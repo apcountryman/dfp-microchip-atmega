@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m3208def.inc
 ;* Title             : Register/Bit Definitions for the ATmega3208
-;* Created           : 2019-04-26 00:07
+;* Created           : 2019-12-20 07:10
 ;* Version           : 1.00
 ;* Support e-mail    : avr@atmel.com
 ;* Target MCU        : ATmega3208
@@ -4060,8 +4060,8 @@
 
 
 #define DATAMEM_START 0x0000
-#define DATAMEM_SIZE 0x8000
-#define DATAMEM_END (0x0000 + 0x8000 - 1)
+#define DATAMEM_SIZE 0x10000
+#define DATAMEM_END (0x0000 + 0x10000 - 1)
 
 #define EEPROM_START 0x1400
 #define EEPROM_SIZE 0x0100

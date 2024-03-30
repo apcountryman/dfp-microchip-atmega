@@ -502,7 +502,7 @@
         </edc:SFRDef>
       </edc:SFRDataSector>
       <edc:GPRDataSector edc:beginaddr="0x60" edc:endaddr="0x260" edc:regionid="IRAM"/>
-      <edc:GPRDataSector edc:beginaddr="0x260" edc:endaddr="0x10000" edc:regionid="XRAM"/>
+      <edc:ExternalSector edc:beginaddr="0x260" edc:endaddr="0x10000" edc:regionid="XRAM" edc:type="ram"/>
     </edc:RegardlessOfMode>
   </edc:DataSpace>
   <edc:DataFlashSpace edc:endaddr="0x400" edc:magicoffset="0x810000"/>
@@ -510,7 +510,7 @@
     <edc:DeviceIDSector edc:beginaddr="0x0" edc:endaddr="0x3" edc:regionid="SIGNATURES" edc:value="0x1E9306"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
-    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x2" edc:regionid="FUSES">
+    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x2" edc:magicoffset="0x820000" edc:regionid="FUSES">
       <edc:DCRDef edc:_addr="0x0" edc:access="nnnnnnnn" edc:cname="LOW" edc:factorydefault="0xE1" edc:impl="0xFF" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="FUSE">
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0" ltx:memberofperipheral="FUSE">
@@ -624,7 +624,7 @@
     </edc:ConfigFuseSector>
   </edc:FusesSpace>
   <edc:LockbitsSpace edc:magicoffset="0x830000">
-    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x1" edc:regionid="LOCKBITS">
+    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x1" edc:magicoffset="0x830000" edc:regionid="LOCKBITS">
       <edc:DCRDef edc:_addr="0x0" edc:access="--nnnnnn" edc:cname="LOCKBIT" edc:factorydefault="0xFF" edc:impl="0x3F" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="LOCKBIT">
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0" ltx:memberofperipheral="LOCKBIT">

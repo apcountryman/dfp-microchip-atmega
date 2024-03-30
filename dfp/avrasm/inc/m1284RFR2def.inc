@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m1284RFR2def.inc
 ;* Title             : Register/Bit Definitions for the ATmega1284RFR2
-;* Created           : 2019-04-26 00:07
+;* Created           : 2019-12-20 07:10
 ;* Version           : 1.00
 ;* Support e-mail    : avr@atmel.com
 ;* Target MCU        : ATmega1284RFR2

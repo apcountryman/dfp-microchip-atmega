@@ -40,8 +40,8 @@
     <edc:Interrupt edc:cname="PIT" edc:desc="" edc:irq="4" ltx:memberofperipheral="RTC"/>
     <edc:Interrupt edc:cname="CCL" edc:desc="" edc:irq="5" ltx:memberofperipheral="CCL"/>
     <edc:Interrupt edc:cname="PORT" edc:desc="" edc:irq="6" ltx:memberofperipheral="PORTA"/>
-    <edc:Interrupt edc:cname="OVF" edc:desc="" edc:irq="7" ltx:memberofperipheral="TCA0"/>
     <edc:Interrupt edc:cname="LUNF" edc:desc="" edc:irq="7" ltx:memberofperipheral="TCA0"/>
+    <edc:Interrupt edc:cname="OVF" edc:desc="" edc:irq="7" ltx:memberofperipheral="TCA0"/>
     <edc:Interrupt edc:cname="HUNF" edc:desc="" edc:irq="8" ltx:memberofperipheral="TCA0"/>
     <edc:Interrupt edc:cname="LCMP0" edc:desc="" edc:irq="9" ltx:memberofperipheral="TCA0"/>
     <edc:Interrupt edc:cname="CMP0" edc:desc="" edc:irq="9" ltx:memberofperipheral="TCA0"/>
@@ -159,7 +159,7 @@
         <edc:SFRDef edc:access="nnnnnnnn" edc:cname="R30" edc:desc="General-Purpose Register" edc:impl="0xFF" edc:mclr="xxxxxxxx" edc:nmmrid="30" edc:nzwidth="0x8" edc:por="xxxxxxxx"/>
         <edc:SFRDef edc:access="nnnnnnnn" edc:cname="R31" edc:desc="General-Purpose Register" edc:impl="0xFF" edc:mclr="xxxxxxxx" edc:nmmrid="31" edc:nzwidth="0x8" edc:por="xxxxxxxx"/>
       </edc:NMMRPlace>
-      <edc:EEDataSector atdf:pagesize="0x20" edc:beginaddr="0x811400" edc:endaddr="0x811500" edc:regionid="EEPROM"/>
+      <edc:EEDataSector atdf:pagesize="0x20" edc:beginaddr="0x811400" edc:endaddr="0x811500" edc:magicoffset="0x810000" edc:regionid="EEPROM"/>
       <edc:ConfigFuseSector atdf:pagesize="0x20" edc:beginaddr="0x1280" edc:endaddr="0x1289" edc:magicoffset="0x820000" edc:regionid="FUSES">
         <edc:DCRDef edc:_addr="0x1280" edc:access="nnnnnnnn" edc:cname="WDTCFG" edc:factorydefault="0x00" edc:impl="0xFF" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="FUSE">
           <edc:DCRModeList>
@@ -4142,6 +4142,40 @@
         <edc:DCRDef edc:_addr="0x1101" edc:access="rrrrrrrr" edc:cname="DEVICEID1" edc:factorydefault="0x0" edc:impl="0x0" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="SIGROW"/>
         <edc:DCRDef edc:_addr="0x1102" edc:access="rrrrrrrr" edc:cname="DEVICEID2" edc:factorydefault="0x0" edc:impl="0x0" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="SIGROW"/>
       </edc:DeviceIDSector>
+      <edc:UserIDSector atdf:pagesize="0x20" edc:beginaddr="0x1300" edc:endaddr="0x1320" edc:magicoffset="0x850000" edc:regionid="USER_SIGNATURES">
+        <edc:SFRDef edc:_addr="0x1300" edc:access="nnnnnnnn" edc:cname="USERROW0" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1301" edc:access="nnnnnnnn" edc:cname="USERROW1" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1302" edc:access="nnnnnnnn" edc:cname="USERROW2" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1303" edc:access="nnnnnnnn" edc:cname="USERROW3" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1304" edc:access="nnnnnnnn" edc:cname="USERROW4" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1305" edc:access="nnnnnnnn" edc:cname="USERROW5" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1306" edc:access="nnnnnnnn" edc:cname="USERROW6" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1307" edc:access="nnnnnnnn" edc:cname="USERROW7" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1308" edc:access="nnnnnnnn" edc:cname="USERROW8" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1309" edc:access="nnnnnnnn" edc:cname="USERROW9" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x130A" edc:access="nnnnnnnn" edc:cname="USERROW10" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x130B" edc:access="nnnnnnnn" edc:cname="USERROW11" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x130C" edc:access="nnnnnnnn" edc:cname="USERROW12" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x130D" edc:access="nnnnnnnn" edc:cname="USERROW13" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x130E" edc:access="nnnnnnnn" edc:cname="USERROW14" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x130F" edc:access="nnnnnnnn" edc:cname="USERROW15" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1310" edc:access="nnnnnnnn" edc:cname="USERROW16" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1311" edc:access="nnnnnnnn" edc:cname="USERROW17" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1312" edc:access="nnnnnnnn" edc:cname="USERROW18" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1313" edc:access="nnnnnnnn" edc:cname="USERROW19" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1314" edc:access="nnnnnnnn" edc:cname="USERROW20" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1315" edc:access="nnnnnnnn" edc:cname="USERROW21" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1316" edc:access="nnnnnnnn" edc:cname="USERROW22" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1317" edc:access="nnnnnnnn" edc:cname="USERROW23" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1318" edc:access="nnnnnnnn" edc:cname="USERROW24" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x1319" edc:access="nnnnnnnn" edc:cname="USERROW25" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x131A" edc:access="nnnnnnnn" edc:cname="USERROW26" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x131B" edc:access="nnnnnnnn" edc:cname="USERROW27" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x131C" edc:access="nnnnnnnn" edc:cname="USERROW28" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x131D" edc:access="nnnnnnnn" edc:cname="USERROW29" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x131E" edc:access="nnnnnnnn" edc:cname="USERROW30" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+        <edc:SFRDef edc:_addr="0x131F" edc:access="nnnnnnnn" edc:cname="USERROW31" edc:nzwidth="0x8" ltx:memberofperipheral="USERROW"/>
+      </edc:UserIDSector>
     </edc:RegardlessOfMode>
     <edc:RegisterMap edc:id="TCA0/SPLIT">
       <edc:SFRDef edc:access="----nnnn" edc:addr="0xA00" edc:cname="CTRLA" edc:impl="0xF" edc:mclr="00000000" edc:nzwidth="0x8" edc:por="00000000" ltx:memberofperipheral="TCA0">
@@ -4422,138 +4456,138 @@
   <edc:PinList edc:ppsflavor="atmel">
     <edc:Pin>
       <edc:VirtualPin edc:name="PA3"/>
-      <edc:VirtualPin edc:name="LUT0_OUT0" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="PIN3" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="SCL" edc:ppsfunction="I2C"/>
-      <edc:VirtualPin edc:name="WO0B1" edc:ppsfunction="TCB1"/>
-      <edc:VirtualPin edc:name="WO3A0" edc:ppsfunction="TCA"/>
-      <edc:VirtualPin edc:name="XDIR" edc:ppsfunction="USART0"/>
+      <edc:VirtualPin edc:name="LUT0_OUT0" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="PIN3" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="SCL" edc:ppsfunction="I2C" ltx:memberofperipheral="TWI0"/>
+      <edc:VirtualPin edc:name="WO0B1" edc:ppsfunction="TCB1" ltx:memberofperipheral="TCB1"/>
+      <edc:VirtualPin edc:name="WO3A0" edc:ppsfunction="TCA" ltx:memberofperipheral="TCA0"/>
+      <edc:VirtualPin edc:name="XDIR" edc:ppsfunction="USART0" ltx:memberofperipheral="USART0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PA4"/>
-      <edc:VirtualPin edc:name="MOSI" edc:ppsfunction="SPI"/>
-      <edc:VirtualPin edc:name="PIN4" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="TXD" edc:ppsfunction="USART0_ALT"/>
-      <edc:VirtualPin edc:name="WO4A0" edc:ppsfunction="TCA"/>
+      <edc:VirtualPin edc:name="MOSI" edc:ppsfunction="SPI" ltx:memberofperipheral="SPI0"/>
+      <edc:VirtualPin edc:name="PIN4" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="TXD" edc:ppsfunction="USART0_ALT" ltx:memberofperipheral="USART0"/>
+      <edc:VirtualPin edc:name="WO4A0" edc:ppsfunction="TCA" ltx:memberofperipheral="TCA0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PA5"/>
-      <edc:VirtualPin edc:name="MISO" edc:ppsfunction="SPI"/>
-      <edc:VirtualPin edc:name="PIN5" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="RXD" edc:ppsfunction="USART0_ALT"/>
-      <edc:VirtualPin edc:name="WO5A0" edc:ppsfunction="TCA"/>
+      <edc:VirtualPin edc:name="MISO" edc:ppsfunction="SPI" ltx:memberofperipheral="SPI0"/>
+      <edc:VirtualPin edc:name="PIN5" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="RXD" edc:ppsfunction="USART0_ALT" ltx:memberofperipheral="USART0"/>
+      <edc:VirtualPin edc:name="WO5A0" edc:ppsfunction="TCA" ltx:memberofperipheral="TCA0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PA6"/>
-      <edc:VirtualPin edc:name="LUT0_OUT0" edc:ppsfunction="CCL_ALT"/>
-      <edc:VirtualPin edc:name="PIN6" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="SCK" edc:ppsfunction="SPI"/>
-      <edc:VirtualPin edc:name="XCK" edc:ppsfunction="USART0_ALT"/>
+      <edc:VirtualPin edc:name="LUT0_OUT0" edc:ppsfunction="CCL_ALT" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="PIN6" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="SCK" edc:ppsfunction="SPI" ltx:memberofperipheral="SPI0"/>
+      <edc:VirtualPin edc:name="XCK" edc:ppsfunction="USART0_ALT" ltx:memberofperipheral="USART0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PA7"/>
-      <edc:VirtualPin edc:name="CLKO" edc:ppsfunction="CLKCTRL"/>
-      <edc:VirtualPin edc:name="EVOUT0" edc:ppsfunction="EVSYS_ALT"/>
-      <edc:VirtualPin edc:name="OUT0" edc:ppsfunction="AC0"/>
-      <edc:VirtualPin edc:name="PIN7" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="SS" edc:ppsfunction="SPI"/>
-      <edc:VirtualPin edc:name="XDIR" edc:ppsfunction="USART0_ALT"/>
+      <edc:VirtualPin edc:name="CLKO" edc:ppsfunction="CLKCTRL" ltx:memberofperipheral="CLKCTRL"/>
+      <edc:VirtualPin edc:name="EVOUT0" edc:ppsfunction="EVSYS_ALT" ltx:memberofperipheral="EVSYS"/>
+      <edc:VirtualPin edc:name="OUT0" edc:ppsfunction="AC0" ltx:memberofperipheral="AC0"/>
+      <edc:VirtualPin edc:name="PIN7" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="SS" edc:ppsfunction="SPI" ltx:memberofperipheral="SPI0"/>
+      <edc:VirtualPin edc:name="XDIR" edc:ppsfunction="USART0_ALT" ltx:memberofperipheral="USART0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PC0"/>
-      <edc:VirtualPin edc:name="LUT1_IN0" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="MOSI" edc:ppsfunction="SPI_ALT"/>
-      <edc:VirtualPin edc:name="PIN0" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="TXD" edc:ppsfunction="USART1"/>
-      <edc:VirtualPin edc:name="WO0A0" edc:ppsfunction="TCA_ALT2"/>
-      <edc:VirtualPin edc:name="WO0B2" edc:ppsfunction="TCB2"/>
+      <edc:VirtualPin edc:name="LUT1_IN0" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="MOSI" edc:ppsfunction="SPI_ALT" ltx:memberofperipheral="SPI0"/>
+      <edc:VirtualPin edc:name="PIN0" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTC"/>
+      <edc:VirtualPin edc:name="TXD" edc:ppsfunction="USART1" ltx:memberofperipheral="USART1"/>
+      <edc:VirtualPin edc:name="WO0A0" edc:ppsfunction="TCA_ALT2" ltx:memberofperipheral="TCA0"/>
+      <edc:VirtualPin edc:name="WO0B2" edc:ppsfunction="TCB2" ltx:memberofperipheral="TCB2"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PC1"/>
-      <edc:VirtualPin edc:name="LUT1_IN1" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="MISO" edc:ppsfunction="SPI_ALT"/>
-      <edc:VirtualPin edc:name="PIN1" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="RXD" edc:ppsfunction="USART1"/>
-      <edc:VirtualPin edc:name="WO1A0" edc:ppsfunction="TCA_ALT2"/>
+      <edc:VirtualPin edc:name="LUT1_IN1" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="MISO" edc:ppsfunction="SPI_ALT" ltx:memberofperipheral="SPI0"/>
+      <edc:VirtualPin edc:name="PIN1" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTC"/>
+      <edc:VirtualPin edc:name="RXD" edc:ppsfunction="USART1" ltx:memberofperipheral="USART1"/>
+      <edc:VirtualPin edc:name="WO1A0" edc:ppsfunction="TCA_ALT2" ltx:memberofperipheral="TCA0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PC2"/>
-      <edc:VirtualPin edc:name="EVOUT2" edc:ppsfunction="EVSYS"/>
-      <edc:VirtualPin edc:name="LUT1_IN2" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="PIN2" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="SCK" edc:ppsfunction="SPI_ALT"/>
-      <edc:VirtualPin edc:name="SDA" edc:ppsfunction="I2C_ALT"/>
-      <edc:VirtualPin edc:name="WO2A0" edc:ppsfunction="TCA_ALT2"/>
-      <edc:VirtualPin edc:name="XCK" edc:ppsfunction="USART1"/>
+      <edc:VirtualPin edc:name="EVOUT2" edc:ppsfunction="EVSYS" ltx:memberofperipheral="EVSYS"/>
+      <edc:VirtualPin edc:name="LUT1_IN2" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="PIN2" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTC"/>
+      <edc:VirtualPin edc:name="SCK" edc:ppsfunction="SPI_ALT" ltx:memberofperipheral="SPI0"/>
+      <edc:VirtualPin edc:name="SDA" edc:ppsfunction="I2C_ALT" ltx:memberofperipheral="TWI0"/>
+      <edc:VirtualPin edc:name="WO2A0" edc:ppsfunction="TCA_ALT2" ltx:memberofperipheral="TCA0"/>
+      <edc:VirtualPin edc:name="XCK" edc:ppsfunction="USART1" ltx:memberofperipheral="USART1"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PC3"/>
-      <edc:VirtualPin edc:name="LUT1_OUT0" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="PIN3" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="SCL" edc:ppsfunction="I2C_ALT"/>
-      <edc:VirtualPin edc:name="SS" edc:ppsfunction="SPI_ALT"/>
-      <edc:VirtualPin edc:name="WO3A0" edc:ppsfunction="TCA_ALT2"/>
-      <edc:VirtualPin edc:name="XDIR" edc:ppsfunction="USART1"/>
+      <edc:VirtualPin edc:name="LUT1_OUT0" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="PIN3" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTC"/>
+      <edc:VirtualPin edc:name="SCL" edc:ppsfunction="I2C_ALT" ltx:memberofperipheral="TWI0"/>
+      <edc:VirtualPin edc:name="SS" edc:ppsfunction="SPI_ALT" ltx:memberofperipheral="SPI0"/>
+      <edc:VirtualPin edc:name="WO3A0" edc:ppsfunction="TCA_ALT2" ltx:memberofperipheral="TCA0"/>
+      <edc:VirtualPin edc:name="XDIR" edc:ppsfunction="USART1" ltx:memberofperipheral="USART1"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD0"/>
-      <edc:VirtualPin edc:name="AIN0" edc:ppsfunction="AIN0"/>
-      <edc:VirtualPin edc:name="LUT2_IN0" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="PIN0" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="WO0A0" edc:ppsfunction="TCA_ALT3"/>
+      <edc:VirtualPin edc:name="AIN0" edc:ppsfunction="AIN0" ltx:memberofperipheral="ADC0"/>
+      <edc:VirtualPin edc:name="LUT2_IN0" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="PIN0" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTD"/>
+      <edc:VirtualPin edc:name="WO0A0" edc:ppsfunction="TCA_ALT3" ltx:memberofperipheral="TCA0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD1"/>
-      <edc:VirtualPin edc:name="AIN1" edc:ppsfunction="AIN0"/>
-      <edc:VirtualPin edc:name="LUT2_IN1" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="P3" edc:ppsfunction="AC0"/>
-      <edc:VirtualPin edc:name="PIN1" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="WO1A0" edc:ppsfunction="TCA_ALT3"/>
+      <edc:VirtualPin edc:name="AIN1" edc:ppsfunction="AIN0" ltx:memberofperipheral="ADC0"/>
+      <edc:VirtualPin edc:name="LUT2_IN1" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="P3" edc:ppsfunction="AC0" ltx:memberofperipheral="AC0"/>
+      <edc:VirtualPin edc:name="PIN1" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTD"/>
+      <edc:VirtualPin edc:name="WO1A0" edc:ppsfunction="TCA_ALT3" ltx:memberofperipheral="TCA0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD2"/>
-      <edc:VirtualPin edc:name="AIN2" edc:ppsfunction="AIN0"/>
-      <edc:VirtualPin edc:name="EVOUT3" edc:ppsfunction="EVSYS"/>
-      <edc:VirtualPin edc:name="LUT2_IN2" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="P0" edc:ppsfunction="AC0"/>
-      <edc:VirtualPin edc:name="PIN2" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="WO2A0" edc:ppsfunction="TCA_ALT3"/>
+      <edc:VirtualPin edc:name="AIN2" edc:ppsfunction="AIN0" ltx:memberofperipheral="ADC0"/>
+      <edc:VirtualPin edc:name="EVOUT3" edc:ppsfunction="EVSYS" ltx:memberofperipheral="EVSYS"/>
+      <edc:VirtualPin edc:name="LUT2_IN2" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="P0" edc:ppsfunction="AC0" ltx:memberofperipheral="AC0"/>
+      <edc:VirtualPin edc:name="PIN2" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTD"/>
+      <edc:VirtualPin edc:name="WO2A0" edc:ppsfunction="TCA_ALT3" ltx:memberofperipheral="TCA0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD3"/>
-      <edc:VirtualPin edc:name="AIN3" edc:ppsfunction="AIN0"/>
-      <edc:VirtualPin edc:name="LUT2_OUT0" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="N0" edc:ppsfunction="AC0"/>
-      <edc:VirtualPin edc:name="PIN3" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="WO3A0" edc:ppsfunction="TCA_ALT3"/>
+      <edc:VirtualPin edc:name="AIN3" edc:ppsfunction="AIN0" ltx:memberofperipheral="ADC0"/>
+      <edc:VirtualPin edc:name="LUT2_OUT0" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="N0" edc:ppsfunction="AC0" ltx:memberofperipheral="AC0"/>
+      <edc:VirtualPin edc:name="PIN3" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTD"/>
+      <edc:VirtualPin edc:name="WO3A0" edc:ppsfunction="TCA_ALT3" ltx:memberofperipheral="TCA0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD4"/>
-      <edc:VirtualPin edc:name="AIN4" edc:ppsfunction="AIN0"/>
-      <edc:VirtualPin edc:name="P1" edc:ppsfunction="AC0"/>
-      <edc:VirtualPin edc:name="PIN4" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="WO4A0" edc:ppsfunction="TCA_ALT3"/>
+      <edc:VirtualPin edc:name="AIN4" edc:ppsfunction="AIN0" ltx:memberofperipheral="ADC0"/>
+      <edc:VirtualPin edc:name="P1" edc:ppsfunction="AC0" ltx:memberofperipheral="AC0"/>
+      <edc:VirtualPin edc:name="PIN4" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTD"/>
+      <edc:VirtualPin edc:name="WO4A0" edc:ppsfunction="TCA_ALT3" ltx:memberofperipheral="TCA0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD5"/>
-      <edc:VirtualPin edc:name="AIN5" edc:ppsfunction="AIN0"/>
-      <edc:VirtualPin edc:name="N1" edc:ppsfunction="AC0"/>
-      <edc:VirtualPin edc:name="PIN5" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="WO5A0" edc:ppsfunction="TCA_ALT3"/>
+      <edc:VirtualPin edc:name="AIN5" edc:ppsfunction="AIN0" ltx:memberofperipheral="ADC0"/>
+      <edc:VirtualPin edc:name="N1" edc:ppsfunction="AC0" ltx:memberofperipheral="AC0"/>
+      <edc:VirtualPin edc:name="PIN5" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTD"/>
+      <edc:VirtualPin edc:name="WO5A0" edc:ppsfunction="TCA_ALT3" ltx:memberofperipheral="TCA0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD6"/>
-      <edc:VirtualPin edc:name="AIN6" edc:ppsfunction="AIN0"/>
-      <edc:VirtualPin edc:name="LUT2_OUT1" edc:ppsfunction="CCL_ALT"/>
-      <edc:VirtualPin edc:name="P2" edc:ppsfunction="AC0"/>
-      <edc:VirtualPin edc:name="PIN6" edc:ppsfunction="IOPORT"/>
+      <edc:VirtualPin edc:name="AIN6" edc:ppsfunction="AIN0" ltx:memberofperipheral="ADC0"/>
+      <edc:VirtualPin edc:name="LUT2_OUT1" edc:ppsfunction="CCL_ALT" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="P2" edc:ppsfunction="AC0" ltx:memberofperipheral="AC0"/>
+      <edc:VirtualPin edc:name="PIN6" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTD"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD7"/>
-      <edc:VirtualPin edc:name="AIN7" edc:ppsfunction="AIN0"/>
-      <edc:VirtualPin edc:name="EVOUT3" edc:ppsfunction="EVSYS_ALT"/>
-      <edc:VirtualPin edc:name="N2" edc:ppsfunction="AC0"/>
-      <edc:VirtualPin edc:name="PIN7" edc:ppsfunction="IOPORT"/>
+      <edc:VirtualPin edc:name="AIN7" edc:ppsfunction="AIN0" ltx:memberofperipheral="ADC0"/>
+      <edc:VirtualPin edc:name="EVOUT3" edc:ppsfunction="EVSYS_ALT" ltx:memberofperipheral="EVSYS"/>
+      <edc:VirtualPin edc:name="N2" edc:ppsfunction="AC0" ltx:memberofperipheral="AC0"/>
+      <edc:VirtualPin edc:name="PIN7" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTD"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="AVDD"/>
@@ -4563,61 +4597,61 @@
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PF0"/>
-      <edc:VirtualPin edc:name="LUT3_IN0" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="PIN0" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="TOSC1" edc:ppsfunction="CLKCTRL"/>
-      <edc:VirtualPin edc:name="TXD" edc:ppsfunction="USART2"/>
-      <edc:VirtualPin edc:name="WO0A0" edc:ppsfunction="TCA_ALT5"/>
+      <edc:VirtualPin edc:name="LUT3_IN0" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="PIN0" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTF"/>
+      <edc:VirtualPin edc:name="TOSC1" edc:ppsfunction="CLKCTRL" ltx:memberofperipheral="CLKCTRL"/>
+      <edc:VirtualPin edc:name="TXD" edc:ppsfunction="USART2" ltx:memberofperipheral="USART2"/>
+      <edc:VirtualPin edc:name="WO0A0" edc:ppsfunction="TCA_ALT5" ltx:memberofperipheral="TCA0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PF1"/>
-      <edc:VirtualPin edc:name="LUT3_IN1" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="PIN1" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="RXD" edc:ppsfunction="USART2"/>
-      <edc:VirtualPin edc:name="TOSC2" edc:ppsfunction="CLKCTRL"/>
-      <edc:VirtualPin edc:name="WO1A0" edc:ppsfunction="TCA_ALT5"/>
+      <edc:VirtualPin edc:name="LUT3_IN1" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="PIN1" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTF"/>
+      <edc:VirtualPin edc:name="RXD" edc:ppsfunction="USART2" ltx:memberofperipheral="USART2"/>
+      <edc:VirtualPin edc:name="TOSC2" edc:ppsfunction="CLKCTRL" ltx:memberofperipheral="CLKCTRL"/>
+      <edc:VirtualPin edc:name="WO1A0" edc:ppsfunction="TCA_ALT5" ltx:memberofperipheral="TCA0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PF2"/>
-      <edc:VirtualPin edc:name="AIN12" edc:ppsfunction="AIN0"/>
-      <edc:VirtualPin edc:name="EVOUT5" edc:ppsfunction="EVSYS"/>
-      <edc:VirtualPin edc:name="LUT3_IN2" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="PIN2" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="SDA" edc:ppsfunction="I2C_ALT2"/>
-      <edc:VirtualPin edc:name="WO2A0" edc:ppsfunction="TCA_ALT5"/>
-      <edc:VirtualPin edc:name="XCK" edc:ppsfunction="USART2"/>
+      <edc:VirtualPin edc:name="AIN12" edc:ppsfunction="AIN0" ltx:memberofperipheral="ADC0"/>
+      <edc:VirtualPin edc:name="EVOUT5" edc:ppsfunction="EVSYS" ltx:memberofperipheral="EVSYS"/>
+      <edc:VirtualPin edc:name="LUT3_IN2" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="PIN2" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTF"/>
+      <edc:VirtualPin edc:name="SDA" edc:ppsfunction="I2C_ALT2" ltx:memberofperipheral="TWI0"/>
+      <edc:VirtualPin edc:name="WO2A0" edc:ppsfunction="TCA_ALT5" ltx:memberofperipheral="TCA0"/>
+      <edc:VirtualPin edc:name="XCK" edc:ppsfunction="USART2" ltx:memberofperipheral="USART2"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PF3"/>
-      <edc:VirtualPin edc:name="AIN13" edc:ppsfunction="AIN0"/>
-      <edc:VirtualPin edc:name="LUT3_OUT1" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="PIN3" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="SCL" edc:ppsfunction="I2C_ALT2"/>
-      <edc:VirtualPin edc:name="WO3A0" edc:ppsfunction="TCA_ALT5"/>
-      <edc:VirtualPin edc:name="XDIR" edc:ppsfunction="USART2"/>
+      <edc:VirtualPin edc:name="AIN13" edc:ppsfunction="AIN0" ltx:memberofperipheral="ADC0"/>
+      <edc:VirtualPin edc:name="LUT3_OUT1" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="PIN3" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTF"/>
+      <edc:VirtualPin edc:name="SCL" edc:ppsfunction="I2C_ALT2" ltx:memberofperipheral="TWI0"/>
+      <edc:VirtualPin edc:name="WO3A0" edc:ppsfunction="TCA_ALT5" ltx:memberofperipheral="TCA0"/>
+      <edc:VirtualPin edc:name="XDIR" edc:ppsfunction="USART2" ltx:memberofperipheral="USART2"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PF4"/>
-      <edc:VirtualPin edc:name="AIN14" edc:ppsfunction="AIN0"/>
-      <edc:VirtualPin edc:name="PIN4" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="TXD" edc:ppsfunction="USART2_ALT"/>
-      <edc:VirtualPin edc:name="WO0B0" edc:ppsfunction="TCB0_ALT"/>
-      <edc:VirtualPin edc:name="WO4A0" edc:ppsfunction="TCA_ALT5"/>
+      <edc:VirtualPin edc:name="AIN14" edc:ppsfunction="AIN0" ltx:memberofperipheral="ADC0"/>
+      <edc:VirtualPin edc:name="PIN4" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTF"/>
+      <edc:VirtualPin edc:name="TXD" edc:ppsfunction="USART2_ALT" ltx:memberofperipheral="USART2"/>
+      <edc:VirtualPin edc:name="WO0B0" edc:ppsfunction="TCB0_ALT" ltx:memberofperipheral="TCB0"/>
+      <edc:VirtualPin edc:name="WO4A0" edc:ppsfunction="TCA_ALT5" ltx:memberofperipheral="TCA0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PF5"/>
-      <edc:VirtualPin edc:name="AIN15" edc:ppsfunction="AIN0"/>
-      <edc:VirtualPin edc:name="PIN5" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="RXD" edc:ppsfunction="USART2_ALT"/>
-      <edc:VirtualPin edc:name="WO0B1" edc:ppsfunction="TCB1_ALT"/>
-      <edc:VirtualPin edc:name="WO5A0" edc:ppsfunction="TCA_ALT5"/>
+      <edc:VirtualPin edc:name="AIN15" edc:ppsfunction="AIN0" ltx:memberofperipheral="ADC0"/>
+      <edc:VirtualPin edc:name="PIN5" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTF"/>
+      <edc:VirtualPin edc:name="RXD" edc:ppsfunction="USART2_ALT" ltx:memberofperipheral="USART2"/>
+      <edc:VirtualPin edc:name="WO0B1" edc:ppsfunction="TCB1_ALT" ltx:memberofperipheral="TCB1"/>
+      <edc:VirtualPin edc:name="WO5A0" edc:ppsfunction="TCA_ALT5" ltx:memberofperipheral="TCA0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PF6"/>
-      <edc:VirtualPin edc:name="LUT3_OUT1" edc:ppsfunction="CCL_ALT"/>
-      <edc:VirtualPin edc:name="PIN6" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="RESET" edc:ppsfunction="OTHER"/>
-      <edc:VirtualPin edc:name="XCK" edc:ppsfunction="USART2_ALT"/>
+      <edc:VirtualPin edc:name="LUT3_OUT1" edc:ppsfunction="CCL_ALT" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="PIN6" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTF"/>
+      <edc:VirtualPin edc:name="RESET" edc:ppsfunction="OTHER" ltx:memberofperipheral="RSTCTRL"/>
+      <edc:VirtualPin edc:name="XCK" edc:ppsfunction="USART2_ALT" ltx:memberofperipheral="USART2"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="UPDI"/>
@@ -4630,28 +4664,28 @@
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PA0"/>
-      <edc:VirtualPin edc:name="CLKI" edc:ppsfunction="CLKCTRL"/>
-      <edc:VirtualPin edc:name="LUT0_IN0" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="PIN0" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="TXD" edc:ppsfunction="USART0"/>
-      <edc:VirtualPin edc:name="WO0A0" edc:ppsfunction="TCA"/>
+      <edc:VirtualPin edc:name="CLKI" edc:ppsfunction="CLKCTRL" ltx:memberofperipheral="CLKCTRL"/>
+      <edc:VirtualPin edc:name="LUT0_IN0" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="PIN0" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="TXD" edc:ppsfunction="USART0" ltx:memberofperipheral="USART0"/>
+      <edc:VirtualPin edc:name="WO0A0" edc:ppsfunction="TCA" ltx:memberofperipheral="TCA0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PA1"/>
-      <edc:VirtualPin edc:name="LUT0_IN1" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="PIN1" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="RXD" edc:ppsfunction="USART0"/>
-      <edc:VirtualPin edc:name="WO1A0" edc:ppsfunction="TCA"/>
+      <edc:VirtualPin edc:name="LUT0_IN1" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="PIN1" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="RXD" edc:ppsfunction="USART0" ltx:memberofperipheral="USART0"/>
+      <edc:VirtualPin edc:name="WO1A0" edc:ppsfunction="TCA" ltx:memberofperipheral="TCA0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PA2"/>
-      <edc:VirtualPin edc:name="EVOUT0" edc:ppsfunction="EVSYS"/>
-      <edc:VirtualPin edc:name="LUT0_IN2" edc:ppsfunction="CCL"/>
-      <edc:VirtualPin edc:name="PIN2" edc:ppsfunction="IOPORT"/>
-      <edc:VirtualPin edc:name="SDA" edc:ppsfunction="I2C"/>
-      <edc:VirtualPin edc:name="WO0B0" edc:ppsfunction="TCB0"/>
-      <edc:VirtualPin edc:name="WO2A0" edc:ppsfunction="TCA"/>
-      <edc:VirtualPin edc:name="XCK" edc:ppsfunction="USART0"/>
+      <edc:VirtualPin edc:name="EVOUT0" edc:ppsfunction="EVSYS" ltx:memberofperipheral="EVSYS"/>
+      <edc:VirtualPin edc:name="LUT0_IN2" edc:ppsfunction="CCL" ltx:memberofperipheral="CCL"/>
+      <edc:VirtualPin edc:name="PIN2" edc:ppsfunction="IOPORT" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="SDA" edc:ppsfunction="I2C" ltx:memberofperipheral="TWI0"/>
+      <edc:VirtualPin edc:name="WO0B0" edc:ppsfunction="TCB0" ltx:memberofperipheral="TCB0"/>
+      <edc:VirtualPin edc:name="WO2A0" edc:ppsfunction="TCA" ltx:memberofperipheral="TCA0"/>
+      <edc:VirtualPin edc:name="XCK" edc:ppsfunction="USART0" ltx:memberofperipheral="USART0"/>
     </edc:Pin>
   </edc:PinList>
 </edc:PIC>
