@@ -46,7 +46,7 @@
     <edc:Interrupt edc:irq="13" edc:cname="TIMER1_OVF" edc:desc="Timer/Counter1 Overflow"/>
     <edc:Interrupt edc:irq="14" edc:cname="TIMER0_COMPA" edc:desc="TimerCounter0 Compare Match A"/>
     <edc:Interrupt edc:irq="15" edc:cname="TIMER0_COMPB" edc:desc="TimerCounter0 Compare Match B"/>
-    <edc:Interrupt edc:irq="16" edc:cname="TIMER0_OVF" edc:desc="Timer/Couner0 Overflow"/>
+    <edc:Interrupt edc:irq="16" edc:cname="TIMER0_OVF" edc:desc="Timer/Counter0 Overflow"/>
     <edc:Interrupt edc:irq="17" edc:cname="SPI0_STC" edc:desc="SPI Serial Transfer Complete"/>
     <edc:Interrupt edc:irq="18" edc:cname="USART0_RX" edc:desc="USART0 Rx Complete"/>
     <edc:Interrupt edc:irq="19" edc:cname="USART0_UDRE" edc:desc="USART0, Data Register Empty"/>
@@ -177,10 +177,10 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC1">
               <edc:SFRFieldDef edc:cname="TOV1" edc:nzwidth="0x1" edc:desc="Timer/Counter1 Overflow Flag"/>
-              <edc:SFRFieldDef edc:cname="OCF1A" edc:nzwidth="0x1" edc:desc="Output Compare Flag 1A"/>
-              <edc:SFRFieldDef edc:cname="OCF1B" edc:nzwidth="0x1" edc:desc="Output Compare Flag 1B"/>
+              <edc:SFRFieldDef edc:cname="OCF1A" edc:nzwidth="0x1" edc:desc="Timer/Counter1 Output Compare A Match Flag"/>
+              <edc:SFRFieldDef edc:cname="OCF1B" edc:nzwidth="0x1" edc:desc="Timer/Counter1 Output Compare B Match Flag"/>
               <edc:AdjustPoint edc:offset="0x2"/>
-              <edc:SFRFieldDef edc:cname="ICF1" edc:nzwidth="0x1" edc:desc="Input Capture Flag 1"/>
+              <edc:SFRFieldDef edc:cname="ICF1" edc:nzwidth="0x1" edc:desc="Timer/Counter1 Input Capture Flag"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -197,8 +197,8 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC3">
               <edc:SFRFieldDef edc:cname="TOV3" edc:nzwidth="0x1" edc:desc="Timer/Counter3 Overflow Flag"/>
-              <edc:SFRFieldDef edc:cname="OCF3A" edc:nzwidth="0x1" edc:desc="Output Compare Flag 3A"/>
-              <edc:SFRFieldDef edc:cname="OCF3B" edc:nzwidth="0x1" edc:desc="Output Compare Flag 3B"/>
+              <edc:SFRFieldDef edc:cname="OCF3A" edc:nzwidth="0x1" edc:desc="Timer/Counter3 Output Compare A Match Flag"/>
+              <edc:SFRFieldDef edc:cname="OCF3B" edc:nzwidth="0x1" edc:desc="Timer/Counter3 Output Compare B Match Flag"/>
               <edc:AdjustPoint edc:offset="0x2"/>
               <edc:SFRFieldDef edc:cname="ICF3" edc:nzwidth="0x1" edc:desc="Timer/Counter3 Input Capture Flag"/>
             </edc:SFRMode>
@@ -208,8 +208,8 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC4">
               <edc:SFRFieldDef edc:cname="TOV4" edc:nzwidth="0x1" edc:desc="Timer/Counter4 Overflow Flag"/>
-              <edc:SFRFieldDef edc:cname="OCF4A" edc:nzwidth="0x1" edc:desc="Output Compare Flag 4A"/>
-              <edc:SFRFieldDef edc:cname="OCF4B" edc:nzwidth="0x1" edc:desc="Output Compare Flag 4B"/>
+              <edc:SFRFieldDef edc:cname="OCF4A" edc:nzwidth="0x1" edc:desc="Timer/Counter4 Output Compare A Match Flag"/>
+              <edc:SFRFieldDef edc:cname="OCF4B" edc:nzwidth="0x1" edc:desc="Timer/Counter4 Output Compare B Match Flag"/>
               <edc:AdjustPoint edc:offset="0x2"/>
               <edc:SFRFieldDef edc:cname="ICF4" edc:nzwidth="0x1" edc:desc="Timer/Counter4 Input Capture Flag"/>
             </edc:SFRMode>
@@ -589,8 +589,8 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC1">
               <edc:SFRFieldDef edc:cname="TOIE1" edc:nzwidth="0x1" edc:desc="Timer/Counter1 Overflow Interrupt Enable"/>
-              <edc:SFRFieldDef edc:cname="OCIE1A" edc:nzwidth="0x1" edc:desc="Timer/Counter1 Output CompareA Match Interrupt Enable"/>
-              <edc:SFRFieldDef edc:cname="OCIE1B" edc:nzwidth="0x1" edc:desc="Timer/Counter1 Output CompareB Match Interrupt Enable"/>
+              <edc:SFRFieldDef edc:cname="OCIE1A" edc:nzwidth="0x1" edc:desc="Timer/Counter1 Output Compare A Match Interrupt Enable"/>
+              <edc:SFRFieldDef edc:cname="OCIE1B" edc:nzwidth="0x1" edc:desc="Timer/Counter1 Output Compare B Match Interrupt Enable"/>
               <edc:AdjustPoint edc:offset="0x2"/>
               <edc:SFRFieldDef edc:cname="ICIE1" edc:nzwidth="0x1" edc:desc="Timer/Counter1 Input Capture Interrupt Enable"/>
             </edc:SFRMode>
@@ -609,8 +609,8 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC3">
               <edc:SFRFieldDef edc:cname="TOIE3" edc:nzwidth="0x1" edc:desc="Timer/Counter3 Overflow Interrupt Enable"/>
-              <edc:SFRFieldDef edc:cname="OCIE3A" edc:nzwidth="0x1" edc:desc="Timer/Counter3 Output Compare Match A Interrupt Enable"/>
-              <edc:SFRFieldDef edc:cname="OCIE3B" edc:nzwidth="0x1" edc:desc="Timer/Counter3 Output Compare Match B Interrupt Enable"/>
+              <edc:SFRFieldDef edc:cname="OCIE3A" edc:nzwidth="0x1" edc:desc="Timer/Counter3 Output Compare A Match Interrupt Enable"/>
+              <edc:SFRFieldDef edc:cname="OCIE3B" edc:nzwidth="0x1" edc:desc="Timer/Counter3 Output Compare B Match Interrupt Enable"/>
               <edc:AdjustPoint edc:offset="0x2"/>
               <edc:SFRFieldDef edc:cname="ICIE3" edc:nzwidth="0x1" edc:desc="Timer/Counter3 Input Capture Interrupt Enable"/>
             </edc:SFRMode>
@@ -620,8 +620,8 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC4">
               <edc:SFRFieldDef edc:cname="TOIE4" edc:nzwidth="0x1" edc:desc="Timer/Counter4 Overflow Interrupt Enable"/>
-              <edc:SFRFieldDef edc:cname="OCIE4A" edc:nzwidth="0x1" edc:desc="Timer/Counter4 Output Compare Match A Interrupt Enable"/>
-              <edc:SFRFieldDef edc:cname="OCIE4B" edc:nzwidth="0x1" edc:desc="Timer/Counter4 Output Compare Match B Interrupt Enable"/>
+              <edc:SFRFieldDef edc:cname="OCIE4A" edc:nzwidth="0x1" edc:desc="Timer/Counter4 Output Compare A Match Interrupt Enable"/>
+              <edc:SFRFieldDef edc:cname="OCIE4B" edc:nzwidth="0x1" edc:desc="Timer/Counter4 Output Compare B Match Interrupt Enable"/>
               <edc:AdjustPoint edc:offset="0x2"/>
               <edc:SFRFieldDef edc:cname="ICIE4" edc:nzwidth="0x1" edc:desc="Timer/Counter4 Input Capture Interrupt Enable"/>
             </edc:SFRMode>
@@ -730,15 +730,15 @@
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC1">
               <edc:SFRFieldDef edc:cname="WGM1" edc:nzwidth="0x2" edc:desc="Waveform Generation Mode"/>
               <edc:AdjustPoint edc:offset="0x2"/>
-              <edc:SFRFieldDef edc:cname="COM1B" edc:nzwidth="0x2" edc:desc="Compare Output Mode 1B, bits"/>
-              <edc:SFRFieldDef edc:cname="COM1A" edc:nzwidth="0x2" edc:desc="Compare Output Mode 1A, bits"/>
+              <edc:SFRFieldDef edc:cname="COM1B" edc:nzwidth="0x2" edc:desc="Compare Output Mode 1B bits"/>
+              <edc:SFRFieldDef edc:cname="COM1A" edc:nzwidth="0x2" edc:desc="Compare Output Mode 1A bits"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
         <edc:SFRDef ltx:memberofperipheral="TC1" edc:cname="TCCR1B" edc:nzwidth="0x8" edc:access="nn-nnnnn" edc:impl="0xDF" edc:_addr="0x81">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC1">
-              <edc:SFRFieldDef edc:cname="CS1" edc:nzwidth="0x3" edc:desc="Prescaler source of Timer/Counter 1">
+              <edc:SFRFieldDef edc:cname="CS1" edc:nzwidth="0x3" edc:desc="Clock Select bits">
                 <edc:SFRFieldSemantic edc:cname="NO_CLOCK_SOURCE_STOPPED" edc:desc="No Clock Source (Stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
                 <edc:SFRFieldSemantic edc:cname="RUNNING_NO_PRESCALING" edc:desc="Running, No Prescaling" edc:when="(field &amp; 0x7) == 0x01"/>
                 <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_8" edc:desc="Running, CLK/8" edc:when="(field &amp; 0x7) == 0x02"/>
@@ -750,8 +750,8 @@
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="WGM1" edc:nzwidth="0x2" edc:desc="Waveform Generation Mode"/>
               <edc:AdjustPoint edc:offset="0x1"/>
-              <edc:SFRFieldDef edc:cname="ICES1" edc:nzwidth="0x1" edc:desc="Input Capture 1 Edge Select"/>
-              <edc:SFRFieldDef edc:cname="ICNC1" edc:nzwidth="0x1" edc:desc="Input Capture 1 Noise Canceler"/>
+              <edc:SFRFieldDef edc:cname="ICES1" edc:nzwidth="0x1" edc:desc="Input Capture Edge Select"/>
+              <edc:SFRFieldDef edc:cname="ICNC1" edc:nzwidth="0x1" edc:desc="Input Capture Noise Canceler"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -759,8 +759,8 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC1">
               <edc:AdjustPoint edc:offset="0x6"/>
-              <edc:SFRFieldDef edc:cname="FOC1B" edc:nzwidth="0x1"/>
-              <edc:SFRFieldDef edc:cname="FOC1A" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="FOC1B" edc:nzwidth="0x1" edc:desc="Force Output Compare for Channel B"/>
+              <edc:SFRFieldDef edc:cname="FOC1A" edc:nzwidth="0x1" edc:desc="Force Output Compare for Channel A"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -773,10 +773,10 @@
         <edc:SFRDef ltx:memberofperipheral="TC3" edc:cname="TCCR3A" edc:nzwidth="0x8" edc:access="nnnn--nn" edc:impl="0xF3" edc:_addr="0x90">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC3">
-              <edc:SFRFieldDef edc:cname="WGM3" edc:nzwidth="0x2" edc:desc="Waveform Genration Mode"/>
+              <edc:SFRFieldDef edc:cname="WGM3" edc:nzwidth="0x2" edc:desc="Waveform Generation Mode"/>
               <edc:AdjustPoint edc:offset="0x2"/>
-              <edc:SFRFieldDef edc:cname="COM3B" edc:nzwidth="0x2" edc:desc="Compare Output Mode bits"/>
-              <edc:SFRFieldDef edc:cname="COM3A" edc:nzwidth="0x2" edc:desc="Compare Output Mode bits"/>
+              <edc:SFRFieldDef edc:cname="COM3B" edc:nzwidth="0x2" edc:desc="Compare Output Mode 3B bits"/>
+              <edc:SFRFieldDef edc:cname="COM3A" edc:nzwidth="0x2" edc:desc="Compare Output Mode 3A bits"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -787,14 +787,13 @@
                 <edc:SFRFieldSemantic edc:cname="NO_CLOCK_SOURCE_STOPPED" edc:desc="No Clock Source (Stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
                 <edc:SFRFieldSemantic edc:cname="RUNNING_NO_PRESCALING" edc:desc="Running, No Prescaling" edc:when="(field &amp; 0x7) == 0x01"/>
                 <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_8" edc:desc="Running, CLK/8" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_32" edc:desc="Running, CLK/32" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_64" edc:desc="Running, CLK/64" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_128" edc:desc="Running, CLK/128" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_256" edc:desc="Running, CLK/256" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_1024" edc:desc="Running, CLK/1024" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_64" edc:desc="Running, CLK/64" edc:when="(field &amp; 0x7) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_256" edc:desc="Running, CLK/256" edc:when="(field &amp; 0x7) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_1024" edc:desc="Running, CLK/1024" edc:when="(field &amp; 0x7) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_EXTCLK_TN_FALLING_EDGE" edc:desc="Running, ExtClk Tn Falling Edge" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_EXTCLK_TN_RISING_EDGE" edc:desc="Running, ExtClk Tn Rising Edge" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
-              <edc:SFRFieldDef edc:cname="WGM32" edc:nzwidth="0x1" edc:desc="Waveform Generation Mode bit 2"/>
-              <edc:SFRFieldDef edc:cname="WGM33" edc:nzwidth="0x1" edc:desc="Waveform Generation Mode bit 3"/>
+              <edc:SFRFieldDef edc:cname="WGM3" edc:nzwidth="0x2" edc:desc="Waveform Generation Mode"/>
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="ICES3" edc:nzwidth="0x1" edc:desc="Input Capture Edge Select"/>
               <edc:SFRFieldDef edc:cname="ICNC3" edc:nzwidth="0x1" edc:desc="Input Capture Noise Canceler"/>
@@ -821,8 +820,8 @@
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC4">
               <edc:SFRFieldDef edc:cname="WGM4" edc:nzwidth="0x2" edc:desc="Waveform Generation Mode"/>
               <edc:AdjustPoint edc:offset="0x2"/>
-              <edc:SFRFieldDef edc:cname="COM4B" edc:nzwidth="0x2" edc:desc="Compare Output Mode bits"/>
-              <edc:SFRFieldDef edc:cname="COM4A" edc:nzwidth="0x2" edc:desc="Compare Output Mode bits"/>
+              <edc:SFRFieldDef edc:cname="COM4B" edc:nzwidth="0x2" edc:desc="Compare Output Mode 4B bits"/>
+              <edc:SFRFieldDef edc:cname="COM4A" edc:nzwidth="0x2" edc:desc="Compare Output Mode 4A bits"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -833,14 +832,13 @@
                 <edc:SFRFieldSemantic edc:cname="NO_CLOCK_SOURCE_STOPPED" edc:desc="No Clock Source (Stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
                 <edc:SFRFieldSemantic edc:cname="RUNNING_NO_PRESCALING" edc:desc="Running, No Prescaling" edc:when="(field &amp; 0x7) == 0x01"/>
                 <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_8" edc:desc="Running, CLK/8" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_32" edc:desc="Running, CLK/32" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_64" edc:desc="Running, CLK/64" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_128" edc:desc="Running, CLK/128" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_256" edc:desc="Running, CLK/256" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_1024" edc:desc="Running, CLK/1024" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_64" edc:desc="Running, CLK/64" edc:when="(field &amp; 0x7) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_256" edc:desc="Running, CLK/256" edc:when="(field &amp; 0x7) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_1024" edc:desc="Running, CLK/1024" edc:when="(field &amp; 0x7) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_EXTCLK_TN_FALLING_EDGE" edc:desc="Running, ExtClk Tn Falling Edge" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_EXTCLK_TN_RISING_EDGE" edc:desc="Running, ExtClk Tn Rising Edge" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
-              <edc:SFRFieldDef edc:cname="WGM42" edc:nzwidth="0x1" edc:desc="Waveform Generation Mode bit 2"/>
-              <edc:SFRFieldDef edc:cname="WGM43" edc:nzwidth="0x1" edc:desc="Waveform Generation Mode bit 3"/>
+              <edc:SFRFieldDef edc:cname="WGM4" edc:nzwidth="0x2" edc:desc="Waveform Generation Mode"/>
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="ICES4" edc:nzwidth="0x1" edc:desc="Input Capture Edge Select"/>
               <edc:SFRFieldDef edc:cname="ICNC4" edc:nzwidth="0x1" edc:desc="Input Capture Noise Canceler"/>
@@ -894,7 +892,7 @@
         <edc:SFRDef ltx:memberofperipheral="TC2" edc:cname="TCCR2A" edc:nzwidth="0x8" edc:access="nnnn--nn" edc:impl="0xF3" edc:_addr="0xB0">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC2">
-              <edc:SFRFieldDef edc:cname="WGM2" edc:nzwidth="0x2" edc:desc="Waveform Genration Mode"/>
+              <edc:SFRFieldDef edc:cname="WGM2" edc:nzwidth="0x2" edc:desc="Waveform Generation Mode"/>
               <edc:AdjustPoint edc:offset="0x2"/>
               <edc:SFRFieldDef edc:cname="COM2B" edc:nzwidth="0x2" edc:desc="Compare Output Mode bits"/>
               <edc:SFRFieldDef edc:cname="COM2A" edc:nzwidth="0x2" edc:desc="Compare Output Mode bits"/>
@@ -969,7 +967,7 @@
               <edc:SFRFieldDef edc:cname="TWIE" edc:nzwidth="0x1" edc:desc="TWI Interrupt Enable"/>
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="TWEN" edc:nzwidth="0x1" edc:desc="TWI Enable Bit"/>
-              <edc:SFRFieldDef edc:cname="TWWC" edc:nzwidth="0x1" edc:desc="TWI Write Collition Flag"/>
+              <edc:SFRFieldDef edc:cname="TWWC" edc:nzwidth="0x1" edc:desc="TWI Write Collision Flag"/>
               <edc:SFRFieldDef edc:cname="TWSTO" edc:nzwidth="0x1" edc:desc="TWI Stop Condition Bit"/>
               <edc:SFRFieldDef edc:cname="TWSTA" edc:nzwidth="0x1" edc:desc="TWI Start Condition Bit"/>
               <edc:SFRFieldDef edc:cname="TWEA" edc:nzwidth="0x1" edc:desc="TWI Enable Acknowledge Bit"/>
@@ -995,7 +993,7 @@
               <edc:SFRFieldDef edc:cname="DOR0" edc:nzwidth="0x1" edc:desc="Data overRun"/>
               <edc:SFRFieldDef edc:cname="FE0" edc:nzwidth="0x1" edc:desc="Framing Error"/>
               <edc:SFRFieldDef edc:cname="UDRE0" edc:nzwidth="0x1" edc:desc="USART Data Register Empty"/>
-              <edc:SFRFieldDef edc:cname="TXC0" edc:nzwidth="0x1" edc:desc="USART Transmitt Complete"/>
+              <edc:SFRFieldDef edc:cname="TXC0" edc:nzwidth="0x1" edc:desc="USART Transmit Complete"/>
               <edc:SFRFieldDef edc:cname="RXC0" edc:nzwidth="0x1" edc:desc="USART Receive Complete"/>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -1059,7 +1057,7 @@
               <edc:SFRFieldDef edc:cname="DOR1" edc:nzwidth="0x1" edc:desc="Data overRun"/>
               <edc:SFRFieldDef edc:cname="FE1" edc:nzwidth="0x1" edc:desc="Framing Error"/>
               <edc:SFRFieldDef edc:cname="UDRE1" edc:nzwidth="0x1" edc:desc="USART Data Register Empty"/>
-              <edc:SFRFieldDef edc:cname="TXC1" edc:nzwidth="0x1" edc:desc="USART Transmitt Complete"/>
+              <edc:SFRFieldDef edc:cname="TXC1" edc:nzwidth="0x1" edc:desc="USART Transmit Complete"/>
               <edc:SFRFieldDef edc:cname="RXC1" edc:nzwidth="0x1" edc:desc="USART Receive Complete"/>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -1137,7 +1135,7 @@
               <edc:SFRFieldDef edc:cname="TWIE1" edc:nzwidth="0x1" edc:desc="TWI Interrupt Enable"/>
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="TWEN1" edc:nzwidth="0x1" edc:desc="TWI Enable Bit"/>
-              <edc:SFRFieldDef edc:cname="TWWC1" edc:nzwidth="0x1" edc:desc="TWI Write Collition Flag"/>
+              <edc:SFRFieldDef edc:cname="TWWC1" edc:nzwidth="0x1" edc:desc="TWI Write Collision Flag"/>
               <edc:SFRFieldDef edc:cname="TWSTO1" edc:nzwidth="0x1" edc:desc="TWI Stop Condition Bit"/>
               <edc:SFRFieldDef edc:cname="TWSTA1" edc:nzwidth="0x1" edc:desc="TWI Start Condition Bit"/>
               <edc:SFRFieldDef edc:cname="TWEA1" edc:nzwidth="0x1" edc:desc="TWI Enable Acknowledge Bit"/>
@@ -1159,7 +1157,7 @@
   </edc:DataSpace>
   <edc:DataFlashSpace edc:endaddr="0x400" edc:magicoffset="0x810000"/>
   <edc:SignaturesSpace edc:magicoffset="0x840000">
-    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9516" edc:rw="r"/>
+    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9516" edc:mask="0xffffff" edc:rw="r"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
     <edc:ConfigFuseSector edc:regionid="FUSES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:magicoffset="0x820000" edc:rw="rw">

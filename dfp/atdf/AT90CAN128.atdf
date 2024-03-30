@@ -695,13 +695,13 @@
           <bitfield caption="TWI Enable Acknowledge Bit" mask="0x40" name="TWEA"/>
           <bitfield caption="TWI Start Condition Bit" mask="0x20" name="TWSTA"/>
           <bitfield caption="TWI Stop Condition Bit" mask="0x10" name="TWSTO"/>
-          <bitfield caption="TWI Write Collition Flag" mask="0x08" name="TWWC"/>
+          <bitfield caption="TWI Write Collision Flag" mask="0x08" name="TWWC"/>
           <bitfield caption="TWI Enable Bit" mask="0x04" name="TWEN"/>
           <bitfield caption="TWI Interrupt Enable" mask="0x01" name="TWIE"/>
         </register>
         <register caption="TWI Status Register" name="TWSR" offset="0xB9" size="1">
           <bitfield caption="TWI Status" mask="0xF8" name="TWS" lsb="3"/>
-          <bitfield caption="TWI Prescaler" mask="0x03" name="TWPS" values="COMM_TWI_PRESACLE"/>
+          <bitfield caption="TWI Prescaler" mask="0x03" name="TWPS" values="COMM_TWI_PRESCALE"/>
         </register>
         <register caption="TWI Data register" name="TWDR" offset="0xBB" size="1" mask="0xFF"/>
         <register caption="TWI (Slave) Address register" name="TWAR" offset="0xBA" size="1">
@@ -709,7 +709,7 @@
           <bitfield caption="TWI General Call Recognition Enable Bit" mask="0x01" name="TWGCE"/>
         </register>
       </register-group>
-      <value-group name="COMM_TWI_PRESACLE">
+      <value-group name="COMM_TWI_PRESCALE">
         <value caption="1" name="1" value="0x00"/>
         <value caption="4" name="4" value="0x01"/>
         <value caption="16" name="16" value="0x02"/>
@@ -721,7 +721,7 @@
         <register caption="USART I/O Data Register" name="UDR0" offset="0xC6" size="1" mask="0xFF" ocd-rw=""/>
         <register caption="USART Control and Status Register A" name="UCSR0A" offset="0xC0" size="1" ocd-rw="R">
           <bitfield caption="USART Receive Complete" mask="0x80" name="RXC0"/>
-          <bitfield caption="USART Transmitt Complete" mask="0x40" name="TXC0"/>
+          <bitfield caption="USART Transmit Complete" mask="0x40" name="TXC0"/>
           <bitfield caption="USART Data Register Empty" mask="0x20" name="UDRE0"/>
           <bitfield caption="Framing Error" mask="0x10" name="FE0"/>
           <bitfield caption="Data overRun" mask="0x08" name="DOR0"/>
@@ -752,7 +752,7 @@
         <register caption="USART I/O Data Register" name="UDR1" offset="0xCE" size="1" mask="0xFF" ocd-rw=""/>
         <register caption="USART Control and Status Register A" name="UCSR1A" offset="0xC8" size="1" ocd-rw="R">
           <bitfield caption="USART Receive Complete" mask="0x80" name="RXC1"/>
-          <bitfield caption="USART Transmitt Complete" mask="0x40" name="TXC1"/>
+          <bitfield caption="USART Transmit Complete" mask="0x40" name="TXC1"/>
           <bitfield caption="USART Data Register Empty" mask="0x20" name="UDRE1"/>
           <bitfield caption="Framing Error" mask="0x10" name="FE1"/>
           <bitfield caption="Data overRun" mask="0x08" name="DOR1"/>
@@ -1094,7 +1094,7 @@
       <register-group caption="Timer/Counter, 8-bit Async" name="TC2">
         <register caption="Timer/Counter2 Control Register" name="TCCR2A" offset="0xB0" size="1">
           <bitfield caption="Force Output Compare" mask="0x80" name="FOC2A"/>
-          <bitfield caption="Waveform Genration Mode" mask="0x40" name="WGM20" values="WAVEFORM_GEN_MODE"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x40" name="WGM20" values="WAVEFORM_GEN_MODE"/>
           <bitfield caption="Compare Output Mode bits" mask="0x30" name="COM2A"/>
           <bitfield caption="Waveform Generation Mode" mask="0x08" name="WGM21"/>
           <bitfield caption="Clock Select bits" mask="0x07" name="CS2" values="CLK_SEL_3BIT"/>
@@ -1268,13 +1268,13 @@
           <bitfield caption="Stuff Error General" mask="0x08" name="SERG"/>
           <bitfield caption="CRC Error General" mask="0x04" name="CERG"/>
           <bitfield caption="Form Error General" mask="0x02" name="FERG"/>
-          <bitfield caption="Ackknowledgement Error General" mask="0x01" name="AERG"/>
+          <bitfield caption="Acknowledgement Error General" mask="0x01" name="AERG"/>
         </register>
         <register caption="CAN General Interrupt Enable Register" name="CANGIE" offset="0xDB" size="1">
           <bitfield caption="Enable all Interrupts" mask="0x80" name="ENIT"/>
           <bitfield caption="Enable Bus Off INterrupt" mask="0x40" name="ENBOFF"/>
           <bitfield caption="Enable Receive Interrupt" mask="0x20" name="ENRX"/>
-          <bitfield caption="Enable Transmitt Interrupt" mask="0x10" name="ENTX"/>
+          <bitfield caption="Enable Transmit Interrupt" mask="0x10" name="ENTX"/>
           <bitfield caption="Enable MOb Error Interrupt" mask="0x08" name="ENERR"/>
           <bitfield caption="Enable Burst Receive Interrupt" mask="0x04" name="ENBX"/>
           <bitfield caption="Enable General Error Interrupt" mask="0x02" name="ENERG"/>
@@ -1320,7 +1320,7 @@
           <bitfield caption="TTC Timer Count" mask="0xFFFF" name="TIMTTC"/>
         </register>
         <register caption="Transmit Error Counter Register" name="CANTEC" offset="0xEA" size="1" mask="0xFF" ocd-rw="R">
-          <bitfield caption="Trasnmit Error Count" mask="0xFF" name="TEC"/>
+          <bitfield caption="Transmit Error Count" mask="0xFF" name="TEC"/>
         </register>
         <register caption="Receive Error Counter Register" name="CANREC" offset="0xEB" size="1" mask="0xFF" ocd-rw="R">
           <bitfield caption="Receive Error Count" mask="0xFF" name="REC"/>
@@ -1342,7 +1342,7 @@
           <bitfield caption="Stuff Error" mask="0x08" name="SERR"/>
           <bitfield caption="CRC Error" mask="0x04" name="CERR"/>
           <bitfield caption="Form Error" mask="0x02" name="FERR"/>
-          <bitfield caption="Ackknowledgement Error" mask="0x01" name="AERR"/>
+          <bitfield caption="Acknowledgement Error" mask="0x01" name="AERR"/>
         </register>
         <register caption="MOb Control and DLC Register" name="CANCDMOB" offset="0xEF" size="1">
           <bitfield caption="MOb Config Bits" mask="0xC0" name="CONMOB"/>
@@ -1352,7 +1352,7 @@
         </register>
         <register caption="Identifier Tag Register 4" name="CANIDT4" offset="0xF0" size="1" mask="0xFF">
           <bitfield caption="Identifier Tag" mask="0xF8" name="IDT"/>
-          <bitfield caption="Remote Trasnmission Request Tag" mask="0x04" name="RTRTAG"/>
+          <bitfield caption="Remote Transmission Request Tag" mask="0x04" name="RTRTAG"/>
           <bitfield caption="Reserved Bit 1 Tag" mask="0x02" name="RB1TAG"/>
           <bitfield caption="Reserved Bit 0 Tag" mask="0x01" name="RB0TAG"/>
         </register>

@@ -338,7 +338,7 @@
     <module caption="Fuses" name="FUSE">
       <register-group caption="Fuses" name="FUSE">
         <register name="EXTENDED" offset="0x02" size="1" initval="0xFF">
-          <bitfield caption="ATmega161 compability mode" mask="0x10" name="M161C"/>
+          <bitfield caption="ATmega161 compatibility mode" mask="0x10" name="M161C"/>
           <bitfield caption="Brownout detector trigger level" mask="0x0E" name="BODLEVEL" values="ENUM_BODLEVEL"/>
         </register>
         <register name="HIGH" offset="0x01" size="1" initval="0x99">
@@ -508,7 +508,7 @@
         </register>
         <register caption="Timer/Counter3  Bytes" name="TCNT3" offset="0x88" size="2" mask="0xFFFF"/>
         <register caption="Timer/Counter3 Output Compare Register A  Bytes" name="OCR3A" offset="0x86" size="2" mask="0xFFFF"/>
-        <register caption="Timer/Counte3 Output Compare Register B  Bytes" name="OCR3B" offset="0x84" size="2" mask="0xFFFF"/>
+        <register caption="Timer/Counter3 Output Compare Register B  Bytes" name="OCR3B" offset="0x84" size="2" mask="0xFFFF"/>
         <register caption="Timer/Counter3 Input Capture Register  Bytes" name="ICR3" offset="0x80" size="2" mask="0xFFFF"/>
       </register-group>
       <value-group name="CLK_SEL_3BIT_EXT">
@@ -535,7 +535,7 @@
     <module caption="Timer/Counter, 8-bit Async" name="TC8_ASYNC">
       <register-group caption="Timer/Counter, 8-bit Async" name="TC2">
         <register caption="Timer/Counter Control Register" name="TCCR2" offset="0x47" size="1">
-          <bitfield caption="Forde Output Compare" mask="0x80" name="FOC2"/>
+          <bitfield caption="Force Output Compare" mask="0x80" name="FOC2"/>
           <bitfield caption="Pulse Width Modulator Select Bit 0" mask="0x40" name="WGM20" values="WAVEFORM_GEN_MODE"/>
           <bitfield caption="Compare Match Output Mode" mask="0x30" name="COM2"/>
           <bitfield caption="Pulse Width Modulator Select Bit 1" mask="0x08" name="WGM21"/>
@@ -599,7 +599,7 @@
         <register caption="USART I/O Data Register" name="UDR0" offset="0x2C" size="1" mask="0xFF" ocd-rw=""/>
         <register caption="USART Control and Status Register A" name="UCSR0A" offset="0x2B" size="1" ocd-rw="R">
           <bitfield caption="USART Receive Complete" mask="0x80" name="RXC0"/>
-          <bitfield caption="USART Transmitt Complete" mask="0x40" name="TXC0"/>
+          <bitfield caption="USART Transmit Complete" mask="0x40" name="TXC0"/>
           <bitfield caption="USART Data Register Empty" mask="0x20" name="UDRE0"/>
           <bitfield caption="Framing Error" mask="0x10" name="FE0"/>
           <bitfield caption="Data overRun" mask="0x08" name="DOR0"/>
@@ -637,7 +637,7 @@
         <register caption="USART I/O Data Register" name="UDR1" offset="0x23" size="1" mask="0xFF"/>
         <register caption="USART Control and Status Register A" name="UCSR1A" offset="0x22" size="1" ocd-rw="R">
           <bitfield caption="USART Receive Complete" mask="0x80" name="RXC1"/>
-          <bitfield caption="USART Transmitt Complete" mask="0x40" name="TXC1"/>
+          <bitfield caption="USART Transmit Complete" mask="0x40" name="TXC1"/>
           <bitfield caption="USART Data Register Empty" mask="0x20" name="UDRE1"/>
           <bitfield caption="Framing Error" mask="0x10" name="FE1"/>
           <bitfield caption="Data overRun" mask="0x08" name="DOR1"/>
@@ -663,7 +663,7 @@
           <bitfield caption="Character Size" mask="0x06" name="UCSZ1"/>
           <bitfield caption="Clock Polarity" mask="0x01" name="UCPOL1"/>
         </register>
-        <register caption="USART Baud Rate Register Highg Byte" name="UBRR1H" offset="0x5C" size="1" mask="0x8F">
+        <register caption="USART Baud Rate Register High Byte" name="UBRR1H" offset="0x5C" size="1" mask="0x8F">
           <bitfield caption="Register Select" mask="0x80" name="URSEL0"/>
           <bitfield caption="USART Baud Rate Register High bits" mask="0x0F" name="UBRR1" lsb="8"/>
         </register>
@@ -822,7 +822,7 @@
         <register caption="Store Program Memory Control Register" name="SPMCR" offset="0x57" size="1">
           <bitfield caption="SPM Interrupt Enable" mask="0x80" name="SPMIE"/>
           <bitfield caption="Read While Write Section Busy" mask="0x40" name="RWWSB"/>
-          <bitfield caption="Read While Write secion read enable" mask="0x10" name="RWWSRE"/>
+          <bitfield caption="Read While Write section read enable" mask="0x10" name="RWWSRE"/>
           <bitfield caption="Boot Lock Bit Set" mask="0x08" name="BLBSET"/>
           <bitfield caption="Page Write" mask="0x04" name="PGWRT"/>
           <bitfield caption="Page Erase" mask="0x02" name="PGERS"/>

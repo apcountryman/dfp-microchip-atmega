@@ -41,7 +41,7 @@
     <edc:Interrupt edc:irq="9" edc:cname="TIMER1_COMPB" edc:desc="Timer 1 Compare Match B"/>
     <edc:Interrupt edc:irq="10" edc:cname="TIMER1_OVF" edc:desc="Timer 1 overflow"/>
     <edc:Interrupt edc:irq="11" edc:cname="TIMER0_IC" edc:desc="Timer 0 Input Capture"/>
-    <edc:Interrupt edc:irq="12" edc:cname="TIMER0_COMPA" edc:desc="Timer 0 Comapre Match A"/>
+    <edc:Interrupt edc:irq="12" edc:cname="TIMER0_COMPA" edc:desc="Timer 0 Compare Match A"/>
     <edc:Interrupt edc:irq="13" edc:cname="TIMER0_COMPB" edc:desc="Timer 0 Compare Match B"/>
     <edc:Interrupt edc:irq="14" edc:cname="TIMER0_OVF" edc:desc="Timer 0 Overflow"/>
     <edc:Interrupt edc:irq="15" edc:cname="SPI_STC" edc:desc="SPI Serial transfer complete"/>
@@ -526,7 +526,7 @@
               <edc:SFRFieldDef edc:cname="CADRCIF" edc:nzwidth="0x1" edc:desc="CC-ADC Accumulate Current Interrupt Flag"/>
               <edc:SFRFieldDef edc:cname="CADACIF" edc:nzwidth="0x1" edc:desc="CC-ADC Accumulate Current Interrupt Flag"/>
               <edc:AdjustPoint edc:offset="0x1"/>
-              <edc:SFRFieldDef edc:cname="CADICIE" edc:nzwidth="0x1" edc:desc="CAD Instantenous Current Interrupt Enable"/>
+              <edc:SFRFieldDef edc:cname="CADICIE" edc:nzwidth="0x1" edc:desc="CAD Instantaneous Current Interrupt Enable"/>
               <edc:SFRFieldDef edc:cname="CADRCIE" edc:nzwidth="0x1" edc:desc="Regular Current Interrupt Enable"/>
               <edc:SFRFieldDef edc:cname="CADACIE" edc:nzwidth="0x1"/>
             </edc:SFRMode>
@@ -562,7 +562,7 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="BATTERY_PROTECTION">
               <edc:SFRFieldDef edc:cname="CHCIF" edc:nzwidth="0x1" edc:desc="Charge High-current Protection Activated Interrupt"/>
-              <edc:SFRFieldDef edc:cname="DHCIF" edc:nzwidth="0x1" edc:desc="Disharge High-current Protection Activated Interrupt"/>
+              <edc:SFRFieldDef edc:cname="DHCIF" edc:nzwidth="0x1" edc:desc="Discharge High-current Protection Activated Interrupt"/>
               <edc:SFRFieldDef edc:cname="COCIF" edc:nzwidth="0x1" edc:desc="Charge Over-current Protection Activated Interrupt Flag"/>
               <edc:SFRFieldDef edc:cname="DOCIF" edc:nzwidth="0x1" edc:desc="Discharge Over-current Protection Activated Interrupt Flag"/>
               <edc:SFRFieldDef edc:cname="SCIF" edc:nzwidth="0x1" edc:desc="Short-circuit Protection Activated Interrupt Flag"/>
@@ -603,7 +603,7 @@
   </edc:DataSpace>
   <edc:DataFlashSpace edc:endaddr="0x100" edc:magicoffset="0x810000"/>
   <edc:SignaturesSpace edc:magicoffset="0x840000">
-    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9310" edc:rw="r"/>
+    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9310" edc:mask="0xffffff" edc:rw="r"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
     <edc:ConfigFuseSector edc:regionid="FUSES" edc:beginaddr="0x0" edc:endaddr="0x1" edc:magicoffset="0x820000" edc:rw="rw">

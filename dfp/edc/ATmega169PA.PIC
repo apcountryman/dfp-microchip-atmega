@@ -978,7 +978,7 @@
   </edc:DataSpace>
   <edc:DataFlashSpace edc:endaddr="0x200" edc:magicoffset="0x810000"/>
   <edc:SignaturesSpace edc:magicoffset="0x840000">
-    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9405" edc:rw="r"/>
+    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9405" edc:mask="0xffffff" edc:rw="r"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
     <edc:ConfigFuseSector edc:regionid="FUSES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:magicoffset="0x820000" edc:rw="rw">

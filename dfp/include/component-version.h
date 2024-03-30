@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Component version header file
  *
- * \brief Component version header file
- *
- * Copyright (c) 2022 Atmel Corporation, a wholly owned subsidiary of Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2023 Microchip Technology Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,15 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
 #ifndef _COMPONENT_VERSION_H_INCLUDED
 #define _COMPONENT_VERSION_H_INCLUDED
 
 #define COMPONENT_VERSION_MAJOR 3
-#define COMPONENT_VERSION_MINOR 0
+#define COMPONENT_VERSION_MINOR 1
 
 //
 // The COMPONENT_VERSION define is composed of the major and the minor version number.
@@ -37,18 +29,18 @@
 // The last four digits of the COMPONENT_VERSION is the minor version with leading zeros.
 // The rest of the COMPONENT_VERSION is the major version.
 //
-#define COMPONENT_VERSION 30000
+#define COMPONENT_VERSION 30001
 
 //
 // The build number does not refer to the component, but to the build number
 // of the device pack that provides the component.
 //
-#define BUILD_NUMBER 158
+#define BUILD_NUMBER 264
 
 //
 // The COMPONENT_VERSION_STRING is a string (enclosed in ") that can be used for logging or embedding.
 //
-#define COMPONENT_VERSION_STRING "3.0"
+#define COMPONENT_VERSION_STRING "3.1"
 
 //
 // The COMPONENT_DATE_STRING contains a timestamp of when the pack was generated.
@@ -58,7 +50,7 @@
 //     "%Y-%m-%d %H:%M:%S"
 //
 //
-#define COMPONENT_DATE_STRING "2022-03-01 14:15:14"
+#define COMPONENT_DATE_STRING "2023-08-15 15:08:33"
 
 #endif/* #ifndef _COMPONENT_VERSION_H_INCLUDED */
 

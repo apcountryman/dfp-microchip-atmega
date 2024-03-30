@@ -6,6 +6,7 @@
     <sdm:mapentry sdm:debuggername="ICD3PlatformTool" sdm:filename="sdmICD3.xml"/>
     <sdm:mapentry sdm:debuggername="ri4hybrid" sdm:filename="sdmICE4.xml"/>
     <sdm:mapentry sdm:debuggername="ICD4Tool" sdm:filename="sdmICD4.xml"/>
+    <sdm:mapentry sdm:debuggername="ICD5Tool" sdm:filename="sdmICD5.xml"/>
   </sdm:debuggermap>
   <sdm:devicecapabilities/>
 </sdm:sdm>

@@ -69,7 +69,7 @@
 	%(old_link)--defsym=__RODATA_PM_OFFSET__=0x4000
 
 *self_spec:
-	%<mmcu=* -mmcu=avrxmega3 -mdevice=atmega1608  %<mshort-calls %<msp8
+	%<mmcu=* -mmcu=avrxmega3 -mdevice=atmega1608  %<mshort-calls  %<msp8
 
 # AVR-LibC's avr/io.h uses the device specifying macro to determine
 # the name of the device header.  For example, -mmcu=atmega8a triggers

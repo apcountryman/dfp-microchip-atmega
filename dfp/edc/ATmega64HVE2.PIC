@@ -41,7 +41,7 @@
     <edc:Interrupt edc:irq="8" edc:cname="TIMER1_COMPB" edc:desc="Timer 1 Compare Match B"/>
     <edc:Interrupt edc:irq="9" edc:cname="TIMER1_OVF" edc:desc="Timer 1 overflow"/>
     <edc:Interrupt edc:irq="10" edc:cname="TIMER0_IC" edc:desc="Timer 0 Input Capture"/>
-    <edc:Interrupt edc:irq="11" edc:cname="TIMER0_COMPA" edc:desc="Timer 0 Comapre Match A"/>
+    <edc:Interrupt edc:irq="11" edc:cname="TIMER0_COMPA" edc:desc="Timer 0 Compare Match A"/>
     <edc:Interrupt edc:irq="12" edc:cname="TIMER0_COMPB" edc:desc="Timer 0 Compare Match B"/>
     <edc:Interrupt edc:irq="13" edc:cname="TIMER0_OVF" edc:desc="Timer 0 Overflow"/>
     <edc:Interrupt edc:irq="14" edc:cname="LIN_STATUS" edc:desc="LIN Status Interrupt"/>
@@ -390,8 +390,8 @@
         <edc:SFRDef ltx:memberofperipheral="WDT" edc:cname="WDTCLR" edc:nzwidth="0x8" edc:access="-----nnn" edc:impl="0x7" edc:_addr="0x63">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="WDT">
-              <edc:SFRFieldDef edc:cname="WDCLE" edc:nzwidth="0x1" edc:desc="Watchdog Timer Comfiguration Lock Enable"/>
-              <edc:SFRFieldDef edc:cname="WDCL" edc:nzwidth="0x2" edc:desc="Watchdog Timer Comfiguration Lock bits"/>
+              <edc:SFRFieldDef edc:cname="WDCLE" edc:nzwidth="0x1" edc:desc="Watchdog Timer Configuration Lock Enable"/>
+              <edc:SFRFieldDef edc:cname="WDCL" edc:nzwidth="0x2" edc:desc="Watchdog Timer Configuration Lock bits"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -732,12 +732,12 @@
                 <edc:SFRFieldSemantic edc:cname="8" edc:desc="8" edc:when="(field &amp; 0xF) == 0x07"/>
                 <edc:SFRFieldSemantic edc:cname="9" edc:desc="9" edc:when="(field &amp; 0xF) == 0x08"/>
                 <edc:SFRFieldSemantic edc:cname="10" edc:desc="10" edc:when="(field &amp; 0xF) == 0x09"/>
-                <edc:SFRFieldSemantic edc:cname="11" edc:desc="11" edc:when="(field &amp; 0xF) == 0x0a"/>
-                <edc:SFRFieldSemantic edc:cname="12" edc:desc="12" edc:when="(field &amp; 0xF) == 0x0b"/>
-                <edc:SFRFieldSemantic edc:cname="13" edc:desc="13" edc:when="(field &amp; 0xF) == 0x0c"/>
-                <edc:SFRFieldSemantic edc:cname="14" edc:desc="14" edc:when="(field &amp; 0xF) == 0x0d"/>
-                <edc:SFRFieldSemantic edc:cname="15" edc:desc="15" edc:when="(field &amp; 0xF) == 0x0e"/>
-                <edc:SFRFieldSemantic edc:cname="16" edc:desc="16" edc:when="(field &amp; 0xF) == 0x0f"/>
+                <edc:SFRFieldSemantic edc:cname="11" edc:desc="11" edc:when="(field &amp; 0xF) == 0x0A"/>
+                <edc:SFRFieldSemantic edc:cname="12" edc:desc="12" edc:when="(field &amp; 0xF) == 0x0B"/>
+                <edc:SFRFieldSemantic edc:cname="13" edc:desc="13" edc:when="(field &amp; 0xF) == 0x0C"/>
+                <edc:SFRFieldSemantic edc:cname="14" edc:desc="14" edc:when="(field &amp; 0xF) == 0x0D"/>
+                <edc:SFRFieldSemantic edc:cname="15" edc:desc="15" edc:when="(field &amp; 0xF) == 0x0E"/>
+                <edc:SFRFieldSemantic edc:cname="16" edc:desc="16" edc:when="(field &amp; 0xF) == 0x0F"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="CADRCM" edc:nzwidth="0x2" edc:desc="C-ADC Regular Current Comparator Mode">
                 <edc:SFRFieldSemantic edc:cname="COMPARATOR_DISABLED" edc:desc="Comparator Disabled" edc:when="(field &amp; 0x3) == 0x00"/>
@@ -842,7 +842,7 @@
   </edc:DataSpace>
   <edc:DataFlashSpace edc:endaddr="0x400" edc:magicoffset="0x810000"/>
   <edc:SignaturesSpace edc:magicoffset="0x840000">
-    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9610" edc:rw="r"/>
+    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9610" edc:mask="0xffffff" edc:rw="r"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
     <edc:ConfigFuseSector edc:regionid="FUSES" edc:beginaddr="0x0" edc:endaddr="0x2" edc:magicoffset="0x820000" edc:rw="rw">

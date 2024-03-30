@@ -215,7 +215,7 @@
               <edc:SFRFieldDef edc:cname="DOR" edc:nzwidth="0x1" edc:desc="Data overRun"/>
               <edc:SFRFieldDef edc:cname="FE" edc:nzwidth="0x1" edc:desc="Framing Error"/>
               <edc:SFRFieldDef edc:cname="UDRE" edc:nzwidth="0x1" edc:desc="USART Data Register Empty"/>
-              <edc:SFRFieldDef edc:cname="TXC" edc:nzwidth="0x1" edc:desc="USART Transmitt Complete"/>
+              <edc:SFRFieldDef edc:cname="TXC" edc:nzwidth="0x1" edc:desc="USART Transmit Complete"/>
               <edc:SFRFieldDef edc:cname="RXC" edc:nzwidth="0x1" edc:desc="USART Receive Complete"/>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -509,7 +509,7 @@
               <edc:SFRFieldDef edc:cname="TWIE" edc:nzwidth="0x1" edc:desc="TWI Interrupt Enable"/>
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="TWEN" edc:nzwidth="0x1" edc:desc="TWI Enable Bit"/>
-              <edc:SFRFieldDef edc:cname="TWWC" edc:nzwidth="0x1" edc:desc="TWI Write Collition Flag"/>
+              <edc:SFRFieldDef edc:cname="TWWC" edc:nzwidth="0x1" edc:desc="TWI Write Collision Flag"/>
               <edc:SFRFieldDef edc:cname="TWSTO" edc:nzwidth="0x1" edc:desc="TWI Stop Condition Bit"/>
               <edc:SFRFieldDef edc:cname="TWSTA" edc:nzwidth="0x1" edc:desc="TWI Start Condition Bit"/>
               <edc:SFRFieldDef edc:cname="TWEA" edc:nzwidth="0x1" edc:desc="TWI Enable Acknowledge Bit"/>
@@ -524,7 +524,7 @@
               <edc:SFRFieldDef edc:cname="PGERS" edc:nzwidth="0x1" edc:desc="Page Erase"/>
               <edc:SFRFieldDef edc:cname="PGWRT" edc:nzwidth="0x1" edc:desc="Page Write"/>
               <edc:SFRFieldDef edc:cname="BLBSET" edc:nzwidth="0x1" edc:desc="Boot Lock Bit Set"/>
-              <edc:SFRFieldDef edc:cname="RWWSRE" edc:nzwidth="0x1" edc:desc="Read While Write secion read enable"/>
+              <edc:SFRFieldDef edc:cname="RWWSRE" edc:nzwidth="0x1" edc:desc="Read While Write section read enable"/>
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="RWWSB" edc:nzwidth="0x1" edc:desc="Read While Write Section Busy"/>
               <edc:SFRFieldDef edc:cname="SPMIE" edc:nzwidth="0x1" edc:desc="SPM Interrupt Enable"/>
@@ -614,7 +614,7 @@
   </edc:DataSpace>
   <edc:DataFlashSpace edc:endaddr="0x400" edc:magicoffset="0x810000"/>
   <edc:SignaturesSpace edc:magicoffset="0x840000">
-    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9502" edc:rw="r"/>
+    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9502" edc:mask="0xffffff" edc:rw="r"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
     <edc:ConfigFuseSector edc:regionid="FUSES" edc:beginaddr="0x0" edc:endaddr="0x2" edc:magicoffset="0x820000" edc:rw="rw">

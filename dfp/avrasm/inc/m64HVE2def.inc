@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m64HVE2def.inc
 ;* Title             : Register/Bit Definitions for the ATmega64HVE2
-;* Created           : 2022-03-01 14:14
+;* Created           : 2023-08-15 15:08
 ;* Version           : 1.00
 ;* Support           : https://microchipsupport.force.com/
 ;* Target MCU        : ATmega64HVE2
@@ -902,9 +902,9 @@
 .equ	WDIF	= 7 ; Watchdog Timeout Interrupt Flag
 
 ; WDTCLR - Watchdog Timer Configuration Lock Register
-.equ	WDCLE	= 0 ; Watchdog Timer Comfiguration Lock Enable
-.equ	WDCL0	= 1 ; Watchdog Timer Comfiguration Lock bits
-.equ	WDCL1	= 2 ; Watchdog Timer Comfiguration Lock bits
+.equ	WDCLE	= 0 ; Watchdog Timer Configuration Lock Enable
+.equ	WDCL0	= 1 ; Watchdog Timer Configuration Lock bits
+.equ	WDCL1	= 2 ; Watchdog Timer Configuration Lock bits
 
 
 ; ***** WAKEUP_TIMER *****************
@@ -1026,7 +1026,7 @@
 .equ	TIMER1_COMPBaddr	 = 0x0010 ; Timer 1 Compare Match B
 .equ	TIMER1_OVFaddr	 = 0x0012 ; Timer 1 overflow
 .equ	TIMER0_ICaddr	 = 0x0014 ; Timer 0 Input Capture
-.equ	TIMER0_COMPAaddr	 = 0x0016 ; Timer 0 Comapre Match A
+.equ	TIMER0_COMPAaddr	 = 0x0016 ; Timer 0 Compare Match A
 .equ	TIMER0_COMPBaddr	 = 0x0018 ; Timer 0 Compare Match B
 .equ	TIMER0_OVFaddr	 = 0x001A ; Timer 0 Overflow
 .equ	LIN_STATUSaddr	 = 0x001C ; LIN Status Interrupt

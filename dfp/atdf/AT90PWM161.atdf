@@ -626,18 +626,18 @@
           <bitfield caption="Analog Comparator 1 Output Bit" mask="0x02" name="AC1O"/>
         </register>
         <register name="AC3ECON" offset="0x7C" size="1">
-          <bitfield caption="Analog Comparator Ouput Invert" mask="0x20" name="AC3OI"/>
-          <bitfield caption="Analog Comparator Ouput Enable" mask="0x10" name="AC3OE"/>
+          <bitfield caption="Analog Comparator Output Invert" mask="0x20" name="AC3OI"/>
+          <bitfield caption="Analog Comparator Output Enable" mask="0x10" name="AC3OE"/>
           <bitfield caption="Analog Comparator Hysteresis Select" mask="0x07" name="AC3H"/>
         </register>
         <register name="AC2ECON" offset="0x7B" size="1">
-          <bitfield caption="Analog Comparator Ouput Invert" mask="0x20" name="AC2OI"/>
-          <bitfield caption="Analog Comparator Ouput Enable" mask="0x10" name="AC2OE"/>
+          <bitfield caption="Analog Comparator Output Invert" mask="0x20" name="AC2OI"/>
+          <bitfield caption="Analog Comparator Output Enable" mask="0x10" name="AC2OE"/>
           <bitfield caption="Analog Comparator Hysteresis Select" mask="0x07" name="AC2H"/>
         </register>
         <register name="AC1ECON" offset="0x7A" size="1">
-          <bitfield caption="Analog Comparator Ouput Invert" mask="0x20" name="AC1OI"/>
-          <bitfield caption="Analog Comparator Ouput Enable" mask="0x10" name="AC1OE"/>
+          <bitfield caption="Analog Comparator Output Invert" mask="0x20" name="AC1OI"/>
+          <bitfield caption="Analog Comparator Output Enable" mask="0x10" name="AC1OE"/>
           <bitfield caption="Analog Comparator Interrupt Capture Enable" mask="0x08" name="AC1ICE"/>
           <bitfield caption="Analog Comparator Hysteresis Select" mask="0x07" name="AC1H"/>
         </register>

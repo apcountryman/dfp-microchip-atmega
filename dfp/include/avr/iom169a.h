@@ -742,13 +742,13 @@
 #define TOV2	0
 
 /* EIFR */
-#define PCIF1  7
-#define PCIF0  6
+#define PCIF1  5
+#define PCIF0  4
 #define INTF0  0
 
 /* EIMSK */
 #define PCIE1  5
-#define PCIE0 4
+#define PCIE0  4
 #define INT0   0
 
 /* EECR */

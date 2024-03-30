@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m324PBdef.inc
 ;* Title             : Register/Bit Definitions for the ATmega324PB
-;* Created           : 2022-03-01 14:14
+;* Created           : 2023-08-15 15:08
 ;* Version           : 1.00
 ;* Support           : https://microchipsupport.force.com/
 ;* Target MCU        : ATmega324PB
@@ -231,7 +231,7 @@
 .equ	DOR	= 3 ; Data overRun
 .equ	FE	= 4 ; Framing Error
 .equ	UDRE	= 5 ; USART Data Register Empty
-.equ	TXC	= 6 ; USART Transmitt Complete
+.equ	TXC	= 6 ; USART Transmit Complete
 .equ	RXC	= 7 ; USART Receive Complete
 
 ; UCSR0B - USART Control and Status Register B
@@ -910,8 +910,8 @@
 .equ	OCF2B	= 2 ; Output Compare Flag 2B
 
 ; TCCR2A - Timer/Counter2 Control Register A
-.equ	WGM20	= 0 ; Waveform Genration Mode
-.equ	WGM21	= 1 ; Waveform Genration Mode
+.equ	WGM20	= 0 ; Waveform Generation Mode
+.equ	WGM21	= 1 ; Waveform Generation Mode
 .equ	COM2B0	= 4 ; Compare Output Mode 2B bits
 .equ	COM2B1	= 5 ; Compare Output Mode 2B bits
 .equ	COM2A0	= 6 ; Compare Output Mode 2A bits
@@ -1238,7 +1238,7 @@
 ; TWCR0 - TWI Control Register
 .equ	TWIE	= 0 ; TWI Interrupt Enable
 .equ	TWEN	= 2 ; TWI Enable Bit
-.equ	TWWC	= 3 ; TWI Write Collition Flag
+.equ	TWWC	= 3 ; TWI Write Collision Flag
 .equ	TWSTO	= 4 ; TWI Stop Condition Bit
 .equ	TWSTA	= 5 ; TWI Start Condition Bit
 .equ	TWEA	= 6 ; TWI Enable Acknowledge Bit

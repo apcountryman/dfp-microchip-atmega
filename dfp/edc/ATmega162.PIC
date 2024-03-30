@@ -159,7 +159,7 @@
               <edc:SFRFieldDef edc:cname="DOR1" edc:nzwidth="0x1" edc:desc="Data overRun"/>
               <edc:SFRFieldDef edc:cname="FE1" edc:nzwidth="0x1" edc:desc="Framing Error"/>
               <edc:SFRFieldDef edc:cname="UDRE1" edc:nzwidth="0x1" edc:desc="USART Data Register Empty"/>
-              <edc:SFRFieldDef edc:cname="TXC1" edc:nzwidth="0x1" edc:desc="USART Transmitt Complete"/>
+              <edc:SFRFieldDef edc:cname="TXC1" edc:nzwidth="0x1" edc:desc="USART Transmit Complete"/>
               <edc:SFRFieldDef edc:cname="RXC1" edc:nzwidth="0x1" edc:desc="USART Receive Complete"/>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -236,7 +236,7 @@
               <edc:SFRFieldDef edc:cname="DOR0" edc:nzwidth="0x1" edc:desc="Data overRun"/>
               <edc:SFRFieldDef edc:cname="FE0" edc:nzwidth="0x1" edc:desc="Framing Error"/>
               <edc:SFRFieldDef edc:cname="UDRE0" edc:nzwidth="0x1" edc:desc="USART Data Register Empty"/>
-              <edc:SFRFieldDef edc:cname="TXC0" edc:nzwidth="0x1" edc:desc="USART Transmitt Complete"/>
+              <edc:SFRFieldDef edc:cname="TXC0" edc:nzwidth="0x1" edc:desc="USART Transmit Complete"/>
               <edc:SFRFieldDef edc:cname="RXC0" edc:nzwidth="0x1" edc:desc="USART Receive Complete"/>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -401,7 +401,7 @@
                 <edc:SFRFieldSemantic edc:cname="CTC" edc:desc="CTC" edc:when="(field &amp; 0x1) == 0x01"/>
                 <edc:SFRFieldSemantic edc:cname="FAST_PWM" edc:desc="Fast PWM" edc:when="(field &amp; 0x1) == 0x03"/>
               </edc:SFRFieldDef>
-              <edc:SFRFieldDef edc:cname="FOC2" edc:nzwidth="0x1" edc:desc="Forde Output Compare"/>
+              <edc:SFRFieldDef edc:cname="FOC2" edc:nzwidth="0x1" edc:desc="Force Output Compare"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -569,7 +569,7 @@
               <edc:SFRFieldDef edc:cname="PGERS" edc:nzwidth="0x1" edc:desc="Page Erase"/>
               <edc:SFRFieldDef edc:cname="PGWRT" edc:nzwidth="0x1" edc:desc="Page Write"/>
               <edc:SFRFieldDef edc:cname="BLBSET" edc:nzwidth="0x1" edc:desc="Boot Lock Bit Set"/>
-              <edc:SFRFieldDef edc:cname="RWWSRE" edc:nzwidth="0x1" edc:desc="Read While Write secion read enable"/>
+              <edc:SFRFieldDef edc:cname="RWWSRE" edc:nzwidth="0x1" edc:desc="Read While Write section read enable"/>
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="RWWSB" edc:nzwidth="0x1" edc:desc="Read While Write Section Busy"/>
               <edc:SFRFieldDef edc:cname="SPMIE" edc:nzwidth="0x1" edc:desc="SPM Interrupt Enable"/>
@@ -798,7 +798,7 @@
   </edc:DataSpace>
   <edc:DataFlashSpace edc:endaddr="0x200" edc:magicoffset="0x810000"/>
   <edc:SignaturesSpace edc:magicoffset="0x840000">
-    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9404" edc:rw="r"/>
+    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9404" edc:mask="0xffffff" edc:rw="r"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
     <edc:ConfigFuseSector edc:regionid="FUSES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:magicoffset="0x820000" edc:rw="rw">
@@ -915,7 +915,7 @@
               <edc:DCRFieldSemantic edc:cname="2V7" edc:desc="Brown-out detection at VCC=2.7 V" edc:when="(field &amp; 0x7) == 0x05"/>
               <edc:DCRFieldSemantic edc:cname="4V3" edc:desc="Brown-out detection at VCC=4.3 V" edc:when="(field &amp; 0x7) == 0x04"/>
             </edc:DCRFieldDef>
-            <edc:DCRFieldDef edc:cname="M161C" edc:nzwidth="0x1" edc:desc="ATmega161 compability mode">
+            <edc:DCRFieldDef edc:cname="M161C" edc:nzwidth="0x1" edc:desc="ATmega161 compatibility mode">
               <edc:DCRFieldSemantic edc:cname="SET" edc:when="(field &amp; 0x1) == 0x0"/>
               <edc:DCRFieldSemantic edc:cname="CLEAR" edc:when="(field &amp; 0x1) == 0x1"/>
             </edc:DCRFieldDef>

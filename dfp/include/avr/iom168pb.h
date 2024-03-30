@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (C) 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  *
  * This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
@@ -779,7 +779,7 @@
 #define TIMER0_COMPB_vect            _VECTOR(15)
 #define TIMER0_COMPB_vect_num        15
 
-/* Timer/Couner0 Overflow */
+/* Timer/Counter0 Overflow */
 #define TIMER0_OVF_vect            _VECTOR(16)
 #define TIMER0_OVF_vect_num        16
 

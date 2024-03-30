@@ -405,7 +405,7 @@
         <register caption="USART I/O Data Register" name="UDR" offset="0x2C" size="1" mask="0xFF"/>
         <register caption="USART Control and Status Register A" name="UCSRA" offset="0x2B" size="1">
           <bitfield caption="USART Receive Complete" mask="0x80" name="RXC"/>
-          <bitfield caption="USART Transmitt Complete" mask="0x40" name="TXC"/>
+          <bitfield caption="USART Transmit Complete" mask="0x40" name="TXC"/>
           <bitfield caption="USART Data Register Empty" mask="0x20" name="UDRE"/>
           <bitfield caption="Framing Error" mask="0x10" name="FE"/>
           <bitfield caption="Data overRun" mask="0x08" name="DOR"/>

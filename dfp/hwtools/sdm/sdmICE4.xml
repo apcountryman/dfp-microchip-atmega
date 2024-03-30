@@ -121,8 +121,8 @@
     <sdm:device sdm:devicename="ATmega64M1" sdm:profile="avrnativetinyocd"/>
     <sdm:device sdm:devicename="ATmega64RFR2" sdm:profile="avrnativetinymegajtag"/>
     <sdm:device sdm:devicename="ATmega8" sdm:profile="avrnativetinymegajtag"/>
-    <sdm:device sdm:devicename="ATmega808" sdm:profile="empty"/>
-    <sdm:device sdm:devicename="ATmega809" sdm:profile="empty"/>
+    <sdm:device sdm:devicename="ATmega808" sdm:profile="avrnativeavr8x"/>
+    <sdm:device sdm:devicename="ATmega809" sdm:profile="avrnativeavr8x"/>
     <sdm:device sdm:devicename="ATmega8515" sdm:profile="avrnativetinymegajtag"/>
     <sdm:device sdm:devicename="ATmega8535" sdm:profile="avrnativetinymegajtag"/>
     <sdm:device sdm:devicename="ATmega88" sdm:profile="avrnativetinyocd"/>
@@ -138,5 +138,4 @@
   <sdm:profiledef sdm:isstub="true" sdm:profilename="avrnativetinyocd" sdm:profilesupported="no"/>
   <sdm:profiledef sdm:isstub="true" sdm:profilename="avrnativetinymegajtagwithoutswbp" sdm:profilesupported="no"/>
   <sdm:profiledef sdm:isstub="true" sdm:profilename="avrnativeavr8x" sdm:profilesupported="no"/>
-  <sdm:profiledef sdm:profilename="empty" sdm:profilesupported="no"/>
 </sdm:sdm>

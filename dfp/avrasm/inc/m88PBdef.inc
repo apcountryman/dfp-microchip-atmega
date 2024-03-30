@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m88PBdef.inc
 ;* Title             : Register/Bit Definitions for the ATmega88PB
-;* Created           : 2022-03-01 14:14
+;* Created           : 2023-08-15 15:08
 ;* Version           : 1.00
 ;* Support           : https://microchipsupport.force.com/
 ;* Target MCU        : ATmega88PB
@@ -163,7 +163,7 @@
 .equ	DOR0	= 3 ; Data overRun
 .equ	FE0	= 4 ; Framing Error
 .equ	UDRE0	= 5 ; USART Data Register Empty
-.equ	TXC0	= 6 ; USART Transmitt Complete
+.equ	TXC0	= 6 ; USART Transmit Complete
 .equ	RXC0	= 7 ; USART Receive Complete
 
 ; UCSR0B - USART Control and Status Register B
@@ -230,7 +230,7 @@
 ; TWCR - TWI Control Register
 .equ	TWIE	= 0 ; TWI Interrupt Enable
 .equ	TWEN	= 2 ; TWI Enable Bit
-.equ	TWWC	= 3 ; TWI Write Collition Flag
+.equ	TWWC	= 3 ; TWI Write Collision Flag
 .equ	TWSTO	= 4 ; TWI Stop Condition Bit
 .equ	TWSTA	= 5 ; TWI Start Condition Bit
 .equ	TWEA	= 6 ; TWI Enable Acknowledge Bit
@@ -393,8 +393,8 @@
 .equ	OCF2B	= 2 ; Output Compare Flag 2B
 
 ; TCCR2A - Timer/Counter2 Control Register A
-.equ	WGM20	= 0 ; Waveform Genration Mode
-.equ	WGM21	= 1 ; Waveform Genration Mode
+.equ	WGM20	= 0 ; Waveform Generation Mode
+.equ	WGM21	= 1 ; Waveform Generation Mode
 .equ	COM2B0	= 4 ; Compare Output Mode bits
 .equ	COM2B1	= 5 ; Compare Output Mode bits
 .equ	COM2A0	= 6 ; Compare Output Mode bits
@@ -1148,7 +1148,7 @@
 .equ	TIMER1_OVFaddr	 = 0x000D ; Timer/Counter1 Overflow
 .equ	TIMER0_COMPAaddr	 = 0x000E ; TimerCounter0 Compare Match A
 .equ	TIMER0_COMPBaddr	 = 0x000F ; TimerCounter0 Compare Match B
-.equ	TIMER0_OVFaddr	 = 0x0010 ; Timer/Couner0 Overflow
+.equ	TIMER0_OVFaddr	 = 0x0010 ; Timer/Counter0 Overflow
 .equ	SPI_STCaddr	 = 0x0011 ; SPI Serial Transfer Complete
 .equ	USART_RXaddr	 = 0x0012 ; USART Rx Complete
 .equ	USART_UDREaddr	 = 0x0013 ; USART, Data Register Empty
