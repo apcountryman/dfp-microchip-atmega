@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m809def.inc
 ;* Title             : Register/Bit Definitions for the ATmega809
-;* Created           : 2019-04-26 00:07
+;* Created           : 2019-12-20 07:10
 ;* Version           : 1.00
 ;* Support e-mail    : avr@atmel.com
 ;* Target MCU        : ATmega809
@@ -4182,124 +4182,124 @@
 ; ***** INTERRUPT VECTORS, ABSOLUTE ADDRESSES ****************************
 
 ; CRCSCAN interrupt vectors
-.equ CRCSCAN_NMI_vect = 0x0001           ; 
+.equ CRCSCAN_NMI_vect = 0x0002           ; 
 
 ; BOD interrupt vectors
-.equ BOD_VLM_vect = 0x0002               ; 
+.equ BOD_VLM_vect = 0x0004               ; 
 
 ; RTC interrupt vectors
-.equ RTC_CNT_vect = 0x0003               ; 
-.equ RTC_PIT_vect = 0x0004               ; 
+.equ RTC_CNT_vect = 0x0006               ; 
+.equ RTC_PIT_vect = 0x0008               ; 
 
 ; CCL interrupt vectors
-.equ CCL_CCL_vect = 0x0005               ; 
+.equ CCL_CCL_vect = 0x000A               ; 
 
 ; PORTA interrupt vectors
-.equ PORTA_PORT_vect = 0x0006            ; 
+.equ PORTA_PORT_vect = 0x000C            ; 
 
 ; TCA0 interrupt vectors
-.equ TCA0_LUNF_vect = 0x0007             ; 
-.equ TCA0_OVF_vect = 0x0007              ; 
-.equ TCA0_HUNF_vect = 0x0008             ; 
-.equ TCA0_LCMP0_vect = 0x0009            ; 
-.equ TCA0_CMP0_vect = 0x0009             ; 
-.equ TCA0_CMP1_vect = 0x000A             ; 
-.equ TCA0_LCMP1_vect = 0x000A            ; 
-.equ TCA0_LCMP2_vect = 0x000B            ; 
-.equ TCA0_CMP2_vect = 0x000B             ; 
+.equ TCA0_LUNF_vect = 0x000E             ; 
+.equ TCA0_OVF_vect = 0x000E              ; 
+.equ TCA0_HUNF_vect = 0x0010             ; 
+.equ TCA0_LCMP0_vect = 0x0012            ; 
+.equ TCA0_CMP0_vect = 0x0012             ; 
+.equ TCA0_CMP1_vect = 0x0014             ; 
+.equ TCA0_LCMP1_vect = 0x0014            ; 
+.equ TCA0_LCMP2_vect = 0x0016            ; 
+.equ TCA0_CMP2_vect = 0x0016             ; 
 
 ; TCB0 interrupt vectors
-.equ TCB0_INT_vect = 0x000C              ; 
+.equ TCB0_INT_vect = 0x0018              ; 
 
 ; TCB1 interrupt vectors
-.equ TCB1_INT_vect = 0x000D              ; 
+.equ TCB1_INT_vect = 0x001A              ; 
 
 ; TWI0 interrupt vectors
-.equ TWI0_TWIS_vect = 0x000E             ; 
-.equ TWI0_TWIM_vect = 0x000F             ; 
+.equ TWI0_TWIS_vect = 0x001C             ; 
+.equ TWI0_TWIM_vect = 0x001E             ; 
 
 ; SPI0 interrupt vectors
-.equ SPI0_INT_vect = 0x0010              ; 
+.equ SPI0_INT_vect = 0x0020              ; 
 
 ; USART0 interrupt vectors
-.equ USART0_RXC_vect = 0x0011            ; 
-.equ USART0_DRE_vect = 0x0012            ; 
-.equ USART0_TXC_vect = 0x0013            ; 
+.equ USART0_RXC_vect = 0x0022            ; 
+.equ USART0_DRE_vect = 0x0024            ; 
+.equ USART0_TXC_vect = 0x0026            ; 
 
 ; PORTD interrupt vectors
-.equ PORTD_PORT_vect = 0x0014            ; 
+.equ PORTD_PORT_vect = 0x0028            ; 
 
 ; AC0 interrupt vectors
-.equ AC0_AC_vect = 0x0015                ; 
+.equ AC0_AC_vect = 0x002A                ; 
 
 ; ADC0 interrupt vectors
-.equ ADC0_RESRDY_vect = 0x0016           ; 
-.equ ADC0_WCOMP_vect = 0x0017            ; 
+.equ ADC0_RESRDY_vect = 0x002C           ; 
+.equ ADC0_WCOMP_vect = 0x002E            ; 
 
 ; PORTC interrupt vectors
-.equ PORTC_PORT_vect = 0x0018            ; 
+.equ PORTC_PORT_vect = 0x0030            ; 
 
 ; TCB2 interrupt vectors
-.equ TCB2_INT_vect = 0x0019              ; 
+.equ TCB2_INT_vect = 0x0032              ; 
 
 ; USART1 interrupt vectors
-.equ USART1_RXC_vect = 0x001A            ; 
-.equ USART1_DRE_vect = 0x001B            ; 
-.equ USART1_TXC_vect = 0x001C            ; 
+.equ USART1_RXC_vect = 0x0034            ; 
+.equ USART1_DRE_vect = 0x0036            ; 
+.equ USART1_TXC_vect = 0x0038            ; 
 
 ; PORTF interrupt vectors
-.equ PORTF_PORT_vect = 0x001D            ; 
+.equ PORTF_PORT_vect = 0x003A            ; 
 
 ; NVMCTRL interrupt vectors
-.equ NVMCTRL_EE_vect = 0x001E            ; 
+.equ NVMCTRL_EE_vect = 0x003C            ; 
 
 ; USART2 interrupt vectors
-.equ USART2_RXC_vect = 0x001F            ; 
-.equ USART2_DRE_vect = 0x0020            ; 
-.equ USART2_TXC_vect = 0x0021            ; 
+.equ USART2_RXC_vect = 0x003E            ; 
+.equ USART2_DRE_vect = 0x0040            ; 
+.equ USART2_TXC_vect = 0x0042            ; 
 
 ; PORTB interrupt vectors
-.equ PORTB_PORT_vect = 0x0022            ; 
+.equ PORTB_PORT_vect = 0x0044            ; 
 
 ; PORTE interrupt vectors
-.equ PORTE_PORT_vect = 0x0023            ; 
+.equ PORTE_PORT_vect = 0x0046            ; 
 
 ; TCB3 interrupt vectors
-.equ TCB3_INT_vect = 0x0024              ; 
+.equ TCB3_INT_vect = 0x0048              ; 
 
 ; USART3 interrupt vectors
-.equ USART3_RXC_vect = 0x0025            ; 
-.equ USART3_DRE_vect = 0x0026            ; 
-.equ USART3_TXC_vect = 0x0027            ; 
+.equ USART3_RXC_vect = 0x004A            ; 
+.equ USART3_DRE_vect = 0x004C            ; 
+.equ USART3_TXC_vect = 0x004E            ; 
 
 
 
 ; ***** INTERRUPT VECTORS, MODULE BASES **********************************
 
-.equ CRCSCAN_vbase = 0x0001
-.equ BOD_vbase = 0x0002
-.equ RTC_vbase = 0x0003
-.equ CCL_vbase = 0x0005
-.equ PORTA_vbase = 0x0006
-.equ TCA0_vbase = 0x0007
-.equ TCB0_vbase = 0x000C
-.equ TCB1_vbase = 0x000D
-.equ TWI0_vbase = 0x000E
-.equ SPI0_vbase = 0x0010
-.equ USART0_vbase = 0x0011
-.equ PORTD_vbase = 0x0014
-.equ AC0_vbase = 0x0015
-.equ ADC0_vbase = 0x0016
-.equ PORTC_vbase = 0x0018
-.equ TCB2_vbase = 0x0019
-.equ USART1_vbase = 0x001A
-.equ PORTF_vbase = 0x001D
-.equ NVMCTRL_vbase = 0x001E
-.equ USART2_vbase = 0x001F
-.equ PORTB_vbase = 0x0022
-.equ PORTE_vbase = 0x0023
-.equ TCB3_vbase = 0x0024
-.equ USART3_vbase = 0x0025
+.equ CRCSCAN_vbase = 0x0002
+.equ BOD_vbase = 0x0004
+.equ RTC_vbase = 0x0006
+.equ CCL_vbase = 0x000A
+.equ PORTA_vbase = 0x000C
+.equ TCA0_vbase = 0x000E
+.equ TCB0_vbase = 0x0018
+.equ TCB1_vbase = 0x001A
+.equ TWI0_vbase = 0x001C
+.equ SPI0_vbase = 0x0020
+.equ USART0_vbase = 0x0022
+.equ PORTD_vbase = 0x0028
+.equ AC0_vbase = 0x002A
+.equ ADC0_vbase = 0x002C
+.equ PORTC_vbase = 0x0030
+.equ TCB2_vbase = 0x0032
+.equ USART1_vbase = 0x0034
+.equ PORTF_vbase = 0x003A
+.equ NVMCTRL_vbase = 0x003C
+.equ USART2_vbase = 0x003E
+.equ PORTB_vbase = 0x0044
+.equ PORTE_vbase = 0x0046
+.equ TCB3_vbase = 0x0048
+.equ USART3_vbase = 0x004A
 
 
 ; ***** INTERRUPT VECTORS, VECTOR OFFSETS ********************************
@@ -4315,7 +4315,7 @@
 ; RTC interrupt vector offsets
 
 .equ RTC_CNT_voffset = 0
-.equ RTC_PIT_voffset = 1
+.equ RTC_PIT_voffset = 2
 
 ; CCL interrupt vector offsets
 
@@ -4329,13 +4329,13 @@
 
 .equ TCA0_LUNF_voffset = 0
 .equ TCA0_OVF_voffset = 0
-.equ TCA0_HUNF_voffset = 1
-.equ TCA0_LCMP0_voffset = 2
-.equ TCA0_CMP0_voffset = 2
-.equ TCA0_CMP1_voffset = 3
-.equ TCA0_LCMP1_voffset = 3
-.equ TCA0_LCMP2_voffset = 4
-.equ TCA0_CMP2_voffset = 4
+.equ TCA0_HUNF_voffset = 2
+.equ TCA0_LCMP0_voffset = 4
+.equ TCA0_CMP0_voffset = 4
+.equ TCA0_CMP1_voffset = 6
+.equ TCA0_LCMP1_voffset = 6
+.equ TCA0_LCMP2_voffset = 8
+.equ TCA0_CMP2_voffset = 8
 
 ; TCB0 interrupt vector offsets
 
@@ -4348,7 +4348,7 @@
 ; TWI0 interrupt vector offsets
 
 .equ TWI0_TWIS_voffset = 0
-.equ TWI0_TWIM_voffset = 1
+.equ TWI0_TWIM_voffset = 2
 
 ; SPI0 interrupt vector offsets
 
@@ -4357,8 +4357,8 @@
 ; USART0 interrupt vector offsets
 
 .equ USART0_RXC_voffset = 0
-.equ USART0_DRE_voffset = 1
-.equ USART0_TXC_voffset = 2
+.equ USART0_DRE_voffset = 2
+.equ USART0_TXC_voffset = 4
 
 ; PORTD interrupt vector offsets
 
@@ -4371,7 +4371,7 @@
 ; ADC0 interrupt vector offsets
 
 .equ ADC0_RESRDY_voffset = 0
-.equ ADC0_WCOMP_voffset = 1
+.equ ADC0_WCOMP_voffset = 2
 
 ; PORTC interrupt vector offsets
 
@@ -4384,8 +4384,8 @@
 ; USART1 interrupt vector offsets
 
 .equ USART1_RXC_voffset = 0
-.equ USART1_DRE_voffset = 1
-.equ USART1_TXC_voffset = 2
+.equ USART1_DRE_voffset = 2
+.equ USART1_TXC_voffset = 4
 
 ; PORTF interrupt vector offsets
 
@@ -4398,8 +4398,8 @@
 ; USART2 interrupt vector offsets
 
 .equ USART2_RXC_voffset = 0
-.equ USART2_DRE_voffset = 1
-.equ USART2_TXC_voffset = 2
+.equ USART2_DRE_voffset = 2
+.equ USART2_TXC_voffset = 4
 
 ; PORTB interrupt vector offsets
 
@@ -4416,12 +4416,12 @@
 ; USART3 interrupt vector offsets
 
 .equ USART3_RXC_voffset = 0
-.equ USART3_DRE_voffset = 1
-.equ USART3_TXC_voffset = 2
+.equ USART3_DRE_voffset = 2
+.equ USART3_TXC_voffset = 4
 
 
 
-.equ INT_VECTORS_SIZE = 40 ; size in words
+.equ INT_VECTORS_SIZE = 80 ; size in words
 
 
 #endif /* _M809DEF_INC_ */

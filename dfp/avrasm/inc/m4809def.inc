@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m4809def.inc
 ;* Title             : Register/Bit Definitions for the ATmega4809
-;* Created           : 2019-04-26 00:07
+;* Created           : 2019-12-20 07:10
 ;* Version           : 1.00
 ;* Support e-mail    : avr@atmel.com
 ;* Target MCU        : ATmega4809
@@ -4114,8 +4114,8 @@
 
 
 #define DATAMEM_START 0x0000
-#define DATAMEM_SIZE 0xC000
-#define DATAMEM_END (0x0000 + 0xC000 - 1)
+#define DATAMEM_SIZE 0x10000
+#define DATAMEM_END (0x0000 + 0x10000 - 1)
 
 #define EEPROM_START 0x1400
 #define EEPROM_SIZE 0x0100
@@ -4198,15 +4198,15 @@
 .equ PORTA_PORT_vect = 0x000C            ; 
 
 ; TCA0 interrupt vectors
-.equ TCA0_OVF_vect = 0x000E              ; 
 .equ TCA0_LUNF_vect = 0x000E             ; 
+.equ TCA0_OVF_vect = 0x000E              ; 
 .equ TCA0_HUNF_vect = 0x0010             ; 
-.equ TCA0_LCMP0_vect = 0x0012            ; 
 .equ TCA0_CMP0_vect = 0x0012             ; 
-.equ TCA0_CMP1_vect = 0x0014             ; 
+.equ TCA0_LCMP0_vect = 0x0012            ; 
 .equ TCA0_LCMP1_vect = 0x0014            ; 
-.equ TCA0_CMP2_vect = 0x0016             ; 
+.equ TCA0_CMP1_vect = 0x0014             ; 
 .equ TCA0_LCMP2_vect = 0x0016            ; 
+.equ TCA0_CMP2_vect = 0x0016             ; 
 
 ; TCB0 interrupt vectors
 .equ TCB0_INT_vect = 0x0018              ; 
@@ -4327,15 +4327,15 @@
 
 ; TCA0 interrupt vector offsets
 
-.equ TCA0_OVF_voffset = 0
 .equ TCA0_LUNF_voffset = 0
+.equ TCA0_OVF_voffset = 0
 .equ TCA0_HUNF_voffset = 2
-.equ TCA0_LCMP0_voffset = 4
 .equ TCA0_CMP0_voffset = 4
-.equ TCA0_CMP1_voffset = 6
+.equ TCA0_LCMP0_voffset = 4
 .equ TCA0_LCMP1_voffset = 6
-.equ TCA0_CMP2_voffset = 8
+.equ TCA0_CMP1_voffset = 6
 .equ TCA0_LCMP2_voffset = 8
+.equ TCA0_CMP2_voffset = 8
 
 ; TCB0 interrupt vector offsets
 

@@ -954,7 +954,7 @@
     <edc:DeviceIDSector edc:beginaddr="0x0" edc:endaddr="0x3" edc:regionid="SIGNATURES" edc:value="0x1E940A"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
-    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x3" edc:regionid="FUSES">
+    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x3" edc:magicoffset="0x820000" edc:regionid="FUSES">
       <edc:DCRDef edc:_addr="0x0" edc:access="nnnnnnnn" edc:cname="LOW" edc:factorydefault="0x62" edc:impl="0xFF" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="FUSE">
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0" ltx:memberofperipheral="FUSE">
@@ -1077,7 +1077,7 @@
     </edc:ConfigFuseSector>
   </edc:FusesSpace>
   <edc:LockbitsSpace edc:magicoffset="0x830000">
-    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x1" edc:regionid="LOCKBITS">
+    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x1" edc:magicoffset="0x830000" edc:regionid="LOCKBITS">
       <edc:DCRDef edc:_addr="0x0" edc:access="--nnnnnn" edc:cname="LOCKBIT" edc:factorydefault="0xFF" edc:impl="0x3F" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="LOCKBIT">
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0" ltx:memberofperipheral="LOCKBIT">
@@ -1106,21 +1106,21 @@
   <edc:PinList edc:ppsflavor="atmel">
     <edc:Pin>
       <edc:VirtualPin edc:name="PB5"/>
-      <edc:VirtualPin edc:name="MOSI" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P5" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT13" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="MOSI" edc:ppsfunction="default" ltx:memberofperipheral="SPI"/>
+      <edc:VirtualPin edc:name="P5" edc:ppsfunction="default" ltx:memberofperipheral="PORTB"/>
+      <edc:VirtualPin edc:name="PCINT13" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PB6"/>
-      <edc:VirtualPin edc:name="MISO" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P6" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT14" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="MISO" edc:ppsfunction="default" ltx:memberofperipheral="SPI"/>
+      <edc:VirtualPin edc:name="P6" edc:ppsfunction="default" ltx:memberofperipheral="PORTB"/>
+      <edc:VirtualPin edc:name="PCINT14" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PB7"/>
-      <edc:VirtualPin edc:name="P7" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT15" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="SCK" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="P7" edc:ppsfunction="default" ltx:memberofperipheral="PORTB"/>
+      <edc:VirtualPin edc:name="PCINT15" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="SCK" edc:ppsfunction="default" ltx:memberofperipheral="SPI"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="RESET"/>
@@ -1139,55 +1139,55 @@
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD0"/>
-      <edc:VirtualPin edc:name="P0" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT24" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="RXD" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="P0" edc:ppsfunction="default" ltx:memberofperipheral="PORTD"/>
+      <edc:VirtualPin edc:name="PCINT24" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="RXD" edc:ppsfunction="default" ltx:memberofperipheral="USART0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD1"/>
-      <edc:VirtualPin edc:name="P1" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT25" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="TXD" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="P1" edc:ppsfunction="default" ltx:memberofperipheral="PORTD"/>
+      <edc:VirtualPin edc:name="PCINT25" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="TXD" edc:ppsfunction="default" ltx:memberofperipheral="USART0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD2"/>
-      <edc:VirtualPin edc:name="INT0" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P2" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT26" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="RXD" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="INT0" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="P2" edc:ppsfunction="default" ltx:memberofperipheral="PORTD"/>
+      <edc:VirtualPin edc:name="PCINT26" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="RXD" edc:ppsfunction="default" ltx:memberofperipheral="USART1"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD3"/>
-      <edc:VirtualPin edc:name="INT1" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P3" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT27" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="TXD" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="INT1" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="P3" edc:ppsfunction="default" ltx:memberofperipheral="PORTD"/>
+      <edc:VirtualPin edc:name="PCINT27" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="TXD" edc:ppsfunction="default" ltx:memberofperipheral="USART1"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD4"/>
-      <edc:VirtualPin edc:name="OCB1" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P4" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT28" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="XCK" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="OCB1" edc:ppsfunction="default" ltx:memberofperipheral="TC1"/>
+      <edc:VirtualPin edc:name="P4" edc:ppsfunction="default" ltx:memberofperipheral="PORTD"/>
+      <edc:VirtualPin edc:name="PCINT28" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="XCK" edc:ppsfunction="default" ltx:memberofperipheral="USART1"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD5"/>
-      <edc:VirtualPin edc:name="OCA1" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P5" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT29" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="OCA1" edc:ppsfunction="default" ltx:memberofperipheral="TC1"/>
+      <edc:VirtualPin edc:name="P5" edc:ppsfunction="default" ltx:memberofperipheral="PORTD"/>
+      <edc:VirtualPin edc:name="PCINT29" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD6"/>
-      <edc:VirtualPin edc:name="ICP1" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="OCB2" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P6" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT30" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="ICP1" edc:ppsfunction="default" ltx:memberofperipheral="TC1"/>
+      <edc:VirtualPin edc:name="OCB2" edc:ppsfunction="default" ltx:memberofperipheral="TC2"/>
+      <edc:VirtualPin edc:name="P6" edc:ppsfunction="default" ltx:memberofperipheral="PORTD"/>
+      <edc:VirtualPin edc:name="PCINT30" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PD7"/>
-      <edc:VirtualPin edc:name="OCA2" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P7" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT31" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="OCA2" edc:ppsfunction="default" ltx:memberofperipheral="TC2"/>
+      <edc:VirtualPin edc:name="P7" edc:ppsfunction="default" ltx:memberofperipheral="PORTD"/>
+      <edc:VirtualPin edc:name="PCINT31" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="VCC"/>
@@ -1197,51 +1197,51 @@
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PC0"/>
-      <edc:VirtualPin edc:name="P0" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT16" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="SCL" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="P0" edc:ppsfunction="default" ltx:memberofperipheral="PORTC"/>
+      <edc:VirtualPin edc:name="PCINT16" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="SCL" edc:ppsfunction="default" ltx:memberofperipheral="TWI"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PC1"/>
-      <edc:VirtualPin edc:name="P1" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT17" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="SDA" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="P1" edc:ppsfunction="default" ltx:memberofperipheral="PORTC"/>
+      <edc:VirtualPin edc:name="PCINT17" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="SDA" edc:ppsfunction="default" ltx:memberofperipheral="TWI"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PC2"/>
-      <edc:VirtualPin edc:name="P2" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT18" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="TCK" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="P2" edc:ppsfunction="default" ltx:memberofperipheral="PORTC"/>
+      <edc:VirtualPin edc:name="PCINT18" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="TCK" edc:ppsfunction="default" ltx:memberofperipheral="JTAG"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PC3"/>
-      <edc:VirtualPin edc:name="P3" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT19" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="TMS" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="P3" edc:ppsfunction="default" ltx:memberofperipheral="PORTC"/>
+      <edc:VirtualPin edc:name="PCINT19" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="TMS" edc:ppsfunction="default" ltx:memberofperipheral="JTAG"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PC4"/>
-      <edc:VirtualPin edc:name="P4" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT20" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="TDO" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="P4" edc:ppsfunction="default" ltx:memberofperipheral="PORTC"/>
+      <edc:VirtualPin edc:name="PCINT20" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="TDO" edc:ppsfunction="default" ltx:memberofperipheral="JTAG"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PC5"/>
-      <edc:VirtualPin edc:name="P5" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT21" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="TDI" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="P5" edc:ppsfunction="default" ltx:memberofperipheral="PORTC"/>
+      <edc:VirtualPin edc:name="PCINT21" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="TDI" edc:ppsfunction="default" ltx:memberofperipheral="JTAG"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PC6"/>
-      <edc:VirtualPin edc:name="P6" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT22" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="TOSC12" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="P6" edc:ppsfunction="default" ltx:memberofperipheral="PORTC"/>
+      <edc:VirtualPin edc:name="PCINT22" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="TOSC12" edc:ppsfunction="default" ltx:memberofperipheral="TC2"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PC7"/>
-      <edc:VirtualPin edc:name="P7" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT23" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="TOSC2" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="P7" edc:ppsfunction="default" ltx:memberofperipheral="PORTC"/>
+      <edc:VirtualPin edc:name="PCINT23" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="TOSC2" edc:ppsfunction="default" ltx:memberofperipheral="TC2"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="AVCC"/>
@@ -1254,51 +1254,51 @@
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PA7"/>
-      <edc:VirtualPin edc:name="ADC7" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P7" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT7" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="ADC7" edc:ppsfunction="default" ltx:memberofperipheral="ADC"/>
+      <edc:VirtualPin edc:name="P7" edc:ppsfunction="default" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="PCINT7" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PA6"/>
-      <edc:VirtualPin edc:name="ADC6" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P6" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT6" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="ADC6" edc:ppsfunction="default" ltx:memberofperipheral="ADC"/>
+      <edc:VirtualPin edc:name="P6" edc:ppsfunction="default" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="PCINT6" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PA5"/>
-      <edc:VirtualPin edc:name="ADC5" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P5" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT5" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="ADC5" edc:ppsfunction="default" ltx:memberofperipheral="ADC"/>
+      <edc:VirtualPin edc:name="P5" edc:ppsfunction="default" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="PCINT5" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PA4"/>
-      <edc:VirtualPin edc:name="ADC4" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P4" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT4" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="ADC4" edc:ppsfunction="default" ltx:memberofperipheral="ADC"/>
+      <edc:VirtualPin edc:name="P4" edc:ppsfunction="default" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="PCINT4" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PA3"/>
-      <edc:VirtualPin edc:name="ADC3" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P3" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT3" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="ADC3" edc:ppsfunction="default" ltx:memberofperipheral="ADC"/>
+      <edc:VirtualPin edc:name="P3" edc:ppsfunction="default" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="PCINT3" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PA2"/>
-      <edc:VirtualPin edc:name="ADC2" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P2" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT2" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="ADC2" edc:ppsfunction="default" ltx:memberofperipheral="ADC"/>
+      <edc:VirtualPin edc:name="P2" edc:ppsfunction="default" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="PCINT2" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PA1"/>
-      <edc:VirtualPin edc:name="ADC1" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P1" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT1" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="ADC1" edc:ppsfunction="default" ltx:memberofperipheral="ADC"/>
+      <edc:VirtualPin edc:name="P1" edc:ppsfunction="default" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="PCINT1" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PA0"/>
-      <edc:VirtualPin edc:name="ADC0" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P0" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT0" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="ADC0" edc:ppsfunction="default" ltx:memberofperipheral="ADC"/>
+      <edc:VirtualPin edc:name="P0" edc:ppsfunction="default" ltx:memberofperipheral="PORTA"/>
+      <edc:VirtualPin edc:name="PCINT0" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="VCC"/>
@@ -1308,38 +1308,38 @@
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PB0"/>
-      <edc:VirtualPin edc:name="P0" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT8" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="T0" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="XCK" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="P0" edc:ppsfunction="default" ltx:memberofperipheral="PORTB"/>
+      <edc:VirtualPin edc:name="PCINT8" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="T0" edc:ppsfunction="default" ltx:memberofperipheral="TC0"/>
+      <edc:VirtualPin edc:name="XCK" edc:ppsfunction="default" ltx:memberofperipheral="USART0"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PB1"/>
-      <edc:VirtualPin edc:name="CLKO0" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P1" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT9" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="T1" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="CLKO0" edc:ppsfunction="default" ltx:memberofperipheral="CPU"/>
+      <edc:VirtualPin edc:name="P1" edc:ppsfunction="default" ltx:memberofperipheral="PORTB"/>
+      <edc:VirtualPin edc:name="PCINT9" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="T1" edc:ppsfunction="default" ltx:memberofperipheral="TC1"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PB2"/>
-      <edc:VirtualPin edc:name="AIN0" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="INT2" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P2" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT10" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="AIN0" edc:ppsfunction="default" ltx:memberofperipheral="AC"/>
+      <edc:VirtualPin edc:name="INT2" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="P2" edc:ppsfunction="default" ltx:memberofperipheral="PORTB"/>
+      <edc:VirtualPin edc:name="PCINT10" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PB3"/>
-      <edc:VirtualPin edc:name="AIN1" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="OCA0" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P3" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT11" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="AIN1" edc:ppsfunction="default" ltx:memberofperipheral="AC"/>
+      <edc:VirtualPin edc:name="OCA0" edc:ppsfunction="default" ltx:memberofperipheral="TC0"/>
+      <edc:VirtualPin edc:name="P3" edc:ppsfunction="default" ltx:memberofperipheral="PORTB"/>
+      <edc:VirtualPin edc:name="PCINT11" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
     </edc:Pin>
     <edc:Pin>
       <edc:VirtualPin edc:name="PB4"/>
-      <edc:VirtualPin edc:name="OCB0" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="P4" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="PCINT12" edc:ppsfunction="default"/>
-      <edc:VirtualPin edc:name="SS" edc:ppsfunction="default"/>
+      <edc:VirtualPin edc:name="OCB0" edc:ppsfunction="default" ltx:memberofperipheral="TC0"/>
+      <edc:VirtualPin edc:name="P4" edc:ppsfunction="default" ltx:memberofperipheral="PORTB"/>
+      <edc:VirtualPin edc:name="PCINT12" edc:ppsfunction="default" ltx:memberofperipheral="EXINT"/>
+      <edc:VirtualPin edc:name="SS" edc:ppsfunction="default" ltx:memberofperipheral="SPI"/>
     </edc:Pin>
   </edc:PinList>
 </edc:PIC>

@@ -1216,14 +1216,10 @@
         </register>
       </register-group>
       <value-group caption="" name="COMM_SCK_RATE_3BIT">
-        <value caption="fosc/4" name="VAL_0x00" value="0x00"/>
-        <value caption="fosc/16" name="VAL_0x01" value="0x01"/>
-        <value caption="fosc/64" name="VAL_0x02" value="0x02"/>
-        <value caption="fosc/128" name="VAL_0x03" value="0x03"/>
-        <value caption="fosc/2" name="VAL_0x04" value="0x04"/>
-        <value caption="fosc/8" name="VAL_0x05" value="0x05"/>
-        <value caption="fosc/32" name="VAL_0x06" value="0x06"/>
-        <value caption="fosc/64" name="VAL_0x07" value="0x07"/>
+        <value caption="fosc/2 or fosc/4" name="VAL_0x00" value="0x00"/>
+        <value caption="fosc/8 or fosc/16" name="VAL_0x01" value="0x01"/>
+        <value caption="fosc/32 or fosc/64" name="VAL_0x02" value="0x02"/>
+        <value caption="fosc/64 or fosc/128" name="VAL_0x03" value="0x03"/>
       </value-group>
     </module>
     <module caption="" name="WDT">

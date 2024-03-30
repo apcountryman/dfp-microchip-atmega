@@ -978,7 +978,7 @@
     <edc:DeviceIDSector edc:beginaddr="0x0" edc:endaddr="0x3" edc:regionid="SIGNATURES" edc:value="0x1E9388"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
-    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x3" edc:regionid="FUSES">
+    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x3" edc:magicoffset="0x820000" edc:regionid="FUSES">
       <edc:DCRDef edc:_addr="0x0" edc:access="nnnnnnnn" edc:cname="LOW" edc:factorydefault="0x62" edc:impl="0xFF" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="FUSE">
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0" ltx:memberofperipheral="FUSE">
@@ -1126,7 +1126,7 @@
     </edc:ConfigFuseSector>
   </edc:FusesSpace>
   <edc:LockbitsSpace edc:magicoffset="0x830000">
-    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x1" edc:regionid="LOCKBITS">
+    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x1" edc:magicoffset="0x830000" edc:regionid="LOCKBITS">
       <edc:DCRDef edc:_addr="0x0" edc:access="--nnnnnn" edc:cname="LOCKBIT" edc:factorydefault="0xFF" edc:impl="0x3F" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="LOCKBIT">
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0" ltx:memberofperipheral="LOCKBIT">

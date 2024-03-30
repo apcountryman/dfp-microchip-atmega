@@ -7,7 +7,7 @@
   <devices>
     <device architecture="AVR8X" family="AVR MEGA" name="ATmega3208">
       <address-spaces>
-        <address-space endianness="little" id="data" name="data" size="0x8000" start="0x0000">
+        <address-space endianness="little" id="data" name="data" size="0x10000" start="0x0000">
           <memory-segment exec="0" name="EEPROM" pagesize="0x40" rw="RW" size="0x0100" start="0x00001400" type="eeprom"/>
           <memory-segment exec="0" name="FUSES" pagesize="0x40" rw="RW" size="0xA" start="0x00001280" type="fuses"/>
           <memory-segment exec="0" name="INTERNAL_SRAM" rw="RW" size="0x1000" start="0x3000" type="ram"/>
@@ -50,10 +50,6 @@
               <signal function="AIN0" group="AIN" index="5" pad="PD5"/>
               <signal function="AIN0" group="AIN" index="6" pad="PD6"/>
               <signal function="AIN0" group="AIN" index="7" pad="PD7"/>
-              <signal function="AIN0" group="AIN" index="8" pad="PE0"/>
-              <signal function="AIN0" group="AIN" index="9" pad="PE1"/>
-              <signal function="AIN0" group="AIN" index="10" pad="PE2"/>
-              <signal function="AIN0" group="AIN" index="11" pad="PE3"/>
               <signal function="AIN0" group="AIN" index="12" pad="PF2"/>
               <signal function="AIN0" group="AIN" index="13" pad="PF3"/>
               <signal function="AIN0" group="AIN" index="14" pad="PF4"/>
@@ -78,7 +74,6 @@
               <signal function="CCL" group="LUT1_IN" index="0" pad="PC0"/>
               <signal function="CCL" group="LUT1_IN" index="1" pad="PC1"/>
               <signal function="CCL" group="LUT1_IN" index="2" pad="PC2"/>
-              <signal field="PORTMUX.CCLROUTEA.LUT1" function="CCL_ALT" group="LUT1_OUT" index="0" pad="PC6"/>
               <signal field="PORTMUX.CCLROUTEA.LUT1" function="CCL" group="LUT1_OUT" index="0" pad="PC3"/>
               <signal function="CCL" group="LUT2_IN" index="0" pad="PD0"/>
               <signal function="CCL" group="LUT2_IN" index="1" pad="PD1"/>
@@ -125,12 +120,9 @@
             <signals>
               <signal field="PORTMUX.EVSYSROUTEA.EVOUT0" function="EVSYS_ALT" group="EVOUT" index="0" pad="PA7"/>
               <signal field="PORTMUX.EVSYSROUTEA.EVOUT0" function="EVSYS" group="EVOUT" index="0" pad="PA2"/>
-              <signal field="PORTMUX.EVSYSROUTEA.EVOUT1" function="EVSYS" group="EVOUT" index="1" pad="PB2"/>
-              <signal field="PORTMUX.EVSYSROUTEA.EVOUT2" function="EVSYS_ALT" group="EVOUT" index="2" pad="PC7"/>
               <signal field="PORTMUX.EVSYSROUTEA.EVOUT2" function="EVSYS" group="EVOUT" index="2" pad="PC2"/>
               <signal field="PORTMUX.EVSYSROUTEA.EVOUT3" function="EVSYS_ALT" group="EVOUT" index="3" pad="PD7"/>
               <signal field="PORTMUX.EVSYSROUTEA.EVOUT3" function="EVSYS" group="EVOUT" index="3" pad="PD2"/>
-              <signal field="PORTMUX.EVSYSROUTEA.EVOUT4" function="EVSYS" group="EVOUT" index="4" pad="PE2"/>
               <signal field="PORTMUX.EVSYSROUTEA.EVOUT5" function="EVSYS" group="EVOUT" index="5" pad="PF2"/>
             </signals>
           </instance>
@@ -171,14 +163,6 @@
           </instance>
           <instance name="PORTB">
             <register-group address-space="data" name="PORTB" name-in-module="PORT" offset="0x0420"/>
-            <signals>
-              <signal function="IOPORT" group="PIN" index="0" pad="PB0"/>
-              <signal function="IOPORT" group="PIN" index="1" pad="PB1"/>
-              <signal function="IOPORT" group="PIN" index="2" pad="PB2"/>
-              <signal function="IOPORT" group="PIN" index="3" pad="PB3"/>
-              <signal function="IOPORT" group="PIN" index="4" pad="PB4"/>
-              <signal function="IOPORT" group="PIN" index="5" pad="PB5"/>
-            </signals>
           </instance>
           <instance name="PORTC">
             <register-group address-space="data" name="PORTC" name-in-module="PORT" offset="0x0440"/>
@@ -187,10 +171,6 @@
               <signal function="IOPORT" group="PIN" index="1" pad="PC1"/>
               <signal function="IOPORT" group="PIN" index="2" pad="PC2"/>
               <signal function="IOPORT" group="PIN" index="3" pad="PC3"/>
-              <signal function="IOPORT" group="PIN" index="4" pad="PC4"/>
-              <signal function="IOPORT" group="PIN" index="5" pad="PC5"/>
-              <signal function="IOPORT" group="PIN" index="6" pad="PC6"/>
-              <signal function="IOPORT" group="PIN" index="7" pad="PC7"/>
             </signals>
           </instance>
           <instance name="PORTD">
@@ -208,12 +188,6 @@
           </instance>
           <instance name="PORTE">
             <register-group address-space="data" name="PORTE" name-in-module="PORT" offset="0x0480"/>
-            <signals>
-              <signal function="IOPORT" group="PIN" index="0" pad="PE0"/>
-              <signal function="IOPORT" group="PIN" index="1" pad="PE1"/>
-              <signal function="IOPORT" group="PIN" index="2" pad="PE2"/>
-              <signal function="IOPORT" group="PIN" index="3" pad="PE3"/>
-            </signals>
           </instance>
           <instance name="PORTF">
             <register-group address-space="data" name="PORTF" name-in-module="PORT" offset="0x04A0"/>
@@ -260,16 +234,12 @@
           <instance name="SPI0">
             <register-group address-space="data" name="SPI0" name-in-module="SPI" offset="0x08C0"/>
             <signals>
-              <signal field="PORTMUX.TWISPIROUTEA.SPI0" function="SPI_ALT2" group="MISO" pad="PE1"/>
               <signal field="PORTMUX.TWISPIROUTEA.SPI0" function="SPI_ALT" group="MISO" pad="PC1"/>
               <signal field="PORTMUX.TWISPIROUTEA.SPI0" function="SPI" group="MISO" pad="PA5"/>
-              <signal field="PORTMUX.TWISPIROUTEA.SPI0" function="SPI_ALT2" group="MOSI" pad="PE0"/>
               <signal field="PORTMUX.TWISPIROUTEA.SPI0" function="SPI_ALT" group="MOSI" pad="PC0"/>
               <signal field="PORTMUX.TWISPIROUTEA.SPI0" function="SPI" group="MOSI" pad="PA4"/>
-              <signal field="PORTMUX.TWISPIROUTEA.SPI0" function="SPI_ALT2" group="SCK" pad="PE2"/>
               <signal field="PORTMUX.TWISPIROUTEA.SPI0" function="SPI_ALT" group="SCK" pad="PC2"/>
               <signal field="PORTMUX.TWISPIROUTEA.SPI0" function="SPI" group="SCK" pad="PA6"/>
-              <signal field="PORTMUX.TWISPIROUTEA.SPI0" function="SPI_ALT2" group="SS" pad="PE3"/>
               <signal field="PORTMUX.TWISPIROUTEA.SPI0" function="SPI_ALT" group="SS" pad="PC3"/>
               <signal field="PORTMUX.TWISPIROUTEA.SPI0" function="SPI" group="SS" pad="PA7"/>
             </signals>
@@ -285,38 +255,26 @@
             <register-group address-space="data" name="TCA0" name-in-module="TCA" offset="0x0A00"/>
             <signals>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT5" group="WO" index="0" pad="PF0"/>
-              <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT4" group="WO" index="0" pad="PE0"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT3" group="WO" index="0" pad="PD0"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT2" group="WO" index="0" pad="PC0"/>
-              <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT" group="WO" index="0" pad="PB0"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA" group="WO" index="0" pad="PA0"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT5" group="WO" index="1" pad="PF1"/>
-              <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT4" group="WO" index="1" pad="PE1"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT3" group="WO" index="1" pad="PD1"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT2" group="WO" index="1" pad="PC1"/>
-              <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT" group="WO" index="1" pad="PB1"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA" group="WO" index="1" pad="PA1"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT5" group="WO" index="2" pad="PF2"/>
-              <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT4" group="WO" index="2" pad="PE2"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT3" group="WO" index="2" pad="PD2"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT2" group="WO" index="2" pad="PC2"/>
-              <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT" group="WO" index="2" pad="PB2"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA" group="WO" index="2" pad="PA2"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT5" group="WO" index="3" pad="PF3"/>
-              <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT4" group="WO" index="3" pad="PE3"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT3" group="WO" index="3" pad="PD3"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT2" group="WO" index="3" pad="PC3"/>
-              <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT" group="WO" index="3" pad="PB3"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA" group="WO" index="3" pad="PA3"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT5" group="WO" index="4" pad="PF4"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT3" group="WO" index="4" pad="PD4"/>
-              <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT2" group="WO" index="4" pad="PC4"/>
-              <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT" group="WO" index="4" pad="PB4"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA" group="WO" index="4" pad="PA4"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT5" group="WO" index="5" pad="PF5"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT3" group="WO" index="5" pad="PD5"/>
-              <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT2" group="WO" index="5" pad="PC5"/>
-              <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA_ALT" group="WO" index="5" pad="PB5"/>
               <signal field="PORTMUX.TCAROUTEA.TCA0" function="TCA" group="WO" index="5" pad="PA5"/>
             </signals>
           </instance>
@@ -339,7 +297,6 @@
           <instance name="TCB2">
             <register-group address-space="data" name="TCB2" name-in-module="TCB" offset="0x0AA0"/>
             <signals>
-              <signal field="PORTMUX.TCBROUTEA.TCB2" function="TCB2_ALT" group="WO" index="0" pad="PB4"/>
               <signal field="PORTMUX.TCBROUTEA.TCB2" function="TCB2" group="WO" index="0" pad="PC0"/>
             </signals>
           </instance>
@@ -374,13 +331,9 @@
           <instance name="USART1">
             <register-group address-space="data" name="USART1" name-in-module="USART" offset="0x0820"/>
             <signals>
-              <signal field="PORTMUX.USARTROUTEA.USART1" function="USART1_ALT" group="RXD" pad="PC5"/>
               <signal field="PORTMUX.USARTROUTEA.USART1" function="USART1" group="RXD" pad="PC1"/>
-              <signal field="PORTMUX.USARTROUTEA.USART1" function="USART1_ALT" group="TXD" pad="PC4"/>
               <signal field="PORTMUX.USARTROUTEA.USART1" function="USART1" group="TXD" pad="PC0"/>
-              <signal field="PORTMUX.USARTROUTEA.USART1" function="USART1_ALT" group="XCK" pad="PC6"/>
               <signal field="PORTMUX.USARTROUTEA.USART1" function="USART1" group="XCK" pad="PC2"/>
-              <signal field="PORTMUX.USARTROUTEA.USART1" function="USART1_ALT" group="XDIR" pad="PC7"/>
               <signal field="PORTMUX.USARTROUTEA.USART1" function="USART1" group="XDIR" pad="PC3"/>
             </signals>
           </instance>
@@ -1206,14 +1159,14 @@
     </module>
     <module caption="Fuses" id="I2600" name="FUSE">
       <register-group caption="Fuses" name="FUSE" size="0x09">
-        <register caption="Application Code Section End" name="APPEND" offset="0x7" rw="RW" size="1" initval="0x00"/>
+        <register caption="Application Code Section End" initval="0x00" name="APPEND" offset="0x7" rw="RW" size="1"/>
         <register caption="BOD Configuration" initval="0x00" name="BODCFG" offset="0x1" rw="RW" size="1">
           <bitfield caption="BOD Operation in Active Mode" mask="0xc" name="ACTIVE" rw="RW" values="FUSE_ACTIVE"/>
           <bitfield caption="BOD Level" mask="0xe0" name="LVL" rw="RW" values="FUSE_LVL"/>
           <bitfield caption="BOD Sample Frequency" mask="0x10" name="SAMPFREQ" rw="RW" values="FUSE_SAMPFREQ"/>
           <bitfield caption="BOD Operation in Sleep Mode" mask="0x3" name="SLEEP" rw="RW" values="FUSE_SLEEP"/>
         </register>
-        <register caption="Boot Section End" name="BOOTEND" offset="0x8" rw="RW" size="1" initval="0x00"/>
+        <register caption="Boot Section End" initval="0x00" name="BOOTEND" offset="0x8" rw="RW" size="1"/>
         <register caption="Oscillator Configuration" initval="0x02" name="OSCCFG" offset="0x2" rw="RW" size="1">
           <bitfield caption="Frequency Select" mask="0x3" name="FREQSEL" rw="RW" values="FUSE_FREQSEL"/>
           <bitfield caption="Oscillator Lock" mask="0x80" name="OSCLOCK" rw="RW"/>
