@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
+<?xml version='1.0' encoding='UTF-8'?>
+<avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
   <variants>
     <variant ordercode="ATmega1281V-8AU" tempmin="-40" tempmax="85" speedmax="8000000" pinout="TQFP64" package="TQFP64" vccmin="1.8" vccmax="5.5"/>
     <variant ordercode="ATmega1281V-8MU" tempmin="-40" tempmax="85" speedmax="8000000" pinout="QFN64" package="QFN64" vccmin="1.8" vccmax="5.5"/>
@@ -520,10 +521,10 @@
   <modules>
     <module caption="Fuses" name="FUSE">
       <register-group caption="Fuses" name="FUSE">
-        <register caption="" name="EXTENDED" offset="0x02" size="1" initval="0xFF">
+        <register name="EXTENDED" offset="0x02" size="1" initval="0xFF">
           <bitfield caption="Brown-out Detector trigger level" mask="0x07" name="BODLEVEL" values="ENUM_BODLEVEL"/>
         </register>
-        <register caption="" name="HIGH" offset="0x01" size="1" initval="0x99">
+        <register name="HIGH" offset="0x01" size="1" initval="0x99">
           <bitfield caption="On-Chip Debug Enabled" mask="0x80" name="OCDEN"/>
           <bitfield caption="JTAG Interface Enabled" mask="0x40" name="JTAGEN"/>
           <bitfield caption="Serial program downloading (SPI) enabled" mask="0x20" name="SPIEN"/>
@@ -532,13 +533,13 @@
           <bitfield caption="Select Boot Size" mask="0x06" name="BOOTSZ" values="ENUM_BOOTSZ"/>
           <bitfield caption="Boot Reset vector Enabled" mask="0x01" name="BOOTRST"/>
         </register>
-        <register caption="" name="LOW" offset="0x00" size="1" initval="0x62">
+        <register name="LOW" offset="0x00" size="1" initval="0x62">
           <bitfield caption="Divide clock by 8 internally" mask="0x80" name="CKDIV8"/>
           <bitfield caption="Clock output on PORTE7" mask="0x40" name="CKOUT"/>
           <bitfield caption="Select Clock Source" mask="0x3F" name="SUT_CKSEL" values="ENUM_SUT_CKSEL"/>
         </register>
       </register-group>
-      <value-group caption="" name="ENUM_SUT_CKSEL">
+      <value-group name="ENUM_SUT_CKSEL">
         <value caption="Ext. Clock; Start-up time: 6 CK + 0 ms" name="EXTCLK_6CK_0MS" value="0x00"/>
         <value caption="Ext. Clock; Start-up time: 6 CK + 4.1 ms" name="EXTCLK_6CK_4MS1" value="0x10"/>
         <value caption="Ext. Clock; Start-up time: 6 CK + 65 ms" name="EXTCLK_6CK_65MS" value="0x20"/>
@@ -595,13 +596,13 @@
         <value caption="Ext. Crystal Osc. 8.0-    MHz; Start-up time: 16K CK + 4.1 ms" name="EXTXOSC_8MHZ_XX_16KCK_4MS1" value="0x2F"/>
         <value caption="Ext. Crystal Osc. 8.0-    MHz; Start-up time: 16K CK + 65 ms" name="EXTXOSC_8MHZ_XX_16KCK_65MS" value="0x3F"/>
       </value-group>
-      <value-group caption="" name="ENUM_BOOTSZ">
+      <value-group name="ENUM_BOOTSZ">
         <value caption="Boot Flash size=512 words start address=$FE00" name="512W_FE00" value="0x03"/>
         <value caption="Boot Flash size=1024 words start address=$FC00" name="1024W_FC00" value="0x02"/>
         <value caption="Boot Flash size=2048 words start address=$F800" name="2048W_F800" value="0x01"/>
         <value caption="Boot Flash size=4096 words start address=$F000" name="4096W_F000" value="0x00"/>
       </value-group>
-      <value-group caption="" name="ENUM_BODLEVEL">
+      <value-group name="ENUM_BODLEVEL">
         <value caption="Brown-out detection disabled" name="DISABLED" value="0x07"/>
         <value caption="Brown-out detection at VCC=1.8 V" name="1V8" value="0x06"/>
         <value caption="Brown-out detection at VCC=2.7 V" name="2V7" value="0x05"/>
@@ -610,24 +611,24 @@
     </module>
     <module caption="Lockbits" name="LOCKBIT">
       <register-group caption="Lockbits" name="LOCKBIT">
-        <register caption="" name="LOCKBIT" offset="0x00" size="1" initval="0xFF">
+        <register name="LOCKBIT" offset="0x00" size="1" initval="0xFF">
           <bitfield caption="Memory Lock" mask="0x03" name="LB" values="ENUM_LB"/>
           <bitfield caption="Boot Loader Protection Mode" mask="0x0C" name="BLB0" values="ENUM_BLB"/>
           <bitfield caption="Boot Loader Protection Mode" mask="0x30" name="BLB1" values="ENUM_BLB2"/>
         </register>
       </register-group>
-      <value-group caption="" name="ENUM_LB">
+      <value-group name="ENUM_LB">
         <value caption="Further programming and verification disabled" name="PROG_VER_DISABLED" value="0x00"/>
         <value caption="Further programming disabled" name="PROG_DISABLED" value="0x02"/>
         <value caption="No memory lock features enabled" name="NO_LOCK" value="0x03"/>
       </value-group>
-      <value-group caption="" name="ENUM_BLB">
+      <value-group name="ENUM_BLB">
         <value caption="LPM and SPM prohibited in Application Section" name="LPM_SPM_DISABLE" value="0x00"/>
         <value caption="LPM prohibited in Application Section" name="LPM_DISABLE" value="0x01"/>
         <value caption="SPM prohibited in Application Section" name="SPM_DISABLE" value="0x02"/>
         <value caption="No lock on SPM and LPM in Application Section" name="NO_LOCK" value="0x03"/>
       </value-group>
-      <value-group caption="" name="ENUM_BLB2">
+      <value-group name="ENUM_BLB2">
         <value caption="LPM and SPM prohibited in Boot Section" name="LPM_SPM_DISABLE" value="0x00"/>
         <value caption="LPM prohibited in Boot Section" name="LPM_DISABLE" value="0x01"/>
         <value caption="SPM prohibited in Boot Section" name="SPM_DISABLE" value="0x02"/>
@@ -653,11 +654,11 @@
           <bitfield caption="AIN0 Digital Input Disable" mask="0x01" name="AIN0D"/>
         </register>
       </register-group>
-      <value-group caption="" name="ANALOG_COMP_INTERRUPT">
-        <value caption="Interrupt on Toggle" name="VAL_0x00" value="0x00"/>
-        <value caption="Reserved" name="VAL_0x01" value="0x01"/>
-        <value caption="Interrupt on Falling Edge" name="VAL_0x02" value="0x02"/>
-        <value caption="Interrupt on Rising Edge" name="VAL_0x03" value="0x03"/>
+      <value-group name="ANALOG_COMP_INTERRUPT">
+        <value caption="Interrupt on Toggle" name="INTERRUPT_ON_TOGGLE" value="0x00"/>
+        <value caption="Reserved" name="RESERVED" value="0x01"/>
+        <value caption="Interrupt on Falling Edge" name="INTERRUPT_ON_FALLING_EDGE" value="0x02"/>
+        <value caption="Interrupt on Rising Edge" name="INTERRUPT_ON_RISING_EDGE" value="0x03"/>
       </value-group>
     </module>
     <module caption="USART" name="USART">
@@ -723,26 +724,26 @@
         </register>
         <register caption="USART Baud Rate Register  Bytes" name="UBRR1" offset="0xCC" size="2" mask="0x0FFF"/>
       </register-group>
-      <value-group caption="" name="COMM_UPM_PARITY_MODE">
-        <value caption="Disabled" name="VAL_0x00" value="0x00"/>
-        <value caption="Reserved" name="VAL_0x01" value="0x01"/>
-        <value caption="Enabled, Even Parity" name="VAL_0x02" value="0x02"/>
-        <value caption="Enabled, Odd Parity" name="VAL_0x03" value="0x03"/>
+      <value-group name="COMM_UPM_PARITY_MODE">
+        <value caption="Disabled" name="DISABLED" value="0x00"/>
+        <value caption="Reserved" name="RESERVED" value="0x01"/>
+        <value caption="Enabled, Even Parity" name="ENABLED_EVEN_PARITY" value="0x02"/>
+        <value caption="Enabled, Odd Parity" name="ENABLED_ODD_PARITY" value="0x03"/>
       </value-group>
-      <value-group caption="" name="COMM_STOP_BIT_SEL">
-        <value caption="1-bit" name="VAL_0x00" value="0x00"/>
-        <value caption="2-bit" name="VAL_0x01" value="0x01"/>
+      <value-group name="COMM_STOP_BIT_SEL">
+        <value caption="1-bit" name="1_BIT" value="0x00"/>
+        <value caption="2-bit" name="2_BIT" value="0x01"/>
       </value-group>
-      <value-group caption="" name="COMM_USART_MODE_2BIT">
-        <value caption="Asynchronous USART" name="VAL_0x00" value="0x00"/>
-        <value caption="Synchronous USART" name="VAL_0x01" value="0x01"/>
-        <value caption="Master SPI" name="VAL_0x03" value="0x03"/>
+      <value-group name="COMM_USART_MODE_2BIT">
+        <value caption="Asynchronous USART" name="ASYNCHRONOUS_USART" value="0x00"/>
+        <value caption="Synchronous USART" name="SYNCHRONOUS_USART" value="0x01"/>
+        <value caption="Master SPI" name="MASTER_SPI" value="0x03"/>
       </value-group>
     </module>
     <module caption="Two Wire Serial Interface" name="TWI">
       <register-group caption="Two Wire Serial Interface" name="TWI">
         <register caption="TWI (Slave) Address Mask Register" name="TWAMR" offset="0xBD" size="1">
-          <bitfield caption="" mask="0xFE" name="TWAM"/>
+          <bitfield mask="0xFE" name="TWAM"/>
         </register>
         <register caption="TWI Bit Rate register" name="TWBR" offset="0xB8" size="1" mask="0xFF"/>
         <register caption="TWI Control Register" name="TWCR" offset="0xBC" size="1" ocd-rw="R">
@@ -764,11 +765,11 @@
           <bitfield caption="TWI General Call Recognition Enable Bit" mask="0x01" name="TWGCE"/>
         </register>
       </register-group>
-      <value-group caption="" name="COMM_TWI_PRESACLE">
-        <value caption="1" name="VAL_0x00" value="0x00"/>
-        <value caption="4" name="VAL_0x01" value="0x01"/>
-        <value caption="16" name="VAL_0x02" value="0x02"/>
-        <value caption="64" name="VAL_0x03" value="0x03"/>
+      <value-group name="COMM_TWI_PRESACLE">
+        <value caption="1" name="1" value="0x00"/>
+        <value caption="4" name="4" value="0x01"/>
+        <value caption="16" name="16" value="0x02"/>
+        <value caption="64" name="64" value="0x03"/>
       </value-group>
     </module>
     <module caption="Serial Peripheral Interface" name="SPI">
@@ -789,15 +790,15 @@
         </register>
         <register caption="SPI Data Register" name="SPDR" offset="0x4E" size="1" mask="0xFF" ocd-rw=""/>
       </register-group>
-      <value-group caption="" name="COMM_SCK_RATE_3BIT">
-        <value caption="fosc/4" name="VAL_0x00" value="0x00"/>
-        <value caption="fosc/16" name="VAL_0x01" value="0x01"/>
-        <value caption="fosc/64" name="VAL_0x02" value="0x02"/>
-        <value caption="fosc/128" name="VAL_0x03" value="0x03"/>
-        <value caption="fosc/2" name="VAL_0x04" value="0x04"/>
-        <value caption="fosc/8" name="VAL_0x05" value="0x05"/>
-        <value caption="fosc/32" name="VAL_0x06" value="0x06"/>
-        <value caption="fosc/64" name="VAL_0x07" value="0x07"/>
+      <value-group name="COMM_SCK_RATE_3BIT">
+        <value caption="fosc/4" name="FOSC_4" value="0x00"/>
+        <value caption="fosc/16" name="FOSC_16" value="0x01"/>
+        <value caption="fosc/64" name="FOSC_64" value="0x02"/>
+        <value caption="fosc/128" name="FOSC_128" value="0x03"/>
+        <value caption="fosc/2" name="FOSC_2" value="0x04"/>
+        <value caption="fosc/8" name="FOSC_8" value="0x05"/>
+        <value caption="fosc/32" name="FOSC_32" value="0x06"/>
+        <value caption="fosc/64" name="FOSC_64" value="0x07"/>
       </value-group>
     </module>
     <module caption="I/O Port" name="PORT">
@@ -845,7 +846,7 @@
         <register caption="Timer/Counter Control Register B" name="TCCR0B" offset="0x45" size="1">
           <bitfield caption="Force Output Compare A" mask="0x80" name="FOC0A"/>
           <bitfield caption="Force Output Compare B" mask="0x40" name="FOC0B"/>
-          <bitfield caption="" mask="0x08" name="WGM02"/>
+          <bitfield mask="0x08" name="WGM02"/>
           <bitfield caption="Clock Select" mask="0x07" name="CS0" values="CLK_SEL_3BIT_EXT"/>
         </register>
         <register caption="Timer/Counter  Control Register A" name="TCCR0A" offset="0x44" size="1">
@@ -868,15 +869,15 @@
           <bitfield caption="Prescaler Reset Timer/Counter1 and Timer/Counter0" mask="0x01" name="PSRSYNC"/>
         </register>
       </register-group>
-      <value-group caption="" name="CLK_SEL_3BIT_EXT">
-        <value caption="No Clock Source (Stopped)" name="VAL_0x00" value="0x00"/>
-        <value caption="Running, No Prescaling" name="VAL_0x01" value="0x01"/>
-        <value caption="Running, CLK/8" name="VAL_0x02" value="0x02"/>
-        <value caption="Running, CLK/64" name="VAL_0x03" value="0x03"/>
-        <value caption="Running, CLK/256" name="VAL_0x04" value="0x04"/>
-        <value caption="Running, CLK/1024" name="VAL_0x05" value="0x05"/>
-        <value caption="Running, ExtClk Tn Falling Edge" name="VAL_0x06" value="0x06"/>
-        <value caption="Running, ExtClk Tn Rising Edge" name="VAL_0x07" value="0x07"/>
+      <value-group name="CLK_SEL_3BIT_EXT">
+        <value caption="No Clock Source (Stopped)" name="NO_CLOCK_SOURCE_STOPPED" value="0x00"/>
+        <value caption="Running, No Prescaling" name="RUNNING_NO_PRESCALING" value="0x01"/>
+        <value caption="Running, CLK/8" name="RUNNING_CLK_8" value="0x02"/>
+        <value caption="Running, CLK/64" name="RUNNING_CLK_64" value="0x03"/>
+        <value caption="Running, CLK/256" name="RUNNING_CLK_256" value="0x04"/>
+        <value caption="Running, CLK/1024" name="RUNNING_CLK_1024" value="0x05"/>
+        <value caption="Running, ExtClk Tn Falling Edge" name="RUNNING_EXTCLK_TN_FALLING_EDGE" value="0x06"/>
+        <value caption="Running, ExtClk Tn Rising Edge" name="RUNNING_EXTCLK_TN_RISING_EDGE" value="0x07"/>
       </value-group>
     </module>
     <module caption="Timer/Counter, 8-bit Async" name="TC8_ASYNC">
@@ -919,15 +920,15 @@
           <bitfield caption="Prescaler Reset Timer/Counter2" mask="0x02" name="PSRASY"/>
         </register>
       </register-group>
-      <value-group caption="" name="CLK_SEL_3BIT">
-        <value caption="No Clock Source (Stopped)" name="VAL_0x00" value="0x00"/>
-        <value caption="Running, No Prescaling" name="VAL_0x01" value="0x01"/>
-        <value caption="Running, CLK/8" name="VAL_0x02" value="0x02"/>
-        <value caption="Running, CLK/32" name="VAL_0x03" value="0x03"/>
-        <value caption="Running, CLK/64" name="VAL_0x04" value="0x04"/>
-        <value caption="Running, CLK/128" name="VAL_0x05" value="0x05"/>
-        <value caption="Running, CLK/256" name="VAL_0x06" value="0x06"/>
-        <value caption="Running, CLK/1024" name="VAL_0x07" value="0x07"/>
+      <value-group name="CLK_SEL_3BIT">
+        <value caption="No Clock Source (Stopped)" name="NO_CLOCK_SOURCE_STOPPED" value="0x00"/>
+        <value caption="Running, No Prescaling" name="RUNNING_NO_PRESCALING" value="0x01"/>
+        <value caption="Running, CLK/8" name="RUNNING_CLK_8" value="0x02"/>
+        <value caption="Running, CLK/32" name="RUNNING_CLK_32" value="0x03"/>
+        <value caption="Running, CLK/64" name="RUNNING_CLK_64" value="0x04"/>
+        <value caption="Running, CLK/128" name="RUNNING_CLK_128" value="0x05"/>
+        <value caption="Running, CLK/256" name="RUNNING_CLK_256" value="0x06"/>
+        <value caption="Running, CLK/1024" name="RUNNING_CLK_1024" value="0x07"/>
       </value-group>
     </module>
     <module caption="Watchdog Timer" name="WDT">
@@ -940,17 +941,17 @@
           <bitfield caption="Watch Dog Enable" mask="0x08" name="WDE"/>
         </register>
       </register-group>
-      <value-group caption="" name="WDOG_TIMER_PRESCALE_4BITS">
-        <value caption="Oscillator Cycles 2K" name="VAL_0x00" value="0x00"/>
-        <value caption="Oscillator Cycles 4K" name="VAL_0x01" value="0x01"/>
-        <value caption="Oscillator Cycles 8K" name="VAL_0x02" value="0x02"/>
-        <value caption="Oscillator Cycles 16K" name="VAL_0x03" value="0x03"/>
-        <value caption="Oscillator Cycles 32K" name="VAL_0x04" value="0x04"/>
-        <value caption="Oscillator Cycles 64K" name="VAL_0x05" value="0x05"/>
-        <value caption="Oscillator Cycles 128K" name="VAL_0x06" value="0x06"/>
-        <value caption="Oscillator Cycles 256K" name="VAL_0x07" value="0x07"/>
-        <value caption="Oscillator Cycles 512K" name="VAL_0x08" value="0x08"/>
-        <value caption="Oscillator Cycles 1024K" name="VAL_0x09" value="0x09"/>
+      <value-group name="WDOG_TIMER_PRESCALE_4BITS">
+        <value caption="Oscillator Cycles 2K" name="OSCILLATOR_CYCLES_2K" value="0x00"/>
+        <value caption="Oscillator Cycles 4K" name="OSCILLATOR_CYCLES_4K" value="0x01"/>
+        <value caption="Oscillator Cycles 8K" name="OSCILLATOR_CYCLES_8K" value="0x02"/>
+        <value caption="Oscillator Cycles 16K" name="OSCILLATOR_CYCLES_16K" value="0x03"/>
+        <value caption="Oscillator Cycles 32K" name="OSCILLATOR_CYCLES_32K" value="0x04"/>
+        <value caption="Oscillator Cycles 64K" name="OSCILLATOR_CYCLES_64K" value="0x05"/>
+        <value caption="Oscillator Cycles 128K" name="OSCILLATOR_CYCLES_128K" value="0x06"/>
+        <value caption="Oscillator Cycles 256K" name="OSCILLATOR_CYCLES_256K" value="0x07"/>
+        <value caption="Oscillator Cycles 512K" name="OSCILLATOR_CYCLES_512K" value="0x08"/>
+        <value caption="Oscillator Cycles 1024K" name="OSCILLATOR_CYCLES_1024K" value="0x09"/>
       </value-group>
     </module>
     <module caption="Timer/Counter, 16-bit" name="TC16">
@@ -1106,15 +1107,15 @@
           <bitfield caption="Timer/Counter1 Overflow Flag" mask="0x01" name="TOV1"/>
         </register>
       </register-group>
-      <value-group caption="" name="CLK_SEL_3BIT_EXT">
-        <value caption="No Clock Source (Stopped)" name="VAL_0x00" value="0x00"/>
-        <value caption="Running, No Prescaling" name="VAL_0x01" value="0x01"/>
-        <value caption="Running, CLK/8" name="VAL_0x02" value="0x02"/>
-        <value caption="Running, CLK/64" name="VAL_0x03" value="0x03"/>
-        <value caption="Running, CLK/256" name="VAL_0x04" value="0x04"/>
-        <value caption="Running, CLK/1024" name="VAL_0x05" value="0x05"/>
-        <value caption="Running, ExtClk Tn Falling Edge" name="VAL_0x06" value="0x06"/>
-        <value caption="Running, ExtClk Tn Rising Edge" name="VAL_0x07" value="0x07"/>
+      <value-group name="CLK_SEL_3BIT_EXT">
+        <value caption="No Clock Source (Stopped)" name="NO_CLOCK_SOURCE_STOPPED" value="0x00"/>
+        <value caption="Running, No Prescaling" name="RUNNING_NO_PRESCALING" value="0x01"/>
+        <value caption="Running, CLK/8" name="RUNNING_CLK_8" value="0x02"/>
+        <value caption="Running, CLK/64" name="RUNNING_CLK_64" value="0x03"/>
+        <value caption="Running, CLK/256" name="RUNNING_CLK_256" value="0x04"/>
+        <value caption="Running, CLK/1024" name="RUNNING_CLK_1024" value="0x05"/>
+        <value caption="Running, ExtClk Tn Falling Edge" name="RUNNING_EXTCLK_TN_FALLING_EDGE" value="0x06"/>
+        <value caption="Running, ExtClk Tn Rising Edge" name="RUNNING_EXTCLK_TN_RISING_EDGE" value="0x07"/>
       </value-group>
     </module>
     <module caption="EEPROM" name="EEPROM">
@@ -1129,10 +1130,10 @@
           <bitfield caption="EEPROM Read Enable" mask="0x01" name="EERE"/>
         </register>
       </register-group>
-      <value-group caption="" name="EEP_MODE">
-        <value caption="Erase and Write in one operation" name="VAL_0x00" value="0x00"/>
-        <value caption="Erase Only" name="VAL_0x01" value="0x01"/>
-        <value caption="Write Only" name="VAL_0x02" value="0x02"/>
+      <value-group name="EEP_MODE">
+        <value caption="Erase and Write in one operation" name="ERASE_AND_WRITE_IN_ONE_OPERATION" value="0x00"/>
+        <value caption="Erase Only" name="ERASE_ONLY" value="0x01"/>
+        <value caption="Write Only" name="WRITE_ONLY" value="0x02"/>
       </value-group>
     </module>
     <module caption="JTAG Interface" name="JTAG">
@@ -1183,10 +1184,10 @@
         </register>
       </register-group>
       <value-group caption="Interrupt Sense Control" name="INTERRUPT_SENSE_CONTROL">
-        <value caption="Low Level of INTX" name="VAL_0x00" value="0x00"/>
-        <value caption="Any Logical Change of INTX" name="VAL_0x01" value="0x01"/>
-        <value caption="Falling Edge of INTX" name="VAL_0x02" value="0x02"/>
-        <value caption="Rising Edge of INTX" name="VAL_0x03" value="0x03"/>
+        <value caption="Low Level of INTX" name="LOW_LEVEL_OF_INTX" value="0x00"/>
+        <value caption="Any Logical Change of INTX" name="ANY_LOGICAL_CHANGE_OF_INTX" value="0x01"/>
+        <value caption="Falling Edge of INTX" name="FALLING_EDGE_OF_INTX" value="0x02"/>
+        <value caption="Rising Edge of INTX" name="RISING_EDGE_OF_INTX" value="0x03"/>
       </value-group>
     </module>
     <module caption="Analog-to-Digital Converter" name="ADC">
@@ -1206,38 +1207,38 @@
           <bitfield caption="ADC  Prescaler Select Bits" mask="0x07" name="ADPS" values="ANALOG_ADC_PRESCALER"/>
         </register>
         <register caption="The ADC Control and Status register B" name="ADCSRB" offset="0x7B" size="1">
-          <bitfield caption="" mask="0x40" name="ACME"/>
+          <bitfield mask="0x40" name="ACME"/>
           <bitfield caption="Analog Channel and Gain Selection Bits" mask="0x08" name="MUX5"/>
           <bitfield caption="ADC Auto Trigger Source bits" mask="0x07" name="ADTS" values="ANALOG_ADC_AUTO_TRIGGER"/>
         </register>
         <register caption="Digital Input Disable Register" name="DIDR2" offset="0x7D" size="1">
-          <bitfield caption="" mask="0x80" name="ADC15D"/>
-          <bitfield caption="" mask="0x40" name="ADC14D"/>
-          <bitfield caption="" mask="0x20" name="ADC13D"/>
-          <bitfield caption="" mask="0x10" name="ADC12D"/>
-          <bitfield caption="" mask="0x08" name="ADC11D"/>
-          <bitfield caption="" mask="0x04" name="ADC10D"/>
-          <bitfield caption="" mask="0x02" name="ADC9D"/>
-          <bitfield caption="" mask="0x01" name="ADC8D"/>
+          <bitfield mask="0x80" name="ADC15D"/>
+          <bitfield mask="0x40" name="ADC14D"/>
+          <bitfield mask="0x20" name="ADC13D"/>
+          <bitfield mask="0x10" name="ADC12D"/>
+          <bitfield mask="0x08" name="ADC11D"/>
+          <bitfield mask="0x04" name="ADC10D"/>
+          <bitfield mask="0x02" name="ADC9D"/>
+          <bitfield mask="0x01" name="ADC8D"/>
         </register>
         <register caption="Digital Input Disable Register" name="DIDR0" offset="0x7E" size="1">
-          <bitfield caption="" mask="0x80" name="ADC7D"/>
-          <bitfield caption="" mask="0x40" name="ADC6D"/>
-          <bitfield caption="" mask="0x20" name="ADC5D"/>
-          <bitfield caption="" mask="0x10" name="ADC4D"/>
-          <bitfield caption="" mask="0x08" name="ADC3D"/>
-          <bitfield caption="" mask="0x04" name="ADC2D"/>
-          <bitfield caption="" mask="0x02" name="ADC1D"/>
-          <bitfield caption="" mask="0x01" name="ADC0D"/>
+          <bitfield mask="0x80" name="ADC7D"/>
+          <bitfield mask="0x40" name="ADC6D"/>
+          <bitfield mask="0x20" name="ADC5D"/>
+          <bitfield mask="0x10" name="ADC4D"/>
+          <bitfield mask="0x08" name="ADC3D"/>
+          <bitfield mask="0x04" name="ADC2D"/>
+          <bitfield mask="0x02" name="ADC1D"/>
+          <bitfield mask="0x01" name="ADC0D"/>
         </register>
       </register-group>
-      <value-group caption="" name="ANALOG_ADC_V_REF6">
-        <value caption="AREF, Internal Vref turned off" name="VAL_0x00" value="0x00"/>
-        <value caption="AVCC with external capacitor at AREF pin" name="VAL_0x01" value="0x01"/>
-        <value caption="Internal 1.1V Voltage Reference with external capacitor at AREF pin" name="VAL_0x02" value="0x02"/>
-        <value caption="Internal 2.56V Voltage Reference with external capacitor at AREF pin" name="VAL_0x03" value="0x03"/>
+      <value-group name="ANALOG_ADC_V_REF6">
+        <value caption="AREF, Internal Vref turned off" name="AREF_INTERNAL_VREF_TURNED_OFF" value="0x00"/>
+        <value caption="AVCC with external capacitor at AREF pin" name="AVCC_WITH_EXTERNAL_CAPACITOR_AT_AREF_PIN" value="0x01"/>
+        <value caption="Internal 1.1V Voltage Reference with external capacitor at AREF pin" name="INTERNAL_1_1V_VOLTAGE_REFERENCE_WITH_EXTERNAL_CAPACITOR_AT_AREF_PIN" value="0x02"/>
+        <value caption="Internal 2.56V Voltage Reference with external capacitor at AREF pin" name="INTERNAL_2_56V_VOLTAGE_REFERENCE_WITH_EXTERNAL_CAPACITOR_AT_AREF_PIN" value="0x03"/>
       </value-group>
-      <value-group caption="" name="ADC_MUX_DIFF6">
+      <value-group name="ADC_MUX_DIFF6">
         <value caption="ADC Single Ended Input pin 0" name="ADC0" value="0x00"/>
         <value caption="ADC Single Ended Input pin 1" name="ADC1" value="0x01"/>
         <value caption="ADC Single Ended Input pin 2" name="ADC2" value="0x02"/>
@@ -1301,25 +1302,25 @@
         <value caption="ADC Differential Inputs Postive pin 12 Negative pin 10 1x Gain" name="ADC12_ADC10_1X" value="0x3C"/>
         <value caption="ADC Differential Inputs Postive pin 13 Negative pin 10 1x Gain" name="ADC13_ADC10_1X" value="0x3D"/>
       </value-group>  
-      <value-group caption="" name="ANALOG_ADC_PRESCALER">
-        <value caption="2" name="VAL_0x00" value="0x00"/>
-        <value caption="2" name="VAL_0x01" value="0x01"/>
-        <value caption="4" name="VAL_0x02" value="0x02"/>
-        <value caption="8" name="VAL_0x03" value="0x03"/>
-        <value caption="16" name="VAL_0x04" value="0x04"/>
-        <value caption="32" name="VAL_0x05" value="0x05"/>
-        <value caption="64" name="VAL_0x06" value="0x06"/>
-        <value caption="128" name="VAL_0x07" value="0x07"/>
+      <value-group name="ANALOG_ADC_PRESCALER">
+        <value caption="2" name="2" value="0x00"/>
+        <value caption="2" name="2" value="0x01"/>
+        <value caption="4" name="4" value="0x02"/>
+        <value caption="8" name="8" value="0x03"/>
+        <value caption="16" name="16" value="0x04"/>
+        <value caption="32" name="32" value="0x05"/>
+        <value caption="64" name="64" value="0x06"/>
+        <value caption="128" name="128" value="0x07"/>
       </value-group>
-      <value-group caption="" name="ANALOG_ADC_AUTO_TRIGGER">
-        <value caption="Free Running mode" name="VAL_0x00" value="0x00"/>
-        <value caption="Analog Comparator" name="VAL_0x01" value="0x01"/>
-        <value caption="External Interrupt Request 0" name="VAL_0x02" value="0x02"/>
-        <value caption="Timer/Counter0 Compare Match A" name="VAL_0x03" value="0x03"/>
-        <value caption="Timer/Counter0 Overflow" name="VAL_0x04" value="0x04"/>
-        <value caption="Timer/Counter1 Compare Match B" name="VAL_0x05" value="0x05"/>
-        <value caption="Timer/Counter1 Overflow" name="VAL_0x06" value="0x06"/>
-        <value caption="Timer/Counter1 Capture Event" name="VAL_0x07" value="0x07"/>
+      <value-group name="ANALOG_ADC_AUTO_TRIGGER">
+        <value caption="Free Running mode" name="FREE_RUNNING_MODE" value="0x00"/>
+        <value caption="Analog Comparator" name="ANALOG_COMPARATOR" value="0x01"/>
+        <value caption="External Interrupt Request 0" name="EXTERNAL_INTERRUPT_REQUEST_0" value="0x02"/>
+        <value caption="Timer/Counter0 Compare Match A" name="TIMER_COUNTER0_COMPARE_MATCH_A" value="0x03"/>
+        <value caption="Timer/Counter0 Overflow" name="TIMER_COUNTER0_OVERFLOW" value="0x04"/>
+        <value caption="Timer/Counter1 Compare Match B" name="TIMER_COUNTER1_COMPARE_MATCH_B" value="0x05"/>
+        <value caption="Timer/Counter1 Overflow" name="TIMER_COUNTER1_OVERFLOW" value="0x06"/>
+        <value caption="Timer/Counter1 Capture Event" name="TIMER_COUNTER1_CAPTURE_EVENT" value="0x07"/>
       </value-group>
     </module>
     <module caption="Bootloader" name="BOOT_LOAD">
@@ -1375,9 +1376,9 @@
         <register caption="Oscillator Calibration Value" name="OSCCAL" offset="0x66" size="1" mask="0xFF">
           <bitfield caption="Oscillator Calibration " mask="0xFF" name="OSCCAL"/>
         </register>
-        <register caption="" name="CLKPR" offset="0x61" size="1">
-          <bitfield caption="" mask="0x80" name="CLKPCE"/>
-          <bitfield caption="" mask="0x0F" name="CLKPS" values="CPU_CLK_PRESCALE_4_BITS_SMALL"/>
+        <register name="CLKPR" offset="0x61" size="1">
+          <bitfield mask="0x80" name="CLKPCE"/>
+          <bitfield mask="0x0F" name="CLKPS" values="CPU_CLK_PRESCALE_4_BITS_SMALL"/>
         </register>
         <register caption="Sleep Mode Control Register" name="SMCR" offset="0x53" size="1">
           <bitfield caption="Sleep Mode Select bits" mask="0x0E" name="SM" values="CPU_SLEEP_MODE_3BITS"/>
@@ -1418,44 +1419,44 @@
           <bitfield caption="Power Reduction ADC" mask="0x01" name="PRADC"/>
         </register>
       </register-group>
-      <value-group caption="" name="CPU_SECTOR_LIMITS2">
-        <value caption="LS = N/A, US = 0x1100 - 0xFFFF" name="VAL_0x00" value="0x00"/>
-        <value caption="LS = 0x2200 - 0x1FFF, US = 0x2000 - 0xFFFF" name="VAL_0x01" value="0x01"/>
-        <value caption="LS = 0x2200 - 0x3FFF, US = 0x4000 - 0xFFFF" name="VAL_0x02" value="0x02"/>
-        <value caption="LS = 0x2200 - 0x5FFF, US = 0x6000 - 0xFFFF" name="VAL_0x03" value="0x03"/>
-        <value caption="LS = 0x2200 - 0x7FFF, US = 0x8000 - 0xFFFF" name="VAL_0x04" value="0x04"/>
-        <value caption="LS = 0x2200 - 0x9FFF, US = 0xA000 - 0xFFFF" name="VAL_0x05" value="0x05"/>
-        <value caption="LS = 0x2200 - 0xBFFF, US = 0xC000 - 0xFFFF" name="VAL_0x06" value="0x06"/>
-        <value caption="LS = 0x2200 - 0xDFFF, US = 0xE000 - 0xFFFF" name="VAL_0x07" value="0x07"/>
+      <value-group name="CPU_SECTOR_LIMITS2">
+        <value caption="LS = N/A, US = 0x1100 - 0xFFFF" name="LS_N_A_US_0X1100_0XFFFF" value="0x00"/>
+        <value caption="LS = 0x2200 - 0x1FFF, US = 0x2000 - 0xFFFF" name="LS_0X2200_0X1FFF_US_0X2000_0XFFFF" value="0x01"/>
+        <value caption="LS = 0x2200 - 0x3FFF, US = 0x4000 - 0xFFFF" name="LS_0X2200_0X3FFF_US_0X4000_0XFFFF" value="0x02"/>
+        <value caption="LS = 0x2200 - 0x5FFF, US = 0x6000 - 0xFFFF" name="LS_0X2200_0X5FFF_US_0X6000_0XFFFF" value="0x03"/>
+        <value caption="LS = 0x2200 - 0x7FFF, US = 0x8000 - 0xFFFF" name="LS_0X2200_0X7FFF_US_0X8000_0XFFFF" value="0x04"/>
+        <value caption="LS = 0x2200 - 0x9FFF, US = 0xA000 - 0xFFFF" name="LS_0X2200_0X9FFF_US_0XA000_0XFFFF" value="0x05"/>
+        <value caption="LS = 0x2200 - 0xBFFF, US = 0xC000 - 0xFFFF" name="LS_0X2200_0XBFFF_US_0XC000_0XFFFF" value="0x06"/>
+        <value caption="LS = 0x2200 - 0xDFFF, US = 0xE000 - 0xFFFF" name="LS_0X2200_0XDFFF_US_0XE000_0XFFFF" value="0x07"/>
       </value-group>
-      <value-group caption="" name="CPU_WAIT_STATES">
-        <value caption="No wait-states" name="VAL_0x00" value="0x00"/>
-        <value caption="Wait one cycle during read/write strobe" name="VAL_0x01" value="0x01"/>
-        <value caption="Wait two cycles during read/write strobe" name="VAL_0x02" value="0x02"/>
-        <value caption="Wait two cycles during read/write and wait one cycle before driving out new address" name="VAL_0x03" value="0x03"/>
+      <value-group name="CPU_WAIT_STATES">
+        <value caption="No wait-states" name="NO_WAIT_STATES" value="0x00"/>
+        <value caption="Wait one cycle during read/write strobe" name="WAIT_ONE_CYCLE_DURING_READ_WRITE_STROBE" value="0x01"/>
+        <value caption="Wait two cycles during read/write strobe" name="WAIT_TWO_CYCLES_DURING_READ_WRITE_STROBE" value="0x02"/>
+        <value caption="Wait two cycles during read/write and wait one cycle before driving out new address" name="WAIT_TWO_CYCLES_DURING_READ_WRITE_AND_WAIT_ONE_CYCLE_BEFORE_DRIVING_OUT_NEW_ADDRESS" value="0x03"/>
       </value-group>
-      <value-group caption="" name="CPU_PIN_RELEASE">
-        <value caption="None" name="VAL_0x00" value="0x00"/>
-        <value caption="Px7" name="VAL_0x01" value="0x01"/>
-        <value caption="Px7-Px6" name="VAL_0x02" value="0x02"/>
-        <value caption="Px7-Px5" name="VAL_0x03" value="0x03"/>
-        <value caption="Px7-Px4" name="VAL_0x04" value="0x04"/>
-        <value caption="Px7-Px3" name="VAL_0x05" value="0x05"/>
-        <value caption="Px7-Px2" name="VAL_0x06" value="0x06"/>
-        <value caption="Full Port X" name="VAL_0x07" value="0x07"/>
+      <value-group name="CPU_PIN_RELEASE">
+        <value caption="None" name="NONE" value="0x00"/>
+        <value caption="Px7" name="PX7" value="0x01"/>
+        <value caption="Px7-Px6" name="PX7_PX6" value="0x02"/>
+        <value caption="Px7-Px5" name="PX7_PX5" value="0x03"/>
+        <value caption="Px7-Px4" name="PX7_PX4" value="0x04"/>
+        <value caption="Px7-Px3" name="PX7_PX3" value="0x05"/>
+        <value caption="Px7-Px2" name="PX7_PX2" value="0x06"/>
+        <value caption="Full Port X" name="FULL_PORT_X" value="0x07"/>
       </value-group>
-      <value-group caption="" name="CPU_CLK_PRESCALE_4_BITS_SMALL">
-        <value caption="1" name="VAL_0x00" value="0x00"/>
-        <value caption="2" name="VAL_0x01" value="0x01"/>
-        <value caption="4" name="VAL_0x02" value="0x02"/>
-        <value caption="8" name="VAL_0x03" value="0x03"/>
-        <value caption="16" name="VAL_0x04" value="0x04"/>
-        <value caption="32" name="VAL_0x05" value="0x05"/>
-        <value caption="64" name="VAL_0x06" value="0x06"/>
-        <value caption="128" name="VAL_0x07" value="0x07"/>
-        <value caption="256" name="VAL_0x08" value="0x08"/>
+      <value-group name="CPU_CLK_PRESCALE_4_BITS_SMALL">
+        <value caption="1" name="1" value="0x00"/>
+        <value caption="2" name="2" value="0x01"/>
+        <value caption="4" name="4" value="0x02"/>
+        <value caption="8" name="8" value="0x03"/>
+        <value caption="16" name="16" value="0x04"/>
+        <value caption="32" name="32" value="0x05"/>
+        <value caption="64" name="64" value="0x06"/>
+        <value caption="128" name="128" value="0x07"/>
+        <value caption="256" name="256" value="0x08"/>
       </value-group>
-      <value-group caption="" name="CPU_SLEEP_MODE_3BITS">
+      <value-group name="CPU_SLEEP_MODE_3BITS">
         <value caption="Idle" name="IDLE" value="0x00"/>
         <value caption="ADC Noise Reduction (If Available)" name="ADC" value="0x01"/>
         <value caption="Power Down" name="PDOWN" value="0x02"/>

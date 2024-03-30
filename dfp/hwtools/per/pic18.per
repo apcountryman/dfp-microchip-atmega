@@ -138,7 +138,13 @@
       <per:sfr key="TBLPTRU" sfr="TBLPTRU" critical="false"/>
       <per:sfr key="TBLPTRH" sfr="TBLPTRH" critical="false"/>
       <per:sfr key="TBLPTRL" sfr="TBLPTRL" critical="false"/>
-      <per:periphClassDesc class="NVM.NonVolatileMemoryController"/>
+      <per:cfg key="PROGMEM0_WRITE_PROTECT" cfg="CONFIG4L" field="WRT0"/>
+      <per:cfg key="PROGMEM1_WRITE_PROTECT" cfg="CONFIG4L" field="WRT1"/>
+      <per:cfg key="PROGMEM2_WRITE_PROTECT" cfg="CONFIG4L" field="WRT2" optional="true"/>
+      <per:cfg key="PROGMEM3_WRITE_PROTECT" cfg="CONFIG4L" field="WRT3" optional="true"/>
+      <per:cfg key="EEDATA_WRITE_PROTECT" cfg="CONFIG4H" field="WRTD"/>
+      <per:cfg key="CONFIG_WRITE_PROTECT" cfg="CONFIG4H" field="WRTC"/>
+      <per:periphClassDesc class="NVM.NVMControllerQ10"/>
     </per:periphConfig>
     <per:periphConfig>
       <per:sfr key="EECON1" sfr="EECON1|NVMCON1"/>
@@ -1089,9 +1095,42 @@
   </per:peripheral>
   <per:peripheral name="COMP@">
     <per:meta char="@" val="1|2"/>
-    <per:periphConfig><per:sfr key="CMPOUTPUT" sfr="CMOUT" observable="false"/><per:sfr key="CMP1output" sfr="CMOUT" field="MC1OUT"/><per:sfr key="CMP2output" sfr="CMOUT" field="MC2OUT"/><per:sfr key="CMP1CON0" sfr="CM1CON0"/><per:sfr key="CMP1enable" sfr="CM1CON0" field="EN"/><per:sfr key="CMP1out" sfr="CM1CON0" field="OUT"/><per:sfr key="CMP1polar" sfr="CM1CON0" field="POL"/><per:sfr key="CMP1CON1" sfr="CM1CON1" observable="false"/><per:sfr key="CMP1interrPosEdge" sfr="CM1CON1" field="INTP"/><per:sfr key="CMP1interrNegEdge" sfr="CM1CON1" field="INTN"/><per:sfr key="CMP2CON0" sfr="CM2CON0"/><per:sfr key="CMP2enable" sfr="CM2CON0" field="EN"/><per:sfr key="CMP2out" sfr="CM2CON0" field="OUT"/><per:sfr key="CMP2polar" sfr="CM2CON0" field="POL"/><per:sfr key="CMP2CON1" sfr="CM2CON1" observable="false"/><per:sfr key="CMP2interrPosEdge" sfr="CM2CON1" field="INTP"/><per:sfr key="CMP2interrNegEdge" sfr="CM2CON1" field="INTN"/><per:sfr key="CMP1negChannel" sfr="CM1NCH"/><per:sfr key="CMP1negChannelSel" sfr="CM1NCH" field="NCH"/><per:sfr key="CMP1posChannel" sfr="CM1PCH"/><per:sfr key="CMP1posChannelSel" sfr="CM1PCH" field="PCH"/><per:sfr key="CMP2negChannel" sfr="CM2NCH"/><per:sfr key="CMP2negChannelSel" sfr="CM2NCH" field="NCH"/><per:sfr key="CMP2posChannel" sfr="CM2PCH"/><per:sfr key="CMP2posChannelSel" sfr="CM2PCH" field="PCH"/><per:sfr key="CMP1InterruptFlag" sfr="PIR1" field="C1IF" observable="false"/><per:sfr key="CMP2InterruptFlag" sfr="PIR5" field="C2IF" observable="false"/>/&gt;
-                                                                                                            
-            <per:pin key="CMP1neg#" pinID="C1IN#-" metaf="#" metar="0|1|2|3" optional="true"/><per:pin key="CMP2neg#" pinID="C2IN#-" metaf="#" metar="0|1|2|3" optional="true"/><per:pin key="CMP1pos0" pinID="C1IN0\+" optional="true"/><per:pin key="CMP2pos0" pinID="C2IN0\+" optional="true"/><per:pin key="AVSS" pinID="AVSS" critical="false"/><per:initParam param="@"/><per:periphClassDesc class="CMPpic18f16q41.Comparator"/></per:periphConfig>
+    <per:periphConfig>
+      <per:sfr key="CMPOUTPUT" sfr="CMOUT" observable="false"/>
+      <per:sfr key="CMP1output" sfr="CMOUT" field="MC1OUT"/>
+      <per:sfr key="CMP2output" sfr="CMOUT" field="MC2OUT"/>
+      <per:sfr key="CMP1CON0" sfr="CM1CON0"/>
+      <per:sfr key="CMP1enable" sfr="CM1CON0" field="EN"/>
+      <per:sfr key="CMP1out" sfr="CM1CON0" field="OUT"/>
+      <per:sfr key="CMP1polar" sfr="CM1CON0" field="POL"/>
+      <per:sfr key="CMP1CON1" sfr="CM1CON1" observable="false"/>
+      <per:sfr key="CMP1interrPosEdge" sfr="CM1CON1" field="INTP"/>
+      <per:sfr key="CMP1interrNegEdge" sfr="CM1CON1" field="INTN"/>
+      <per:sfr key="CMP2CON0" sfr="CM2CON0"/>
+      <per:sfr key="CMP2enable" sfr="CM2CON0" field="EN"/>
+      <per:sfr key="CMP2out" sfr="CM2CON0" field="OUT"/>
+      <per:sfr key="CMP2polar" sfr="CM2CON0" field="POL"/>
+      <per:sfr key="CMP2CON1" sfr="CM2CON1" observable="false"/>
+      <per:sfr key="CMP2interrPosEdge" sfr="CM2CON1" field="INTP"/>
+      <per:sfr key="CMP2interrNegEdge" sfr="CM2CON1" field="INTN"/>
+      <per:sfr key="CMP1negChannel" sfr="CM1NCH"/>
+      <per:sfr key="CMP1negChannelSel" sfr="CM1NCH" field="NCH"/>
+      <per:sfr key="CMP1posChannel" sfr="CM1PCH"/>
+      <per:sfr key="CMP1posChannelSel" sfr="CM1PCH" field="PCH"/>
+      <per:sfr key="CMP2negChannel" sfr="CM2NCH"/>
+      <per:sfr key="CMP2negChannelSel" sfr="CM2NCH" field="NCH"/>
+      <per:sfr key="CMP2posChannel" sfr="CM2PCH"/>
+      <per:sfr key="CMP2posChannelSel" sfr="CM2PCH" field="PCH"/>
+      <per:sfr key="CMP1InterruptFlag" sfr="PIR1" field="C1IF" observable="false"/>
+      <per:sfr key="CMP2InterruptFlag" sfr="PIR5" field="C2IF" observable="false"/>
+      <per:pin key="CMP1neg#" pinID="C1IN#-" metaf="#" metar="0|1|2|3" optional="true"/>
+      <per:pin key="CMP2neg#" pinID="C2IN#-" metaf="#" metar="0|1|2|3" optional="true"/>
+      <per:pin key="CMP1pos0" pinID="C1IN0\+" optional="true"/>
+      <per:pin key="CMP2pos0" pinID="C2IN0\+" optional="true"/>
+      <per:pin key="AVSS" pinID="AVSS" critical="false"/>
+      <per:initParam param="@"/>
+      <per:periphClassDesc class="CMPpic18f16q41.Comparator"/>
+    </per:periphConfig>
   </per:peripheral>
   <per:peripheral name="ECCP1">
     <per:periphConfig>

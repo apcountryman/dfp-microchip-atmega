@@ -816,6 +816,7 @@
               <edc:SFRFieldDef edc:cname="CLKSEL" edc:desc="Clock Select" edc:nzwidth="0x2">
                 <edc:SFRFieldSemantic edc:cname="INT32K" edc:desc="Internal 32kHz OSC" edc:when="(field &amp; 0x3) == 0x00"/>
                 <edc:SFRFieldSemantic edc:cname="INT1K" edc:desc="Internal 1kHz OSC" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="TOSC32K" edc:desc="32KHz Crystal OSC" edc:when="(field &amp; 0x3) == 0x02"/>
                 <edc:SFRFieldSemantic edc:cname="EXTCLK" edc:desc="External Clock" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
@@ -3558,12 +3559,10 @@
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
-        <edc:SFRDef edc:_addr="0x80B" edc:access="n------n" edc:cname="DBGCTRL" edc:impl="0x81" edc:mclr="00000000" edc:nzwidth="0x8" edc:por="00000000" ltx:memberofperipheral="USART0">
+        <edc:SFRDef edc:_addr="0x80B" edc:access="-------n" edc:cname="DBGCTRL" edc:impl="0x1" edc:mclr="00000000" edc:nzwidth="0x8" edc:por="00000000" ltx:memberofperipheral="USART0">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="USART0">
               <edc:SFRFieldDef edc:cname="DBGRUN" edc:desc="Debug Run" edc:nzwidth="0x1"/>
-              <edc:AdjustPoint edc:offset="0x6"/>
-              <edc:SFRFieldDef edc:cname="ABMBP" edc:desc="Autobaud majority voter bypass" edc:nzwidth="0x1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -3686,12 +3685,10 @@
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
-        <edc:SFRDef edc:_addr="0x82B" edc:access="n------n" edc:cname="DBGCTRL" edc:impl="0x81" edc:mclr="00000000" edc:nzwidth="0x8" edc:por="00000000" ltx:memberofperipheral="USART1">
+        <edc:SFRDef edc:_addr="0x82B" edc:access="-------n" edc:cname="DBGCTRL" edc:impl="0x1" edc:mclr="00000000" edc:nzwidth="0x8" edc:por="00000000" ltx:memberofperipheral="USART1">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="USART1">
               <edc:SFRFieldDef edc:cname="DBGRUN" edc:desc="Debug Run" edc:nzwidth="0x1"/>
-              <edc:AdjustPoint edc:offset="0x6"/>
-              <edc:SFRFieldDef edc:cname="ABMBP" edc:desc="Autobaud majority voter bypass" edc:nzwidth="0x1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -3814,12 +3811,10 @@
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
-        <edc:SFRDef edc:_addr="0x84B" edc:access="n------n" edc:cname="DBGCTRL" edc:impl="0x81" edc:mclr="00000000" edc:nzwidth="0x8" edc:por="00000000" ltx:memberofperipheral="USART2">
+        <edc:SFRDef edc:_addr="0x84B" edc:access="-------n" edc:cname="DBGCTRL" edc:impl="0x1" edc:mclr="00000000" edc:nzwidth="0x8" edc:por="00000000" ltx:memberofperipheral="USART2">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="USART2">
               <edc:SFRFieldDef edc:cname="DBGRUN" edc:desc="Debug Run" edc:nzwidth="0x1"/>
-              <edc:AdjustPoint edc:offset="0x6"/>
-              <edc:SFRFieldDef edc:cname="ABMBP" edc:desc="Autobaud majority voter bypass" edc:nzwidth="0x1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -3942,12 +3937,10 @@
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
-        <edc:SFRDef edc:_addr="0x86B" edc:access="n------n" edc:cname="DBGCTRL" edc:impl="0x81" edc:mclr="00000000" edc:nzwidth="0x8" edc:por="00000000" ltx:memberofperipheral="USART3">
+        <edc:SFRDef edc:_addr="0x86B" edc:access="-------n" edc:cname="DBGCTRL" edc:impl="0x1" edc:mclr="00000000" edc:nzwidth="0x8" edc:por="00000000" ltx:memberofperipheral="USART3">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="USART3">
               <edc:SFRFieldDef edc:cname="DBGRUN" edc:desc="Debug Run" edc:nzwidth="0x1"/>
-              <edc:AdjustPoint edc:offset="0x6"/>
-              <edc:SFRFieldDef edc:cname="ABMBP" edc:desc="Autobaud majority voter bypass" edc:nzwidth="0x1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>

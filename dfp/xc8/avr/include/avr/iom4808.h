@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (C) 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  *
  * This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
@@ -3001,6 +3001,25 @@ IO Module Instances. Mapped to memory.
 #define CCL_INSEL23_bm  (1<<3)  /* LUT Input 2 Source Selection bit 3 mask. */
 #define CCL_INSEL23_bp  3  /* LUT Input 2 Source Selection bit 3 position. */
 
+/* CCL.TRUTH0  bit masks and bit positions */
+#define CCL_TRUTH_gm  0xFF  /* Truth Table group mask. */
+#define CCL_TRUTH_gp  0  /* Truth Table group position. */
+#define CCL_TRUTH0_bm  (1<<0)  /* Truth Table bit 0 mask. */
+#define CCL_TRUTH0_bp  0  /* Truth Table bit 0 position. */
+#define CCL_TRUTH1_bm  (1<<1)  /* Truth Table bit 1 mask. */
+#define CCL_TRUTH1_bp  1  /* Truth Table bit 1 position. */
+#define CCL_TRUTH2_bm  (1<<2)  /* Truth Table bit 2 mask. */
+#define CCL_TRUTH2_bp  2  /* Truth Table bit 2 position. */
+#define CCL_TRUTH3_bm  (1<<3)  /* Truth Table bit 3 mask. */
+#define CCL_TRUTH3_bp  3  /* Truth Table bit 3 position. */
+#define CCL_TRUTH4_bm  (1<<4)  /* Truth Table bit 4 mask. */
+#define CCL_TRUTH4_bp  4  /* Truth Table bit 4 position. */
+#define CCL_TRUTH5_bm  (1<<5)  /* Truth Table bit 5 mask. */
+#define CCL_TRUTH5_bp  5  /* Truth Table bit 5 position. */
+#define CCL_TRUTH6_bm  (1<<6)  /* Truth Table bit 6 mask. */
+#define CCL_TRUTH6_bp  6  /* Truth Table bit 6 position. */
+#define CCL_TRUTH7_bm  (1<<7)  /* Truth Table bit 7 mask. */
+#define CCL_TRUTH7_bp  7  /* Truth Table bit 7 position. */
 
 /* CCL.LUT1CTRLA  bit masks and bit positions */
 /* CCL_ENABLE  is already defined. */
@@ -3016,6 +3035,8 @@ IO Module Instances. Mapped to memory.
 /* CCL.LUT1CTRLC  bit masks and bit positions */
 /* CCL_INSEL2  is already defined. */
 
+/* CCL.TRUTH1  bit masks and bit positions */
+/* CCL_TRUTH  is already defined. */
 
 /* CCL.LUT2CTRLA  bit masks and bit positions */
 /* CCL_ENABLE  is already defined. */
@@ -3031,6 +3052,8 @@ IO Module Instances. Mapped to memory.
 /* CCL.LUT2CTRLC  bit masks and bit positions */
 /* CCL_INSEL2  is already defined. */
 
+/* CCL.TRUTH2  bit masks and bit positions */
+/* CCL_TRUTH  is already defined. */
 
 /* CCL.LUT3CTRLA  bit masks and bit positions */
 /* CCL_ENABLE  is already defined. */
@@ -3046,6 +3069,8 @@ IO Module Instances. Mapped to memory.
 /* CCL.LUT3CTRLC  bit masks and bit positions */
 /* CCL_INSEL2  is already defined. */
 
+/* CCL.TRUTH3  bit masks and bit positions */
+/* CCL_TRUTH  is already defined. */
 
 /* CLKCTRL - Clock controller */
 /* CLKCTRL.MCLKCTRLA  bit masks and bit positions */
@@ -4470,8 +4495,6 @@ IO Module Instances. Mapped to memory.
 /* USART.DBGCTRL  bit masks and bit positions */
 #define USART_DBGRUN_bm  0x01  /* Debug Run bit mask. */
 #define USART_DBGRUN_bp  0  /* Debug Run bit position. */
-#define USART_ABMBP_bm  0x80  /* Autobaud majority voter bypass bit mask. */
-#define USART_ABMBP_bp  7  /* Autobaud majority voter bypass bit position. */
 
 /* USART.EVCTRL  bit masks and bit positions */
 #define USART_IREI_bm  0x01  /* IrDA Event Input Enable bit mask. */

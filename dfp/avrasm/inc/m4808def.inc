@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m4808def.inc
 ;* Title             : Register/Bit Definitions for the ATmega4808
-;* Created           : 2020-12-01 09:15
+;* Created           : 2021-07-13 10:40
 ;* Version           : 1.00
 ;* Support e-mail    : avr@atmel.com
 ;* Target MCU        : ATmega4808
@@ -3113,6 +3113,7 @@
 ; Clock Select select
 .equ RTC_CLKSEL_INT32K_gc = (0x00<<0)    ; Internal 32kHz OSC
 .equ RTC_CLKSEL_INT1K_gc = (0x01<<0)     ; Internal 1kHz OSC
+.equ RTC_CLKSEL_TOSC32K_gc = (0x02<<0)   ; 32KHz Crystal OSC
 .equ RTC_CLKSEL_EXTCLK_gc = (0x03<<0)    ; External Clock
 
 ; Prescaling Factor select
@@ -3828,8 +3829,6 @@
 .equ USART_ABW1_bp = 7                   ; Auto Baud Window bit 1 position
 
 ; USART_DBGCTRL masks
-.equ USART_ABMBP_bm = 0x80               ; Autobaud majority voter bypass bit mask
-.equ USART_ABMBP_bp = 7                  ; Autobaud majority voter bypass bit position
 .equ USART_DBGRUN_bm = 0x01              ; Debug Run bit mask
 .equ USART_DBGRUN_bp = 0                 ; Debug Run bit position
 

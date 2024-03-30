@@ -526,7 +526,7 @@
 .equ	PGERS	= 1	; Page Erase
 .equ	PGWRT	= 2	; Page Write
 .equ	BLBSET	= 3	; Boot Lock Bit Set
-.equ	RWWSRE	= 4	; Read While Write secion read enable
+.equ	RWWSRE	= 4	; Read While Write section read enable
 .equ	ASRE	= RWWSRE	; For compatibility
 .equ	RWWSB	= 6	; Read While Write Section Busy
 .equ	ASB	= RWWSB	; For compatibility

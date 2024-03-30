@@ -446,7 +446,7 @@
   <per:peripheral name="TCB@">
     <per:meta char="@" val="0|1|2|3|4"/>
     <per:periphConfig>
-      <per:pin key="WO" pinID="WO0?B@"/>
+      <per:pin key="WO" pinID="WO0?B@" optional="true"/>
       <per:sfr key="ENABLE" sfr="CTRLA" periph="TCB@" field="ENABLE"/>
       <per:sfr key="CLKSEL" sfr="CTRLA" periph="TCB@" field="CLKSEL"/>
       <per:sfr key="SYNCUPD" sfr="CTRLA" periph="TCB@" field="SYNCUPD"/>
@@ -1233,7 +1233,7 @@
       <per:sfr key="WINDOWHIGHVAL" sfr="WINHT" periph="ADC0"/>
       <per:pin key="AIN#" pinID="AIN#" metaf="#" metar="0-15" optional="true" critical="false"/>
       <per:pin key="VDD" pinID="VCC" optional="true" critical="false"/>
-      <per:pin key="GND" pinID="GND1" critical="false"/>
+      <per:pin key="GND" pinID="GND1?" critical="false"/>
       <per:periphClassDesc class="ADC.ADC_ATtiny162x"/>
     </per:periphConfig>
     <per:periphConfig beta="Only implemented for ATmega4809 and ATtiny817-like">
@@ -1596,8 +1596,8 @@
       <per:sfr key="CMPBEN" sfr="FAULTCTRL" field="CMPBEN" periph="TCD0"/>
       <per:sfr key="CMPCEN" sfr="FAULTCTRL" field="CMPCEN" periph="TCD0"/>
       <per:sfr key="CMPDEN" sfr="FAULTCTRL" field="CMPDEN" periph="TCD0"/>
-      <per:pin key="WOA" pinID="WOAD0"/>
-      <per:pin key="WOB" pinID="WOB1?D0"/>
+      <per:pin key="WOA" pinID="WOAD0" optional="true"/>
+      <per:pin key="WOB" pinID="WOB1?D0" optional="true"/>
       <per:pin key="WOC" pinID="WOC2?D0" optional="true"/>
       <per:pin key="WOD" pinID="WOD3?D0" optional="true"/>
       <per:pin key="CLKI" pinID="CLKI|EXTCLK" critical="false"/>

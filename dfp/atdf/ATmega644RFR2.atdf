@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
+<?xml version='1.0' encoding='UTF-8'?>
+<avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
   <variants>
     <variant ordercode="ATmega644RFR2-ZU" package="VQFN48" speedmax="16000000" tempmax="85" tempmin="-40" vccmax="3.6" vccmin="1.8"/>
     <variant ordercode="ATmega644RFR2-ZUR" package="VQFN48" speedmax="16000000" tempmax="85" tempmin="-40" vccmax="3.6" vccmin="1.8"/>
@@ -406,10 +407,10 @@
   <modules>
     <module caption="Fuses" name="FUSE">
       <register-group caption="Fuses" name="FUSE">
-        <register caption="" name="EXTENDED" offset="0x02" size="1" initval="0xFE">
+        <register name="EXTENDED" offset="0x02" size="1" initval="0xFE">
           <bitfield caption="Brown-out Detector trigger level" mask="0x07" name="BODLEVEL" values="ENUM_BODLEVEL"/>
         </register>
-        <register caption="" name="HIGH" offset="0x01" size="1" initval="0x99">
+        <register name="HIGH" offset="0x01" size="1" initval="0x99">
           <bitfield caption="On-Chip Debug Enabled" mask="0x80" name="OCDEN"/>
           <bitfield caption="JTAG Interface Enabled" mask="0x40" name="JTAGEN"/>
           <bitfield caption="Serial program downloading (SPI) enabled" mask="0x20" name="SPIEN"/>
@@ -418,13 +419,13 @@
           <bitfield caption="Select Boot Size" mask="0x06" name="BOOTSZ" values="ENUM_BOOTSZ"/>
           <bitfield caption="Boot Reset vector Enabled" mask="0x01" name="BOOTRST"/>
         </register>
-        <register caption="" name="LOW" offset="0x00" size="1" initval="0x62">
+        <register name="LOW" offset="0x00" size="1" initval="0x62">
           <bitfield caption="Divide clock by 8 internally" mask="0x80" name="CKDIV8"/>
           <bitfield caption="Clock output on PORTE7" mask="0x40" name="CKOUT"/>
           <bitfield caption="Select Clock Source : Start-up time" mask="0x3F" name="CKSEL_SUT" values="ENUM_SUT_CKSEL"/>
         </register>
       </register-group>
-      <value-group caption="" name="ENUM_SUT_CKSEL">
+      <value-group name="ENUM_SUT_CKSEL">
         <value caption="Ext. Clock; Start-up time: 6 CK + 0 ms" name="EXTCLK_6CK_0MS" value="0x00"/>
         <value caption="Ext. Clock; Start-up time: 6 CK + 4.1 ms" name="EXTCLK_6CK_4MS1" value="0x10"/>
         <value caption="Ext. Clock; Start-up time: 6 CK + 65 ms" name="EXTCLK_6CK_65MS" value="0x20"/>
@@ -475,13 +476,13 @@
         <value caption="Tranceiver Oscillator; Start-up time: 16K CK + 4.1 ms" name="TOSC_16KCK_4MS1" value="0x2F"/>
         <value caption="Tranceiver Oscillator; Start-up time: 16K CK + 65 ms" name="TOSC_16KCK_65MS" value="0x3F"/>
       </value-group>
-      <value-group caption="" name="ENUM_BOOTSZ">
+      <value-group name="ENUM_BOOTSZ">
         <value caption="Boot Flash size=512 words start address=$7E00" name="512W_7E00" value="0x03"/>
         <value caption="Boot Flash size=1024 words start address=$7C00" name="1024W_7C00" value="0x02"/>
         <value caption="Boot Flash size=2048 words start address=$7800" name="2048W_7800" value="0x01"/>
         <value caption="Boot Flash size=4096 words start address=$7000" name="4096W_7000" value="0x00"/>
       </value-group>
-      <value-group caption="" name="ENUM_BODLEVEL">
+      <value-group name="ENUM_BODLEVEL">
         <value caption="Brown-out detection disabled" name="DISABLED" value="0x07"/>
         <value caption="Brown-out detection at VCC=1.8 V" name="1V8" value="0x06"/>
         <value caption="Brown-out detection at VCC=1.9 V" name="1V9" value="0x05"/>
@@ -494,24 +495,24 @@
     </module>
     <module caption="Lockbits" name="LOCKBIT">
       <register-group caption="Lockbits" name="LOCKBIT">
-        <register caption="" name="LOCKBIT" offset="0x00" size="1" initval="0xFF">
+        <register name="LOCKBIT" offset="0x00" size="1" initval="0xFF">
           <bitfield caption="Memory Lock" mask="0x03" name="LB" values="ENUM_LB"/>
           <bitfield caption="Boot Loader Protection Mode" mask="0x0C" name="BLB0" values="ENUM_BLB"/>
           <bitfield caption="Boot Loader Protection Mode" mask="0x30" name="BLB1" values="ENUM_BLB2"/>
         </register>
       </register-group>
-      <value-group caption="" name="ENUM_LB">
+      <value-group name="ENUM_LB">
         <value caption="Further programming and verification disabled" name="PROG_VER_DISABLED" value="0x00"/>
         <value caption="Further programming disabled" name="PROG_DISABLED" value="0x02"/>
         <value caption="No memory lock features enabled" name="NO_LOCK" value="0x03"/>
       </value-group>
-      <value-group caption="" name="ENUM_BLB">
+      <value-group name="ENUM_BLB">
         <value caption="LPM and SPM prohibited in Application Section" name="LPM_SPM_DISABLE" value="0x00"/>
         <value caption="LPM prohibited in Application Section" name="LPM_DISABLE" value="0x01"/>
         <value caption="SPM prohibited in Application Section" name="SPM_DISABLE" value="0x02"/>
         <value caption="No lock on SPM and LPM in Application Section" name="NO_LOCK" value="0x03"/>
       </value-group>
-      <value-group caption="" name="ENUM_BLB2">
+      <value-group name="ENUM_BLB2">
         <value caption="LPM and SPM prohibited in Boot Section" name="LPM_SPM_DISABLE" value="0x00"/>
         <value caption="LPM prohibited in Boot Section" name="LPM_DISABLE" value="0x01"/>
         <value caption="SPM prohibited in Boot Section" name="SPM_DISABLE" value="0x02"/>
@@ -537,11 +538,11 @@
           <bitfield caption="AIN0 Digital Input Disable" mask="0x01" name="AIN0D"/>
         </register>
       </register-group>
-      <value-group caption="" name="ANALOG_COMP_INTERRUPT">
-        <value caption="Interrupt on Toggle" name="VAL_0x00" value="0x00"/>
-        <value caption="Reserved" name="VAL_0x01" value="0x01"/>
-        <value caption="Interrupt on Falling Edge" name="VAL_0x02" value="0x02"/>
-        <value caption="Interrupt on Rising Edge" name="VAL_0x03" value="0x03"/>
+      <value-group name="ANALOG_COMP_INTERRUPT">
+        <value caption="Interrupt on Toggle" name="INTERRUPT_ON_TOGGLE" value="0x00"/>
+        <value caption="Reserved" name="RESERVED" value="0x01"/>
+        <value caption="Interrupt on Falling Edge" name="INTERRUPT_ON_FALLING_EDGE" value="0x02"/>
+        <value caption="Interrupt on Rising Edge" name="INTERRUPT_ON_RISING_EDGE" value="0x03"/>
       </value-group>
     </module>
     <module caption="USART" name="USART">
@@ -607,35 +608,35 @@
         </register>
         <register caption="USART1 Baud Rate Register  Bytes" name="UBRR1" offset="0xCC" size="2" mask="0xFFFF"/>
       </register-group>
-      <value-group caption="" name="COMM_USART_MODE_2BIT_MEGARF">
-        <value caption="Asynchronous USART" name="VAL_0x00" value="0x00"/>
-        <value caption="Synchronous USART" name="VAL_0x01" value="0x01"/>
-        <value caption="Reserved" name="VAL_0x02" value="0x02"/>
-        <value caption="Master SPI (MSPIM)" name="VAL_0x03" value="0x03"/>
+      <value-group name="COMM_USART_MODE_2BIT_MEGARF">
+        <value caption="Asynchronous USART" name="ASYNCHRONOUS_USART" value="0x00"/>
+        <value caption="Synchronous USART" name="SYNCHRONOUS_USART" value="0x01"/>
+        <value caption="Reserved" name="RESERVED" value="0x02"/>
+        <value caption="Master SPI (MSPIM)" name="MASTER_SPI_MSPIM" value="0x03"/>
       </value-group>
-      <value-group caption="" name="COMM_UPM_PARITY_MODE">
-        <value caption="Disabled" name="VAL_0x00" value="0x00"/>
-        <value caption="Reserved" name="VAL_0x01" value="0x01"/>
-        <value caption="Enabled, Even Parity" name="VAL_0x02" value="0x02"/>
-        <value caption="Enabled, Odd Parity" name="VAL_0x03" value="0x03"/>
+      <value-group name="COMM_UPM_PARITY_MODE">
+        <value caption="Disabled" name="DISABLED" value="0x00"/>
+        <value caption="Reserved" name="RESERVED" value="0x01"/>
+        <value caption="Enabled, Even Parity" name="ENABLED_EVEN_PARITY" value="0x02"/>
+        <value caption="Enabled, Odd Parity" name="ENABLED_ODD_PARITY" value="0x03"/>
       </value-group>
-      <value-group caption="" name="COMM_STOP_BIT_SEL">
-        <value caption="1-bit" name="VAL_0x00" value="0x00"/>
-        <value caption="2-bit" name="VAL_0x01" value="0x01"/>
+      <value-group name="COMM_STOP_BIT_SEL">
+        <value caption="1-bit" name="1_BIT" value="0x00"/>
+        <value caption="2-bit" name="2_BIT" value="0x01"/>
       </value-group>
-      <value-group caption="" name="USART_CHAR_SIZE_BITF">
-        <value caption="5-bit" name="VAL_0" value="0"/>
-        <value caption="6-bit" name="VAL_1" value="1"/>
-        <value caption="7-bit" name="VAL_2" value="2"/>
-        <value caption="8-bit" name="VAL_3" value="3"/>
-        <value caption="Reserved" name="VAL_4" value="4"/>
-        <value caption="Reserved" name="VAL_5" value="5"/>
-        <value caption="Reserved" name="VAL_6" value="6"/>
-        <value caption="9-bit" name="VAL_7" value="7"/>
+      <value-group name="USART_CHAR_SIZE_BITF">
+        <value caption="5-bit" name="5_BIT" value="0"/>
+        <value caption="6-bit" name="6_BIT" value="1"/>
+        <value caption="7-bit" name="7_BIT" value="2"/>
+        <value caption="8-bit" name="8_BIT" value="3"/>
+        <value caption="Reserved" name="RESERVED" value="4"/>
+        <value caption="Reserved" name="RESERVED" value="5"/>
+        <value caption="Reserved" name="RESERVED" value="6"/>
+        <value caption="9-bit" name="9_BIT" value="7"/>
       </value-group>
-      <value-group caption="" name="USART_CLK_POLARITY_BITF">
-        <value caption="Rising XCKn Edge (Transmitted Data Changed), Falling XCKn Edge (Received Data Sampled)" name="VAL_0" value="0"/>
-        <value caption="Falling XCKn Edge (Transmitted Data Changed), Rising XCKn Edge (Received Data Sampled)" name="VAL_1" value="1"/>
+      <value-group name="USART_CLK_POLARITY_BITF">
+        <value caption="Rising XCKn Edge (Transmitted Data Changed), Falling XCKn Edge (Received Data Sampled)" name="RISING_XCKN_EDGE_TRANSMITTED_DATA_CHANGED_FALLING_XCKN_EDGE_RECEIVED_DATA_SAMPLED" value="0"/>
+        <value caption="Falling XCKn Edge (Transmitted Data Changed), Rising XCKn Edge (Received Data Sampled)" name="FALLING_XCKN_EDGE_TRANSMITTED_DATA_CHANGED_RISING_XCKN_EDGE_RECEIVED_DATA_SAMPLED" value="1"/>
       </value-group>
     </module>
     <module caption="Two Wire Serial Interface" name="TWI">
@@ -666,40 +667,40 @@
           <bitfield caption="TWI General Call Recognition Enable Bit" mask="0x01" name="TWGCE"/>
         </register>
       </register-group>
-      <value-group caption="" name="TWI_STATUS_BITF">
-        <value caption="Bus error due to illegal START or STOP condition." name="VAL_0x00" value="0x00"/>
-        <value caption="A START condition has been transmitted." name="VAL_0x08" value="0x08"/>
-        <value caption="A repeated START condition has been transmitted." name="VAL_0x10" value="0x10"/>
-        <value caption="SLA+W has been transmitted; ACK has been received." name="VAL_0x18" value="0x18"/>
-        <value caption="SLA+W has been transmitted; NOT ACK has been received." name="VAL_0x20" value="0x20"/>
-        <value caption="Data byte has been transmitted; ACK has been received." name="VAL_0x28" value="0x28"/>
-        <value caption="Data byte has been transmitted; NOT ACK has been received." name="VAL_0x30" value="0x30"/>
-        <value caption="Arbitration lost in SLA+W or data bytes (Transmitter); Arbitration lost in SLA+R or NOT ACK bit (Receiver)." name="VAL_0x38" value="0x38"/>
-        <value caption="SLA+R has been transmitted; ACK has been received." name="VAL_0x40" value="0x40"/>
-        <value caption="SLA+R has been transmitted; NOT ACK has been received." name="VAL_0x48" value="0x48"/>
-        <value caption="Data byte has been received; ACK has been returned." name="VAL_0x50" value="0x50"/>
-        <value caption="Data byte has been received; NOT ACK has been returned." name="VAL_0x58" value="0x58"/>
-        <value caption="Own SLA+W has been received; ACK has been returned." name="VAL_0x60" value="0x60"/>
-        <value caption="Arbitration lost in SLA+R/W as Master; own SLA+W has been received; ACK has been returned." name="VAL_0x68" value="0x68"/>
-        <value caption="General call address has been received; ACK has been returned." name="VAL_0x70" value="0x70"/>
-        <value caption="Arbitration lost in SLA+R/W as Master; general call address has been received; ACK has been returned." name="VAL_0x78" value="0x78"/>
-        <value caption="Previously addressed with own SLA+W; data has been received; ACK has been returned." name="VAL_0x80" value="0x80"/>
-        <value caption="Previously addressed with own SLA+W; data has been received; NOT ACK has been returned." name="VAL_0x88" value="0x88"/>
-        <value caption="Previously addressed with general call; data has been received; ACK has been returned." name="VAL_0x90" value="0x90"/>
-        <value caption="Previously addressed with general call; data has been received; NOT ACK has been returned." name="VAL_0x98" value="0x98"/>
-        <value caption="A STOP condition or repeated START condition has been received while still addressed as Slave." name="VAL_0xA0" value="0xA0"/>
-        <value caption="Own SLA+R has been received; ACK has been returned." name="VAL_0xA8" value="0xA8"/>
-        <value caption="Arbitration lost in SLA+R/W as Master; own SLA+R has been received; ACK has been returned." name="VAL_0xB0" value="0xB0"/>
-        <value caption="Data byte in TWDR has been transmitted; ACK has been received." name="VAL_0xB8" value="0xB8"/>
-        <value caption="Data byte in TWDR has been transmitted; NO ACK has been received." name="VAL_0xC0" value="0xC0"/>
-        <value caption="Last data byte in TWDR has been transmitted (TWEA = 0); ACK has been received." name="VAL_0xC8" value="0xC8"/>
-        <value caption="No relevant state information available; TWINT = 0." name="VAL_0xF8" value="0xF8"/>
+      <value-group name="TWI_STATUS_BITF">
+        <value caption="Bus error due to illegal START or STOP condition." name="BUS_ERROR_DUE_TO_ILLEGAL_START_OR_STOP_CONDITION" value="0x00"/>
+        <value caption="A START condition has been transmitted." name="A_START_CONDITION_HAS_BEEN_TRANSMITTED" value="0x08"/>
+        <value caption="A repeated START condition has been transmitted." name="A_REPEATED_START_CONDITION_HAS_BEEN_TRANSMITTED" value="0x10"/>
+        <value caption="SLA+W has been transmitted; ACK has been received." name="SLA_W_HAS_BEEN_TRANSMITTED_ACK_HAS_BEEN_RECEIVED" value="0x18"/>
+        <value caption="SLA+W has been transmitted; NOT ACK has been received." name="SLA_W_HAS_BEEN_TRANSMITTED_NOT_ACK_HAS_BEEN_RECEIVED" value="0x20"/>
+        <value caption="Data byte has been transmitted; ACK has been received." name="DATA_BYTE_HAS_BEEN_TRANSMITTED_ACK_HAS_BEEN_RECEIVED" value="0x28"/>
+        <value caption="Data byte has been transmitted; NOT ACK has been received." name="DATA_BYTE_HAS_BEEN_TRANSMITTED_NOT_ACK_HAS_BEEN_RECEIVED" value="0x30"/>
+        <value caption="Arbitration lost in SLA+W or data bytes (Transmitter); Arbitration lost in SLA+R or NOT ACK bit (Receiver)." name="ARBITRATION_LOST_IN_SLA_W_OR_DATA_BYTES_TRANSMITTER_ARBITRATION_LOST_IN_SLA_R_OR_NOT_ACK_BIT_RECEIVER" value="0x38"/>
+        <value caption="SLA+R has been transmitted; ACK has been received." name="SLA_R_HAS_BEEN_TRANSMITTED_ACK_HAS_BEEN_RECEIVED" value="0x40"/>
+        <value caption="SLA+R has been transmitted; NOT ACK has been received." name="SLA_R_HAS_BEEN_TRANSMITTED_NOT_ACK_HAS_BEEN_RECEIVED" value="0x48"/>
+        <value caption="Data byte has been received; ACK has been returned." name="DATA_BYTE_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" value="0x50"/>
+        <value caption="Data byte has been received; NOT ACK has been returned." name="DATA_BYTE_HAS_BEEN_RECEIVED_NOT_ACK_HAS_BEEN_RETURNED" value="0x58"/>
+        <value caption="Own SLA+W has been received; ACK has been returned." name="OWN_SLA_W_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" value="0x60"/>
+        <value caption="Arbitration lost in SLA+R/W as Master; own SLA+W has been received; ACK has been returned." name="ARBITRATION_LOST_IN_SLA_R_W_AS_MASTER_OWN_SLA_W_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" value="0x68"/>
+        <value caption="General call address has been received; ACK has been returned." name="GENERAL_CALL_ADDRESS_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" value="0x70"/>
+        <value caption="Arbitration lost in SLA+R/W as Master; general call address has been received; ACK has been returned." name="ARBITRATION_LOST_IN_SLA_R_W_AS_MASTER_GENERAL_CALL_ADDRESS_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" value="0x78"/>
+        <value caption="Previously addressed with own SLA+W; data has been received; ACK has been returned." name="PREVIOUSLY_ADDRESSED_WITH_OWN_SLA_W_DATA_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" value="0x80"/>
+        <value caption="Previously addressed with own SLA+W; data has been received; NOT ACK has been returned." name="PREVIOUSLY_ADDRESSED_WITH_OWN_SLA_W_DATA_HAS_BEEN_RECEIVED_NOT_ACK_HAS_BEEN_RETURNED" value="0x88"/>
+        <value caption="Previously addressed with general call; data has been received; ACK has been returned." name="PREVIOUSLY_ADDRESSED_WITH_GENERAL_CALL_DATA_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" value="0x90"/>
+        <value caption="Previously addressed with general call; data has been received; NOT ACK has been returned." name="PREVIOUSLY_ADDRESSED_WITH_GENERAL_CALL_DATA_HAS_BEEN_RECEIVED_NOT_ACK_HAS_BEEN_RETURNED" value="0x98"/>
+        <value caption="A STOP condition or repeated START condition has been received while still addressed as Slave." name="A_STOP_CONDITION_OR_REPEATED_START_CONDITION_HAS_BEEN_RECEIVED_WHILE_STILL_ADDRESSED_AS_SLAVE" value="0xA0"/>
+        <value caption="Own SLA+R has been received; ACK has been returned." name="OWN_SLA_R_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" value="0xA8"/>
+        <value caption="Arbitration lost in SLA+R/W as Master; own SLA+R has been received; ACK has been returned." name="ARBITRATION_LOST_IN_SLA_R_W_AS_MASTER_OWN_SLA_R_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" value="0xB0"/>
+        <value caption="Data byte in TWDR has been transmitted; ACK has been received." name="DATA_BYTE_IN_TWDR_HAS_BEEN_TRANSMITTED_ACK_HAS_BEEN_RECEIVED" value="0xB8"/>
+        <value caption="Data byte in TWDR has been transmitted; NO ACK has been received." name="DATA_BYTE_IN_TWDR_HAS_BEEN_TRANSMITTED_NO_ACK_HAS_BEEN_RECEIVED" value="0xC0"/>
+        <value caption="Last data byte in TWDR has been transmitted (TWEA = 0); ACK has been received." name="LAST_DATA_BYTE_IN_TWDR_HAS_BEEN_TRANSMITTED_TWEA_0_ACK_HAS_BEEN_RECEIVED" value="0xC8"/>
+        <value caption="No relevant state information available; TWINT = 0." name="NO_RELEVANT_STATE_INFORMATION_AVAILABLE_TWINT_0" value="0xF8"/>
       </value-group>
-      <value-group caption="" name="COMM_TWI_PRESACLE">
-        <value caption="1" name="VAL_0x00" value="0x00"/>
-        <value caption="4" name="VAL_0x01" value="0x01"/>
-        <value caption="16" name="VAL_0x02" value="0x02"/>
-        <value caption="64" name="VAL_0x03" value="0x03"/>
+      <value-group name="COMM_TWI_PRESACLE">
+        <value caption="1" name="1" value="0x00"/>
+        <value caption="4" name="4" value="0x01"/>
+        <value caption="16" name="16" value="0x02"/>
+        <value caption="64" name="64" value="0x03"/>
       </value-group>
     </module>
     <module caption="Serial Peripheral Interface" name="SPI">
@@ -758,19 +759,19 @@
           <bitfield caption="Clock Polarity" mask="0x01" name="UCPOL1"/>
         </register>
       </register-group>
-      <value-group caption="" name="SPI_CPOL_BITF">
-        <value caption="Rising (Leading Edge), Falling (Trailing Edge)" name="VAL_0" value="0"/>
-        <value caption="Falling (Leading Egde), Rising (Trailing Edge)" name="VAL_1" value="1"/>
+      <value-group name="SPI_CPOL_BITF">
+        <value caption="Rising (Leading Edge), Falling (Trailing Edge)" name="RISING_LEADING_EDGE_FALLING_TRAILING_EDGE" value="0"/>
+        <value caption="Falling (Leading Egde), Rising (Trailing Edge)" name="FALLING_LEADING_EGDE_RISING_TRAILING_EDGE" value="1"/>
       </value-group>
-      <value-group caption="" name="SPI_CPHA_BITF">
-        <value caption="Sample (Leading Edge), Setup (Trailing Edge)" name="VAL_0" value="0"/>
-        <value caption="Setup (Leading Edge), Sample (Trailing Edge)" name="VAL_1" value="1"/>
+      <value-group name="SPI_CPHA_BITF">
+        <value caption="Sample (Leading Edge), Setup (Trailing Edge)" name="SAMPLE_LEADING_EDGE_SETUP_TRAILING_EDGE" value="0"/>
+        <value caption="Setup (Leading Edge), Sample (Trailing Edge)" name="SETUP_LEADING_EDGE_SAMPLE_TRAILING_EDGE" value="1"/>
       </value-group>
-      <value-group caption="" name="COMM_SCK_RATE_SPI2X">
-        <value caption="fosc/4 / fosc/2 (SPI2X=0/1)" name="VAL_0x00" value="0x00"/>
-        <value caption="fosc/16 / fosc/8 (SPI2X=0/1)" name="VAL_0x01" value="0x01"/>
-        <value caption="fosc/64 / fosc/32 (SPI2X=0/1)" name="VAL_0x02" value="0x02"/>
-        <value caption="fosc/128 / fosc/64 (SPI2X=0/1)" name="VAL_0x03" value="0x03"/>
+      <value-group name="COMM_SCK_RATE_SPI2X">
+        <value caption="fosc/4 / fosc/2 (SPI2X=0/1)" name="FOSC_4_FOSC_2_SPI2X_0_1" value="0x00"/>
+        <value caption="fosc/16 / fosc/8 (SPI2X=0/1)" name="FOSC_16_FOSC_8_SPI2X_0_1" value="0x01"/>
+        <value caption="fosc/64 / fosc/32 (SPI2X=0/1)" name="FOSC_64_FOSC_32_SPI2X_0_1" value="0x02"/>
+        <value caption="fosc/128 / fosc/64 (SPI2X=0/1)" name="FOSC_128_FOSC_64_SPI2X_0_1" value="0x03"/>
       </value-group>
     </module>
     <module caption="I/O Port" name="PORT">
@@ -819,7 +820,7 @@
           <bitfield caption="Force Output Compare A" mask="0x80" name="FOC0A"/>
           <bitfield caption="Force Output Compare B" mask="0x40" name="FOC0B"/>
           <bitfield caption="Reserved Bit" mask="0x30" name="Res"/>
-          <bitfield caption="" mask="0x08" name="WGM02"/>
+          <bitfield mask="0x08" name="WGM02"/>
           <bitfield caption="Clock Select" mask="0x07" name="CS0" values="TC0_CLK_SEL_3BIT_EXT"/>
         </register>
         <register caption="Timer/Counter0 Control Register A" name="TCCR0A" offset="0x44" size="1">
@@ -844,37 +845,37 @@
           <bitfield caption="Prescaler Reset for Synchronous Timer/Counters" mask="0x01" name="PSRSYNC"/>
         </register>
       </register-group>
-      <value-group caption="" name="TC0_CLK_SEL_3BIT_EXT">
-        <value caption="No clock source (Timer/Counter0 stopped)" name="VAL_0x00" value="0x00"/>
-        <value caption="clk_IO/1 (no prescaling)" name="VAL_0x01" value="0x01"/>
-        <value caption="clk_IO/8 (from prescaler)" name="VAL_0x02" value="0x02"/>
-        <value caption="clk_IO/64 (from prescaler)" name="VAL_0x03" value="0x03"/>
-        <value caption="clk_IO/256 (from prescaler)" name="VAL_0x04" value="0x04"/>
-        <value caption="clk_IO/1024 (from prescaler)" name="VAL_0x05" value="0x05"/>
-        <value caption="External clock source on T0 pin, clock on falling edge" name="VAL_0x06" value="0x06"/>
-        <value caption="External clock source on T0 pin, clock on rising edge" name="VAL_0x07" value="0x07"/>
+      <value-group name="TC0_CLK_SEL_3BIT_EXT">
+        <value caption="No clock source (Timer/Counter0 stopped)" name="NO_CLOCK_SOURCE_TIMER_COUNTER0_STOPPED" value="0x00"/>
+        <value caption="clk_IO/1 (no prescaling)" name="CLK_IO_1_NO_PRESCALING" value="0x01"/>
+        <value caption="clk_IO/8 (from prescaler)" name="CLK_IO_8_FROM_PRESCALER" value="0x02"/>
+        <value caption="clk_IO/64 (from prescaler)" name="CLK_IO_64_FROM_PRESCALER" value="0x03"/>
+        <value caption="clk_IO/256 (from prescaler)" name="CLK_IO_256_FROM_PRESCALER" value="0x04"/>
+        <value caption="clk_IO/1024 (from prescaler)" name="CLK_IO_1024_FROM_PRESCALER" value="0x05"/>
+        <value caption="External clock source on T0 pin, clock on falling edge" name="EXTERNAL_CLOCK_SOURCE_ON_T0_PIN_CLOCK_ON_FALLING_EDGE" value="0x06"/>
+        <value caption="External clock source on T0 pin, clock on rising edge" name="EXTERNAL_CLOCK_SOURCE_ON_T0_PIN_CLOCK_ON_RISING_EDGE" value="0x07"/>
       </value-group>
-      <value-group caption="" name="TC0_COM0A_BITF">
-        <value caption="Normal port operation, OC0A disconnected" name="VAL_0" value="0"/>
-        <value caption="Toggle OC0A on Compare Match" name="VAL_1" value="1"/>
-        <value caption="Clear OC0A on Compare Match" name="VAL_2" value="2"/>
-        <value caption="Set OC0A on Compare Match" name="VAL_3" value="3"/>
+      <value-group name="TC0_COM0A_BITF">
+        <value caption="Normal port operation, OC0A disconnected" name="NORMAL_PORT_OPERATION_OC0A_DISCONNECTED" value="0"/>
+        <value caption="Toggle OC0A on Compare Match" name="TOGGLE_OC0A_ON_COMPARE_MATCH" value="1"/>
+        <value caption="Clear OC0A on Compare Match" name="CLEAR_OC0A_ON_COMPARE_MATCH" value="2"/>
+        <value caption="Set OC0A on Compare Match" name="SET_OC0A_ON_COMPARE_MATCH" value="3"/>
       </value-group>
-      <value-group caption="" name="TC0_COM0B_BITF">
-        <value caption="Normal port operation, OC0B disconnected" name="VAL_0" value="0"/>
-        <value caption="Toggle OC0B on Compare Match" name="VAL_1" value="1"/>
-        <value caption="Clear OC0B on Compare Match" name="VAL_2" value="2"/>
-        <value caption="Set OC0B on Compare Match" name="VAL_3" value="3"/>
+      <value-group name="TC0_COM0B_BITF">
+        <value caption="Normal port operation, OC0B disconnected" name="NORMAL_PORT_OPERATION_OC0B_DISCONNECTED" value="0"/>
+        <value caption="Toggle OC0B on Compare Match" name="TOGGLE_OC0B_ON_COMPARE_MATCH" value="1"/>
+        <value caption="Clear OC0B on Compare Match" name="CLEAR_OC0B_ON_COMPARE_MATCH" value="2"/>
+        <value caption="Set OC0B on Compare Match" name="SET_OC0B_ON_COMPARE_MATCH" value="3"/>
       </value-group>
-      <value-group caption="" name="TC0_WGM_BITF">
-        <value caption="Normal mode of operation" name="VAL_0x0" value="0x0"/>
-        <value caption="PWM, phase correct, TOP=0xFF" name="VAL_0x1" value="0x1"/>
-        <value caption="CTC, TOP = OCRA" name="VAL_0x2" value="0x2"/>
-        <value caption="Fast PWM, TOP=0xFF" name="VAL_0x3" value="0x3"/>
-        <value caption="Reserved" name="VAL_0x4" value="0x4"/>
-        <value caption="PWM, Phase correct, TOP = OCRA" name="VAL_0x5" value="0x5"/>
-        <value caption="Reserved" name="VAL_0x6" value="0x6"/>
-        <value caption="Fast PWM, TOP=OCRA" name="VAL_0x7" value="0x7"/>
+      <value-group name="TC0_WGM_BITF">
+        <value caption="Normal mode of operation" name="NORMAL_MODE_OF_OPERATION" value="0x0"/>
+        <value caption="PWM, phase correct, TOP=0xFF" name="PWM_PHASE_CORRECT_TOP_0XFF" value="0x1"/>
+        <value caption="CTC, TOP = OCRA" name="CTC_TOP_OCRA" value="0x2"/>
+        <value caption="Fast PWM, TOP=0xFF" name="FAST_PWM_TOP_0XFF" value="0x3"/>
+        <value caption="Reserved" name="RESERVED" value="0x4"/>
+        <value caption="PWM, Phase correct, TOP = OCRA" name="PWM_PHASE_CORRECT_TOP_OCRA" value="0x5"/>
+        <value caption="Reserved" name="RESERVED" value="0x6"/>
+        <value caption="Fast PWM, TOP=OCRA" name="FAST_PWM_TOP_OCRA" value="0x7"/>
       </value-group>
     </module>
     <module caption="Timer/Counter, 8-bit Async" name="TC8_ASYNC">
@@ -920,37 +921,37 @@
           <bitfield caption="Prescaler Reset Timer/Counter2" mask="0x02" name="PSRASY"/>
         </register>
       </register-group>
-      <value-group caption="" name="TC2_COM2A_BITF">
-        <value caption="Normal port operation, OC2A disconnected" name="VAL_0" value="0"/>
-        <value caption="Toggle OC2A on Compare Match" name="VAL_1" value="1"/>
-        <value caption="Clear OC2A on Compare Match" name="VAL_2" value="2"/>
-        <value caption="Set OC2A on Compare Match" name="VAL_3" value="3"/>
+      <value-group name="TC2_COM2A_BITF">
+        <value caption="Normal port operation, OC2A disconnected" name="NORMAL_PORT_OPERATION_OC2A_DISCONNECTED" value="0"/>
+        <value caption="Toggle OC2A on Compare Match" name="TOGGLE_OC2A_ON_COMPARE_MATCH" value="1"/>
+        <value caption="Clear OC2A on Compare Match" name="CLEAR_OC2A_ON_COMPARE_MATCH" value="2"/>
+        <value caption="Set OC2A on Compare Match" name="SET_OC2A_ON_COMPARE_MATCH" value="3"/>
       </value-group>
-      <value-group caption="" name="TC2_COM2B_BITF">
-        <value caption="Normal port operation, OC2B disconnected" name="VAL_0" value="0"/>
-        <value caption="Toggle OC2B on Compare Match" name="VAL_1" value="1"/>
-        <value caption="Clear OC2B on Compare Match" name="VAL_2" value="2"/>
-        <value caption="Set OC2B on Compare Match" name="VAL_3" value="3"/>
+      <value-group name="TC2_COM2B_BITF">
+        <value caption="Normal port operation, OC2B disconnected" name="NORMAL_PORT_OPERATION_OC2B_DISCONNECTED" value="0"/>
+        <value caption="Toggle OC2B on Compare Match" name="TOGGLE_OC2B_ON_COMPARE_MATCH" value="1"/>
+        <value caption="Clear OC2B on Compare Match" name="CLEAR_OC2B_ON_COMPARE_MATCH" value="2"/>
+        <value caption="Set OC2B on Compare Match" name="SET_OC2B_ON_COMPARE_MATCH" value="3"/>
       </value-group>
-      <value-group caption="" name="TC0_WGM_BITF">
-        <value caption="Normal mode of operation" name="VAL_0x0" value="0x0"/>
-        <value caption="PWM, phase correct, TOP=0xFF" name="VAL_0x1" value="0x1"/>
-        <value caption="CTC, TOP = OCRA" name="VAL_0x2" value="0x2"/>
-        <value caption="Fast PWM, TOP=0xFF" name="VAL_0x3" value="0x3"/>
-        <value caption="Reserved" name="VAL_0x4" value="0x4"/>
-        <value caption="PWM, Phase correct, TOP = OCRA" name="VAL_0x5" value="0x5"/>
-        <value caption="Reserved" name="VAL_0x6" value="0x6"/>
-        <value caption="Fast PWM, TOP=OCRA" name="VAL_0x7" value="0x7"/>
+      <value-group name="TC0_WGM_BITF">
+        <value caption="Normal mode of operation" name="NORMAL_MODE_OF_OPERATION" value="0x0"/>
+        <value caption="PWM, phase correct, TOP=0xFF" name="PWM_PHASE_CORRECT_TOP_0XFF" value="0x1"/>
+        <value caption="CTC, TOP = OCRA" name="CTC_TOP_OCRA" value="0x2"/>
+        <value caption="Fast PWM, TOP=0xFF" name="FAST_PWM_TOP_0XFF" value="0x3"/>
+        <value caption="Reserved" name="RESERVED" value="0x4"/>
+        <value caption="PWM, Phase correct, TOP = OCRA" name="PWM_PHASE_CORRECT_TOP_OCRA" value="0x5"/>
+        <value caption="Reserved" name="RESERVED" value="0x6"/>
+        <value caption="Fast PWM, TOP=OCRA" name="FAST_PWM_TOP_OCRA" value="0x7"/>
       </value-group>
-      <value-group caption="" name="TC2_CLK_SEL_3BIT">
-        <value caption="No clock source (Timer/Counter2 stopped)" name="VAL_0x00" value="0x00"/>
-        <value caption="clk_T2S/1 (no prescaling)" name="VAL_0x01" value="0x01"/>
-        <value caption="clk_T2S/8 (from prescaler)" name="VAL_0x02" value="0x02"/>
-        <value caption="clk_T2S/32 (from prescaler)" name="VAL_0x03" value="0x03"/>
-        <value caption="clk_T2S/64 (from prescaler)" name="VAL_0x04" value="0x04"/>
-        <value caption="clk_T2S/128 (from prescaler)" name="VAL_0x05" value="0x05"/>
-        <value caption="clk_T2S/256 (from prescaler)" name="VAL_0x06" value="0x06"/>
-        <value caption="clk_T2S/1024 (from prescaler)" name="VAL_0x07" value="0x07"/>
+      <value-group name="TC2_CLK_SEL_3BIT">
+        <value caption="No clock source (Timer/Counter2 stopped)" name="NO_CLOCK_SOURCE_TIMER_COUNTER2_STOPPED" value="0x00"/>
+        <value caption="clk_T2S/1 (no prescaling)" name="CLK_T2S_1_NO_PRESCALING" value="0x01"/>
+        <value caption="clk_T2S/8 (from prescaler)" name="CLK_T2S_8_FROM_PRESCALER" value="0x02"/>
+        <value caption="clk_T2S/32 (from prescaler)" name="CLK_T2S_32_FROM_PRESCALER" value="0x03"/>
+        <value caption="clk_T2S/64 (from prescaler)" name="CLK_T2S_64_FROM_PRESCALER" value="0x04"/>
+        <value caption="clk_T2S/128 (from prescaler)" name="CLK_T2S_128_FROM_PRESCALER" value="0x05"/>
+        <value caption="clk_T2S/256 (from prescaler)" name="CLK_T2S_256_FROM_PRESCALER" value="0x06"/>
+        <value caption="clk_T2S/1024 (from prescaler)" name="CLK_T2S_1024_FROM_PRESCALER" value="0x07"/>
       </value-group>
     </module>
     <module caption="Watchdog Timer" name="WDT">
@@ -963,17 +964,17 @@
           <bitfield caption="Watch Dog Enable" mask="0x08" name="WDE"/>
         </register>
       </register-group>
-      <value-group caption="" name="WDOG_TIMER_PRESCALE_4BITS">
-        <value caption="Oscillator Cycles 2K" name="VAL_0x00" value="0x00"/>
-        <value caption="Oscillator Cycles 4K" name="VAL_0x01" value="0x01"/>
-        <value caption="Oscillator Cycles 8K" name="VAL_0x02" value="0x02"/>
-        <value caption="Oscillator Cycles 16K" name="VAL_0x03" value="0x03"/>
-        <value caption="Oscillator Cycles 32K" name="VAL_0x04" value="0x04"/>
-        <value caption="Oscillator Cycles 64K" name="VAL_0x05" value="0x05"/>
-        <value caption="Oscillator Cycles 128K" name="VAL_0x06" value="0x06"/>
-        <value caption="Oscillator Cycles 256K" name="VAL_0x07" value="0x07"/>
-        <value caption="Oscillator Cycles 512K" name="VAL_0x08" value="0x08"/>
-        <value caption="Oscillator Cycles 1024K" name="VAL_0x09" value="0x09"/>
+      <value-group name="WDOG_TIMER_PRESCALE_4BITS">
+        <value caption="Oscillator Cycles 2K" name="OSCILLATOR_CYCLES_2K" value="0x00"/>
+        <value caption="Oscillator Cycles 4K" name="OSCILLATOR_CYCLES_4K" value="0x01"/>
+        <value caption="Oscillator Cycles 8K" name="OSCILLATOR_CYCLES_8K" value="0x02"/>
+        <value caption="Oscillator Cycles 16K" name="OSCILLATOR_CYCLES_16K" value="0x03"/>
+        <value caption="Oscillator Cycles 32K" name="OSCILLATOR_CYCLES_32K" value="0x04"/>
+        <value caption="Oscillator Cycles 64K" name="OSCILLATOR_CYCLES_64K" value="0x05"/>
+        <value caption="Oscillator Cycles 128K" name="OSCILLATOR_CYCLES_128K" value="0x06"/>
+        <value caption="Oscillator Cycles 256K" name="OSCILLATOR_CYCLES_256K" value="0x07"/>
+        <value caption="Oscillator Cycles 512K" name="OSCILLATOR_CYCLES_512K" value="0x08"/>
+        <value caption="Oscillator Cycles 1024K" name="OSCILLATOR_CYCLES_1024K" value="0x09"/>
       </value-group>
     </module>
     <module caption="Timer/Counter, 16-bit" name="TC16">
@@ -1133,55 +1134,55 @@
           <bitfield caption="Timer/Counter1 Overflow Flag" mask="0x01" name="TOV1"/>
         </register>
       </register-group>
-      <value-group caption="" name="TC4_COMNX_BITF">
-        <value caption="Normal operation" name="VAL_0" value="0"/>
-        <value caption="Reserved" name="VAL_1" value="1"/>
-        <value caption="Reserved" name="VAL_2" value="2"/>
-        <value caption="Reserved" name="VAL_3" value="3"/>
+      <value-group name="TC4_COMNX_BITF">
+        <value caption="Normal operation" name="NORMAL_OPERATION" value="0"/>
+        <value caption="Reserved" name="RESERVED" value="1"/>
+        <value caption="Reserved" name="RESERVED" value="2"/>
+        <value caption="Reserved" name="RESERVED" value="3"/>
       </value-group>
-      <value-group caption="" name="TC1_WGMX_BITF">
-        <value caption="Normal mode of operation" name="VAL_0x0" value="0x0"/>
-        <value caption="PWM, phase correct, 8-bit" name="VAL_0x1" value="0x1"/>
-        <value caption="PWM, phase correct, 9-bit" name="VAL_0x2" value="0x2"/>
-        <value caption="PWM, phase correct, 10-bit" name="VAL_0x3" value="0x3"/>
-        <value caption="CTC, TOP = OCRnA" name="VAL_0x4" value="0x4"/>
-        <value caption="Fast PWM, 8-bit" name="VAL_0x5" value="0x5"/>
-        <value caption="Fast PWM, 9-bit" name="VAL_0x6" value="0x6"/>
-        <value caption="Fast PWM, 10-bit" name="VAL_0x7" value="0x7"/>
-        <value caption="PWM, Phase and frequency correct, TOP = ICRn" name="VAL_0x8" value="0x8"/>
-        <value caption="PWM, Phase and frequency correct, TOP = OCRnA" name="VAL_0x9" value="0x9"/>
-        <value caption="PWM, Phase correct, TOP = ICRn" name="VAL_0xA" value="0xA"/>
-        <value caption="PWM, Phase correct, TOP = OCRnA" name="VAL_0xB" value="0xB"/>
-        <value caption="CTC, TOP = OCRnA" name="VAL_0xC" value="0xC"/>
-        <value caption="Reserved" name="VAL_0xD" value="0xD"/>
-        <value caption="Fast PWM, TOP = ICRn" name="VAL_0xE" value="0xE"/>
-        <value caption="Fast PWM, TOP = OCRnA" name="VAL_0xF" value="0xF"/>
+      <value-group name="TC1_WGMX_BITF">
+        <value caption="Normal mode of operation" name="NORMAL_MODE_OF_OPERATION" value="0x0"/>
+        <value caption="PWM, phase correct, 8-bit" name="PWM_PHASE_CORRECT_8_BIT" value="0x1"/>
+        <value caption="PWM, phase correct, 9-bit" name="PWM_PHASE_CORRECT_9_BIT" value="0x2"/>
+        <value caption="PWM, phase correct, 10-bit" name="PWM_PHASE_CORRECT_10_BIT" value="0x3"/>
+        <value caption="CTC, TOP = OCRnA" name="CTC_TOP_OCRNA" value="0x4"/>
+        <value caption="Fast PWM, 8-bit" name="FAST_PWM_8_BIT" value="0x5"/>
+        <value caption="Fast PWM, 9-bit" name="FAST_PWM_9_BIT" value="0x6"/>
+        <value caption="Fast PWM, 10-bit" name="FAST_PWM_10_BIT" value="0x7"/>
+        <value caption="PWM, Phase and frequency correct, TOP = ICRn" name="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_ICRN" value="0x8"/>
+        <value caption="PWM, Phase and frequency correct, TOP = OCRnA" name="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_OCRNA" value="0x9"/>
+        <value caption="PWM, Phase correct, TOP = ICRn" name="PWM_PHASE_CORRECT_TOP_ICRN" value="0xA"/>
+        <value caption="PWM, Phase correct, TOP = OCRnA" name="PWM_PHASE_CORRECT_TOP_OCRNA" value="0xB"/>
+        <value caption="CTC, TOP = OCRnA" name="CTC_TOP_OCRNA" value="0xC"/>
+        <value caption="Reserved" name="RESERVED" value="0xD"/>
+        <value caption="Fast PWM, TOP = ICRn" name="FAST_PWM_TOP_ICRN" value="0xE"/>
+        <value caption="Fast PWM, TOP = OCRnA" name="FAST_PWM_TOP_OCRNA" value="0xF"/>
       </value-group>
-      <value-group caption="" name="CLK_SEL_3BIT_NOEXT_MEGARF">
-        <value caption="No clock source (Timer/Counter stopped)" name="VAL_0x00" value="0x00"/>
-        <value caption="clk_IO/1 (no prescaling)" name="VAL_0x01" value="0x01"/>
-        <value caption="clk_IO/8 (from prescaler)" name="VAL_0x02" value="0x02"/>
-        <value caption="clk_IO/64 (from prescaler)" name="VAL_0x03" value="0x03"/>
-        <value caption="clk_IO/256 (from prescaler)" name="VAL_0x04" value="0x04"/>
-        <value caption="clk_IO/1024 (from prescaler)" name="VAL_0x05" value="0x05"/>
-        <value caption="Reserved" name="VAL_0x06" value="0x06"/>
-        <value caption="Reserved" name="VAL_0x07" value="0x07"/>
+      <value-group name="CLK_SEL_3BIT_NOEXT_MEGARF">
+        <value caption="No clock source (Timer/Counter stopped)" name="NO_CLOCK_SOURCE_TIMER_COUNTER_STOPPED" value="0x00"/>
+        <value caption="clk_IO/1 (no prescaling)" name="CLK_IO_1_NO_PRESCALING" value="0x01"/>
+        <value caption="clk_IO/8 (from prescaler)" name="CLK_IO_8_FROM_PRESCALER" value="0x02"/>
+        <value caption="clk_IO/64 (from prescaler)" name="CLK_IO_64_FROM_PRESCALER" value="0x03"/>
+        <value caption="clk_IO/256 (from prescaler)" name="CLK_IO_256_FROM_PRESCALER" value="0x04"/>
+        <value caption="clk_IO/1024 (from prescaler)" name="CLK_IO_1024_FROM_PRESCALER" value="0x05"/>
+        <value caption="Reserved" name="RESERVED" value="0x06"/>
+        <value caption="Reserved" name="RESERVED" value="0x07"/>
       </value-group>
-      <value-group caption="" name="TC1_COMNX_BITF">
-        <value caption="Normal port operation, OCnA/OCnB/OCnC disconnected." name="VAL_0" value="0"/>
-        <value caption="Toggle OCnA/OCnB/OCnC on Compare Match." name="VAL_1" value="1"/>
-        <value caption="Clear OCnA/OCnB/OCnC on Compare Match (set output to low level)." name="VAL_2" value="2"/>
-        <value caption="Set OCnA/OCnB/OCnC on Compare Match (set output to high level)." name="VAL_3" value="3"/>
+      <value-group name="TC1_COMNX_BITF">
+        <value caption="Normal port operation, OCnA/OCnB/OCnC disconnected." name="NORMAL_PORT_OPERATION_OCNA_OCNB_OCNC_DISCONNECTED" value="0"/>
+        <value caption="Toggle OCnA/OCnB/OCnC on Compare Match." name="TOGGLE_OCNA_OCNB_OCNC_ON_COMPARE_MATCH" value="1"/>
+        <value caption="Clear OCnA/OCnB/OCnC on Compare Match (set output to low level)." name="CLEAR_OCNA_OCNB_OCNC_ON_COMPARE_MATCH_SET_OUTPUT_TO_LOW_LEVEL" value="2"/>
+        <value caption="Set OCnA/OCnB/OCnC on Compare Match (set output to high level)." name="SET_OCNA_OCNB_OCNC_ON_COMPARE_MATCH_SET_OUTPUT_TO_HIGH_LEVEL" value="3"/>
       </value-group>
-      <value-group caption="" name="CLK_SEL_3BIT_EXT_MEGARF">
-        <value caption="No clock source (Timer/Counter stopped)" name="VAL_0x00" value="0x00"/>
-        <value caption="clk_IO/1 (no prescaling)" name="VAL_0x01" value="0x01"/>
-        <value caption="clk_IO/8 (from prescaler)" name="VAL_0x02" value="0x02"/>
-        <value caption="clk_IO/64 (from prescaler)" name="VAL_0x03" value="0x03"/>
-        <value caption="clk_IO/256 (from prescaler)" name="VAL_0x04" value="0x04"/>
-        <value caption="clk_IO/1024 (from prescaler)" name="VAL_0x05" value="0x05"/>
-        <value caption="External clock source on Tn pin, clock on falling edge" name="VAL_0x06" value="0x06"/>
-        <value caption="External clock source on Tn pin, clock on rising edge" name="VAL_0x07" value="0x07"/>
+      <value-group name="CLK_SEL_3BIT_EXT_MEGARF">
+        <value caption="No clock source (Timer/Counter stopped)" name="NO_CLOCK_SOURCE_TIMER_COUNTER_STOPPED" value="0x00"/>
+        <value caption="clk_IO/1 (no prescaling)" name="CLK_IO_1_NO_PRESCALING" value="0x01"/>
+        <value caption="clk_IO/8 (from prescaler)" name="CLK_IO_8_FROM_PRESCALER" value="0x02"/>
+        <value caption="clk_IO/64 (from prescaler)" name="CLK_IO_64_FROM_PRESCALER" value="0x03"/>
+        <value caption="clk_IO/256 (from prescaler)" name="CLK_IO_256_FROM_PRESCALER" value="0x04"/>
+        <value caption="clk_IO/1024 (from prescaler)" name="CLK_IO_1024_FROM_PRESCALER" value="0x05"/>
+        <value caption="External clock source on Tn pin, clock on falling edge" name="EXTERNAL_CLOCK_SOURCE_ON_TN_PIN_CLOCK_ON_FALLING_EDGE" value="0x06"/>
+        <value caption="External clock source on Tn pin, clock on rising edge" name="EXTERNAL_CLOCK_SOURCE_ON_TN_PIN_CLOCK_ON_RISING_EDGE" value="0x07"/>
       </value-group>
     </module>
     <module caption="Low-Power 2.4 GHz Transceiver" name="TRX24">
@@ -1530,7 +1531,7 @@
         <register caption="Start of frame buffer" name="TRXFBST" offset="0x180" size="1" mask="0xFF"/>
         <register caption="End of frame buffer" name="TRXFBEND" offset="0x1FF" size="1" mask="0xFF"/>
       </register-group>
-      <value-group caption="" name="PALTD_bitf">
+      <value-group name="PALTD_bitf">
         <value caption="-3us" name="PALTD_MINUS_3US" value="0"/>
         <value caption="-2us" name="PALTD_MINUS_2US" value="1"/>
         <value caption="-1us" name="PALTD_MINUS_1US" value="2"/>
@@ -1540,7 +1541,7 @@
         <value caption="3us" name="PALTD_3US" value="6"/>
         <value caption="4us" name="PALTD_4US" value="7"/>
       </value-group>
-      <value-group caption="" name="PALTU_bitf">
+      <value-group name="PALTU_bitf">
         <value caption="-3us" name="PALTU_MINUS_3US" value="0"/>
         <value caption="-2us" name="PALTU_MINUS_2US" value="1"/>
         <value caption="-1us" name="PALTU_MINUS_1US" value="2"/>
@@ -1550,27 +1551,27 @@
         <value caption="3us" name="PALTU_3US" value="6"/>
         <value caption="4us" name="PALTU_4US" value="7"/>
       </value-group>
-      <value-group caption="" name="AES_MODE_BITF">
+      <value-group name="AES_MODE_BITF">
         <value caption="AES Mode is ECB (Electronic Code Book)." name="AES_MODE_ECB" value="0"/>
         <value caption="AES Mode is CBC (Cipher Block Chaining)." name="AES_MODE_CBC" value="1"/>
       </value-group>
-      <value-group caption="" name="AES_DIRECTION_BITF">
+      <value-group name="AES_DIRECTION_BITF">
         <value caption="AES operation is encryption." name="AES_DIR_ENC" value="0"/>
         <value caption="AES operation is decryption." name="AES_DIR_DEC" value="1"/>
       </value-group>
-      <value-group caption="" name="CCA_DONE_bitf">
+      <value-group name="CCA_DONE_bitf">
         <value caption="CCA calculation not finished" name="CCA_NOT_FIN" value="0"/>
         <value caption="CCA calculation finished" name="CCA_FIN" value="1"/>
       </value-group>
-      <value-group caption="" name="CCA_STATUS_bitf">
+      <value-group name="CCA_STATUS_bitf">
         <value caption="Channel indicated as busy." name="CCA_BUSY" value="0"/>
         <value caption="Channel indicated as idle." name="CCA_IDLE" value="1"/>
       </value-group>
-      <value-group caption="" name="TST_STATUS_bitf">
+      <value-group name="TST_STATUS_bitf">
         <value caption="Test mode is disabled." name="TST_DISABLED" value="0"/>
         <value caption="Test mode is active." name="TST_ENABLED" value="1"/>
       </value-group>
-      <value-group caption="" name="TRX_STATUS_bitf">
+      <value-group name="TRX_STATUS_bitf">
         <value caption="P_ON" name="P_ON" value="0x00"/>
         <value caption="BUSY_RX" name="BUSY_RX" value="0x01"/>
         <value caption="BUSY_TX" name="BUSY_TX" value="0x02"/>
@@ -1584,7 +1585,7 @@
         <value caption="TX_ARET_ON" name="TX_ARET_ON" value="0x19"/>
         <value caption="STATE_TRANSITION_IN_PROGRESS" name="STATE_TRANSITION_IN_PROGRESS" value="0x1F"/>
       </value-group>
-      <value-group caption="" name="TRAC_STATUS_bitf">
+      <value-group name="TRAC_STATUS_bitf">
         <value caption="SUCCESS (RX_AACK, TX_ARET)" name="TRAC_SUCCESS" value="0"/>
         <value caption="SUCCESS_DATA_PENDING (TX_ARET)" name="TRAC_SUCCESS_DATA_PENDING" value="1"/>
         <value caption="SUCCESS_WAIT_FOR_ACK (RX_AACK)" name="TRAC_SUCCESS_WAIT_FOR_ACK" value="2"/>
@@ -1592,7 +1593,7 @@
         <value caption="NO_ACK (TX_ARET)" name="TRAC_NO_ACK" value="5"/>
         <value caption="INVALID (RX_AACK, TX_ARET)" name="TRAC_INVALID" value="7"/>
       </value-group>
-      <value-group caption="" name="TRX_CMD_bitf">
+      <value-group name="TRX_CMD_bitf">
         <value caption="NOP" name="CMD_NOP" value="0x00"/>
         <value caption="TX_START" name="CMD_TX_START" value="0x02"/>
         <value caption="FORCE_TRX_OFF" name="CMD_FORCE_TRX_OFF" value="0x03"/>
@@ -1603,48 +1604,48 @@
         <value caption="RX_AACK_ON" name="CMD_RX_AACK_ON" value="0x16"/>
         <value caption="TX_ARET_ON" name="CMD_TX_ARET_ON" value="0x19"/>
       </value-group>
-      <value-group caption="" name="TX_PWR_bitf">
-        <value caption="3.5 dBm" name="VAL_0" value="0"/>
-        <value caption="3.3 dBm" name="VAL_1" value="1"/>
-        <value caption="2.8 dBm" name="VAL_2" value="2"/>
-        <value caption="2.3 dBm" name="VAL_3" value="3"/>
-        <value caption="1.8 dBm" name="VAL_4" value="4"/>
-        <value caption="1.2 dBm" name="VAL_5" value="5"/>
-        <value caption="0.5 dBm" name="VAL_6" value="6"/>
-        <value caption="-0.5 dBm" name="VAL_7" value="7"/>
-        <value caption="-1.5 dBm" name="VAL_8" value="8"/>
-        <value caption="-2.5 dBm" name="VAL_9" value="9"/>
-        <value caption="-3.5 dBm" name="VAL_10" value="10"/>
-        <value caption="-4.5 dBm" name="VAL_11" value="11"/>
-        <value caption="-6.5 dBm" name="VAL_12" value="12"/>
-        <value caption="-8.5 dBm" name="VAL_13" value="13"/>
-        <value caption="-11.5 dBm" name="VAL_14" value="14"/>
-        <value caption="-16.5 dBm" name="VAL_15" value="15"/>
+      <value-group name="TX_PWR_bitf">
+        <value caption="3.5 dBm" name="3_5_DBM" value="0"/>
+        <value caption="3.3 dBm" name="3_3_DBM" value="1"/>
+        <value caption="2.8 dBm" name="2_8_DBM" value="2"/>
+        <value caption="2.3 dBm" name="2_3_DBM" value="3"/>
+        <value caption="1.8 dBm" name="1_8_DBM" value="4"/>
+        <value caption="1.2 dBm" name="1_2_DBM" value="5"/>
+        <value caption="0.5 dBm" name="0_5_DBM" value="6"/>
+        <value caption="-0.5 dBm" name="_0_5_DBM" value="7"/>
+        <value caption="-1.5 dBm" name="_1_5_DBM" value="8"/>
+        <value caption="-2.5 dBm" name="_2_5_DBM" value="9"/>
+        <value caption="-3.5 dBm" name="_3_5_DBM" value="10"/>
+        <value caption="-4.5 dBm" name="_4_5_DBM" value="11"/>
+        <value caption="-6.5 dBm" name="_6_5_DBM" value="12"/>
+        <value caption="-8.5 dBm" name="_8_5_DBM" value="13"/>
+        <value caption="-11.5 dBm" name="_11_5_DBM" value="14"/>
+        <value caption="-16.5 dBm" name="_16_5_DBM" value="15"/>
       </value-group>
-      <value-group caption="" name="RX_CRC_VALID_bitf">
+      <value-group name="RX_CRC_VALID_bitf">
         <value caption="CRC (FCS) not valid" name="CRC_INVALID" value="0"/>
         <value caption="CRC (FCS) valid" name="CRC_VALID" value="1"/>
       </value-group>
-      <value-group caption="" name="RSSI_VALUE_BITF">
+      <value-group name="RSSI_VALUE_BITF">
         <value caption="Minimum RSSI value: P(RF) &lt; -90 dBm" name="RSSI_MIN" value="0"/>
         <value caption="P(RF) = RSSI_BASE_VAL+3 · (RSSI-1) [dBm]" name="RSSI_MIN_PLUS_3dB" value="1"/>
         <value caption="..." name="VAL_2" value="2"/>
         <value caption="Maximum RSSI value: P(RF) ≥ -10 dBm" name="RSSI_MAX" value="28"/>
       </value-group>
-      <value-group caption="" name="ED_LEVEL_BITF">
+      <value-group name="ED_LEVEL_BITF">
         <value caption="Minimum result of last ED measurement" name="ED_MIN" value="0x00"/>
         <value caption="P(RF) = RSSI_BASE_VAL+ED [dBm]" name="ED_MIN_PLUS_1dB" value="0x01"/>
         <value caption="..." name="VAL_0x02" value="0x02"/>
         <value caption="Maximum result of last ED measurement" name="ED_MAX" value="0x54"/>
         <value caption="Reset value" name="ED_RESET" value="0xFF"/>
       </value-group>
-      <value-group caption="" name="CCA_MODE_bitf">
+      <value-group name="CCA_MODE_bitf">
         <value caption="Mode 3a, Carrier sense OR energy above threshold" name="CCA_CS_OR_ED" value="0"/>
         <value caption="Mode 1, Energy above threshold" name="CCA_ED" value="1"/>
         <value caption="Mode 2, Carrier sense only" name="CCA_CS" value="2"/>
         <value caption="Mode 3b, Carrier sense AND energy above threshold" name="CCA_CS_AND_ED" value="3"/>
       </value-group>
-      <value-group caption="" name="CHANNEL_bitf">
+      <value-group name="CHANNEL_bitf">
         <value caption="2405 MHz" name="F_2405MHZ" value="11"/>
         <value caption="2410 MHz" name="F_2410MHZ" value="12"/>
         <value caption="2415 MHz" name="F_2415MHZ" value="13"/>
@@ -1662,162 +1663,162 @@
         <value caption="2475 MHz" name="F_2475MHZ" value="25"/>
         <value caption="2480 MHz" name="F_2480MHZ" value="26"/>
       </value-group>
-      <value-group caption="" name="PDT_THRES_bitf">
+      <value-group name="PDT_THRES_bitf">
         <value caption="Reset value, to be used if Antenna Diversity algorithm is disabled" name="PDT_THRES_ANT_DIV_OFF" value="0x7"/>
         <value caption="Recommended correlator threshold for Antenna Diversity operation" name="PDT_THRES_ANT_DIV_ON" value="0x3"/>
       </value-group>
-      <value-group caption="" name="SFD_VALUE_BITF">
+      <value-group name="SFD_VALUE_BITF">
         <value caption="IEEE 802.15.4 compliant value of the SFD" name="IEEE_SFD" value="0xA7"/>
       </value-group>
-      <value-group caption="" name="OQPSK_DATA_RATE_bitf">
+      <value-group name="OQPSK_DATA_RATE_bitf">
         <value caption="250 kb/s (IEEE 802.15.4 compliant)" name="RATE_250KB" value="0"/>
         <value caption="500 kb/s" name="RATE_500KB" value="1"/>
         <value caption="1000 kb/s" name="RATE_1000KB" value="2"/>
         <value caption="2000 kb/s" name="RATE_2000KB" value="3"/>
       </value-group>
-      <value-group caption="" name="ANT_SEL_bitf">
+      <value-group name="ANT_SEL_bitf">
         <value caption="Antenna 0" name="ANTENNA_0" value="0"/>
         <value caption="Antenna 1" name="ANTENNA_1" value="1"/>
       </value-group>
-      <value-group caption="" name="ANT_DIV_EN_bitf">
-        <value caption="Antenna Diversity algorithm disabled" name="VAL_0" value="0"/>
-        <value caption="Antenna Diversity algorithm enabled" name="VAL_1" value="1"/>
+      <value-group name="ANT_DIV_EN_bitf">
+        <value caption="Antenna Diversity algorithm disabled" name="ANTENNA_DIVERSITY_ALGORITHM_DISABLED" value="0"/>
+        <value caption="Antenna Diversity algorithm enabled" name="ANTENNA_DIVERSITY_ALGORITHM_ENABLED" value="1"/>
       </value-group>
-      <value-group caption="" name="ANT_EXT_SW_EN_bitf">
+      <value-group name="ANT_EXT_SW_EN_bitf">
         <value caption="Antenna Diversity RF switch control disabled" name="ANT_DIV_EXT_SW_DIS" value="0"/>
         <value caption="Antenna Diversity RF switch control enabled" name="ANT_DIV_EXT_SW_EN" value="1"/>
       </value-group>
-      <value-group caption="" name="ANT_CTRL_bitf">
-        <value caption="Reserved" name="VAL_0" value="0"/>
+      <value-group name="ANT_CTRL_bitf">
+        <value caption="Reserved" name="RESERVED" value="0"/>
         <value caption="Antenna 1: DIG1=H, DIG2=L" name="ANT_1" value="1"/>
         <value caption="Antenna 0: DIG1=L, DIG2=H" name="ANT_0" value="2"/>
         <value caption="Default value for ANT_EXT_SW_EN=0; Mandatory setting for applications not using Antenna Diversity" name="ANT_RESET" value="3"/>
       </value-group>
-      <value-group caption="" name="AVREG_EXT_BITF">
+      <value-group name="AVREG_EXT_BITF">
         <value caption="Internal AVDD voltage regulator for the analog section is enabled." name="AVDD_INT" value="0"/>
         <value caption="Internal AVDD voltage regulator is disabled; use external regulated 1.8V supply voltage for the analog section." name="AVDD_EXT" value="1"/>
       </value-group>
-      <value-group caption="" name="AVDD_OK_BITF">
-        <value caption="Analog voltage regulator disabled or supply voltage not stable" name="VAL_0" value="0"/>
-        <value caption="Analog supply voltage has settled" name="VAL_1" value="1"/>
+      <value-group name="AVDD_OK_BITF">
+        <value caption="Analog voltage regulator disabled or supply voltage not stable" name="ANALOG_VOLTAGE_REGULATOR_DISABLED_OR_SUPPLY_VOLTAGE_NOT_STABLE" value="0"/>
+        <value caption="Analog supply voltage has settled" name="ANALOG_SUPPLY_VOLTAGE_HAS_SETTLED" value="1"/>
       </value-group>
-      <value-group caption="" name="DVREG_EXT_BITF">
+      <value-group name="DVREG_EXT_BITF">
         <value caption="Internal DVDD voltage regulator for the digital section is enabled." name="DVDD_INT" value="0"/>
         <value caption="Internal DVDD voltage regulator is disabled; use external regulated 1.8V supply voltage for the digital section." name="DVDD_EXT" value="1"/>
       </value-group>
-      <value-group caption="" name="DVDD_OK_BITF">
-        <value caption="Digital voltage regulator disabled or supply voltage not stable" name="VAL_0" value="0"/>
-        <value caption="Digital supply voltage has settled" name="VAL_1" value="1"/>
+      <value-group name="DVDD_OK_BITF">
+        <value caption="Digital voltage regulator disabled or supply voltage not stable" name="DIGITAL_VOLTAGE_REGULATOR_DISABLED_OR_SUPPLY_VOLTAGE_NOT_STABLE" value="0"/>
+        <value caption="Digital supply voltage has settled" name="DIGITAL_SUPPLY_VOLTAGE_HAS_SETTLED" value="1"/>
       </value-group>
-      <value-group caption="" name="BATMON_OK_bitf">
-        <value caption="The battery voltage is below the threshold." name="VAL_0" value="0"/>
-        <value caption="The battery voltage is above the threshold." name="VAL_1" value="1"/>
+      <value-group name="BATMON_OK_bitf">
+        <value caption="The battery voltage is below the threshold." name="THE_BATTERY_VOLTAGE_IS_BELOW_THE_THRESHOLD" value="0"/>
+        <value caption="The battery voltage is above the threshold." name="THE_BATTERY_VOLTAGE_IS_ABOVE_THE_THRESHOLD" value="1"/>
       </value-group>
-      <value-group caption="" name="BATMON_HR_bitf">
+      <value-group name="BATMON_HR_bitf">
         <value caption="Enables the low range, see BATMON_VTH" name="BATMON_HR_DIS" value="0"/>
         <value caption="Enables the high range, see BATMON_VTH" name="BATMON_HR_EN" value="1"/>
       </value-group>
-      <value-group caption="" name="BATMON_VTH_bitf">
-        <value caption="2.550V / 1.70V (BATMON_HR=1/0)" name="VAL_0x0" value="0x0"/>
-        <value caption="2.625V / 1.75V (BATMON_HR=1/0)" name="VAL_0x1" value="0x1"/>
-        <value caption="2.700V / 1.80V (BATMON_HR=1/0)" name="VAL_0x2" value="0x2"/>
-        <value caption="2.775V / 1.85V (BATMON_HR=1/0)" name="VAL_0x3" value="0x3"/>
-        <value caption="2.850V / 1.90V (BATMON_HR=1/0)" name="VAL_0x4" value="0x4"/>
-        <value caption="2.925V / 1.95V (BATMON_HR=1/0)" name="VAL_0x5" value="0x5"/>
-        <value caption="3.000V / 2.00V (BATMON_HR=1/0)" name="VAL_0x6" value="0x6"/>
-        <value caption="3.075V / 2.05V (BATMON_HR=1/0)" name="VAL_0x7" value="0x7"/>
-        <value caption="3.150V / 2.10V (BATMON_HR=1/0)" name="VAL_0x8" value="0x8"/>
-        <value caption="3.225V / 2.15V (BATMON_HR=1/0)" name="VAL_0x9" value="0x9"/>
-        <value caption="3.300V / 2.20V (BATMON_HR=1/0)" name="VAL_0xA" value="0xA"/>
-        <value caption="3.375V / 2.25V (BATMON_HR=1/0)" name="VAL_0xB" value="0xB"/>
-        <value caption="3.450V / 2.30V (BATMON_HR=1/0)" name="VAL_0xC" value="0xC"/>
-        <value caption="3.525V / 2.35V (BATMON_HR=1/0)" name="VAL_0xD" value="0xD"/>
-        <value caption="3.600V / 2.40V (BATMON_HR=1/0)" name="VAL_0xE" value="0xE"/>
-        <value caption="3.675V / 2.45V (BATMON_HR=1/0)" name="VAL_0xF" value="0xF"/>
+      <value-group name="BATMON_VTH_bitf">
+        <value caption="2.550V / 1.70V (BATMON_HR=1/0)" name="2_550V_1_70V_BATMON_HR_1_0" value="0x0"/>
+        <value caption="2.625V / 1.75V (BATMON_HR=1/0)" name="2_625V_1_75V_BATMON_HR_1_0" value="0x1"/>
+        <value caption="2.700V / 1.80V (BATMON_HR=1/0)" name="2_700V_1_80V_BATMON_HR_1_0" value="0x2"/>
+        <value caption="2.775V / 1.85V (BATMON_HR=1/0)" name="2_775V_1_85V_BATMON_HR_1_0" value="0x3"/>
+        <value caption="2.850V / 1.90V (BATMON_HR=1/0)" name="2_850V_1_90V_BATMON_HR_1_0" value="0x4"/>
+        <value caption="2.925V / 1.95V (BATMON_HR=1/0)" name="2_925V_1_95V_BATMON_HR_1_0" value="0x5"/>
+        <value caption="3.000V / 2.00V (BATMON_HR=1/0)" name="3_000V_2_00V_BATMON_HR_1_0" value="0x6"/>
+        <value caption="3.075V / 2.05V (BATMON_HR=1/0)" name="3_075V_2_05V_BATMON_HR_1_0" value="0x7"/>
+        <value caption="3.150V / 2.10V (BATMON_HR=1/0)" name="3_150V_2_10V_BATMON_HR_1_0" value="0x8"/>
+        <value caption="3.225V / 2.15V (BATMON_HR=1/0)" name="3_225V_2_15V_BATMON_HR_1_0" value="0x9"/>
+        <value caption="3.300V / 2.20V (BATMON_HR=1/0)" name="3_300V_2_20V_BATMON_HR_1_0" value="0xA"/>
+        <value caption="3.375V / 2.25V (BATMON_HR=1/0)" name="3_375V_2_25V_BATMON_HR_1_0" value="0xB"/>
+        <value caption="3.450V / 2.30V (BATMON_HR=1/0)" name="3_450V_2_30V_BATMON_HR_1_0" value="0xC"/>
+        <value caption="3.525V / 2.35V (BATMON_HR=1/0)" name="3_525V_2_35V_BATMON_HR_1_0" value="0xD"/>
+        <value caption="3.600V / 2.40V (BATMON_HR=1/0)" name="3_600V_2_40V_BATMON_HR_1_0" value="0xE"/>
+        <value caption="3.675V / 2.45V (BATMON_HR=1/0)" name="3_675V_2_45V_BATMON_HR_1_0" value="0xF"/>
       </value-group>
-      <value-group caption="" name="XTAL_MODE_BITF">
-        <value caption="Internal crystal oscillator disabled; use external reference frequency." name="VAL_0x4" value="0x4"/>
-        <value caption="Internal crystal oscillator enabled; amplitude regulation of oscillation enabled." name="VAL_0xF" value="0xF"/>
+      <value-group name="XTAL_MODE_BITF">
+        <value caption="Internal crystal oscillator disabled; use external reference frequency." name="INTERNAL_CRYSTAL_OSCILLATOR_DISABLED_USE_EXTERNAL_REFERENCE_FREQUENCY" value="0x4"/>
+        <value caption="Internal crystal oscillator enabled; amplitude regulation of oscillation enabled." name="INTERNAL_CRYSTAL_OSCILLATOR_ENABLED_AMPLITUDE_REGULATION_OF_OSCILLATION_ENABLED" value="0xF"/>
       </value-group>
-      <value-group caption="" name="XTAL_TRIM_bitf">
+      <value-group name="XTAL_TRIM_bitf">
         <value caption="0.0 pF, trimming capacitors disconnected" name="XTAL_TRIM_MIN" value="0x0"/>
         <value caption="0.3 pF, trimming capacitor switched on" name="VAL_0x1" value="0x1"/>
         <value caption="..." name="VAL_0x2" value="0x2"/>
         <value caption="4.5 pF, trimming capacitor switched on" name="XTAL_TRIM_MAX" value="0xF"/>
       </value-group>
-      <value-group caption="" name="RX_PDT_LEVEL_BITF">
+      <value-group name="RX_PDT_LEVEL_BITF">
         <value caption="RX_THRES ≤ RSSI_BASE_VAL (Reset value); RSSI value not considered" name="RX_PDT_LEVEL_MIN" value="0x0"/>
         <value caption="RX_THRES &gt; RSSI_BASE_VAL + 0 · 3; RSSI &gt; -90 dBm" name="VAL_0x1" value="0x1"/>
         <value caption="..." name="VAL_0x2" value="0x2"/>
         <value caption="RX_THRES &gt; RSSI_BASE_VAL + 13 · 3; RSSI &gt; -51 dBm" name="VAL_0xE" value="0xE"/>
         <value caption="RX_THRES &gt; RSSI_BASE_VAL + 14 · 3; RSSI &gt; -48 dBm" name="RX_PDT_LEVEL_MAX" value="0xF"/>
       </value-group>
-      <value-group caption="" name="RX_RPC_CTRL_BITF">
-        <value caption="Activates minimum power saving behaviour for smart receiving mode" name="VAL_0" value="0"/>
-        <value caption="Reserved" name="VAL_1" value="1"/>
-        <value caption="Reserved" name="VAL_2" value="2"/>
-        <value caption="Activates maximum power saving behaviour for smart receiving mode" name="VAL_3" value="3"/>
+      <value-group name="RX_RPC_CTRL_BITF">
+        <value caption="Activates minimum power saving behaviour for smart receiving mode" name="ACTIVATES_MINIMUM_POWER_SAVING_BEHAVIOUR_FOR_SMART_RECEIVING_MODE" value="0"/>
+        <value caption="Reserved" name="RESERVED" value="1"/>
+        <value caption="Reserved" name="RESERVED" value="2"/>
+        <value caption="Activates maximum power saving behaviour for smart receiving mode" name="ACTIVATES_MAXIMUM_POWER_SAVING_BEHAVIOUR_FOR_SMART_RECEIVING_MODE" value="3"/>
       </value-group>
-      <value-group caption="" name="AACK_ACK_TIME_bitf">
+      <value-group name="AACK_ACK_TIME_bitf">
         <value caption="12 symbols acknowledgment time" name="AACK_ACK_TIME_12_SYM" value="0"/>
         <value caption=" 2 symbols acknowledgment time" name="AACK_ACK_TIME_2_SYM" value="1"/>
       </value-group>
-      <value-group caption="" name="PART_NUM_bitf">
+      <value-group name="PART_NUM_bitf">
         <value caption="ATmega128RFA1 part number" name="P_ATmega128RFA1" value="0x83"/>
         <value caption="RFA2 family" name="P_RFA2" value="0x93"/>
         <value caption="RFR2 family" name="P_RFR2" value="0x94"/>
       </value-group>
-      <value-group caption="" name="VERSION_NUM_2_BITF">
+      <value-group name="VERSION_NUM_2_BITF">
         <value caption="Revision A" name="REV_A" value="12"/>
         <value caption="Revision B" name="REV_B" value="1"/>
         <value caption="Revision C" name="REV_C" value="3"/>
         <value caption="Revision D" name="REV_D" value="4"/>
       </value-group>
-      <value-group caption="" name="MAN_ID_0_BITF">
+      <value-group name="MAN_ID_0_BITF">
         <value caption="Atmel JEDEC manufacturer ID, bits [7:0] of 32 bit manufacturer ID: 00 00 00 1F" name="ATMEL_BYTE_0" value="0x1f"/>
       </value-group>
-      <value-group caption="" name="MAN_ID_1_BITF">
+      <value-group name="MAN_ID_1_BITF">
         <value caption="Atmel JEDEC manufacturer ID, bits [15:8] of 32 bit manufacturer ID: 00 00 00 1F" name="ATMEL_BYTE_1" value="0x00"/>
       </value-group>
-      <value-group caption="" name="MAX_FRAME_RETRIES_bitf">
-        <value caption="Retransmission of frame is not attempted." name="VAL_0x0" value="0x0"/>
-        <value caption="Retransmission of frame is attempted once." name="VAL_0x1" value="0x1"/>
-        <value caption="..." name="VAL_0x2" value="0x2"/>
-        <value caption="Retransmission of frame is attempted 15 times." name="VAL_0xF" value="0xF"/>
+      <value-group name="MAX_FRAME_RETRIES_bitf">
+        <value caption="Retransmission of frame is not attempted." name="RETRANSMISSION_OF_FRAME_IS_NOT_ATTEMPTED" value="0x0"/>
+        <value caption="Retransmission of frame is attempted once." name="RETRANSMISSION_OF_FRAME_IS_ATTEMPTED_ONCE" value="0x1"/>
+        <value caption="..." name="RESERVED" value="0x2"/>
+        <value caption="Retransmission of frame is attempted 15 times." name="RETRANSMISSION_OF_FRAME_IS_ATTEMPTED_15_TIMES" value="0xF"/>
       </value-group>
-      <value-group caption="" name="MAX_CSMA_RETRIES_bitf">
-        <value caption="No repetition of CSMA-CA procedure" name="VAL_0x0" value="0x0"/>
-        <value caption="One repetition of CSMA-CA procedure" name="VAL_0x1" value="0x1"/>
-        <value caption="..." name="VAL_0x2" value="0x2"/>
-        <value caption="Five repetitions (highest IEEE 802.15.4 compliant value)" name="VAL_0x5" value="0x5"/>
-        <value caption="Reserved" name="VAL_0x6" value="0x6"/>
-        <value caption="Immediate frame re-transmission without performing CSMA-CA" name="VAL_0x7" value="0x7"/>
+      <value-group name="MAX_CSMA_RETRIES_bitf">
+        <value caption="No repetition of CSMA-CA procedure" name="NO_REPETITION_OF_CSMA_CA_PROCEDURE" value="0x0"/>
+        <value caption="One repetition of CSMA-CA procedure" name="ONE_REPETITION_OF_CSMA_CA_PROCEDURE" value="0x1"/>
+        <value caption="..." name="RESERVED" value="0x2"/>
+        <value caption="Five repetitions (highest IEEE 802.15.4 compliant value)" name="FIVE_REPETITIONS_HIGHEST_IEEE_802_15_4_COMPLIANT_VALUE" value="0x5"/>
+        <value caption="Reserved" name="RESERVED" value="0x6"/>
+        <value caption="Immediate frame re-transmission without performing CSMA-CA" name="IMMEDIATE_FRAME_RE_TRANSMISSION_WITHOUT_PERFORMING_CSMA_CA" value="0x7"/>
       </value-group>
-      <value-group caption="" name="SLOTTED_OPERATION_BITF">
+      <value-group name="SLOTTED_OPERATION_BITF">
         <value caption="The radio transceiver operates in unslotted mode. An acknowledgment frame is automatically sent if requested." name="SLOTTED_OP_DIS" value="0"/>
         <value caption="The transmission of an acknowledgment frame has to be controlled by the microcontroller." name="SLOTTED_OP_EN" value="1"/>
       </value-group>
-      <value-group caption="" name="AACK_FVN_MODE_bitf">
-        <value caption="Acknowledge frames with version number 0" name="VAL_0" value="0"/>
-        <value caption="Acknowledge frames with version number 0 or 1" name="VAL_1" value="1"/>
-        <value caption="Acknowledge frames with version number 0 or 1 or 2" name="VAL_2" value="2"/>
-        <value caption="Acknowledge frames independent of frame version number" name="VAL_3" value="3"/>
+      <value-group name="AACK_FVN_MODE_bitf">
+        <value caption="Acknowledge frames with version number 0" name="ACKNOWLEDGE_FRAMES_WITH_VERSION_NUMBER_0" value="0"/>
+        <value caption="Acknowledge frames with version number 0 or 1" name="ACKNOWLEDGE_FRAMES_WITH_VERSION_NUMBER_0_OR_1" value="1"/>
+        <value caption="Acknowledge frames with version number 0 or 1 or 2" name="ACKNOWLEDGE_FRAMES_WITH_VERSION_NUMBER_0_OR_1_OR_2" value="2"/>
+        <value caption="Acknowledge frames independent of frame version number" name="ACKNOWLEDGE_FRAMES_INDEPENDENT_OF_FRAME_VERSION_NUMBER" value="3"/>
       </value-group>
-      <value-group caption="" name="MAX_BE_bitf">
-        <value caption="This value is not valid for the maximum back-off exponent." name="VAL_1" value="1"/>
-        <value caption="This value is not valid for the maximum back-off exponent." name="VAL_2" value="2"/>
-        <value caption="Minimum, IEEE compliant value for the maximum back-off exponent." name="VAL_3" value="3"/>
-        <value caption="..." name="VAL_4" value="4"/>
-        <value caption="Maximum, IEEE compliant value for the maximum back-off exponent." name="VAL_8" value="8"/>
+      <value-group name="MAX_BE_bitf">
+        <value caption="This value is not valid for the maximum back-off exponent." name="THIS_VALUE_IS_NOT_VALID_FOR_THE_MAXIMUM_BACK_OFF_EXPONENT" value="1"/>
+        <value caption="This value is not valid for the maximum back-off exponent." name="THIS_VALUE_IS_NOT_VALID_FOR_THE_MAXIMUM_BACK_OFF_EXPONENT" value="2"/>
+        <value caption="Minimum, IEEE compliant value for the maximum back-off exponent." name="MINIMUM_IEEE_COMPLIANT_VALUE_FOR_THE_MAXIMUM_BACK_OFF_EXPONENT" value="3"/>
+        <value caption="..." name="RESERVED" value="4"/>
+        <value caption="Maximum, IEEE compliant value for the maximum back-off exponent." name="MAXIMUM_IEEE_COMPLIANT_VALUE_FOR_THE_MAXIMUM_BACK_OFF_EXPONENT" value="8"/>
       </value-group>
-      <value-group caption="" name="MIN_BE_bitf">
-        <value caption="Minimum value of minimum back-off exponent." name="VAL_0" value="0"/>
-        <value caption="..." name="VAL_1" value="1"/>
-        <value caption="Maximum value of minimum back-off exponent. MIN_BE must be smaller or equal to MAX_BE." name="VAL_8" value="8"/>
+      <value-group name="MIN_BE_bitf">
+        <value caption="Minimum value of minimum back-off exponent." name="MINIMUM_VALUE_OF_MINIMUM_BACK_OFF_EXPONENT" value="0"/>
+        <value caption="..." name="RESERVED" value="1"/>
+        <value caption="Maximum value of minimum back-off exponent. MIN_BE must be smaller or equal to MAX_BE." name="MAXIMUM_VALUE_OF_MINIMUM_BACK_OFF_EXPONENT_MIN_BE_MUST_BE_SMALLER_OR_EQUAL_TO_MAX_BE" value="8"/>
       </value-group>
-      <value-group caption="" name="TST_CTRL_DIG_BITF">
-        <value caption="NORMAL (no test is active)" name="VAL_0" value="0"/>
-        <value caption="TST_CONT_TX (continuous transmit)" name="VAL_15" value="15"/>
+      <value-group name="TST_CTRL_DIG_BITF">
+        <value caption="NORMAL (no test is active)" name="NORMAL_NO_TEST_IS_ACTIVE" value="0"/>
+        <value caption="TST_CONT_TX (continuous transmit)" name="TST_CONT_TX_CONTINUOUS_TRANSMIT" value="15"/>
       </value-group>
     </module>
     <module caption="MAC Symbol Counter" name="SYMCNT">
@@ -1955,29 +1956,29 @@
           <bitfield caption="Symbol Counter Received Frame Timestamp Register LL-Byte" mask="0xFF" name="SCRSTRLL"/>
         </register>
       </register-group>
-      <value-group caption="" name="SCCKDIV_BITF">
-        <value caption="Transceiver Clock divided by 256, (62.5kHz)" name="VAL_0" value="0"/>
-        <value caption="Transceiver Clock divided by 128, (125kHz)" name="VAL_1" value="1"/>
-        <value caption="Transceiver Clock divided by 64,  (250kHz)" name="VAL_2" value="2"/>
-        <value caption="Transceiver Clock divided by 32,  (500kHz)" name="VAL_3" value="3"/>
-        <value caption="Transceiver Clock divided by 16,  (1MHz)" name="VAL_4" value="4"/>
-        <value caption="Transceiver Clock divided by 8,   (2MHz)" name="VAL_5" value="5"/>
-        <value caption="Transceiver Clock divided by 4,   (4MHz)" name="VAL_6" value="6"/>
+      <value-group name="SCCKDIV_BITF">
+        <value caption="Transceiver Clock divided by 256, (62.5kHz)" name="TRANSCEIVER_CLOCK_DIVIDED_BY_256_62_5KHZ" value="0"/>
+        <value caption="Transceiver Clock divided by 128, (125kHz)" name="TRANSCEIVER_CLOCK_DIVIDED_BY_128_125KHZ" value="1"/>
+        <value caption="Transceiver Clock divided by 64,  (250kHz)" name="TRANSCEIVER_CLOCK_DIVIDED_BY_64_250KHZ" value="2"/>
+        <value caption="Transceiver Clock divided by 32,  (500kHz)" name="TRANSCEIVER_CLOCK_DIVIDED_BY_32_500KHZ" value="3"/>
+        <value caption="Transceiver Clock divided by 16,  (1MHz)" name="TRANSCEIVER_CLOCK_DIVIDED_BY_16_1MHZ" value="4"/>
+        <value caption="Transceiver Clock divided by 8,   (2MHz)" name="TRANSCEIVER_CLOCK_DIVIDED_BY_8_2MHZ" value="5"/>
+        <value caption="Transceiver Clock divided by 4,   (4MHz)" name="TRANSCEIVER_CLOCK_DIVIDED_BY_4_4MHZ" value="6"/>
       </value-group>
-      <value-group caption="" name="SCCS3_BITF">
-        <value caption="Compare Unit 3 Relative Compare Source = Beacon Timestamp Register" name="VAL_0" value="0"/>
-        <value caption="Compare Unit 3 Relative Compare Source = Transmit Frame Timestamp Register" name="VAL_1" value="1"/>
-        <value caption="Compare Unit 3 Relative Compare Source = Received Frame Timestamp Register" name="VAL_2" value="2"/>
+      <value-group name="SCCS3_BITF">
+        <value caption="Compare Unit 3 Relative Compare Source = Beacon Timestamp Register" name="COMPARE_UNIT_3_RELATIVE_COMPARE_SOURCE_BEACON_TIMESTAMP_REGISTER" value="0"/>
+        <value caption="Compare Unit 3 Relative Compare Source = Transmit Frame Timestamp Register" name="COMPARE_UNIT_3_RELATIVE_COMPARE_SOURCE_TRANSMIT_FRAME_TIMESTAMP_REGISTER" value="1"/>
+        <value caption="Compare Unit 3 Relative Compare Source = Received Frame Timestamp Register" name="COMPARE_UNIT_3_RELATIVE_COMPARE_SOURCE_RECEIVED_FRAME_TIMESTAMP_REGISTER" value="2"/>
       </value-group>
-      <value-group caption="" name="SCCS2_BITF">
-        <value caption="Compare Unit 2 Relative Compare Source = Beacon Timestamp Register" name="VAL_0" value="0"/>
-        <value caption="Compare Unit 2 Relative Compare Source = Transmit Frame Timestamp Register" name="VAL_1" value="1"/>
-        <value caption="Compare Unit 2 Relative Compare Source = Received Frame Timestamp Register" name="VAL_2" value="2"/>
+      <value-group name="SCCS2_BITF">
+        <value caption="Compare Unit 2 Relative Compare Source = Beacon Timestamp Register" name="COMPARE_UNIT_2_RELATIVE_COMPARE_SOURCE_BEACON_TIMESTAMP_REGISTER" value="0"/>
+        <value caption="Compare Unit 2 Relative Compare Source = Transmit Frame Timestamp Register" name="COMPARE_UNIT_2_RELATIVE_COMPARE_SOURCE_TRANSMIT_FRAME_TIMESTAMP_REGISTER" value="1"/>
+        <value caption="Compare Unit 2 Relative Compare Source = Received Frame Timestamp Register" name="COMPARE_UNIT_2_RELATIVE_COMPARE_SOURCE_RECEIVED_FRAME_TIMESTAMP_REGISTER" value="2"/>
       </value-group>
-      <value-group caption="" name="SCCS1_BITF">
-        <value caption="Compare Unit 1 Relative Compare Source = Beacon Timestamp Register" name="VAL_0" value="0"/>
-        <value caption="Compare Unit 1 Relative Compare Source = Transmit Frame Timestamp Register" name="VAL_1" value="1"/>
-        <value caption="Compare Unit 1 Relative Compare Source = Received Frame Timestamp Register" name="VAL_2" value="2"/>
+      <value-group name="SCCS1_BITF">
+        <value caption="Compare Unit 1 Relative Compare Source = Beacon Timestamp Register" name="COMPARE_UNIT_1_RELATIVE_COMPARE_SOURCE_BEACON_TIMESTAMP_REGISTER" value="0"/>
+        <value caption="Compare Unit 1 Relative Compare Source = Transmit Frame Timestamp Register" name="COMPARE_UNIT_1_RELATIVE_COMPARE_SOURCE_TRANSMIT_FRAME_TIMESTAMP_REGISTER" value="1"/>
+        <value caption="Compare Unit 1 Relative Compare Source = Received Frame Timestamp Register" name="COMPARE_UNIT_1_RELATIVE_COMPARE_SOURCE_RECEIVED_FRAME_TIMESTAMP_REGISTER" value="2"/>
       </value-group>
     </module>
     <module caption="EEPROM" name="EEPROM">
@@ -1992,11 +1993,11 @@
           <bitfield caption="EEPROM Read Enable" mask="0x01" name="EERE"/>
         </register>
       </register-group>
-      <value-group caption="" name="EEP_MODE2">
-        <value caption="Erase and Write in one operation (Atomic Operation)" name="VAL_0x00" value="0x00"/>
-        <value caption="Erase only" name="VAL_0x01" value="0x01"/>
-        <value caption="Write only" name="VAL_0x02" value="0x02"/>
-        <value caption="Reserved for future use" name="VAL_0x03" value="0x03"/>
+      <value-group name="EEP_MODE2">
+        <value caption="Erase and Write in one operation (Atomic Operation)" name="ERASE_AND_WRITE_IN_ONE_OPERATION_ATOMIC_OPERATION" value="0x00"/>
+        <value caption="Erase only" name="ERASE_ONLY" value="0x01"/>
+        <value caption="Write only" name="WRITE_ONLY" value="0x02"/>
+        <value caption="Reserved for future use" name="RESERVED_FOR_FUTURE_USE" value="0x03"/>
       </value-group>
     </module>
     <module caption="JTAG Interface" name="JTAG">
@@ -2011,8 +2012,8 @@
           <bitfield caption="JTAG Reset Flag" mask="0x10" name="JTRF"/>
         </register>
       </register-group>
-      <value-group caption="" name="OCDR_DATA_BITF">
-        <value caption="Refer to the debugger documentation for further information on how to use this register." name="VAL_0" value="0"/>
+      <value-group name="OCDR_DATA_BITF">
+        <value caption="Refer to the debugger documentation for further information on how to use this register." name="REFER_TO_THE_DEBUGGER_DOCUMENTATION_FOR_FURTHER_INFORMATION_ON_HOW_TO_USE_THIS_REGISTER" value="0"/>
       </value-group>
     </module>
     <module caption="External Interrupts" name="EXINT">
@@ -2053,21 +2054,21 @@
           <bitfield caption="Pin Change Interrupt Enables" mask="0x07" name="PCIE"/>
         </register>
       </register-group>
-      <value-group caption="" name="INTERRUPT_SENSE_CONTROL3">
-        <value caption="The low level of INTn generates an interrupt request." name="VAL_0x00" value="0x00"/>
-        <value caption="Any edge of INTn generates asynchronously an interrupt request." name="VAL_0x01" value="0x01"/>
-        <value caption="The falling edge of INTn generates asynchronously an interrupt request." name="VAL_0x02" value="0x02"/>
-        <value caption="The rising edge of INTn generates asynchronously an interrupt request." name="VAL_0x03" value="0x03"/>
+      <value-group name="INTERRUPT_SENSE_CONTROL3">
+        <value caption="The low level of INTn generates an interrupt request." name="THE_LOW_LEVEL_OF_INTN_GENERATES_AN_INTERRUPT_REQUEST" value="0x00"/>
+        <value caption="Any edge of INTn generates asynchronously an interrupt request." name="ANY_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" value="0x01"/>
+        <value caption="The falling edge of INTn generates asynchronously an interrupt request." name="THE_FALLING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" value="0x02"/>
+        <value caption="The rising edge of INTn generates asynchronously an interrupt request." name="THE_RISING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" value="0x03"/>
       </value-group>
-      <value-group caption="" name="INTERRUPT_REQ_ENABLE_BITF">
-        <value caption="All external pin interrupts are disabled." name="VAL_0x00" value="0x00"/>
-        <value caption="All external pin interrupts are enabled." name="VAL_0xff" value="0xff"/>
+      <value-group name="INTERRUPT_REQ_ENABLE_BITF">
+        <value caption="All external pin interrupts are disabled." name="ALL_EXTERNAL_PIN_INTERRUPTS_ARE_DISABLED" value="0x00"/>
+        <value caption="All external pin interrupts are enabled." name="ALL_EXTERNAL_PIN_INTERRUPTS_ARE_ENABLED" value="0xff"/>
       </value-group>
-      <value-group caption="" name="INTERRUPT_EXT_FLAG_BITF">
-        <value caption="No edge or logic change on INT7:0 occurred." name="VAL_0x00" value="0x00"/>
-        <value caption="A edge or logic change on INT0 occurred and triggered an interrupt request." name="VAL_0x01" value="0x01"/>
-        <value caption="..." name="VAL_0x02" value="0x02"/>
-        <value caption="A edge or logic change on INT7 occurred and triggered an interrupt request." name="VAL_0x80" value="0x80"/>
+      <value-group name="INTERRUPT_EXT_FLAG_BITF">
+        <value caption="No edge or logic change on INT7:0 occurred." name="NO_EDGE_OR_LOGIC_CHANGE_ON_INT7_0_OCCURRED" value="0x00"/>
+        <value caption="A edge or logic change on INT0 occurred and triggered an interrupt request." name="A_EDGE_OR_LOGIC_CHANGE_ON_INT0_OCCURRED_AND_TRIGGERED_AN_INTERRUPT_REQUEST" value="0x01"/>
+        <value caption="..." name="RESERVED" value="0x02"/>
+        <value caption="A edge or logic change on INT7 occurred and triggered an interrupt request." name="A_EDGE_OR_LOGIC_CHANGE_ON_INT7_OCCURRED_AND_TRIGGERED_AN_INTERRUPT_REQUEST" value="0x80"/>
       </value-group>
     </module>
     <module caption="Analog-to-Digital Converter" name="ADC">
@@ -2120,46 +2121,46 @@
           <bitfield caption="Disable ADC7:0 Digital Input" mask="0x01" name="ADC0D"/>
         </register>
       </register-group>
-      <value-group caption="" name="ANALOG_ADC_V_REF9">
-        <value caption="AREF, Internal reference voltage generation turned off" name="VAL_0x00" value="0x00"/>
-        <value caption="AVDD with external capacitor at AREF pin" name="VAL_0x01" value="0x01"/>
-        <value caption="Internal 1.5V Voltage Reference (no external capacitor at AREF pin)" name="VAL_0x02" value="0x02"/>
-        <value caption="Internal 1.6V Voltage Reference (no external capacitor at AREF pin)" name="VAL_0x03" value="0x03"/>
+      <value-group name="ANALOG_ADC_V_REF9">
+        <value caption="AREF, Internal reference voltage generation turned off" name="AREF_INTERNAL_REFERENCE_VOLTAGE_GENERATION_TURNED_OFF" value="0x00"/>
+        <value caption="AVDD with external capacitor at AREF pin" name="AVDD_WITH_EXTERNAL_CAPACITOR_AT_AREF_PIN" value="0x01"/>
+        <value caption="Internal 1.5V Voltage Reference (no external capacitor at AREF pin)" name="INTERNAL_1_5V_VOLTAGE_REFERENCE_NO_EXTERNAL_CAPACITOR_AT_AREF_PIN" value="0x02"/>
+        <value caption="Internal 1.6V Voltage Reference (no external capacitor at AREF pin)" name="INTERNAL_1_6V_VOLTAGE_REFERENCE_NO_EXTERNAL_CAPACITOR_AT_AREF_PIN" value="0x03"/>
       </value-group>
-      <value-group caption="" name="ANALOG_ADC_PRESCALER">
-        <value caption="2" name="VAL_0x00" value="0x00"/>
-        <value caption="2" name="VAL_0x01" value="0x01"/>
-        <value caption="4" name="VAL_0x02" value="0x02"/>
-        <value caption="8" name="VAL_0x03" value="0x03"/>
-        <value caption="16" name="VAL_0x04" value="0x04"/>
-        <value caption="32" name="VAL_0x05" value="0x05"/>
-        <value caption="64" name="VAL_0x06" value="0x06"/>
-        <value caption="128" name="VAL_0x07" value="0x07"/>
+      <value-group name="ANALOG_ADC_PRESCALER">
+        <value caption="2" name="2" value="0x00"/>
+        <value caption="2" name="2" value="0x01"/>
+        <value caption="4" name="4" value="0x02"/>
+        <value caption="8" name="8" value="0x03"/>
+        <value caption="16" name="16" value="0x04"/>
+        <value caption="32" name="32" value="0x05"/>
+        <value caption="64" name="64" value="0x06"/>
+        <value caption="128" name="128" value="0x07"/>
       </value-group>
-      <value-group caption="" name="ANALOG_ADC_AUTO_TRIGGER">
-        <value caption="Free Running mode" name="VAL_0x00" value="0x00"/>
-        <value caption="Analog Comparator" name="VAL_0x01" value="0x01"/>
-        <value caption="External Interrupt Request 0" name="VAL_0x02" value="0x02"/>
-        <value caption="Timer/Counter0 Compare Match A" name="VAL_0x03" value="0x03"/>
-        <value caption="Timer/Counter0 Overflow" name="VAL_0x04" value="0x04"/>
-        <value caption="Timer/Counter1 Compare Match B" name="VAL_0x05" value="0x05"/>
-        <value caption="Timer/Counter1 Overflow" name="VAL_0x06" value="0x06"/>
-        <value caption="Timer/Counter1 Capture Event" name="VAL_0x07" value="0x07"/>
+      <value-group name="ANALOG_ADC_AUTO_TRIGGER">
+        <value caption="Free Running mode" name="FREE_RUNNING_MODE" value="0x00"/>
+        <value caption="Analog Comparator" name="ANALOG_COMPARATOR" value="0x01"/>
+        <value caption="External Interrupt Request 0" name="EXTERNAL_INTERRUPT_REQUEST_0" value="0x02"/>
+        <value caption="Timer/Counter0 Compare Match A" name="TIMER_COUNTER0_COMPARE_MATCH_A" value="0x03"/>
+        <value caption="Timer/Counter0 Overflow" name="TIMER_COUNTER0_OVERFLOW" value="0x04"/>
+        <value caption="Timer/Counter1 Compare Match B" name="TIMER_COUNTER1_COMPARE_MATCH_B" value="0x05"/>
+        <value caption="Timer/Counter1 Overflow" name="TIMER_COUNTER1_OVERFLOW" value="0x06"/>
+        <value caption="Timer/Counter1 Capture Event" name="TIMER_COUNTER1_CAPTURE_EVENT" value="0x07"/>
       </value-group>
-      <value-group caption="" name="ANALOG_ADC_TRACK_AND_HOLD_TIME">
-        <value caption="Single ended: 1, differential 3 ADC clock cycles" name="VAL_0x00" value="0x00"/>
-        <value caption="Single ended: 2, differential 5 ADC clock cycles" name="VAL_0x01" value="0x01"/>
-        <value caption="Single ended: 3, differential 7 ADC clock cycles" name="VAL_0x02" value="0x02"/>
-        <value caption="Single ended: 4, differential 9 ADC clock cycles" name="VAL_0x03" value="0x03"/>
+      <value-group name="ANALOG_ADC_TRACK_AND_HOLD_TIME">
+        <value caption="Single ended: 1, differential 3 ADC clock cycles" name="SINGLE_ENDED_1_DIFFERENTIAL_3_ADC_CLOCK_CYCLES" value="0x00"/>
+        <value caption="Single ended: 2, differential 5 ADC clock cycles" name="SINGLE_ENDED_2_DIFFERENTIAL_5_ADC_CLOCK_CYCLES" value="0x01"/>
+        <value caption="Single ended: 3, differential 7 ADC clock cycles" name="SINGLE_ENDED_3_DIFFERENTIAL_7_ADC_CLOCK_CYCLES" value="0x02"/>
+        <value caption="Single ended: 4, differential 9 ADC clock cycles" name="SINGLE_ENDED_4_DIFFERENTIAL_9_ADC_CLOCK_CYCLES" value="0x03"/>
       </value-group>
-      <value-group caption="" name="ANALOG_ADC_STARTUP_TIME">
-        <value caption="3 ADC clock cycles" name="VAL_0x00" value="0x00"/>
-        <value caption="7 ADC clock cycles" name="VAL_0x01" value="0x01"/>
-        <value caption="11 ADC clock cycles" name="VAL_0x02" value="0x02"/>
-        <value caption="15 ADC clock cycles" name="VAL_0x03" value="0x03"/>
-        <value caption="..." name="VAL_0x04" value="0x04"/>
-        <value caption="251 ADC clock cycles" name="VAL_0x3E" value="0x3E"/>
-        <value caption="255 ADC clock cycles" name="VAL_0x3F" value="0x3F"/>
+      <value-group name="ANALOG_ADC_STARTUP_TIME">
+        <value caption="3 ADC clock cycles" name="3_ADC_CLOCK_CYCLES" value="0x00"/>
+        <value caption="7 ADC clock cycles" name="7_ADC_CLOCK_CYCLES" value="0x01"/>
+        <value caption="11 ADC clock cycles" name="11_ADC_CLOCK_CYCLES" value="0x02"/>
+        <value caption="15 ADC clock cycles" name="15_ADC_CLOCK_CYCLES" value="0x03"/>
+        <value caption="..." name="RESERVED" value="0x04"/>
+        <value caption="251 ADC clock cycles" name="251_ADC_CLOCK_CYCLES" value="0x3E"/>
+        <value caption="255 ADC clock cycles" name="255_ADC_CLOCK_CYCLES" value="0x3F"/>
       </value-group>
     </module>
     <module caption="Bootloader" name="BOOT_LOAD">
@@ -2254,31 +2255,31 @@
           <bitfield caption="Power Reduction ADC" mask="0x01" name="PRADC"/>
         </register>
       </register-group>
-      <value-group caption="" name="OSCCAL_BITF">
-        <value caption="Calibration value for lowest oscillator frequency" name="VAL_0x00" value="0x00"/>
-        <value caption="End value of low frequency range calibration" name="VAL_0x7f" value="0x7f"/>
-        <value caption="Start value of high frequency range calibration" name="VAL_0x80" value="0x80"/>
-        <value caption="Calibration value for highest oscillator frequency" name="VAL_0xff" value="0xff"/>
+      <value-group name="OSCCAL_BITF">
+        <value caption="Calibration value for lowest oscillator frequency" name="CALIBRATION_VALUE_FOR_LOWEST_OSCILLATOR_FREQUENCY" value="0x00"/>
+        <value caption="End value of low frequency range calibration" name="END_VALUE_OF_LOW_FREQUENCY_RANGE_CALIBRATION" value="0x7f"/>
+        <value caption="Start value of high frequency range calibration" name="START_VALUE_OF_HIGH_FREQUENCY_RANGE_CALIBRATION" value="0x80"/>
+        <value caption="Calibration value for highest oscillator frequency" name="CALIBRATION_VALUE_FOR_HIGHEST_OSCILLATOR_FREQUENCY" value="0xff"/>
       </value-group>
-      <value-group caption="" name="CPU_CLK_PRESCALE_4_BITS_SMALL_MEGARF">
-        <value caption="Division factor 1   / RC-Oscillator   2" name="VAL_0x0" value="0x0"/>
-        <value caption="Division factor 2   / RC-Oscillator   4" name="VAL_0x1" value="0x1"/>
-        <value caption="Division factor 4   / RC-Oscillator   8" name="VAL_0x2" value="0x2"/>
-        <value caption="Division factor 8   / RC-Oscillator  16" name="VAL_0x3" value="0x3"/>
-        <value caption="Division factor 16  / RC-Oscillator  32" name="VAL_0x4" value="0x4"/>
-        <value caption="Division factor 32  / RC-Oscillator  64" name="VAL_0x5" value="0x5"/>
-        <value caption="Division factor 64  / RC-Oscillator 128" name="VAL_0x6" value="0x6"/>
-        <value caption="Division factor 128 / RC-Oscillator 256" name="VAL_0x7" value="0x7"/>
-        <value caption="Division factor 256 / RC-Oscillator 512" name="VAL_0x8" value="0x8"/>
-        <value caption="Reserved" name="VAL_0x9" value="0x9"/>
-        <value caption="Reserved" name="VAL_0xA" value="0xA"/>
-        <value caption="Reserved" name="VAL_0xB" value="0xB"/>
-        <value caption="Reserved" name="VAL_0xC" value="0xC"/>
-        <value caption="Reserved" name="VAL_0xD" value="0xD"/>
-        <value caption="Reserved" name="VAL_0xE" value="0xE"/>
-        <value caption="Division factor 1 only permitted for RC-Oscillator. Flash and EEPROM programming is not allowed." name="VAL_0xF" value="0xF"/>
+      <value-group name="CPU_CLK_PRESCALE_4_BITS_SMALL_MEGARF">
+        <value caption="Division factor 1   / RC-Oscillator   2" name="DIVISION_FACTOR_1_RC_OSCILLATOR_2" value="0x0"/>
+        <value caption="Division factor 2   / RC-Oscillator   4" name="DIVISION_FACTOR_2_RC_OSCILLATOR_4" value="0x1"/>
+        <value caption="Division factor 4   / RC-Oscillator   8" name="DIVISION_FACTOR_4_RC_OSCILLATOR_8" value="0x2"/>
+        <value caption="Division factor 8   / RC-Oscillator  16" name="DIVISION_FACTOR_8_RC_OSCILLATOR_16" value="0x3"/>
+        <value caption="Division factor 16  / RC-Oscillator  32" name="DIVISION_FACTOR_16_RC_OSCILLATOR_32" value="0x4"/>
+        <value caption="Division factor 32  / RC-Oscillator  64" name="DIVISION_FACTOR_32_RC_OSCILLATOR_64" value="0x5"/>
+        <value caption="Division factor 64  / RC-Oscillator 128" name="DIVISION_FACTOR_64_RC_OSCILLATOR_128" value="0x6"/>
+        <value caption="Division factor 128 / RC-Oscillator 256" name="DIVISION_FACTOR_128_RC_OSCILLATOR_256" value="0x7"/>
+        <value caption="Division factor 256 / RC-Oscillator 512" name="DIVISION_FACTOR_256_RC_OSCILLATOR_512" value="0x8"/>
+        <value caption="Reserved" name="RESERVED" value="0x9"/>
+        <value caption="Reserved" name="RESERVED" value="0xA"/>
+        <value caption="Reserved" name="RESERVED" value="0xB"/>
+        <value caption="Reserved" name="RESERVED" value="0xC"/>
+        <value caption="Reserved" name="RESERVED" value="0xD"/>
+        <value caption="Reserved" name="RESERVED" value="0xE"/>
+        <value caption="Division factor 1 only permitted for RC-Oscillator. Flash and EEPROM programming is not allowed." name="DIVISION_FACTOR_1_ONLY_PERMITTED_FOR_RC_OSCILLATOR_FLASH_AND_EEPROM_PROGRAMMING_IS_NOT_ALLOWED" value="0xF"/>
       </value-group>
-      <value-group caption="" name="CPU_SLEEP_MODE_3BITS">
+      <value-group name="CPU_SLEEP_MODE_3BITS">
         <value caption="Idle" name="IDLE" value="0x00"/>
         <value caption="ADC Noise Reduction (If Available)" name="ADC" value="0x01"/>
         <value caption="Power Down" name="PDOWN" value="0x02"/>
@@ -2305,25 +2306,25 @@
           <bitfield caption="Coarse Calibration Bits" mask="0x07" name="BGCAL" values="BGCAL_BITF"/>
         </register>
       </register-group>
-      <value-group caption="" name="NEMCR_ADDRESS_BITF">
-        <value caption="Factory Row" name="VAL_0" value="0"/>
-        <value caption="User Row 1" name="VAL_1" value="1"/>
-        <value caption="User Row 2" name="VAL_2" value="2"/>
-        <value caption="User Row 3" name="VAL_3" value="3"/>
+      <value-group name="NEMCR_ADDRESS_BITF">
+        <value caption="Factory Row" name="FACTORY_ROW" value="0"/>
+        <value caption="User Row 1" name="USER_ROW_1" value="1"/>
+        <value caption="User Row 2" name="USER_ROW_2" value="2"/>
+        <value caption="User Row 3" name="USER_ROW_3" value="3"/>
       </value-group>
-      <value-group caption="" name="BGCAL_FINE_BITF">
-        <value caption="Center value" name="VAL_0" value="0"/>
-        <value caption="Voltage step up" name="VAL_1" value="1"/>
-        <value caption="Voltage step down" name="VAL_8" value="8"/>
-        <value caption="Setting for highest voltage" name="VAL_7" value="7"/>
-        <value caption="Setting for lowest voltage" name="VAL_15" value="15"/>
+      <value-group name="BGCAL_FINE_BITF">
+        <value caption="Center value" name="CENTER_VALUE" value="0"/>
+        <value caption="Voltage step up" name="VOLTAGE_STEP_UP" value="1"/>
+        <value caption="Voltage step down" name="VOLTAGE_STEP_DOWN" value="8"/>
+        <value caption="Setting for highest voltage" name="SETTING_FOR_HIGHEST_VOLTAGE" value="7"/>
+        <value caption="Setting for lowest voltage" name="SETTING_FOR_LOWEST_VOLTAGE" value="15"/>
       </value-group>
-      <value-group caption="" name="BGCAL_BITF">
-        <value caption="Center value" name="VAL_4" value="4"/>
-        <value caption="Voltage step up" name="VAL_3" value="3"/>
-        <value caption="Voltage step down" name="VAL_5" value="5"/>
-        <value caption="Setting for highest voltage" name="VAL_0" value="0"/>
-        <value caption="Setting for lowest voltage" name="VAL_7" value="7"/>
+      <value-group name="BGCAL_BITF">
+        <value caption="Center value" name="CENTER_VALUE" value="4"/>
+        <value caption="Voltage step up" name="VOLTAGE_STEP_UP" value="3"/>
+        <value caption="Voltage step down" name="VOLTAGE_STEP_DOWN" value="5"/>
+        <value caption="Setting for highest voltage" name="SETTING_FOR_HIGHEST_VOLTAGE" value="0"/>
+        <value caption="Setting for lowest voltage" name="SETTING_FOR_LOWEST_VOLTAGE" value="7"/>
       </value-group>
     </module>
     <module caption="Power Controller" name="PWRCTRL">
@@ -2377,15 +2378,15 @@
           <bitfield caption="Pull-up Disable" mask="0x10" name="PUD"/>
         </register>
       </register-group>
-      <value-group caption="" name="LLDRL_VALUE_BITF">
-        <value caption="Calibration limit for fast process corner/high output voltage" name="VAL_0x00" value="0x00"/>
-        <value caption="Calibration limit for slow process corner/low output voltage" name="VAL_0x08" value="0x08"/>
+      <value-group name="LLDRL_VALUE_BITF">
+        <value caption="Calibration limit for fast process corner/high output voltage" name="CALIBRATION_LIMIT_FOR_FAST_PROCESS_CORNER_HIGH_OUTPUT_VOLTAGE" value="0x00"/>
+        <value caption="Calibration limit for slow process corner/low output voltage" name="CALIBRATION_LIMIT_FOR_SLOW_PROCESS_CORNER_LOW_OUTPUT_VOLTAGE" value="0x08"/>
       </value-group>
-      <value-group caption="" name="LLDRH_VALUE_BITF">
-        <value caption="Calibration limit for fast process corner/high output voltage" name="VAL_0x00" value="0x00"/>
-        <value caption="Calibration limit for slow process corner/low output voltage" name="VAL_0x10" value="0x10"/>
+      <value-group name="LLDRH_VALUE_BITF">
+        <value caption="Calibration limit for fast process corner/high output voltage" name="CALIBRATION_LIMIT_FOR_FAST_PROCESS_CORNER_HIGH_OUTPUT_VOLTAGE" value="0x00"/>
+        <value caption="Calibration limit for slow process corner/low output voltage" name="CALIBRATION_LIMIT_FOR_SLOW_PROCESS_CORNER_LOW_OUTPUT_VOLTAGE" value="0x10"/>
       </value-group>
-      <value-group caption="" name="PAD_IO_bitf">
+      <value-group name="PAD_IO_bitf">
         <value caption="2 mA" name="PAD_IO_2MA" value="0"/>
         <value caption="4 mA" name="PAD_IO_4MA" value="1"/>
         <value caption="6 mA" name="PAD_IO_6MA" value="2"/>

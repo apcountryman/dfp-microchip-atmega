@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
+<?xml version='1.0' encoding='UTF-8'?>
+<avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
   <variants>
     <variant tempmin="0" tempmax="0" speedmax="0" package="" ordercode="standard" vccmin="1.8" vccmax="4.5"/>
   </variants>
@@ -231,7 +232,7 @@
   <modules>
     <module caption="Fuses" name="FUSE">
       <register-group caption="Fuses" name="FUSE">
-        <register caption="" name="LOW" offset="0x00" size="1" initval="0xDF">
+        <register name="LOW" offset="0x00" size="1" initval="0xDF">
           <bitfield caption="Watch-dog Timer always on" mask="0x80" name="WDTON"/>
           <bitfield caption="Preserve EEPROM through the Chip Erase cycle" mask="0x40" name="EESAVE"/>
           <bitfield caption="Serial program downloading (SPI) enabled" mask="0x20" name="SPIEN"/>
@@ -240,7 +241,7 @@
           <bitfield caption="Select start-up time" mask="0x07" name="SUT" values="ENUM_SUT"/>
         </register>
       </register-group>
-      <value-group caption="" name="ENUM_SUT">
+      <value-group name="ENUM_SUT">
         <value caption="Start-up time 6 CK/14 CK + 4 ms" name="6CK_14CK_4MS" value="0x00"/>
         <value caption="Start-up time 6 CK/14 CK + 8 ms" name="6CK_14CK_8MS" value="0x01"/>
         <value caption="Start-up time 6 CK/14 CK + 16 ms" name="6CK_14CK_16MS" value="0x02"/>
@@ -253,11 +254,11 @@
     </module>
     <module caption="Lockbits" name="LOCKBIT">
       <register-group caption="Lockbits" name="LOCKBIT">
-        <register caption="" name="LOCKBIT" offset="0x00" size="1" initval="0xFF">
+        <register name="LOCKBIT" offset="0x00" size="1" initval="0xFF">
           <bitfield caption="Memory Lock" mask="0x03" name="LB" values="ENUM_LB"/>
         </register>
       </register-group>
-      <value-group caption="" name="ENUM_LB">
+      <value-group name="ENUM_LB">
         <value caption="Further programming and verification disabled" name="PROG_VER_DISABLED" value="0x00"/>
         <value caption="Further programming disabled" name="PROG_DISABLED" value="0x02"/>
         <value caption="No memory lock features enabled" name="NO_LOCK" value="0x03"/>
@@ -287,17 +288,17 @@
           <bitfield caption="Watch Dog Enable" mask="0x08" name="WDE"/>
         </register>
       </register-group>
-      <value-group caption="" name="WDOG_TIMER_PRESCALE_4BITS">
-        <value caption="Oscillator Cycles 2K" name="VAL_0x00" value="0x00"/>
-        <value caption="Oscillator Cycles 4K" name="VAL_0x01" value="0x01"/>
-        <value caption="Oscillator Cycles 8K" name="VAL_0x02" value="0x02"/>
-        <value caption="Oscillator Cycles 16K" name="VAL_0x03" value="0x03"/>
-        <value caption="Oscillator Cycles 32K" name="VAL_0x04" value="0x04"/>
-        <value caption="Oscillator Cycles 64K" name="VAL_0x05" value="0x05"/>
-        <value caption="Oscillator Cycles 128K" name="VAL_0x06" value="0x06"/>
-        <value caption="Oscillator Cycles 256K" name="VAL_0x07" value="0x07"/>
-        <value caption="Oscillator Cycles 512K" name="VAL_0x08" value="0x08"/>
-        <value caption="Oscillator Cycles 1024K" name="VAL_0x09" value="0x09"/>
+      <value-group name="WDOG_TIMER_PRESCALE_4BITS">
+        <value caption="Oscillator Cycles 2K" name="OSCILLATOR_CYCLES_2K" value="0x00"/>
+        <value caption="Oscillator Cycles 4K" name="OSCILLATOR_CYCLES_4K" value="0x01"/>
+        <value caption="Oscillator Cycles 8K" name="OSCILLATOR_CYCLES_8K" value="0x02"/>
+        <value caption="Oscillator Cycles 16K" name="OSCILLATOR_CYCLES_16K" value="0x03"/>
+        <value caption="Oscillator Cycles 32K" name="OSCILLATOR_CYCLES_32K" value="0x04"/>
+        <value caption="Oscillator Cycles 64K" name="OSCILLATOR_CYCLES_64K" value="0x05"/>
+        <value caption="Oscillator Cycles 128K" name="OSCILLATOR_CYCLES_128K" value="0x06"/>
+        <value caption="Oscillator Cycles 256K" name="OSCILLATOR_CYCLES_256K" value="0x07"/>
+        <value caption="Oscillator Cycles 512K" name="OSCILLATOR_CYCLES_512K" value="0x08"/>
+        <value caption="Oscillator Cycles 1024K" name="OSCILLATOR_CYCLES_1024K" value="0x09"/>
       </value-group>
     </module>
     <module caption="Bandgap" name="BANDGAP">
@@ -326,10 +327,10 @@
         </register>
       </register-group>
       <value-group caption="Interrupt Sense Control" name="INTERRUPT_SENSE_CONTROL">
-        <value caption="Low Level of INTX" name="VAL_0x00" value="0x00"/>
-        <value caption="Any Logical Change of INTX" name="VAL_0x01" value="0x01"/>
-        <value caption="Falling Edge of INTX" name="VAL_0x02" value="0x02"/>
-        <value caption="Rising Edge of INTX" name="VAL_0x03" value="0x03"/>
+        <value caption="Low Level of INTX" name="LOW_LEVEL_OF_INTX" value="0x00"/>
+        <value caption="Any Logical Change of INTX" name="ANY_LOGICAL_CHANGE_OF_INTX" value="0x01"/>
+        <value caption="Falling Edge of INTX" name="FALLING_EDGE_OF_INTX" value="0x02"/>
+        <value caption="Rising Edge of INTX" name="RISING_EDGE_OF_INTX" value="0x03"/>
       </value-group>
     </module>
     <module caption="I/O Port" name="PORT">
@@ -376,15 +377,15 @@
         </register>
         <register caption="SPI Data Register" name="SPDR" offset="0x4e" size="1" mask="0xFF" ocd-rw=""/>
       </register-group>
-      <value-group caption="" name="COMM_SCK_RATE_3BIT">
-        <value caption="fosc/4" name="VAL_0x00" value="0x00"/>
-        <value caption="fosc/16" name="VAL_0x01" value="0x01"/>
-        <value caption="fosc/64" name="VAL_0x02" value="0x02"/>
-        <value caption="fosc/128" name="VAL_0x03" value="0x03"/>
-        <value caption="fosc/2" name="VAL_0x04" value="0x04"/>
-        <value caption="fosc/8" name="VAL_0x05" value="0x05"/>
-        <value caption="fosc/32" name="VAL_0x06" value="0x06"/>
-        <value caption="fosc/64" name="VAL_0x07" value="0x07"/>
+      <value-group name="COMM_SCK_RATE_3BIT">
+        <value caption="fosc/4" name="FOSC_4" value="0x00"/>
+        <value caption="fosc/16" name="FOSC_16" value="0x01"/>
+        <value caption="fosc/64" name="FOSC_64" value="0x02"/>
+        <value caption="fosc/128" name="FOSC_128" value="0x03"/>
+        <value caption="fosc/2" name="FOSC_2" value="0x04"/>
+        <value caption="fosc/8" name="FOSC_8" value="0x05"/>
+        <value caption="fosc/32" name="FOSC_32" value="0x06"/>
+        <value caption="fosc/64" name="FOSC_64" value="0x07"/>
       </value-group>
     </module>
     <module caption="Bootloader" name="BOOT_LOAD">
@@ -452,7 +453,7 @@
           <bitfield caption="Clock Prescaler Select Bits" mask="0x03" name="CLKPS"/>
         </register>
       </register-group>
-      <value-group name="CPU_SLEEP_MODE_3BITS" caption="">
+      <value-group name="CPU_SLEEP_MODE_3BITS">
         <value caption="Idle" name="IDLE" value="0x00"/>
         <value caption="ADC Noise Reduction (If Available)" name="ADC" value="0x01"/>
         <value caption="Reserved" name="VAL_0x02" value="0x02"/>
@@ -506,17 +507,17 @@
         <register caption="EEPROM Read/Write Access" name="EEAR" offset="0x41" size="1" mask="0xFF"/>
         <register caption="EEPROM Data Register" name="EEDR" offset="0x40" size="1" mask="0xFF"/>
         <register caption="EEPROM Control Register" name="EECR" offset="0x3F" size="1">
-          <bitfield caption="" mask="0x30" name="EEPM" values="EEP_MODE"/>
+          <bitfield mask="0x30" name="EEPM" values="EEP_MODE"/>
           <bitfield caption="EEProm Ready Interrupt Enable" mask="0x08" name="EERIE"/>
           <bitfield caption="EEPROM Master Write Enable" mask="0x04" name="EEMPE"/>
           <bitfield caption="EEPROM Write Enable" mask="0x02" name="EEPE"/>
           <bitfield caption="EEPROM Read Enable" mask="0x01" name="EERE"/>
         </register>
       </register-group>
-      <value-group caption="" name="EEP_MODE">
-        <value caption="Erase and Write in one operation" name="VAL_0x00" value="0x00"/>
-        <value caption="Erase Only" name="VAL_0x01" value="0x01"/>
-        <value caption="Write Only" name="VAL_0x02" value="0x02"/>
+      <value-group name="EEP_MODE">
+        <value caption="Erase and Write in one operation" name="ERASE_AND_WRITE_IN_ONE_OPERATION" value="0x00"/>
+        <value caption="Erase Only" name="ERASE_ONLY" value="0x01"/>
+        <value caption="Write Only" name="WRITE_ONLY" value="0x02"/>
       </value-group>
     </module>
     <module caption="Timer/Counter, 16-bit" name="TC16">
@@ -587,14 +588,14 @@
       <register-group caption="Coulomb Counter" name="COULOMB_COUNTER">
         <register caption="CC-ADC Control and Status Register A" name="CADCSRA" offset="0xE4" size="1">
           <bitfield caption="When the CADEN bit is cleared (zero), the CC-ADC is disabled. When the CADEN bit is set (one), the CC-ADC will continuously measure the voltage drop over the external sense resistor RSENSE. In Power-down, only the Regular Current detection is active. In Power-off, the CC-ADC is always disabled." mask="0x80" name="CADEN"/>
-          <bitfield caption="" mask="0x40" name="CADPOL"/>
+          <bitfield mask="0x40" name="CADPOL"/>
           <bitfield caption="CC_ADC Update Busy" mask="0x20" name="CADUB"/>
           <bitfield caption="CC_ADC Accumulate Current Select Bits" mask="0x18" name="CADAS"/>
           <bitfield caption="The CADSI bits determine the current sampling interval for the Regular Current detection in Power-down mode. The actual settings remain to be determined." mask="0x06" name="CADSI"/>
           <bitfield caption="When the CADSE bit is written to one, the ongoing CC-ADC conversion is aborted, and the CC-ADC enters Regular Current detection mode." mask="0x01" name="CADSE"/>
         </register>
         <register caption="CC-ADC Control and Status Register B" name="CADCSRB" offset="0xE5" size="1">
-          <bitfield caption="" mask="0x40" name="CADACIE"/>
+          <bitfield mask="0x40" name="CADACIE"/>
           <bitfield caption="Regular Current Interrupt Enable" mask="0x20" name="CADRCIE"/>
           <bitfield caption="CAD Instantenous Current Interrupt Enable" mask="0x10" name="CADICIE"/>
           <bitfield caption="CC-ADC Accumulate Current Interrupt Flag" mask="0x04" name="CADACIF"/>

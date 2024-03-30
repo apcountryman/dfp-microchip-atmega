@@ -264,14 +264,14 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC0">
               <edc:SFRFieldDef edc:cname="CS0" edc:desc="Clock Select" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No Clock Source (Stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Running, No Prescaling" edc:when="(field &amp; 0x7) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Running, CLK/8" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Running, CLK/64" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Running, CLK/256" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Running, CLK/1024" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Running, ExtClk Tn Falling Edge" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Running, ExtClk Tn Rising Edge" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="NO_CLOCK_SOURCE_STOPPED" edc:desc="No Clock Source (Stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_NO_PRESCALING" edc:desc="Running, No Prescaling" edc:when="(field &amp; 0x7) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_8" edc:desc="Running, CLK/8" edc:when="(field &amp; 0x7) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_64" edc:desc="Running, CLK/64" edc:when="(field &amp; 0x7) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_256" edc:desc="Running, CLK/256" edc:when="(field &amp; 0x7) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_1024" edc:desc="Running, CLK/1024" edc:when="(field &amp; 0x7) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_EXTCLK_TN_FALLING_EDGE" edc:desc="Running, ExtClk Tn Falling Edge" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_EXTCLK_TN_RISING_EDGE" edc:desc="Running, ExtClk Tn Rising Edge" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="WGM02" edc:nzwidth="0x1"/>
               <edc:AdjustPoint edc:offset="0x2"/>
@@ -315,14 +315,14 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="SPI">
               <edc:SFRFieldDef edc:cname="SPR" edc:desc="SPI Clock Rate Selects" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="fosc/4" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="fosc/16" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="fosc/64" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="fosc/128" edc:when="(field &amp; 0x3) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="fosc/2" edc:when="(field &amp; 0x3) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="fosc/8" edc:when="(field &amp; 0x3) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="fosc/32" edc:when="(field &amp; 0x3) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="fosc/64" edc:when="(field &amp; 0x3) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="FOSC_4" edc:desc="fosc/4" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="FOSC_16" edc:desc="fosc/16" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="FOSC_64" edc:desc="fosc/64" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="FOSC_128" edc:desc="fosc/128" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="FOSC_2" edc:desc="fosc/2" edc:when="(field &amp; 0x3) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="FOSC_8" edc:desc="fosc/8" edc:when="(field &amp; 0x3) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="FOSC_32" edc:desc="fosc/32" edc:when="(field &amp; 0x3) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="FOSC_64" edc:desc="fosc/64" edc:when="(field &amp; 0x3) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="CPHA" edc:desc="Clock Phase" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="CPOL" edc:desc="Clock polarity" edc:nzwidth="0x1"/>
@@ -440,16 +440,16 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="WDT">
               <edc:SFRFieldDef edc:cname="WDP" edc:desc="Watchdog Timer Prescaler Bits" edc:mask="0x27" edc:nzwidth="0x6">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Oscillator Cycles 2K" edc:when="(field &amp; 0x27) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Oscillator Cycles 4K" edc:when="(field &amp; 0x27) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Oscillator Cycles 8K" edc:when="(field &amp; 0x27) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Oscillator Cycles 16K" edc:when="(field &amp; 0x27) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Oscillator Cycles 32K" edc:when="(field &amp; 0x27) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Oscillator Cycles 64K" edc:when="(field &amp; 0x27) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Oscillator Cycles 128K" edc:when="(field &amp; 0x27) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Oscillator Cycles 256K" edc:when="(field &amp; 0x27) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="Oscillator Cycles 512K" edc:when="(field &amp; 0x27) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x09" edc:desc="Oscillator Cycles 1024K" edc:when="(field &amp; 0x27) == 0x09"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_2K" edc:desc="Oscillator Cycles 2K" edc:when="(field &amp; 0x27) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_4K" edc:desc="Oscillator Cycles 4K" edc:when="(field &amp; 0x27) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_8K" edc:desc="Oscillator Cycles 8K" edc:when="(field &amp; 0x27) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_16K" edc:desc="Oscillator Cycles 16K" edc:when="(field &amp; 0x27) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_32K" edc:desc="Oscillator Cycles 32K" edc:when="(field &amp; 0x27) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_64K" edc:desc="Oscillator Cycles 64K" edc:when="(field &amp; 0x27) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_128K" edc:desc="Oscillator Cycles 128K" edc:when="(field &amp; 0x27) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_256K" edc:desc="Oscillator Cycles 256K" edc:when="(field &amp; 0x27) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_512K" edc:desc="Oscillator Cycles 512K" edc:when="(field &amp; 0x27) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_1024K" edc:desc="Oscillator Cycles 1024K" edc:when="(field &amp; 0x27) == 0x09"/>
               </edc:SFRFieldDef>
               <edc:AdjustPoint edc:offset="-3"/>
               <edc:SFRFieldDef edc:cname="WDE" edc:desc="Watch Dog Enable" edc:nzwidth="0x1"/>
@@ -464,15 +464,15 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="CPU">
               <edc:SFRFieldDef edc:cname="CLKPS" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="1" edc:when="(field &amp; 0xF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="2" edc:when="(field &amp; 0xF) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="4" edc:when="(field &amp; 0xF) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="8" edc:when="(field &amp; 0xF) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="16" edc:when="(field &amp; 0xF) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="32" edc:when="(field &amp; 0xF) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="64" edc:when="(field &amp; 0xF) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="128" edc:when="(field &amp; 0xF) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="256" edc:when="(field &amp; 0xF) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="1" edc:desc="1" edc:when="(field &amp; 0xF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="2" edc:desc="2" edc:when="(field &amp; 0xF) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="4" edc:desc="4" edc:when="(field &amp; 0xF) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="8" edc:desc="8" edc:when="(field &amp; 0xF) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="16" edc:desc="16" edc:when="(field &amp; 0xF) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="32" edc:desc="32" edc:when="(field &amp; 0xF) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="64" edc:desc="64" edc:when="(field &amp; 0xF) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="128" edc:desc="128" edc:when="(field &amp; 0xF) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="256" edc:desc="256" edc:when="(field &amp; 0xF) == 0x08"/>
               </edc:SFRFieldDef>
               <edc:AdjustPoint edc:offset="0x3"/>
               <edc:SFRFieldDef edc:cname="CLKPCE" edc:nzwidth="0x1"/>
@@ -507,28 +507,28 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="EXINT">
               <edc:SFRFieldDef edc:cname="ISC0" edc:desc="External Interrupt Sense Control Bit" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="LOW_LEVEL_OF_INTX" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_LOGICAL_CHANGE_OF_INTX" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="FALLING_EDGE_OF_INTX" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="RISING_EDGE_OF_INTX" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ISC1" edc:desc="External Interrupt Sense Control Bit" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="LOW_LEVEL_OF_INTX" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_LOGICAL_CHANGE_OF_INTX" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="FALLING_EDGE_OF_INTX" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="RISING_EDGE_OF_INTX" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ISC2" edc:desc="External Interrupt Sense Control Bit" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="LOW_LEVEL_OF_INTX" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_LOGICAL_CHANGE_OF_INTX" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="FALLING_EDGE_OF_INTX" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="RISING_EDGE_OF_INTX" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ISC3" edc:desc="External Interrupt Sense Control Bit" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="LOW_LEVEL_OF_INTX" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_LOGICAL_CHANGE_OF_INTX" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="FALLING_EDGE_OF_INTX" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="RISING_EDGE_OF_INTX" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -610,10 +610,10 @@
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="ADLAR" edc:desc="Left Adjust Result" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="REFS" edc:desc="Reference Selection Bits" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="AREF, Internal Vref turned off" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="AVCC with external capacitor at AREF pin" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Internal 2.56V Voltage Reference with external capacitor at AREF pin" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="AREF_INTERNAL_VREF_TURNED_OFF" edc:desc="AREF, Internal Vref turned off" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="AVCC_WITH_EXTERNAL_CAPACITOR_AT_AREF_PIN" edc:desc="AVCC with external capacitor at AREF pin" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="INTERNAL_2_56V_VOLTAGE_REFERENCE_WITH_EXTERNAL_CAPACITOR_AT_AREF_PIN" edc:desc="Internal 2.56V Voltage Reference with external capacitor at AREF pin" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -659,14 +659,14 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC1">
               <edc:SFRFieldDef edc:cname="CS1" edc:desc="Prescaler source of Timer/Counter 1" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No Clock Source (Stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Running, No Prescaling" edc:when="(field &amp; 0x7) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Running, CLK/8" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Running, CLK/64" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Running, CLK/256" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Running, CLK/1024" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Running, ExtClk Tn Falling Edge" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Running, ExtClk Tn Rising Edge" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="NO_CLOCK_SOURCE_STOPPED" edc:desc="No Clock Source (Stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_NO_PRESCALING" edc:desc="Running, No Prescaling" edc:when="(field &amp; 0x7) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_8" edc:desc="Running, CLK/8" edc:when="(field &amp; 0x7) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_64" edc:desc="Running, CLK/64" edc:when="(field &amp; 0x7) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_256" edc:desc="Running, CLK/256" edc:when="(field &amp; 0x7) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_1024" edc:desc="Running, CLK/1024" edc:when="(field &amp; 0x7) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_EXTCLK_TN_FALLING_EDGE" edc:desc="Running, ExtClk Tn Falling Edge" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_EXTCLK_TN_RISING_EDGE" edc:desc="Running, ExtClk Tn Rising Edge" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="WGM1" edc:desc="Waveform Generation Mode" edc:nzwidth="0x2"/>
               <edc:AdjustPoint edc:offset="0x1"/>
@@ -719,10 +719,10 @@
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="PSC0">
               <edc:SFRFieldDef edc:cname="PEOP0" edc:desc="End of PSC0 Interrupt" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PRN0" edc:desc="Ramp Number" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="1" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="2" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="3" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="4" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="1" edc:desc="1" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="2" edc:desc="2" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="3" edc:desc="3" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="4" edc:desc="4" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="PEV0A" edc:desc="External Event A Interrupt" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PEV0B" edc:desc="External Event B Interrupt" edc:nzwidth="0x1"/>
@@ -747,10 +747,10 @@
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="PSC2">
               <edc:SFRFieldDef edc:cname="PEOP2" edc:desc="End of PSC2 Interrupt" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PRN2" edc:desc="Ramp Number" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="1" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="2" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="3" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="4" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="1" edc:desc="1" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="2" edc:desc="2" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="3" edc:desc="3" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="4" edc:desc="4" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="PEV2A" edc:desc="External Event A Interrupt" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PEV2B" edc:desc="External Event B Interrupt" edc:nzwidth="0x1"/>
@@ -788,10 +788,10 @@
               <edc:SFRFieldDef edc:cname="AC2M" edc:desc="Analog Comparator 2 Multiplexer Register" edc:nzwidth="0x3"/>
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="AC2IS" edc:desc="Analog Comparator 2  Interrupt Select Bit" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Interrupt on Toggle" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Interrupt on Falling Edge" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Interrupt on Rising Edge" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="INTERRUPT_ON_TOGGLE" edc:desc="Interrupt on Toggle" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="INTERRUPT_ON_FALLING_EDGE" edc:desc="Interrupt on Falling Edge" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="INTERRUPT_ON_RISING_EDGE" edc:desc="Interrupt on Rising Edge" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="AC2IE" edc:desc="Analog Comparator 2 Interrupt Enable Bit" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="AC2EN" edc:desc="Analog Comparator 2 Enable Bit" edc:nzwidth="0x1"/>
@@ -807,10 +807,10 @@
               <edc:SFRFieldDef edc:cname="POEN0B" edc:desc="PSCOUT01 Output Enable" edc:nzwidth="0x1"/>
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="PSYNC0" edc:desc="Synchronization Out for ADC Selection" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Send signal on leading edge of PSCOUTn0" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Send signal on trailing edge of PSCOUTn0" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Send signal on leading edge of PSCOUTn1" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Send signal on trailing edge of PSCOUTn1" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="SEND_SIGNAL_ON_LEADING_EDGE_OF_PSCOUTN0" edc:desc="Send signal on leading edge of PSCOUTn0" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="SEND_SIGNAL_ON_TRAILING_EDGE_OF_PSCOUTN0" edc:desc="Send signal on trailing edge of PSCOUTn0" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="SEND_SIGNAL_ON_LEADING_EDGE_OF_PSCOUTN1" edc:desc="Send signal on leading edge of PSCOUTn1" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="SEND_SIGNAL_ON_TRAILING_EDGE_OF_PSCOUTN1" edc:desc="Send signal on trailing edge of PSCOUTn1" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -827,10 +827,10 @@
               <edc:SFRFieldDef edc:cname="PCLKSEL0" edc:desc="PSC 0 Input Clock Select" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="POP0" edc:desc="PSC 0 Output Polarity" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PMODE0" edc:desc="PSC 0 Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="One Ramp Mode" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Two Ramp Mode" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Four Ramp Mode" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Center Aligned Mode" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="ONE_RAMP_MODE" edc:desc="One Ramp Mode" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="TWO_RAMP_MODE" edc:desc="Two Ramp Mode" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="FOUR_RAMP_MODE" edc:desc="Four Ramp Mode" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="CENTER_ALIGNED_MODE" edc:desc="Center Aligned Mode" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="PLOCK0" edc:desc="PSC 0 Lock" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PALOCK0" edc:desc="PSC 0 Autolock" edc:nzwidth="0x1"/>
@@ -848,10 +848,10 @@
               <edc:SFRFieldDef edc:cname="PAOC0B" edc:desc="PSC 0 Asynchronous Output Control B" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PBFM0" edc:desc="PSC 0 Balance Flank Width Modulation" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PPRE0" edc:desc="PSC 0 Prescaler Selects" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No divider on PSC input clock" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Divide the PSC input clock by 4" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Divide the PSC input clock by 16" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Divide the PSC input clock by 64" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="NO_DIVIDER_ON_PSC_INPUT_CLOCK" edc:desc="No divider on PSC input clock" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="DIVIDE_THE_PSC_INPUT_CLOCK_BY_4" edc:desc="Divide the PSC input clock by 4" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="DIVIDE_THE_PSC_INPUT_CLOCK_BY_16" edc:desc="Divide the PSC input clock by 16" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="DIVIDE_THE_PSC_INPUT_CLOCK_BY_64" edc:desc="Divide the PSC input clock by 64" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -860,22 +860,22 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="PSC0">
               <edc:SFRFieldDef edc:cname="PRFM0A" edc:desc="PSC 0 Retrigger and Fault Mode for Part A" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No action, PSC Input is ignored" edc:when="(field &amp; 0xF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Stop signal, Execute Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Stop signal, Execute Opposite while Fault active" edc:when="(field &amp; 0xF) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Deactivate outputs without changing timing." edc:when="(field &amp; 0xF) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Stop signal and Insert Dead-Time" edc:when="(field &amp; 0xF) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait." edc:when="(field &amp; 0xF) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Halt PSC and Wait for Software Action" edc:when="(field &amp; 0xF) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x09" edc:desc="Fixed Frequency Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x09"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0A" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0A"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0B" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0B"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0C" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0C"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0D" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0D"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0E" edc:desc="Fixed Frequency Edge Retrigger PSC and Disactivate Output" edc:when="(field &amp; 0xF) == 0x0E"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0F" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0F"/>
+                <edc:SFRFieldSemantic edc:cname="NO_ACTION_PSC_INPUT_IS_IGNORED" edc:desc="No action, PSC Input is ignored" edc:when="(field &amp; 0xF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_JUMP_TO_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_EXECUTE_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Execute Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_EXECUTE_OPPOSITE_WHILE_FAULT_ACTIVE" edc:desc="Stop signal, Execute Opposite while Fault active" edc:when="(field &amp; 0xF) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="DEACTIVATE_OUTPUTS_WITHOUT_CHANGING_TIMING" edc:desc="Deactivate outputs without changing timing." edc:when="(field &amp; 0xF) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_AND_INSERT_DEAD_TIME" edc:desc="Stop signal and Insert Dead-Time" edc:when="(field &amp; 0xF) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_JUMP_TO_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait." edc:when="(field &amp; 0xF) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="HALT_PSC_AND_WAIT_FOR_SOFTWARE_ACTION" edc:desc="Halt PSC and Wait for Software Action" edc:when="(field &amp; 0xF) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="EDGE_RETRIGGER_PSC" edc:desc="Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC" edc:desc="Fixed Frequency Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x09"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0A"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0B"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0C"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0D"/>
+                <edc:SFRFieldSemantic edc:cname="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC_AND_DISACTIVATE_OUTPUT" edc:desc="Fixed Frequency Edge Retrigger PSC and Disactivate Output" edc:when="(field &amp; 0xF) == 0x0E"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0F"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="PFLTE0A" edc:desc="PSC 0 Filter Enable on Input Part A" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PELEV0A" edc:desc="PSC 0 Edge Level Selector on Input Part A" edc:nzwidth="0x1"/>
@@ -888,22 +888,22 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="PSC0">
               <edc:SFRFieldDef edc:cname="PRFM0B" edc:desc="PSC 0 Retrigger and Fault Mode for Part B" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No action, PSC Input is ignored" edc:when="(field &amp; 0xF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Stop signal, Execute Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Stop signal, Execute Opposite while Fault active" edc:when="(field &amp; 0xF) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Deactivate outputs without changing timing." edc:when="(field &amp; 0xF) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Stop signal and Insert Dead-Time" edc:when="(field &amp; 0xF) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait." edc:when="(field &amp; 0xF) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Halt PSC and Wait for Software Action" edc:when="(field &amp; 0xF) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x09" edc:desc="Fixed Frequency Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x09"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0A" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0A"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0B" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0B"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0C" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0C"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0D" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0D"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0E" edc:desc="Fixed Frequency Edge Retrigger PSC and Disactivate Output" edc:when="(field &amp; 0xF) == 0x0E"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0F" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0F"/>
+                <edc:SFRFieldSemantic edc:cname="NO_ACTION_PSC_INPUT_IS_IGNORED" edc:desc="No action, PSC Input is ignored" edc:when="(field &amp; 0xF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_JUMP_TO_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_EXECUTE_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Execute Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_EXECUTE_OPPOSITE_WHILE_FAULT_ACTIVE" edc:desc="Stop signal, Execute Opposite while Fault active" edc:when="(field &amp; 0xF) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="DEACTIVATE_OUTPUTS_WITHOUT_CHANGING_TIMING" edc:desc="Deactivate outputs without changing timing." edc:when="(field &amp; 0xF) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_AND_INSERT_DEAD_TIME" edc:desc="Stop signal and Insert Dead-Time" edc:when="(field &amp; 0xF) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_JUMP_TO_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait." edc:when="(field &amp; 0xF) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="HALT_PSC_AND_WAIT_FOR_SOFTWARE_ACTION" edc:desc="Halt PSC and Wait for Software Action" edc:when="(field &amp; 0xF) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="EDGE_RETRIGGER_PSC" edc:desc="Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC" edc:desc="Fixed Frequency Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x09"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0A"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0B"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0C"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0D"/>
+                <edc:SFRFieldSemantic edc:cname="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC_AND_DISACTIVATE_OUTPUT" edc:desc="Fixed Frequency Edge Retrigger PSC and Disactivate Output" edc:when="(field &amp; 0xF) == 0x0E"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0F"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="PFLTE0B" edc:desc="PSC 0 Filter Enable on Input Part B" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PELEV0B" edc:desc="PSC 0 Edge Level Selector on Input Part B" edc:nzwidth="0x1"/>
@@ -929,10 +929,10 @@
               <edc:SFRFieldDef edc:cname="POEN1B" edc:desc="PSCOUT11 Output Enable" edc:nzwidth="0x1"/>
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="PSYNC1" edc:desc="Synchronization Out for ADC Selection" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Send signal on leading edge of PSCOUTn0" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Send signal on trailing edge of PSCOUTn0" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Send signal on leading edge of PSCOUTn1" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Send signal on trailing edge of PSCOUTn1" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="SEND_SIGNAL_ON_LEADING_EDGE_OF_PSCOUTN0" edc:desc="Send signal on leading edge of PSCOUTn0" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="SEND_SIGNAL_ON_TRAILING_EDGE_OF_PSCOUTN0" edc:desc="Send signal on trailing edge of PSCOUTn0" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="SEND_SIGNAL_ON_LEADING_EDGE_OF_PSCOUTN1" edc:desc="Send signal on leading edge of PSCOUTn1" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="SEND_SIGNAL_ON_TRAILING_EDGE_OF_PSCOUTN1" edc:desc="Send signal on trailing edge of PSCOUTn1" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -948,10 +948,10 @@
               <edc:SFRFieldDef edc:cname="PAOC1B" edc:desc="PSC 1 Asynchronous Output Control B" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PBFM1" edc:desc="Balance Flank Width Modulation" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PPRE1" edc:desc="PSC 1 Prescaler Selects" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No divider on PSC input clock" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Divide the PSC input clock by 4" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Divide the PSC input clock by 16" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Divide the PSC input clock by 64" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="NO_DIVIDER_ON_PSC_INPUT_CLOCK" edc:desc="No divider on PSC input clock" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="DIVIDE_THE_PSC_INPUT_CLOCK_BY_4" edc:desc="Divide the PSC input clock by 4" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="DIVIDE_THE_PSC_INPUT_CLOCK_BY_16" edc:desc="Divide the PSC input clock by 16" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="DIVIDE_THE_PSC_INPUT_CLOCK_BY_64" edc:desc="Divide the PSC input clock by 64" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -960,22 +960,22 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="PSC1">
               <edc:SFRFieldDef edc:cname="PRFM1A" edc:desc="PSC 1 Retrigger and Fault Mode for Part A" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No action, PSC Input is ignored" edc:when="(field &amp; 0xF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Stop signal, Execute Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Stop signal, Execute Opposite while Fault active" edc:when="(field &amp; 0xF) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Deactivate outputs without changing timing." edc:when="(field &amp; 0xF) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Stop signal and Insert Dead-Time" edc:when="(field &amp; 0xF) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait." edc:when="(field &amp; 0xF) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Halt PSC and Wait for Software Action" edc:when="(field &amp; 0xF) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x09" edc:desc="Fixed Frequency Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x09"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0A" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0A"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0B" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0B"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0C" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0C"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0D" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0D"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0E" edc:desc="Fixed Frequency Edge Retrigger PSC and Disactivate Output" edc:when="(field &amp; 0xF) == 0x0E"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0F" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0F"/>
+                <edc:SFRFieldSemantic edc:cname="NO_ACTION_PSC_INPUT_IS_IGNORED" edc:desc="No action, PSC Input is ignored" edc:when="(field &amp; 0xF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_JUMP_TO_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_EXECUTE_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Execute Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_EXECUTE_OPPOSITE_WHILE_FAULT_ACTIVE" edc:desc="Stop signal, Execute Opposite while Fault active" edc:when="(field &amp; 0xF) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="DEACTIVATE_OUTPUTS_WITHOUT_CHANGING_TIMING" edc:desc="Deactivate outputs without changing timing." edc:when="(field &amp; 0xF) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_AND_INSERT_DEAD_TIME" edc:desc="Stop signal and Insert Dead-Time" edc:when="(field &amp; 0xF) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_JUMP_TO_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait." edc:when="(field &amp; 0xF) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="HALT_PSC_AND_WAIT_FOR_SOFTWARE_ACTION" edc:desc="Halt PSC and Wait for Software Action" edc:when="(field &amp; 0xF) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="EDGE_RETRIGGER_PSC" edc:desc="Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC" edc:desc="Fixed Frequency Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x09"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0A"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0B"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0C"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0D"/>
+                <edc:SFRFieldSemantic edc:cname="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC_AND_DISACTIVATE_OUTPUT" edc:desc="Fixed Frequency Edge Retrigger PSC and Disactivate Output" edc:when="(field &amp; 0xF) == 0x0E"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0F"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="PFLTE1A" edc:desc="PSC 1 Filter Enable on Input Part A" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PELEV1A" edc:desc="PSC 1 Edge Level Selector on Input Part A" edc:nzwidth="0x1"/>
@@ -988,22 +988,22 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="PSC1">
               <edc:SFRFieldDef edc:cname="PRFM1B" edc:desc="PSC 1 Retrigger and Fault Mode for Part B" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No action, PSC Input is ignored" edc:when="(field &amp; 0xF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Stop signal, Execute Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Stop signal, Execute Opposite while Fault active" edc:when="(field &amp; 0xF) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Deactivate outputs without changing timing." edc:when="(field &amp; 0xF) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Stop signal and Insert Dead-Time" edc:when="(field &amp; 0xF) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait." edc:when="(field &amp; 0xF) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Halt PSC and Wait for Software Action" edc:when="(field &amp; 0xF) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x09" edc:desc="Fixed Frequency Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x09"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0A" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0A"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0B" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0B"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0C" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0C"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0D" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0D"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0E" edc:desc="Fixed Frequency Edge Retrigger PSC and Disactivate Output" edc:when="(field &amp; 0xF) == 0x0E"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0F" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0F"/>
+                <edc:SFRFieldSemantic edc:cname="NO_ACTION_PSC_INPUT_IS_IGNORED" edc:desc="No action, PSC Input is ignored" edc:when="(field &amp; 0xF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_JUMP_TO_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_EXECUTE_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Execute Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_EXECUTE_OPPOSITE_WHILE_FAULT_ACTIVE" edc:desc="Stop signal, Execute Opposite while Fault active" edc:when="(field &amp; 0xF) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="DEACTIVATE_OUTPUTS_WITHOUT_CHANGING_TIMING" edc:desc="Deactivate outputs without changing timing." edc:when="(field &amp; 0xF) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_AND_INSERT_DEAD_TIME" edc:desc="Stop signal and Insert Dead-Time" edc:when="(field &amp; 0xF) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_JUMP_TO_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait." edc:when="(field &amp; 0xF) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="HALT_PSC_AND_WAIT_FOR_SOFTWARE_ACTION" edc:desc="Halt PSC and Wait for Software Action" edc:when="(field &amp; 0xF) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="EDGE_RETRIGGER_PSC" edc:desc="Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC" edc:desc="Fixed Frequency Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x09"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0A"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0B"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0C"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0D"/>
+                <edc:SFRFieldSemantic edc:cname="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC_AND_DISACTIVATE_OUTPUT" edc:desc="Fixed Frequency Edge Retrigger PSC and Disactivate Output" edc:when="(field &amp; 0xF) == 0x0E"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0F"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="PFLTE1B" edc:desc="PSC 1 Filter Enable on Input Part B" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PELEV1B" edc:desc="PSC 1 Edge Level Selector on Input Part B" edc:nzwidth="0x1"/>
@@ -1044,10 +1044,10 @@
               <edc:SFRFieldDef edc:cname="PCLKSEL2" edc:desc="PSC 2 Input Clock Select" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="POP2" edc:desc="PSC 2 Output Polarity" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PMODE2" edc:desc="PSC 2 Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="One Ramp Mode" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Two Ramp Mode" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Four Ramp Mode" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Center Aligned Mode" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="ONE_RAMP_MODE" edc:desc="One Ramp Mode" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="TWO_RAMP_MODE" edc:desc="Two Ramp Mode" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="FOUR_RAMP_MODE" edc:desc="Four Ramp Mode" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="CENTER_ALIGNED_MODE" edc:desc="Center Aligned Mode" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="PLOCK2" edc:desc="PSC 2 Lock" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PALOCK2" edc:desc="PSC 2 Autolock" edc:nzwidth="0x1"/>
@@ -1065,10 +1065,10 @@
               <edc:SFRFieldDef edc:cname="PAOC2B" edc:desc="PSC 2 Asynchronous Output Control B" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PBFM2" edc:desc="Balance Flank Width Modulation" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PPRE2" edc:desc="PSC 2 Prescaler Selects" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No divider on PSC input clock" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Divide the PSC input clock by 4" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Divide the PSC input clock by 16" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Divide the PSC input clock by 64" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="NO_DIVIDER_ON_PSC_INPUT_CLOCK" edc:desc="No divider on PSC input clock" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="DIVIDE_THE_PSC_INPUT_CLOCK_BY_4" edc:desc="Divide the PSC input clock by 4" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="DIVIDE_THE_PSC_INPUT_CLOCK_BY_16" edc:desc="Divide the PSC input clock by 16" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="DIVIDE_THE_PSC_INPUT_CLOCK_BY_64" edc:desc="Divide the PSC input clock by 64" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -1077,22 +1077,22 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="PSC2">
               <edc:SFRFieldDef edc:cname="PRFM2A" edc:desc="PSC 2 Retrigger and Fault Mode for Part A" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No action, PSC Input is ignored" edc:when="(field &amp; 0xF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Stop signal, Execute Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Stop signal, Execute Opposite while Fault active" edc:when="(field &amp; 0xF) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Deactivate outputs without changing timing." edc:when="(field &amp; 0xF) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Stop signal and Insert Dead-Time" edc:when="(field &amp; 0xF) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait." edc:when="(field &amp; 0xF) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Halt PSC and Wait for Software Action" edc:when="(field &amp; 0xF) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x09" edc:desc="Fixed Frequency Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x09"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0A" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0A"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0B" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0B"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0C" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0C"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0D" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0D"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0E" edc:desc="Fixed Frequency Edge Retrigger PSC and Disactivate Output" edc:when="(field &amp; 0xF) == 0x0E"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0F" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0F"/>
+                <edc:SFRFieldSemantic edc:cname="NO_ACTION_PSC_INPUT_IS_IGNORED" edc:desc="No action, PSC Input is ignored" edc:when="(field &amp; 0xF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_JUMP_TO_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_EXECUTE_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Execute Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_EXECUTE_OPPOSITE_WHILE_FAULT_ACTIVE" edc:desc="Stop signal, Execute Opposite while Fault active" edc:when="(field &amp; 0xF) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="DEACTIVATE_OUTPUTS_WITHOUT_CHANGING_TIMING" edc:desc="Deactivate outputs without changing timing." edc:when="(field &amp; 0xF) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_AND_INSERT_DEAD_TIME" edc:desc="Stop signal and Insert Dead-Time" edc:when="(field &amp; 0xF) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_JUMP_TO_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait." edc:when="(field &amp; 0xF) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="HALT_PSC_AND_WAIT_FOR_SOFTWARE_ACTION" edc:desc="Halt PSC and Wait for Software Action" edc:when="(field &amp; 0xF) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="EDGE_RETRIGGER_PSC" edc:desc="Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC" edc:desc="Fixed Frequency Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x09"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0A"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0B"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0C"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0D"/>
+                <edc:SFRFieldSemantic edc:cname="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC_AND_DISACTIVATE_OUTPUT" edc:desc="Fixed Frequency Edge Retrigger PSC and Disactivate Output" edc:when="(field &amp; 0xF) == 0x0E"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0F"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="PFLTE2A" edc:desc="PSC 2 Filter Enable on Input Part A" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PELEV2A" edc:desc="PSC 2 Edge Level Selector on Input Part A" edc:nzwidth="0x1"/>
@@ -1105,22 +1105,22 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="PSC2">
               <edc:SFRFieldDef edc:cname="PRFM2B" edc:desc="PSC 2 Retrigger and Fault Mode for Part B" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No action, PSC Input is ignored" edc:when="(field &amp; 0xF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Stop signal, Execute Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Stop signal, Execute Opposite while Fault active" edc:when="(field &amp; 0xF) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Deactivate outputs without changing timing." edc:when="(field &amp; 0xF) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Stop signal and Insert Dead-Time" edc:when="(field &amp; 0xF) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait." edc:when="(field &amp; 0xF) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Halt PSC and Wait for Software Action" edc:when="(field &amp; 0xF) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x09" edc:desc="Fixed Frequency Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x09"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0A" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0A"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0B" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0B"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0C" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0C"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0D" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0D"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0E" edc:desc="Fixed Frequency Edge Retrigger PSC and Disactivate Output" edc:when="(field &amp; 0xF) == 0x0E"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0F" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0F"/>
+                <edc:SFRFieldSemantic edc:cname="NO_ACTION_PSC_INPUT_IS_IGNORED" edc:desc="No action, PSC Input is ignored" edc:when="(field &amp; 0xF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_JUMP_TO_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_EXECUTE_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Execute Opposite Dead-Time and Wait" edc:when="(field &amp; 0xF) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_EXECUTE_OPPOSITE_WHILE_FAULT_ACTIVE" edc:desc="Stop signal, Execute Opposite while Fault active" edc:when="(field &amp; 0xF) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="DEACTIVATE_OUTPUTS_WITHOUT_CHANGING_TIMING" edc:desc="Deactivate outputs without changing timing." edc:when="(field &amp; 0xF) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_AND_INSERT_DEAD_TIME" edc:desc="Stop signal and Insert Dead-Time" edc:when="(field &amp; 0xF) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="STOP_SIGNAL_JUMP_TO_OPPOSITE_DEAD_TIME_AND_WAIT" edc:desc="Stop signal, Jump to Opposite Dead-Time and Wait." edc:when="(field &amp; 0xF) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="HALT_PSC_AND_WAIT_FOR_SOFTWARE_ACTION" edc:desc="Halt PSC and Wait for Software Action" edc:when="(field &amp; 0xF) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="EDGE_RETRIGGER_PSC" edc:desc="Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC" edc:desc="Fixed Frequency Edge Retrigger PSC" edc:when="(field &amp; 0xF) == 0x09"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0A"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0B"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0C"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0D"/>
+                <edc:SFRFieldSemantic edc:cname="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC_AND_DISACTIVATE_OUTPUT" edc:desc="Fixed Frequency Edge Retrigger PSC and Disactivate Output" edc:when="(field &amp; 0xF) == 0x0E"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_DO_NOT_USE" edc:desc="Reserved (do not use)" edc:when="(field &amp; 0xF) == 0x0F"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="PFLTE2B" edc:desc="PSC 2 Filter Enable on Input Part B" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PELEV2B" edc:desc="PSC 2 Edge Level Selector on Input Part B" edc:nzwidth="0x1"/>
