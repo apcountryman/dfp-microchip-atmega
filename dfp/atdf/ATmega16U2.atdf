@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
+<?xml version="1.0" encoding="UTF-8"?><avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
   <variants>
     <variant ordercode="ATmega16U2-AU" speedmax="16000000" tempmin="-40" tempmax="85" vccmin="2.7" vccmax="5.5" package="TQFP32" pinout="QUAD"/>
     <variant ordercode="ATmega16U2-MU" speedmax="16000000" tempmin="-40" tempmax="85" vccmin="2.7" vccmax="5.5" package="QFN32" pinout="QUAD"/>
@@ -134,7 +133,9 @@
         <module name="CPU">
           <instance name="CPU" caption="CPU Registers">
             <register-group name="CPU" name-in-module="CPU" offset="0x00" address-space="data" caption="CPU Registers"/>
-          </instance>
+          <parameters>
+        <param name="CORE_VERSION" value="V3"/>
+      </parameters></instance>
         </module>
         <module name="EXINT">
           <instance name="EXINT" caption="External Interrupts">
@@ -913,9 +914,7 @@
         <value caption="Standby" name="STDBY" value="0x06"/>
         <value caption="Extended Standby" name="ESTDBY" value="0x07"/>
       </value-group>
-      <parameters>
-        <param name="CORE_VERSION" value="V3"/>
-      </parameters>
+      
     </module>
     <module caption="External Interrupts" name="EXINT">
       <register-group caption="External Interrupts" name="EXINT">

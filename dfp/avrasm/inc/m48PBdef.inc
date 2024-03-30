@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m48PBdef.inc
 ;* Title             : Register/Bit Definitions for the ATmega48PB
-;* Created           : 2019-12-20 07:10
+;* Created           : 2020-05-05 14:14
 ;* Version           : 1.00
 ;* Support e-mail    : avr@atmel.com
 ;* Target MCU        : ATmega48PB
@@ -1059,7 +1059,7 @@
 ; ***** DATA MEMORY DECLARATIONS *****************************************
 .equ	FLASHSTART	= 0x0000 ; Note: Word address
 .equ	FLASHEND	= 0x07FF ; Note: Word address
-.equ	FLASHPAGESIZE	= 0x0020 ;
+.equ	FLASHPAGESIZE	= 0x0020 ; Note: Size in words
 
 .equ	IOEND	= 0x00FF
 

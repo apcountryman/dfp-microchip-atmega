@@ -670,7 +670,7 @@
                 <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Timer/Counter1 Capture Event" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:AdjustPoint edc:offset="0x3"/>
-              <edc:SFRFieldDef edc:cname="ACME" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="ACME" edc:desc="Analog Comparator Multiplexer Enable" edc:nzwidth="0x1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -702,15 +702,17 @@
           </edc:SFRModeList>
         </edc:SFRDef>
         <edc:AdjustPoint edc:_addr="0x7D" edc:offset="0x1"/>
-        <edc:SFRDef edc:_addr="0x7E" edc:access="--nnnnnn" edc:cname="DIDR0" edc:impl="0x3F" edc:nzwidth="0x8" ltx:memberofperipheral="ADC">
+        <edc:SFRDef edc:_addr="0x7E" edc:access="nnnnnnnn" edc:cname="DIDR0" edc:nzwidth="0x8" ltx:memberofperipheral="ADC">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="ADC">
-              <edc:SFRFieldDef edc:cname="ADC0D" edc:nzwidth="0x1"/>
-              <edc:SFRFieldDef edc:cname="ADC1D" edc:nzwidth="0x1"/>
-              <edc:SFRFieldDef edc:cname="ADC2D" edc:nzwidth="0x1"/>
-              <edc:SFRFieldDef edc:cname="ADC3D" edc:nzwidth="0x1"/>
-              <edc:SFRFieldDef edc:cname="ADC4D" edc:nzwidth="0x1"/>
-              <edc:SFRFieldDef edc:cname="ADC5D" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="ADC0D" edc:desc="ADC Digital Input Disable" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="ADC1D" edc:desc="ADC Digital Input Disable" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="ADC2D" edc:desc="ADC Digital Input Disable" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="ADC3D" edc:desc="ADC Digital Input Disable" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="ADC4D" edc:desc="ADC Digital Input Disable" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="ADC5D" edc:desc="ADC Digital Input Disable" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="ADC6D" edc:desc="ADC Digital Input Disable" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="ADC7D" edc:desc="ADC Digital Input Disable" edc:nzwidth="0x1"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>

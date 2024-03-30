@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
+<?xml version="1.0" encoding="UTF-8"?><avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
   <variants>
     <variant tempmin="0" tempmax="0" speedmax="0" package="" ordercode="standard" vccmin="1.8" vccmax="4.5"/>
   </variants>
@@ -78,7 +77,9 @@
         <module name="CPU">
           <instance name="CPU" caption="CPU Registers">
             <register-group name="CPU" name-in-module="CPU" offset="0x00" address-space="data" caption="CPU Registers"/>
-          </instance>
+          <parameters>
+        <param name="CORE_VERSION" value="V2E"/>
+      </parameters></instance>
         </module>
         <module name="BATTERY_PROTECTION">
           <instance name="BATTERY_PROTECTION" caption="Battery Protection">
@@ -461,9 +462,7 @@
         <value caption="Reserved" name="VAL_0x06" value="0x06"/>
         <value caption="Reserved" name="VAL_0x07" value="0x07"/>
       </value-group>
-      <parameters>
-        <param name="CORE_VERSION" value="V2E"/>
-      </parameters>
+      
     </module>
     <module caption="Battery Protection" name="BATTERY_PROTECTION">
       <register-group caption="Battery Protection" name="BATTERY_PROTECTION">

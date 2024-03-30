@@ -134,7 +134,7 @@
   <edc:DataSpace edc:magicoffset="0x800000">
     <edc:RegardlessOfMode>
       <edc:NMMRPlace edc:regionid="corenmmrs">
-        <edc:SFRDef edc:access="nnnnnnnnnnnnnnnnnnnnnnnn" edc:cname="PC" edc:desc="Program Counter" edc:impl="0xFFFFFF" edc:mclr="000000000000000000000000" edc:nmmrid="60" edc:nzwidth="0x18" edc:por="000000000000000000000000"/>
+        <edc:SFRDef edc:access="nnnnnnnnnnnnnnnn" edc:cname="PC" edc:desc="Program Counter" edc:impl="0xFFFF" edc:mclr="0000000000000000" edc:nmmrid="60" edc:nzwidth="0x10" edc:por="0000000000000000"/>
       </edc:NMMRPlace>
       <edc:SFRDataSector edc:beginaddr="0x0" edc:endaddr="0x20" edc:regionid="REGISTERS">
         <edc:SFRDef edc:_addr="0x0" edc:access="nnnnnnnn" edc:cname="R0" edc:desc="General-Purpose Register" edc:impl="0xFF" edc:mclr="xxxxxxxx" edc:nzwidth="0x8" edc:por="xxxxxxxx"/>
@@ -1457,7 +1457,7 @@
       <edc:ExternalSector edc:beginaddr="0x2200" edc:endaddr="0x10000" edc:regionid="XRAM" edc:type="ram"/>
     </edc:RegardlessOfMode>
   </edc:DataSpace>
-  <edc:DataFlashSpace edc:endaddr="0x400" edc:magicoffset="0x810000"/>
+  <edc:DataFlashSpace edc:endaddr="0x1000" edc:magicoffset="0x810000"/>
   <edc:SignaturesSpace edc:magicoffset="0x840000">
     <edc:DeviceIDSector edc:beginaddr="0x0" edc:endaddr="0x3" edc:regionid="SIGNATURES" edc:value="0x1E9703"/>
   </edc:SignaturesSpace>

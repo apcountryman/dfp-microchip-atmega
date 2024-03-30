@@ -12,7 +12,7 @@
           <memory-segment exec="0" name="INTERNAL_SRAM" rw="RW" size="0x0400" start="0x3c00" type="ram"/>
           <memory-segment exec="0" name="IO" rw="RW" size="0x1100" start="0x00000000" type="io"/>
           <memory-segment exec="0" name="LOCKBITS" pagesize="0x20" rw="RW" size="0x1" start="0x0000128A" type="lockbits"/>
-          <memory-segment exec="0" name="MAPPED_PROGMEM" pagesize="0x40" rw="R" size="0x2000" start="0x00004000" type="other"/>
+          <memory-segment exec="0" name="MAPPED_PROGMEM" pagesize="0x40" rw="RW" size="0x2000" start="0x00004000" type="other"/>
           <memory-segment exec="0" name="PROD_SIGNATURES" pagesize="0x40" rw="R" size="0x3D" start="0x00001103" type="signatures"/>
           <memory-segment exec="0" name="SIGNATURES" pagesize="0x40" rw="R" size="0x3" start="0x00001100" type="signatures"/>
           <memory-segment exec="0" name="USER_SIGNATURES" pagesize="0x20" rw="RW" size="0x20" start="0x00001300" type="user_signatures"/>
@@ -106,6 +106,9 @@
         <module id="I2100" name="CPU">
           <instance name="CPU">
             <register-group address-space="data" name="CPU" name-in-module="CPU" offset="0x0030"/>
+            <parameters>
+              <param name="CORE_VERSION" value="V4"/>
+            </parameters>
           </instance>
         </module>
         <module id="I2104" name="CPUINT">
@@ -460,12 +463,12 @@
         <interrupt index="7" module-instance="TCA0" name="LUNF"/>
         <interrupt index="7" module-instance="TCA0" name="OVF"/>
         <interrupt index="8" module-instance="TCA0" name="HUNF"/>
-        <interrupt index="9" module-instance="TCA0" name="LCMP0"/>
         <interrupt index="9" module-instance="TCA0" name="CMP0"/>
+        <interrupt index="9" module-instance="TCA0" name="LCMP0"/>
         <interrupt index="10" module-instance="TCA0" name="CMP1"/>
         <interrupt index="10" module-instance="TCA0" name="LCMP1"/>
-        <interrupt index="11" module-instance="TCA0" name="LCMP2"/>
         <interrupt index="11" module-instance="TCA0" name="CMP2"/>
+        <interrupt index="11" module-instance="TCA0" name="LCMP2"/>
         <interrupt index="12" module-instance="TCB0" name="INT"/>
         <interrupt index="13" module-instance="TCB1" name="INT"/>
         <interrupt index="14" module-instance="TWI0" name="TWIS"/>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
+<?xml version="1.0" encoding="UTF-8"?><avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
   <variants>
     <variant ordercode="ATmega164PA-AU" tempmin="-40" tempmax="85" speedmax="20000000" pinout="TQFP_QFN_44" package="TQFP44" vccmin="1.8" vccmax="5.5"/>
     <variant ordercode="ATmega164PA-PU" tempmin="-40" tempmax="85" speedmax="20000000" pinout="PDIP40" package="PDIP40" vccmin="1.8" vccmax="5.5"/>
@@ -265,7 +264,9 @@
             <signals>
               <signal group="CLKO" index="0" function="default" pad="PB1"/>
             </signals>
-          </instance>
+          <parameters>
+        <param name="CORE_VERSION" value="V2E"/>
+      </parameters></instance>
         </module>
         <module name="FUSE">
           <instance name="FUSE" caption="Fuses">
@@ -1213,9 +1214,7 @@
       <value-group caption="Oscillator Calibration Values" name="OSCCAL_VALUE_ADDRESSES">
         <value value="0x00" caption="8.0 MHz" name="8_0_MHz"/>
       </value-group>
-      <parameters>
-        <param name="CORE_VERSION" value="V2E"/>
-      </parameters>
+      
     </module>
   </modules>
   <pinouts>
