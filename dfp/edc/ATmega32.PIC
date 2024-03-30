@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><edc:PIC xmlns:edc="http://crownking/edc" xmlns:atdf="http://crownking/atdf" xmlns:ltx="http://crownking/ltx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" atdf:architecture="AVR8" atdf:family="megaAVR" edc:arch="avr8" edc:hasfreeze="false" edc:name="ATmega32" edc:procid="0x0000" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><edc:PIC xmlns:edc="http://crownking/edc" xmlns:atdf="http://crownking/atdf" xmlns:ltx="http://crownking/ltx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" atdf:architecture="AVR8" atdf:family="megaAVR" edc:arch="avr8" edc:hasFreeze="false" edc:name="ATmega32" edc:procid="0x0000" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Properties>
     <edc:Property edc:propkey="file.registers.are.odd.address.accessible" edc:propvalue="true"/>
   </edc:Properties>
@@ -74,11 +74,11 @@
     <edc:Peripheral edc:cname="JTAG" edc:desc="JTAG Interface"/>
   </edc:PeripheralList>
   <edc:ProgramSpace>
-    <edc:CodeSector atdf:pagesize="0x80" edc:beginaddr="0x0" edc:endaddr="0x4000" edc:regionid="IFLASH"/>
-    <edc:CodeSector atdf:pagesize="0x80" edc:beginaddr="0x3F00" edc:endaddr="0x4000" edc:regionid="BOOT_SECTION_1"/>
-    <edc:CodeSector atdf:pagesize="0x80" edc:beginaddr="0x3E00" edc:endaddr="0x4000" edc:regionid="BOOT_SECTION_2"/>
-    <edc:CodeSector atdf:pagesize="0x80" edc:beginaddr="0x3C00" edc:endaddr="0x4000" edc:regionid="BOOT_SECTION_3"/>
-    <edc:CodeSector atdf:pagesize="0x80" edc:beginaddr="0x3800" edc:endaddr="0x4000" edc:regionid="BOOT_SECTION_4"/>
+    <edc:CodeSector atdf:pagesize="0x80" edc:beginaddr="0x0" edc:endaddr="0x4000" edc:regionid="IFLASH" edc:rw="rw"/>
+    <edc:CodeSector atdf:pagesize="0x80" edc:beginaddr="0x3F00" edc:endaddr="0x4000" edc:regionid="BOOT_SECTION_1" edc:rw="rw"/>
+    <edc:CodeSector atdf:pagesize="0x80" edc:beginaddr="0x3E00" edc:endaddr="0x4000" edc:regionid="BOOT_SECTION_2" edc:rw="rw"/>
+    <edc:CodeSector atdf:pagesize="0x80" edc:beginaddr="0x3C00" edc:endaddr="0x4000" edc:regionid="BOOT_SECTION_3" edc:rw="rw"/>
+    <edc:CodeSector atdf:pagesize="0x80" edc:beginaddr="0x3800" edc:endaddr="0x4000" edc:regionid="BOOT_SECTION_4" edc:rw="rw"/>
   </edc:ProgramSpace>
   <edc:DataSpace edc:magicoffset="0x800000">
     <edc:RegardlessOfMode>
@@ -379,8 +379,8 @@
                 <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Running, CLK/64" edc:when="(field &amp; 0x7) == 0x03"/>
                 <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Running, CLK/256" edc:when="(field &amp; 0x7) == 0x04"/>
                 <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Running, CLK/1024" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Running, ExtClk Tx Falling Edge" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Running, ExtClk Tx Rising Edge" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Running, ExtClk Tn Falling Edge" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Running, ExtClk Tn Rising Edge" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="WGM1" edc:desc="Waveform Generation Mode" edc:nzwidth="0x2"/>
               <edc:AdjustPoint edc:offset="0x1"/>
@@ -448,8 +448,8 @@
                 <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Running, CLK/64" edc:when="(field &amp; 0x7) == 0x03"/>
                 <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Running, CLK/256" edc:when="(field &amp; 0x7) == 0x04"/>
                 <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Running, CLK/1024" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Running, ExtClk Tx Falling Edge" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Running, ExtClk Tx Rising Edge" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Running, ExtClk Tn Falling Edge" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Running, ExtClk Tn Rising Edge" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="WGM01" edc:desc="Waveform Generation Mode 1" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="COM0" edc:desc="Compare Match Output Modes" edc:nzwidth="0x2"/>
@@ -640,10 +640,10 @@
   </edc:DataSpace>
   <edc:DataFlashSpace edc:endaddr="0x400" edc:magicoffset="0x810000"/>
   <edc:SignaturesSpace edc:magicoffset="0x840000">
-    <edc:DeviceIDSector edc:beginaddr="0x0" edc:endaddr="0x3" edc:regionid="SIGNATURES" edc:value="0x1E9502"/>
+    <edc:DeviceIDSector edc:beginaddr="0x0" edc:endaddr="0x3" edc:regionid="SIGNATURES" edc:rw="r" edc:value="0x1E9502"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
-    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x2" edc:magicoffset="0x820000" edc:regionid="FUSES">
+    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x2" edc:magicoffset="0x820000" edc:regionid="FUSES" edc:rw="rw">
       <edc:DCRDef edc:_addr="0x0" edc:access="nnnnnnnn" edc:cname="LOW" edc:factorydefault="0xE1" edc:impl="0xFF" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="FUSE">
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0" ltx:memberofperipheral="FUSE">
@@ -757,7 +757,7 @@
     </edc:ConfigFuseSector>
   </edc:FusesSpace>
   <edc:LockbitsSpace edc:magicoffset="0x830000">
-    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x1" edc:magicoffset="0x830000" edc:regionid="LOCKBITS">
+    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x1" edc:magicoffset="0x830000" edc:regionid="LOCKBITS" edc:rw="rw">
       <edc:DCRDef edc:_addr="0x0" edc:access="--nnnnnn" edc:cname="LOCKBIT" edc:factorydefault="0xFF" edc:impl="0x3F" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="LOCKBIT">
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0" ltx:memberofperipheral="LOCKBIT">

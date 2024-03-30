@@ -1,21 +1,32 @@
-/*****************************************************************************
- *
- * Copyright (C) 2020 Atmel Corporation, a wholly owned subsidiary of Microchip Technology Inc.
+/*
+ * Copyright (C) 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
+ * Redistribution and use in source and binary forms, with or without modification, are
+ * permitted provided that the following conditions are met:
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- ****************************************************************************/
-
+ *     1. Redistributions of source code must retain the above copyright notice, this list of
+ *        conditions and the following disclaimer.
+ *
+ *     2. Redistributions in binary form must reproduce the above copyright notice, this list
+ *        of conditions and the following disclaimer in the documentation and/or other
+ *        materials provided with the distribution. Publication is not required when
+ *        this file is used in an embedded application.
+ *
+ *     3. Microchip's name may not be used to endorse or promote products derived from this
+ *        software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
 
 #ifndef _AVR_IO_H_
 #  error "Include <avr/io.h> instead of this file."
@@ -989,6 +1000,45 @@ typedef struct PORTMUX_struct
     register8_t reserved_1[10];
 } PORTMUX_t;
 
+/* Event Output A select */
+typedef enum PORTMUX_EVOUTA_enum
+{
+    PORTMUX_EVOUTA_DEFAULT_gc = (0x00<<0),  /* EVOUT on PA2 */
+    PORTMUX_EVOUTA_ALT1_gc = (0x01<<0),  /* EVOUT on PA7 */
+} PORTMUX_EVOUTA_t;
+
+/* Event Output B select */
+typedef enum PORTMUX_EVOUTB_enum
+{
+    PORTMUX_EVOUTB_DEFAULT_gc = (0x00<<1),  /* EVOUT on PB2 */
+} PORTMUX_EVOUTB_t;
+
+/* Event Output C select */
+typedef enum PORTMUX_EVOUTC_enum
+{
+    PORTMUX_EVOUTC_DEFAULT_gc = (0x00<<2),  /* EVOUT on PC2 */
+    PORTMUX_EVOUTC_ALT1_gc = (0x01<<2),  /* EVOUT on PC7 */
+} PORTMUX_EVOUTC_t;
+
+/* Event Output D select */
+typedef enum PORTMUX_EVOUTD_enum
+{
+    PORTMUX_EVOUTD_DEFAULT_gc = (0x00<<3),  /* EVOUT on PD2 */
+    PORTMUX_EVOUTD_ALT1_gc = (0x01<<3),  /* EVOUT on PD7 */
+} PORTMUX_EVOUTD_t;
+
+/* Event Output E select */
+typedef enum PORTMUX_EVOUTE_enum
+{
+    PORTMUX_EVOUTE_DEFAULT_gc = (0x00<<4),  /* EVOUT on PE2 */
+} PORTMUX_EVOUTE_t;
+
+/* Event Output F select */
+typedef enum PORTMUX_EVOUTF_enum
+{
+    PORTMUX_EVOUTF_DEFAULT_gc = (0x00<<5),  /* EVOUT on PF2 */
+} PORTMUX_EVOUTF_t;
+
 /* Port Multiplexer SPI0 select */
 typedef enum PORTMUX_SPI0_enum
 {
@@ -1008,6 +1058,32 @@ typedef enum PORTMUX_TCA0_enum
     PORTMUX_TCA0_PORTE_gc = (0x04<<0),  /* TCA0 pins on PE[5:0] */
     PORTMUX_TCA0_PORTF_gc = (0x05<<0),  /* TCA0 pins on PF[5:0] */
 } PORTMUX_TCA0_t;
+
+/* Port Multiplexer TCB0 select */
+typedef enum PORTMUX_TCB0_enum
+{
+    PORTMUX_TCB0_DEFAULT_gc = (0x00<<0),  /* WO on PA2 */
+    PORTMUX_TCB0_ALT1_gc = (0x01<<0),  /* WO on PF4 */
+} PORTMUX_TCB0_t;
+
+/* Port Multiplexer TCB1 select */
+typedef enum PORTMUX_TCB1_enum
+{
+    PORTMUX_TCB1_DEFAULT_gc = (0x00<<1),  /* WO on PA3 */
+    PORTMUX_TCB1_ALT1_gc = (0x01<<1),  /* WO on PF5 */
+} PORTMUX_TCB1_t;
+
+/* Port Multiplexer TCB2 select */
+typedef enum PORTMUX_TCB2_enum
+{
+    PORTMUX_TCB2_DEFAULT_gc = (0x00<<2),  /* WO on PC0 */
+} PORTMUX_TCB2_t;
+
+/* Port Multiplexer TCB3 select */
+typedef enum PORTMUX_TCB3_enum
+{
+    PORTMUX_TCB3_ALT1_gc = (0x01<<3),  /* WO on PC1 */
+} PORTMUX_TCB3_t;
 
 /* Port Multiplexer TWI0 select */
 typedef enum PORTMUX_TWI0_enum
@@ -3616,18 +3692,18 @@ IO Module Instances. Mapped to memory.
 
 /* PORTMUX - Port Multiplexer */
 /* PORTMUX.EVSYSROUTEA  bit masks and bit positions */
-#define PORTMUX_EVOUT0_bm  0x01  /* Event Output 0 bit mask. */
-#define PORTMUX_EVOUT0_bp  0  /* Event Output 0 bit position. */
-#define PORTMUX_EVOUT1_bm  0x02  /* Event Output 1 bit mask. */
-#define PORTMUX_EVOUT1_bp  1  /* Event Output 1 bit position. */
-#define PORTMUX_EVOUT2_bm  0x04  /* Event Output 2 bit mask. */
-#define PORTMUX_EVOUT2_bp  2  /* Event Output 2 bit position. */
-#define PORTMUX_EVOUT3_bm  0x08  /* Event Output 3 bit mask. */
-#define PORTMUX_EVOUT3_bp  3  /* Event Output 3 bit position. */
-#define PORTMUX_EVOUT4_bm  0x10  /* Event Output 4 bit mask. */
-#define PORTMUX_EVOUT4_bp  4  /* Event Output 4 bit position. */
-#define PORTMUX_EVOUT5_bm  0x20  /* Event Output 5 bit mask. */
-#define PORTMUX_EVOUT5_bp  5  /* Event Output 5 bit position. */
+#define PORTMUX_EVOUTA_bm  0x01  /* Event Output A bit mask. */
+#define PORTMUX_EVOUTA_bp  0  /* Event Output A bit position. */
+#define PORTMUX_EVOUTB_bm  0x02  /* Event Output B bit mask. */
+#define PORTMUX_EVOUTB_bp  1  /* Event Output B bit position. */
+#define PORTMUX_EVOUTC_bm  0x04  /* Event Output C bit mask. */
+#define PORTMUX_EVOUTC_bp  2  /* Event Output C bit position. */
+#define PORTMUX_EVOUTD_bm  0x08  /* Event Output D bit mask. */
+#define PORTMUX_EVOUTD_bp  3  /* Event Output D bit position. */
+#define PORTMUX_EVOUTE_bm  0x10  /* Event Output E bit mask. */
+#define PORTMUX_EVOUTE_bp  4  /* Event Output E bit position. */
+#define PORTMUX_EVOUTF_bm  0x20  /* Event Output F bit mask. */
+#define PORTMUX_EVOUTF_bp  5  /* Event Output F bit position. */
 
 /* PORTMUX.CCLROUTEA  bit masks and bit positions */
 #define PORTMUX_LUT0_bm  0x01  /* CCL LUT0 bit mask. */
@@ -4441,6 +4517,7 @@ IO Module Instances. Mapped to memory.
 #define USART_CMODE0_bp  6  /* Communication Mode bit 0 position. */
 #define USART_CMODE1_bm  (1<<7)  /* Communication Mode bit 1 mask. */
 #define USART_CMODE1_bp  7  /* Communication Mode bit 1 position. */
+/* USART_CMODE  is already defined. */
 
 
 /* USART.CTRLD  bit masks and bit positions */

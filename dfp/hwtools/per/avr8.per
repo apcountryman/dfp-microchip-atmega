@@ -165,7 +165,8 @@
       <per:sfr key="SPMEN" sfr="SPMCSR" field="SPMEN|SELFPRGEN"/>
       <per:sfr key="PGERS" sfr="SPMCSR" field="PGERS"/>
       <per:sfr key="PGWRT" sfr="SPMCSR" field="PGWRT"/>
-      <per:sfr key="BLBSET" sfr="SPMCSR" field="(B)?LBSET|R(W)?FLB"/>
+      <per:sfr key="FLSEL" sfr="SPMCSR" field="FLSEL" optional="true"/>
+      <per:sfr key="BLBSET" sfr="SPMCSR" field="(B)?LBSET|R(W)?FLB" optional="true"/>
       <per:sfr key="RWWSRE" sfr="SPMCSR" field="RWWSRE" optional="true"/>
       <per:sfr key="CTPB" sfr="SPMCSR" field="CTPB" optional="true"/>
       <per:sfr key="SIGRD" sfr="SPMCSR" field="SIGRD|RSIG" optional="true"/>
@@ -311,6 +312,7 @@
       <per:sfr key="OCRnA" sfr="OCR@A?" optional="true"/>
       <per:sfr key="OCRnB" sfr="OCR@B" optional="true"/>
       <per:sfr key="PSRSYNC" sfr="GTCCR|SFIOR" field="PSR(SYNC|123)" optional="true" critical="false"/>
+      <per:sfr key="PSRn" sfr="GTCCR" field="PSR@" optional="true"/>
       <per:sfr key="TIFR" sfr="TIFR@?" critical="false"/>
       <per:sfr key="OCFA" sfr="TIFR@?" field="OCF@?A?" optional="true" critical="false"/>
       <per:sfr key="OCFB" sfr="TIFR@?" field="OCF@B" optional="true" critical="false"/>
@@ -320,6 +322,35 @@
       <per:sfr key="OCIEA" sfr="TIMSK@?" field="OCIE@A?" optional="true" critical="false"/>
       <per:sfr key="TOIE" sfr="TIMSK@?" field="TOIE@?" optional="true" critical="false"/>
       <per:initParam param="@"/>
+      <per:periphClassDesc class="TimerCounter.TC_8bit"/>
+    </per:periphConfig>
+  </per:peripheral>
+  <per:peripheral name="TC1">
+    <per:periphConfig>
+      <per:pin key="OCnA" pinID="OC1A" critical="false"/>
+      <per:pin key="OCnAINV" pinID="OC1AINV" critical="false"/>
+      <per:pin key="OCnB" pinID="OC1B" critical="false"/>
+      <per:pin key="OCnBINV" pinID="OC1BINV" critical="false"/>
+      <per:sfr key="CSn" sfr="TCCR1" field="CS1" periph="TC1"/>
+      <per:sfr key="COMnA" sfr="TCCR1" field="COM1A" periph="TC1"/>
+      <per:sfr key="PWMnA" sfr="TCCR1" field="PWM1A" periph="TC1"/>
+      <per:sfr key="CTCn" sfr="TCCR1" field="CTC1" periph="TC1"/>
+      <per:sfr key="PSRn" sfr="GTCCR" field="PSR1" periph="TC1"/>
+      <per:sfr key="FOCnA" sfr="GTCCR" field="FOC1A" periph="TC1"/>
+      <per:sfr key="FOCnB" sfr="GTCCR" field="FOC1B" periph="TC1"/>
+      <per:sfr key="COMnB" sfr="GTCCR" field="COM1B" periph="TC1"/>
+      <per:sfr key="PWMnB" sfr="GTCCR" field="PWM1B" periph="TC1"/>
+      <per:sfr key="TCNTn" sfr="TCNT1" periph="TC1"/>
+      <per:sfr key="OCRnA" sfr="OCR1A" periph="TC1"/>
+      <per:sfr key="OCRnB" sfr="OCR1B" periph="TC1"/>
+      <per:sfr key="OCRnC" sfr="OCR1C" periph="TC1"/>
+      <per:sfr key="TOIE" sfr="TIMSK" field="TOIE1"/>
+      <per:sfr key="OCIEA" sfr="TIMSK" field="OCIE1A"/>
+      <per:sfr key="OCIEB" sfr="TIMSK" field="OCIE1B"/>
+      <per:sfr key="TOV" sfr="TIFR" field="TOV1"/>
+      <per:sfr key="OCFA" sfr="TIFR" field="OCF1A"/>
+      <per:sfr key="OCFB" sfr="TIFR" field="OCF1B"/>
+      <per:initParam param="1"/>
       <per:periphClassDesc class="TimerCounter.TC_8bit"/>
     </per:periphConfig>
   </per:peripheral>
@@ -826,6 +857,36 @@
       <per:sfr key="WDRF" sfr="MCUC?SR|RSTFLR" field="WDRF"/>
       <per:periphClassDesc class="WatchdogTimer"/>
     </per:periphConfig>
+    <per:periphConfig>
+      <per:cfg key="WDTPERIODCFG" cfg="WDTCFG" field="PERIOD" periph="FUSE"/>
+      <per:cfg key="WDTWINDOWCFG" cfg="WDTCFG" field="WINDOW" periph="FUSE"/>
+      <per:sfr key="CTRLA" sfr="CTRLA" periph="WDT"/>
+      <per:sfr key="WDTPERIOD" sfr="CTRLA" field="PERIOD" periph="WDT"/>
+      <per:sfr key="WDTWINDOW" sfr="CTRLA" field="WINDOW" periph="WDT"/>
+      <per:sfr key="STATUS" sfr="STATUS" periph="WDT"/>
+      <per:sfr key="LOCK" sfr="STATUS" field="LOCK" periph="WDT"/>
+      <per:sfr key="RESETFLAGS" sfr="RSTFR" periph="RSTCTRL" critical="false"/>
+      <per:sfr key="WDTRESETFLAG" sfr="RSTFR" field="WDRF" periph="RSTCTRL" critical="false"/>
+      <per:sfr key="CONFIGCHANGEPROT" sfr="CCP" periph="CPU" critical="false"/>
+      <per:periphClassDesc class="ATtinyWDT"/>
+    </per:periphConfig>
+    <per:periphConfig>
+      <per:cfg key="WDT_PERIOD" cfg="FUSEBYTE1" field="WDPER" periph="FUSE"/>
+      <per:cfg key="WDT_WINDOW" cfg="FUSEBYTE1" field="WDWPER" periph="FUSE"/>
+      <per:cfg key="WDT_LOCK" cfg="FUSEBYTE4" field="WDLOCK" periph="FUSE"/>
+      <per:sfr key="CTRL" sfr="CTRL" periph="WDT"/>
+      <per:sfr key="WDT_NORMAL_PERIOD" sfr="CTRL" field="PER" periph="WDT"/>
+      <per:sfr key="NORMAL_ENABLE" sfr="CTRL" field="ENABLE" periph="WDT"/>
+      <per:sfr key="CTRL_CHANGE_EN" sfr="CTRL" field="CEN" periph="WDT"/>
+      <per:sfr key="WINDOW_CTRL" sfr="WINCTRL" periph="WDT"/>
+      <per:sfr key="WDT_WINDOW_PERIOD" sfr="WINCTRL" field="WPER" periph="WDT"/>
+      <per:sfr key="WINDOW_ENABLE" sfr="WINCTRL" field="WEN" periph="WDT"/>
+      <per:sfr key="WINDOW_CTRL_CHANGE_EN" sfr="WINCTRL" field="WCEN" periph="WDT"/>
+      <per:sfr key="RESET_FLAGS" sfr="STATUS" periph="RST" critical="false"/>
+      <per:sfr key="WDT_RESET_FLAG" sfr="STATUS" field="WDRF" periph="RST" critical="false"/>
+      <per:sfr key="CONFIG_CHANGE_PROTECT" sfr="CCP" periph="CPU" critical="false"/>
+      <per:periphClassDesc class="ATxmegaWDT"/>
+    </per:periphConfig>
   </per:peripheral>
   <per:peripheral name="UART@">
     <per:meta char="@" val="0|1|2|3"/>
@@ -1117,18 +1178,19 @@
     </per:periphConfig>
   </per:peripheral>
   <per:peripheral name="ADC">
-    <per:meta char="@" val="A|B"/>
-    <per:periphConfig beta="ATtiny162x ADC implementation (SIMX-1886)">
+    <per:periphConfig beta="ATtiny162x ADC implementation (SIMX-1886) - EVSYS not supported yet (SIMX-1938)">
       <per:sfr key="CTRLA" sfr="CTRLA" periph="ADC0"/>
       <per:sfr key="ENABLE" sfr="CTRLA" field="ENABLE" periph="ADC0"/>
-      <per:sfr key="RUNSTBY" sfr="CTRLA" field="RUNSTBY" periph="ADC0"/>
+      <per:sfr key="RUNSTDBY" sfr="CTRLA" field="RUNSTDBY" periph="ADC0"/>
       <per:sfr key="CTRLB" sfr="CTRLB" periph="ADC0"/>
-      <per:sfr key="PRESC" sfr="CTRLB" field="PRESC" periph="ADC0"/>
+      <per:sfr key="PRESCALER" sfr="CTRLB" field="PRESC" periph="ADC0"/>
       <per:sfr key="CTRLC" sfr="CTRLC" periph="ADC0"/>
       <per:sfr key="REFSEL" sfr="CTRLC" field="REFSEL" periph="ADC0"/>
       <per:sfr key="CTRLD" sfr="CTRLD" periph="ADC0"/>
-      <per:sfr key="WINCM" sfr="CTRLD" field="WINCM" periph="ADC0"/>
-      <per:sfr key="WINSRC" sfr="CTRLD" field="WINSRC" periph="ADC0"/>
+      <per:sfr key="WINDOWMODE" sfr="CTRLD" field="WINCM" periph="ADC0"/>
+      <per:sfr key="WINDOWSOURCE" sfr="CTRLD" field="WINSRC" periph="ADC0"/>
+      <per:sfr key="CTRLE" sfr="CTRLE" periph="ADC0"/>
+      <per:sfr key="SAMPDURATION" sfr="CTRLE" field="SAMPDUR" periph="ADC0"/>
       <per:sfr key="INTCTRL" sfr="INTCTRL" periph="ADC0"/>
       <per:sfr key="RESRDY_E" sfr="INTCTRL" field="RESRDY" periph="ADC0"/>
       <per:sfr key="SAMPRDY_E" sfr="INTCTRL" field="SAMPRDY" periph="ADC0"/>
@@ -1139,13 +1201,40 @@
       <per:sfr key="INTFLAGS" sfr="INTFLAGS" periph="ADC0"/>
       <per:sfr key="RESRDY_F" sfr="INTFLAGS" field="RESRDY" periph="ADC0"/>
       <per:sfr key="SAMPRDY_F" sfr="INTFLAGS" field="SAMPRDY" periph="ADC0"/>
-      <per:sfr key="WCMP_F" sfr="INTFLAGS" field="WCMP" periph="ADC0"/>
+      <per:sfr key="WINDOW_F" sfr="INTFLAGS" field="WCMP" periph="ADC0"/>
       <per:sfr key="RESOVR_F" sfr="INTFLAGS" field="RESOVR" periph="ADC0"/>
       <per:sfr key="SAMPOVR_F" sfr="INTFLAGS" field="SAMPOVR" periph="ADC0"/>
-      <per:sfr key="TRIGOVR_F" sfr="INTFLAGS" field="TRIGOVR" periph="ADC0"/>
+      <per:sfr key="CONVOVR_F" sfr="INTFLAGS" field="TRIGOVR" periph="ADC0"/>
       <per:sfr key="STATUS" sfr="STATUS" periph="ADC0"/>
       <per:sfr key="ADCBUSY" sfr="STATUS" field="ADCBUSY" periph="ADC0"/>
-      <per:periphClassDesc class="ADC.ATtiny162x"/>
+      <per:sfr key="CTRLE" sfr="CTRLE" periph="ADC0"/>
+      <per:sfr key="SAMPDUR" sfr="CTRLE" field="SAMPDUR" periph="ADC0"/>
+      <per:sfr key="CTRLF" sfr="CTRLF" periph="ADC0"/>
+      <per:sfr key="SAMPNUM" sfr="CTRLF" field="SAMPNUM" periph="ADC0"/>
+      <per:sfr key="LEFTADJ" sfr="CTRLF" field="LEFTADJ" periph="ADC0"/>
+      <per:sfr key="FREERUN" sfr="CTRLF" field="FREERUN" periph="ADC0"/>
+      <per:sfr key="COMMAND" sfr="COMMAND" periph="ADC0"/>
+      <per:sfr key="START" sfr="COMMAND" field="START" periph="ADC0"/>
+      <per:sfr key="MODE" sfr="COMMAND" field="MODE" periph="ADC0"/>
+      <per:sfr key="DIFF" sfr="COMMAND" field="DIFF" periph="ADC0"/>
+      <per:sfr key="PGACTRL" sfr="PGACTRL" periph="ADC0"/>
+      <per:sfr key="PGAEN" sfr="PGACTRL" field="PGAEN" periph="ADC0"/>
+      <per:sfr key="PGAGAIN" sfr="PGACTRL" field="GAIN" periph="ADC0"/>
+      <per:sfr key="PGASAMPDUR" sfr="PGACTRL" field="ADCPGASAMPDUR" periph="ADC0"/>
+      <per:sfr key="MUXPOS" sfr="MUXPOS" periph="ADC0"/>
+      <per:sfr key="MUXPOS_SEL" sfr="MUXPOS" field="MUXPOS" periph="ADC0"/>
+      <per:sfr key="MUXPOS_VIA" sfr="MUXPOS" field="VIA" periph="ADC0"/>
+      <per:sfr key="MUXNEG" sfr="MUXNEG" periph="ADC0"/>
+      <per:sfr key="MUXNEG_SEL" sfr="MUXNEG" field="MUXNEG" periph="ADC0"/>
+      <per:sfr key="MUXNEG_VIA" sfr="MUXNEG" field="VIA" periph="ADC0"/>
+      <per:sfr key="RESULT" sfr="RESULT" periph="ADC0"/>
+      <per:sfr key="SAMPLE" sfr="SAMPLE" periph="ADC0"/>
+      <per:sfr key="WINDOWLOWVAL" sfr="WINLT" periph="ADC0"/>
+      <per:sfr key="WINDOWHIGHVAL" sfr="WINHT" periph="ADC0"/>
+      <per:pin key="AIN#" pinID="AIN#" metaf="#" metar="0-15" optional="true" critical="false"/>
+      <per:pin key="VDD" pinID="VCC" optional="true" critical="false"/>
+      <per:pin key="GND" pinID="GND1" critical="false"/>
+      <per:periphClassDesc class="ADC.ADC_ATtiny162x"/>
     </per:periphConfig>
     <per:periphConfig beta="Only implemented for ATmega4809 and ATtiny817-like">
       <per:sfr key="CTRLA" sfr="CTRLA" periph="ADC0"/>
@@ -1190,47 +1279,9 @@
       <per:sfr key="DUTYCYC" sfr="CALIB" field="DUTYCYC" optional="true" periph="ADC0"/>
       <per:pin key="AIN#" pinID="AIN#" metaf="#" metar="0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15" optional="true" critical="false"/>
       <per:pin key="VDD" pinID="(A)?VDD" optional="true"/>
-      <per:pin key="GND" pinID="(A)?GND" optional="true"/>
+      <per:pin key="GND" pinID="(A)?GND" optional="true" critical="false"/>
       <per:pin key="VREFA" pinID="VREFA" optional="true"/>
       <per:periphClassDesc class="ADC.ADC"/>
-    </per:periphConfig>
-    <per:periphConfig beta="Only implemented for ATxmega128A1U-like">
-      <per:sfr key="CTRLA" sfr="CTRLA" periph="ADC@"/>
-      <per:sfr key="DMASEL" sfr="CTRLA" field="DMASEL" periph="ADC@"/>
-      <per:sfr key="CH0START" sfr="CTRLA" field="CH0START" periph="ADC@"/>
-      <per:sfr key="CH1START" sfr="CTRLA" field="CH1START" periph="ADC@"/>
-      <per:sfr key="CH2START" sfr="CTRLA" field="CH2START" periph="ADC@"/>
-      <per:sfr key="CH3START" sfr="CTRLA" field="CH3START" periph="ADC@"/>
-      <per:sfr key="FLUSH" sfr="CTRLA" field="FLUSH" periph="ADC@"/>
-      <per:sfr key="ENABLE" sfr="CTRLA" field="ENABLE" periph="ADC@"/>
-      <per:sfr key="CTRLB" sfr="CTRLB" periph="ADC@"/>
-      <per:sfr key="IMPMODE" sfr="CTRLB" field="IMPMODE" periph="ADC@"/>
-      <per:sfr key="CURRLIMIT" sfr="CTRLB" field="CURRLIMIT" periph="ADC@"/>
-      <per:sfr key="CONMODE" sfr="CTRLB" field="CONMODE" periph="ADC@"/>
-      <per:sfr key="FREERUN" sfr="CTRLB" field="FREERUN" periph="ADC@"/>
-      <per:sfr key="RESOLUTION" sfr="CTRLB" field="RESOLUTION" periph="ADC@"/>
-      <per:sfr key="REFCTRL" sfr="REFCTRL" periph="ADC@"/>
-      <per:sfr key="REFSEL" sfr="REFCTRL" field="REFSEL" periph="ADC@"/>
-      <per:sfr key="BANDGAP" sfr="REFCTRL" field="BANDGAP" periph="ADC@"/>
-      <per:sfr key="TEMPREF" sfr="REFCTRL" field="TEMPREF" periph="ADC@"/>
-      <per:sfr key="EVCTRL" sfr="EVCTRL" periph="ADC@"/>
-      <per:sfr key="SWEEP" sfr="EVCTRL" field="SWEEP" periph="ADC@"/>
-      <per:sfr key="EVSEL" sfr="EVCTRL" field="EVSEL" periph="ADC@"/>
-      <per:sfr key="EVACT" sfr="EVCTRL" field="EVACT" periph="ADC@"/>
-      <per:sfr key="PRESCALER" sfr="PRESCALER" periph="ADC@"/>
-      <per:sfr key="INTFLAGS" sfr="INTFLAGS" periph="ADC@"/>
-      <per:sfr key="CH0IF" sfr="INTFLAGS" field="CH0IF" periph="ADC@"/>
-      <per:sfr key="CH1IF" sfr="INTFLAGS" field="CH1IF" periph="ADC@"/>
-      <per:sfr key="CH2IF" sfr="INTFLAGS" field="CH2IF" periph="ADC@"/>
-      <per:sfr key="CH3IF" sfr="INTFLAGS" field="CH3IF" periph="ADC@"/>
-      <per:sfr key="TEMP" sfr="TEMP" periph="ADC@"/>
-      <per:sfr key="CAL" sfr="CAL" periph="ADC@"/>
-      <per:sfr key="CH0RES" sfr="CH0RES" periph="ADC@"/>
-      <per:sfr key="CH1RES" sfr="CH1RES" periph="ADC@"/>
-      <per:sfr key="CH2RES" sfr="CH2RES" periph="ADC@"/>
-      <per:sfr key="CH3RES" sfr="CH3RES" periph="ADC@"/>
-      <per:sfr key="CMP" sfr="CMP" periph="ADC@"/>
-      <per:periphClassDesc class="ADC.ADCxmega"/>
     </per:periphConfig>
     <per:periphConfig beta="Only implemented for AT90CAN128-like - External Interrupt and Timer/Counter trigger sources not implemented">
       <per:sfr key="ADMUX" sfr="ADMUX" periph="ADC|AD_CONVERTER"/>
@@ -1250,67 +1301,11 @@
       <per:sfr key="ADC" sfr="ADC" periph="ADC|AD_CONVERTER"/>
       <per:sfr key="DIDR0" sfr="DIDR0" periph="ADC|AD_CONVERTER"/>
       <per:sfr key="ADC#D" sfr="DIDR0" field="ADC#D" metaf="#" metar="0|1|2|3|4|5|6|7" optional="true"/>
-      <per:pin key="ADC#" pinID="ADC#" metaf="#" metar="0|1|2|3|4|5|6|7" optional="true"/>
+      <per:pin key="ADC#" pinID="ADC#" metaf="#" metar="0|1|2|3|4|5|6|7" optional="true" critical="false"/>
       <per:pin key="AREF" pinID="AREF"/>
-      <per:pin key="GND" pinID="GND"/>
-      <per:pin key="AVCC" pinID="AVCC"/>
+      <per:pin key="GND" pinID="GND" critical="false"/>
+      <per:pin key="AVCC" pinID="AVCC" critical="false"/>
       <per:periphClassDesc class="ADC.ADC90CAN"/>
-    </per:periphConfig>
-    <per:periphConfig beta="Only implemented for ATxmega32E5-like">
-      <per:sfr key="CTRLA" sfr="CTRLA" periph="ADCA"/>
-      <per:sfr key="START" sfr="CTRLA" field="START" periph="ADCA"/>
-      <per:sfr key="FLUSH" sfr="CTRLA" field="FLUSH" periph="ADCA"/>
-      <per:sfr key="ENABLE" sfr="CTRLA" field="ENABLE" periph="ADCA"/>
-      <per:sfr key="CTRLB" sfr="CTRLB" periph="ADCA"/>
-      <per:sfr key="CURRLIMIT" sfr="CTRLB" field="CURRLIMIT" periph="ADCA"/>
-      <per:sfr key="CONVMODE" sfr="CTRLB" field="CONMODE" periph="ADCA"/>
-      <per:sfr key="FREERUN" sfr="CTRLB" field="FREERUN" periph="ADCA"/>
-      <per:sfr key="RESOLUTION" sfr="CTRLB" field="RESOLUTION" periph="ADCA"/>
-      <per:sfr key="REFCTRL" sfr="REFCTRL" periph="ADCA"/>
-      <per:sfr key="REFSEL" sfr="REFCTRL" field="REFSEL" periph="ADCA"/>
-      <per:sfr key="BANDGAP" sfr="REFCTRL" field="BANDGAP" periph="ADCA"/>
-      <per:sfr key="TEMPREF" sfr="REFCTRL" field="TEMPREF" periph="ADCA"/>
-      <per:sfr key="EVCTRL" sfr="EVCTRL" periph="ADCA"/>
-      <per:sfr key="EVSEL" sfr="EVCTRL" field="EVSEL" periph="ADCA"/>
-      <per:sfr key="EVACT" sfr="EVCTRL" field="EVACT" periph="ADCA"/>
-      <per:sfr key="PRESCALER" sfr="PRESCALER" periph="ADCA"/>
-      <per:sfr key="INTFLAGS" sfr="INTFLAGS" periph="ADCA"/>
-      <per:sfr key="CH0IF" sfr="INTFLAGS" field="CH0IF" periph="ADCA"/>
-      <per:sfr key="TEMP" sfr="TEMP" periph="ADCA"/>
-      <per:sfr key="SAMPCTRL" sfr="SAMPCTRL" periph="ADCA"/>
-      <per:sfr key="SAMPVAL" sfr="SAMPCTRL" field="SAMPVAL" periph="ADCA"/>
-      <per:sfr key="CAL" sfr="CAL" periph="ADCA"/>
-      <per:sfr key="CH0RES" sfr="CH0RES" periph="ADCA"/>
-      <per:sfr key="CMP" sfr="CMP" periph="ADCA"/>
-      <per:sfr key="CTRL" sfr="CH0CTRL" periph="ADCA"/>
-      <per:sfr key="STARTCH0" sfr="CH0CTRL" field="START" periph="ADCA"/>
-      <per:sfr key="GAIN" sfr="CH0CTRL" field="GAIN" periph="ADCA"/>
-      <per:sfr key="INPUTMODE" sfr="CH0CTRL" field="INPUTMODE" periph="ADCA"/>
-      <per:sfr key="MUXCTRL" sfr="CH0MUXCTRL" periph="ADCA"/>
-      <per:sfr key="MUXPOS" sfr="CH0MUXCTRL" field="MUXINT|MUXPOS" periph="ADCA"/>
-      <per:sfr key="MUXNEG" sfr="CH0MUXCTRL" field="MUXNEG" periph="ADCA"/>
-      <per:sfr key="INTCTRL" sfr="CH0INTCTRL" periph="ADCA"/>
-      <per:sfr key="INTMODE" sfr="CH0INTCTRL" field="INTMODE" periph="ADCA"/>
-      <per:sfr key="INTLVL" sfr="CH0INTCTRL" field="INTLVL" periph="ADCA"/>
-      <per:sfr key="CH0INTFLAGS" sfr="CH0INTFLAGS" periph="ADCA"/>
-      <per:sfr key="IF" sfr="CH0INTFLAGS" field="IF" periph="ADCA"/>
-      <per:sfr key="RES" sfr="CH0RES" periph="ADCA"/>
-      <per:sfr key="SCAN" sfr="CH0SCAN" periph="ADCA"/>
-      <per:sfr key="CORRCTRL" sfr="CH0CORRCTRL" periph="ADCA"/>
-      <per:sfr key="CORREN" sfr="CH0CORRCTRL" field="CORREN" periph="ADCA"/>
-      <per:sfr key="OFFSETCORR0" sfr="CH0OFFSETCORR0" periph="ADCA"/>
-      <per:sfr key="OFFSETCORR1" sfr="CH0OFFSETCORR1" periph="ADCA"/>
-      <per:sfr key="GAINCORR0" sfr="CH0GAINCORR0" periph="ADCA"/>
-      <per:sfr key="GAINCORR1" sfr="CH0GAINCORR1" periph="ADCA"/>
-      <per:sfr key="AVGCTRL" sfr="CH0AVGCTRL" periph="ADCA"/>
-      <per:sfr key="RIGHTSHIFT" sfr="CH0AVGCTRL" field="RIGHTSHIFT" periph="ADCA"/>
-      <per:sfr key="SAMPNUM" sfr="CH0AVGCTRL" field="SAMPNUM" periph="ADCA"/>
-      <per:pin key="ADC#" pinID="ADC#" metaf="#" metar="0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15" optional="true"/>
-      <per:pin key="AREFA" pinID="REFA0" optional="true"/>
-      <per:pin key="AREFD" pinID="REFD0" optional="true"/>
-      <per:pin key="GND" pinID="GND"/>
-      <per:pin key="AVCC" pinID="AVCC"/>
-      <per:periphClassDesc class="ADC.ADCxmegaE"/>
     </per:periphConfig>
     <per:periphConfig>
       <per:sfr key="CTRLA" sfr="CTRLA" periph="ADC0"/>
@@ -1351,6 +1346,140 @@
       <per:sfr key="ADC0REF" sfr="ADC0REF" periph="VREF"/>
       <per:sfr key="REFSEL" sfr="ADC0REF" field="REFSEL" periph="VREF"/>
       <per:periphClassDesc class="ADC.ADC128DA"/>
+    </per:periphConfig>
+  </per:peripheral>
+  <per:peripheral name="ADC@">
+    <per:meta char="@" val="A|B"/>
+    <per:periphConfig beta="Only implemented for ATxmega32E5-like">
+      <per:sfr key="CTRLA" sfr="CTRLA" periph="ADC@"/>
+      <per:sfr key="START" sfr="CTRLA" field="START" periph="ADC@"/>
+      <per:sfr key="FLUSH" sfr="CTRLA" field="FLUSH" periph="ADC@"/>
+      <per:sfr key="ENABLE" sfr="CTRLA" field="ENABLE" periph="ADC@"/>
+      <per:sfr key="CTRLB" sfr="CTRLB" periph="ADC@"/>
+      <per:sfr key="CURRLIMIT" sfr="CTRLB" field="CURRLIMIT" periph="ADC@"/>
+      <per:sfr key="CONVMODE" sfr="CTRLB" field="CONMODE" periph="ADC@"/>
+      <per:sfr key="FREERUN" sfr="CTRLB" field="FREERUN" periph="ADC@"/>
+      <per:sfr key="RESOLUTION" sfr="CTRLB" field="RESOLUTION" periph="ADC@"/>
+      <per:sfr key="REFCTRL" sfr="REFCTRL" periph="ADC@"/>
+      <per:sfr key="REFSEL" sfr="REFCTRL" field="REFSEL" periph="ADC@"/>
+      <per:sfr key="BANDGAP" sfr="REFCTRL" field="BANDGAP" periph="ADC@"/>
+      <per:sfr key="TEMPREF" sfr="REFCTRL" field="TEMPREF" periph="ADC@"/>
+      <per:sfr key="EVCTRL" sfr="EVCTRL" periph="ADC@"/>
+      <per:sfr key="EVSEL" sfr="EVCTRL" field="EVSEL" periph="ADC@"/>
+      <per:sfr key="EVACT" sfr="EVCTRL" field="EVACT" periph="ADC@"/>
+      <per:sfr key="PRESCALER" sfr="PRESCALER" periph="ADC@"/>
+      <per:sfr key="INTFLAGS" sfr="INTFLAGS" periph="ADC@"/>
+      <per:sfr key="CH0IF" sfr="INTFLAGS" field="CH0IF" periph="ADC@"/>
+      <per:sfr key="TEMP" sfr="TEMP" periph="ADC@"/>
+      <per:sfr key="SAMPCTRL" sfr="SAMPCTRL" periph="ADC@"/>
+      <per:sfr key="SAMPVAL" sfr="SAMPCTRL" field="SAMPVAL" periph="ADC@"/>
+      <per:sfr key="CAL" sfr="CAL" periph="ADC@"/>
+      <per:sfr key="CH0RES" sfr="CH0RES" periph="ADC@"/>
+      <per:sfr key="CMP" sfr="CMP" periph="ADC@"/>
+      <per:sfr key="CTRL" sfr="CH0CTRL" periph="ADC@"/>
+      <per:sfr key="STARTCH0" sfr="CH0CTRL" field="START" periph="ADC@"/>
+      <per:sfr key="GAIN" sfr="CH0CTRL" field="GAIN" periph="ADC@"/>
+      <per:sfr key="INPUTMODE" sfr="CH0CTRL" field="INPUTMODE" periph="ADC@"/>
+      <per:sfr key="MUXCTRL" sfr="CH0MUXCTRL" periph="ADC@"/>
+      <per:sfr key="MUXPOS" sfr="CH0MUXCTRL" field="MUXINT|MUXPOS" periph="ADC@"/>
+      <per:sfr key="MUXNEG" sfr="CH0MUXCTRL" field="MUXNEG" periph="ADC@"/>
+      <per:sfr key="INTCTRL" sfr="CH0INTCTRL" periph="ADC@"/>
+      <per:sfr key="INTMODE" sfr="CH0INTCTRL" field="INTMODE" periph="ADC@"/>
+      <per:sfr key="INTLVL" sfr="CH0INTCTRL" field="INTLVL" periph="ADC@"/>
+      <per:sfr key="CH0INTFLAGS" sfr="CH0INTFLAGS" periph="ADC@"/>
+      <per:sfr key="IF" sfr="CH0INTFLAGS" field="IF" periph="ADC@"/>
+      <per:sfr key="RES" sfr="CH0RES" periph="ADC@"/>
+      <per:sfr key="SCAN" sfr="CH0SCAN" periph="ADC@"/>
+      <per:sfr key="CORRCTRL" sfr="CH0CORRCTRL" periph="ADC@"/>
+      <per:sfr key="CORREN" sfr="CH0CORRCTRL" field="CORREN" periph="ADC@"/>
+      <per:sfr key="OFFSETCORR0" sfr="CH0OFFSETCORR0" periph="ADC@"/>
+      <per:sfr key="OFFSETCORR1" sfr="CH0OFFSETCORR1" periph="ADC@"/>
+      <per:sfr key="GAINCORR0" sfr="CH0GAINCORR0" periph="ADC@"/>
+      <per:sfr key="GAINCORR1" sfr="CH0GAINCORR1" periph="ADC@"/>
+      <per:sfr key="AVGCTRL" sfr="CH0AVGCTRL" periph="ADC@"/>
+      <per:sfr key="RIGHTSHIFT" sfr="CH0AVGCTRL" field="RIGHTSHIFT" periph="ADC@"/>
+      <per:sfr key="SAMPNUM" sfr="CH0AVGCTRL" field="SAMPNUM" periph="ADC@"/>
+      <per:pin key="ADC#" pinID="ADC#" metaf="#" metar="0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15" optional="true" critical="false"/>
+      <per:pin key="AREFA" pinID="REFA0" optional="true" critical="false"/>
+      <per:pin key="AREFD" pinID="REFD0" optional="true" critical="false"/>
+      <per:pin key="GND" pinID="GND" critical="false"/>
+      <per:pin key="AVCC" pinID="AVCC" critical="false"/>
+      <per:periphClassDesc class="ADC.ADCxmegaE"/>
+    </per:periphConfig>
+    <per:periphConfig beta="SIMX-1962 In development">
+      <per:sfr key="CTRLA" sfr="CTRLA" periph="ADC@"/>
+      <per:sfr key="DMASEL" sfr="CTRLA" field="DMASEL" optional="true" periph="ADC@"/>
+      <per:sfr key="CH0START" sfr="CTRLA" field="CH0START" periph="ADC@"/>
+      <per:sfr key="CH1START" sfr="CTRLA" field="CH1START" optional="true" periph="ADC@"/>
+      <per:sfr key="CH2START" sfr="CTRLA" field="CH2START" optional="true" periph="ADC@"/>
+      <per:sfr key="CH3START" sfr="CTRLA" field="CH3START" optional="true" periph="ADC@"/>
+      <per:sfr key="FLUSH" sfr="CTRLA" field="FLUSH" periph="ADC@"/>
+      <per:sfr key="ENABLE" sfr="CTRLA" field="ENABLE" periph="ADC@"/>
+      <per:sfr key="CTRLB" sfr="CTRLB" periph="ADC@"/>
+      <per:sfr key="IMPMODE" sfr="CTRLB" field="IMPMODE" optional="true" periph="ADC@"/>
+      <per:sfr key="CURRLIMIT" sfr="CTRLB" field="CURRLIMIT" optional="true" periph="ADC@"/>
+      <per:sfr key="CONMODE" sfr="CTRLB" field="CONMODE" periph="ADC@"/>
+      <per:sfr key="FREERUN" sfr="CTRLB" field="FREERUN" periph="ADC@"/>
+      <per:sfr key="RESOLUTION" sfr="CTRLB" field="RESOLUTION" periph="ADC@"/>
+      <per:sfr key="REFCTRL" sfr="REFCTRL" periph="ADC@"/>
+      <per:sfr key="REFSEL" sfr="REFCTRL" field="REFSEL" periph="ADC@"/>
+      <per:sfr key="BANDGAP" sfr="REFCTRL" field="BANDGAP" periph="ADC@"/>
+      <per:sfr key="TEMPREF" sfr="REFCTRL" field="TEMPREF" periph="ADC@"/>
+      <per:sfr key="EVCTRL" sfr="EVCTRL" periph="ADC@"/>
+      <per:sfr key="SWEEP" sfr="EVCTRL" field="SWEEP" optional="true" periph="ADC@"/>
+      <per:sfr key="EVSEL" sfr="EVCTRL" field="EVSEL" periph="ADC@"/>
+      <per:sfr key="EVACT" sfr="EVCTRL" field="EVACT" periph="ADC@"/>
+      <per:sfr key="PRESCALER" sfr="PRESCALER" periph="ADC@"/>
+      <per:sfr key="INTFLAGS" sfr="INTFLAGS" periph="ADC@"/>
+      <per:sfr key="CH0IF" sfr="INTFLAGS" field="CH0IF" periph="ADC@"/>
+      <per:sfr key="CH1IF" sfr="INTFLAGS" field="CH1IF" optional="true" periph="ADC@"/>
+      <per:sfr key="CH2IF" sfr="INTFLAGS" field="CH2IF" optional="true" periph="ADC@"/>
+      <per:sfr key="CH3IF" sfr="INTFLAGS" field="CH3IF" optional="true" periph="ADC@"/>
+      <per:sfr key="TEMP" sfr="TEMP" periph="ADC@"/>
+      <per:sfr key="CAL" sfr="CAL" periph="ADC@"/>
+      <per:sfr key="0RES" sfr="CH0RES" periph="ADC@"/>
+      <per:sfr key="1RES" sfr="CH1RES" optional="true" periph="ADC@"/>
+      <per:sfr key="2RES" sfr="CH2RES" optional="true" periph="ADC@"/>
+      <per:sfr key="3RES" sfr="CH3RES" optional="true" periph="ADC@"/>
+      <per:sfr key="CMP" sfr="CMP" periph="ADC@"/>
+      <per:sfr key="CH0CTRL" sfr="CH0CTRL" periph="ADC@"/>
+      <per:sfr key="0START" sfr="CH0CTRL" field="START" periph="ADC@"/>
+      <per:sfr key="0GAIN" sfr="CH0CTRL" field="GAIN(FAC)?" periph="ADC@"/>
+      <per:sfr key="0INPUTMODE" sfr="CH0CTRL" field="INPUTMODE" periph="ADC@"/>
+      <per:sfr key="CH#CTRL" sfr="CH#CTRL" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:sfr key="#START" sfr="CH#CTRL" field="START" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:sfr key="#GAIN" sfr="CH#CTRL" field="GAIN(FAC)?" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:sfr key="#INPUTMODE" sfr="CH#CTRL" field="INPUTMODE" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:sfr key="CH0MUXCTRL" sfr="CH0MUXCTRL" periph="ADC@"/>
+      <per:sfr key="0MUXPOS" sfr="CH0MUXCTRL" field="MUXINT|MUXPOS" periph="ADC@"/>
+      <per:sfr key="0MUXNEG" sfr="CH0MUXCTRL" field="MUXNEG(H)?" periph="ADC@"/>
+      <per:sfr key="CH#MUXCTRL" sfr="CH#MUXCTRL" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:sfr key="#MUXPOS" sfr="CH#MUXCTRL" field="MUXINT|MUXPOS" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:sfr key="#MUXNEG" sfr="CH#MUXCTRL" field="MUXNEG(H)?" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:sfr key="CH0INTCTRL" sfr="CH0INTCTRL" periph="ADC@"/>
+      <per:sfr key="0INTLVL" sfr="CH0INTCTRL" field="INTLVL" periph="ADC@"/>
+      <per:sfr key="0INTMODE" sfr="CH0INTCTRL" field="INTMODE" periph="ADC@"/>
+      <per:sfr key="CH#INTCTRL" sfr="CH#INTCTRL" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:sfr key="#INTLVL" sfr="CH#INTCTRL" field="INTLVL" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:sfr key="#INTMODE" sfr="CH#INTCTRL" field="INTMODE" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:sfr key="CH0INTFLAGS" sfr="CH0INTFLAGS" periph="ADC@"/>
+      <per:sfr key="0IF" sfr="CH0INTFLAGS" field="CHIF" periph="ADC@"/>
+      <per:sfr key="CH#INTFLAGS" sfr="CH#INTFLAGS" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:sfr key="#IF" sfr="CH#INTFLAGS" field="CHIF" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:sfr key="CH0RES" sfr="CH0RES" periph="ADC@"/>
+      <per:sfr key="CH#RES" sfr="CH#RES" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:sfr key="CH0SCAN" sfr="CH0SCAN" optional="true" periph="ADC@"/>
+      <per:sfr key="0SCANNUM" sfr="CH0SCAN" field="SCANNUM" optional="true" periph="ADC@"/>
+      <per:sfr key="0OFFSET" sfr="CH0SCAN" field="OFFSET" optional="true" periph="ADC@"/>
+      <per:sfr key="CH#SCAN" sfr="CH#SCAN" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:sfr key="#SCANNUM" sfr="CH#SCAN" field="SCANNUM" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:sfr key="#OFFSET" sfr="CH#SCAN" field="OFFSET" metaf="#" metar="1|2|3" optional="true" periph="ADC@"/>
+      <per:pin key="ADC#" pinID="ADC#" metaf="#" metar="0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15" optional="true" critical="false"/>
+      <per:pin key="VREFA" pinID="REFA0" optional="true" critical="false"/>
+      <per:pin key="VREFB" pinID="REFB0" optional="true" critical="false"/>
+      <per:pin key="GND" pinID="GND" optional="true" critical="false"/>
+      <per:pin key="VCC" pinID="AVCC" optional="true" critical="false"/>
+      <per:periphClassDesc class="ADC.ADCxmegaAD"/>
     </per:periphConfig>
   </per:peripheral>
   <per:peripheral name="TC@">
@@ -1517,6 +1646,80 @@
       <per:sfr key="ADC_CH0RES" sfr="CH0RES" periph="ADCA" optional="true" critical="false"/>
       <per:periphClassDesc class="DMA.DMAxmegaE"/>
     </per:periphConfig>
+    <per:periphConfig>
+      <per:sfr key="CTRL" sfr="CTRL" periph="DMA"/>
+      <per:sfr key="PRIMODE" sfr="CTRL" field="PRIMODE" periph="DMA"/>
+      <per:sfr key="DBUFMODE" sfr="CTRL" field="DBUFMODE" periph="DMA"/>
+      <per:sfr key="RESET" sfr="CTRL" field="RESET" periph="DMA"/>
+      <per:sfr key="ENABLE" sfr="CTRL" field="ENABLE" periph="DMA"/>
+      <per:sfr key="INTFLAGS" sfr="INTFLAGS" periph="DMA"/>
+      <per:sfr key="#TRNIF" sfr="INTFLAGS" field="CH#TRNIF" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="#ERRIF" sfr="INTFLAGS" field="CH#ERRIF" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="@TRNIF" sfr="INTFLAGS" field="CH@TRNIF" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="@ERRIF" sfr="INTFLAGS" field="CH@ERRIF" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="STATUS" sfr="STATUS" periph="DMA"/>
+      <per:sfr key="#PEND" sfr="STATUS" field="CH#PEND" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="#BUSY" sfr="STATUS" field="CH#BUSY" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="@PEND" sfr="STATUS" field="CH@PEND" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="@BUSY" sfr="STATUS" field="CH@BUSY" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH#CTRLA" sfr="CH#CTRLA" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#BURSTLEN" sfr="CH#CTRLA" field="BURSTLEN" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#SINGLE" sfr="CH#CTRLA" field="SINGLE" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#TRFREQ" sfr="CH#CTRLA" field="TRFREQ" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#REPEAT" sfr="CH#CTRLA" field="REPEAT" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#RESET" sfr="CH#CTRLA" field="RESET|CHRST" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#ENABLE" sfr="CH#CTRLA" field="ENABLE|CHEN" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH@CTRLA" sfr="CH@CTRLA" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@BURSTLEN" sfr="CH@CTRLA" field="BURSTLEN" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@SINGLE" sfr="CH@CTRLA" field="SINGLE" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@TRFREQ" sfr="CH@CTRLA" field="TRFREQ" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@REPEAT" sfr="CH@CTRLA" field="REPEAT" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@RESET" sfr="CH@CTRLA" field="RESET" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@ENABLE" sfr="CH@CTRLA" field="ENABLE" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH#CTRLB" sfr="CH#CTRLB" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#TRNINTLVL" sfr="CH#CTRLB" field="TRNINTLVL" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#ERRINTLVL" sfr="CH#CTRLB" field="ERRINTLVL" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#TRNIF" sfr="CH#CTRLB" field="TRNIF" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#ERRIF" sfr="CH#CTRLB" field="ERRIF" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#PEND" sfr="CH#CTRLB" field="CHPEND" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#BUSY" sfr="CH#CTRLB" field="CHBUSY" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH@CTRLB" sfr="CH@CTRLB" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@TRNINTLVL" sfr="CH@CTRLB" field="TRNINTLVL" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@ERRINTLVL" sfr="CH@CTRLB" field="ERRINTLVL" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@TRNIF" sfr="CH@CTRLB" field="TRNIF" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@ERRIF" sfr="CH@CTRLB" field="ERRIF" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@PEND" sfr="CH@CTRLB" field="CHPEND" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@BUSY" sfr="CH@CTRLB" field="CHBUSY" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH#ADDRCTRL" sfr="CH#ADDRCTRL" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#DESTDIR" sfr="CH#ADDRCTRL" field="DESTDIR" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#DESTRELOAD" sfr="CH#ADDRCTRL" field="DESTRELOAD" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#SRCDIR" sfr="CH#ADDRCTRL" field="SRCDIR" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH#SRCRELOAD" sfr="CH#ADDRCTRL" field="SRCRELOAD" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH@ADDRCTRL" sfr="CH@ADDRCTRL" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@DESTDIR" sfr="CH@ADDRCTRL" field="DESTDIR" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@DESTRELOAD" sfr="CH@ADDRCTRL" field="DESTRELOAD" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@SRCDIR" sfr="CH@ADDRCTRL" field="SRCDIR" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH@SRCRELOAD" sfr="CH@ADDRCTRL" field="SRCRELOAD" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH#TRIGSRC" sfr="CH#TRIGSRC" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH@TRIGSRC" sfr="CH@TRIGSRC" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH#TRFCNT" sfr="CH#TRFCNT" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH@TRFCNT" sfr="CH@TRFCNT" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH#SRCADDR0" sfr="CH#SRCADDR0" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH@SRCADDR0" sfr="CH@SRCADDR0" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH#SRCADDR1" sfr="CH#SRCADDR1" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH@SRCADDR1" sfr="CH@SRCADDR1" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH#SRCADDR2" sfr="CH#SRCADDR2" metaf="#" metar="0|1" optional="true" periph="DMA"/>
+      <per:sfr key="CH@SRCADDR2" sfr="CH@SRCADDR2" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH#DESTADDR0" sfr="CH#DESTADDR0" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH@DESTADDR0" sfr="CH@DESTADDR0" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH#DESTADDR1" sfr="CH#DESTADDR1" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH@DESTADDR1" sfr="CH@DESTADDR1" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH#DESTADDR2" sfr="CH#DESTADDR2" metaf="#" metar="0|1" optional="true" periph="DMA"/>
+      <per:sfr key="CH@DESTADDR2" sfr="CH@DESTADDR2" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:sfr key="CH#REPCNT" sfr="CH#REPCNT" metaf="#" metar="0|1" periph="DMA"/>
+      <per:sfr key="CH@REPCNT" sfr="CH@REPCNT" metaf="@" metar="2|3" optional="true" periph="DMA"/>
+      <per:periphClassDesc class="DMA.DMAxmegaA"/>
+    </per:periphConfig>
   </per:peripheral>
   <per:peripheral name="FLASH_REMAPPER" excludeFromMgrRpt="true">
     <per:periphConfig>
@@ -1524,6 +1727,105 @@
       <per:sfr key="FLMAPLOCK" sfr="CTRLB" field="FLMAPLOCK" periph="NVMCTRL"/>
       <per:sfr key="FLMAP" sfr="CTRLB" field="FLMAP" periph="NVMCTRL"/>
       <per:periphClassDesc class="FlashRemapper"/>
+    </per:periphConfig>
+  </per:peripheral>
+  <per:peripheral name="NVMController">
+    <per:periphConfig>
+      <per:sfr key="CTRLA" sfr="CTRLA" periph="NVMCTRL"/>
+      <per:sfr key="CMD" sfr="CTRLA" field="CMD" periph="NVMCTRL"/>
+      <per:sfr key="CTRLB" sfr="CTRLB" periph="NVMCTRL"/>
+      <per:sfr key="APPCODEWP" sfr="CTRLB" field="APPCODEWP|APCWP" periph="NVMCTRL"/>
+      <per:sfr key="BOOTRP" sfr="CTRLB" field="BOOTRP|BOOTLOCK" periph="NVMCTRL"/>
+      <per:sfr key="APPDATAWP" sfr="CTRLB" field="APPDATAWP" optional="true" periph="NVMCTRL"/>
+      <per:sfr key="FLMAP" sfr="CTRLB" field="FLMAP" optional="true" periph="NVMCTRL"/>
+      <per:sfr key="FLMAPLOCK" sfr="CTRLB" field="FLMAPLOCK" optional="true" periph="NVMCTRL"/>
+      <per:sfr key="EEWP" sfr="CTRLB" field="EEWP" optional="true" periph="NVMCTRL"/>
+      <per:sfr key="STATUS" sfr="STATUS" periph="NVMCTRL"/>
+      <per:sfr key="FBUSY" sfr="STATUS" field="FBUSY|FLBUSY" periph="NVMCTRL"/>
+      <per:sfr key="EEBUSY" sfr="STATUS" field="EEBUSY" periph="NVMCTRL"/>
+      <per:sfr key="ERROR" sfr="STATUS" field="ERROR|WRERROR" periph="NVMCTRL"/>
+      <per:sfr key="INTCTRL" sfr="INTCTRL" periph="NVMCTRL"/>
+      <per:sfr key="EEREADY_CTRL" sfr="INTCTRL" field="EEREADY" periph="NVMCTRL"/>
+      <per:sfr key="FLREADY_CTRL" sfr="INTCTRL" field="FLREADY" optional="true" periph="NVMCTRL"/>
+      <per:sfr key="INTFLAGS" sfr="INTFLAGS" periph="NVMCTRL"/>
+      <per:sfr key="EEREADY_FLAGS" sfr="INTFLAGS" field="EEREADY" periph="NVMCTRL"/>
+      <per:sfr key="FLREADY_FLAGS" sfr="INTFLAGS" field="FLREADY" optional="true" periph="NVMCTRL"/>
+      <per:sfr key="DATA" sfr="DATA" periph="NVMCTRL"/>
+      <per:sfr key="ADDR" sfr="ADDR" periph="NVMCTRL"/>
+      <per:sfr key="CCP" sfr="CCP" periph="CPU"/>
+      <per:cfg key="CODE_SIZE" cfg="CODESIZE" critical="false" optional="true" periph="FUSE"/>
+      <per:cfg key="BOOT_SIZE" cfg="BOOTSIZE" critical="false" optional="true" periph="FUSE"/>
+      <per:periphClassDesc class="nvmcontroller.NVMControllerAVR"/>
+    </per:periphConfig>
+    <per:periphConfig>
+      <per:sfr key="NVMCSR" sfr="NVMCSR" periph="CPU"/>
+      <per:sfr key="NVMBSY" sfr="NVMCSR" field="NVMBSY" periph="CPU"/>
+      <per:sfr key="NVMCMD" sfr="NVMCMD" periph="CPU"/>
+      <per:periphClassDesc class="NVMController"/>
+    </per:periphConfig>
+    <per:periphConfig>
+      <per:sfr key="SPMCSR" sfr="SPMCSR" periph="CPU"/>
+      <per:sfr key="SPMEN" sfr="SPMCSR" field="SPMEN|SELFPRGEN" periph="CPU"/>
+      <per:sfr key="PGERS" sfr="SPMCSR" field="PGERS" periph="CPU"/>
+      <per:sfr key="PGWRT" sfr="SPMCSR" field="PGWRT" periph="CPU"/>
+      <per:sfr key="RFLB" sfr="SPMCSR" field="RFLB|RWFLB" optional="true" periph="CPU"/>
+      <per:sfr key="CTPB" sfr="SPMCSR" field="CTPB" optional="true" periph="CPU"/>
+      <per:sfr key="RSIG" sfr="SPMCSR" field="RSIG" optional="true" periph="CPU"/>
+      <per:sfr key="RWWSRE" sfr="SPMCSR" field="RWWSRE" optional="true" periph="CPU"/>
+      <per:sfr key="RWWSB" sfr="SPMCSR" field="RWWSB" optional="true" periph="CPU"/>
+      <per:sfr key="SPMIE" sfr="SPMCSR" field="SPMIE" optional="true" periph="CPU"/>
+      <per:sfr key="BLBSET" sfr="SPMCSR" field="BLBSET" optional="true" periph="CPU"/>
+      <per:periphClassDesc class="NVMController"/>
+    </per:periphConfig>
+    <per:periphConfig>
+      <per:sfr key="SPMCSR" sfr="SPMCSR|SPMCR" periph="BOOT_LOAD"/>
+      <per:sfr key="SPMEN" sfr="SPMCSR|SPMCR" field="SPMEN|SELFPRGEN" periph="BOOT_LOAD"/>
+      <per:sfr key="PGERS" sfr="SPMCSR|SPMCR" field="PGERS" periph="BOOT_LOAD"/>
+      <per:sfr key="PGWRT" sfr="SPMCSR|SPMCR" field="PGWRT" periph="BOOT_LOAD"/>
+      <per:sfr key="RWWSRE" sfr="SPMCSR|SPMCR" field="RWWSRE" optional="true" periph="BOOT_LOAD"/>
+      <per:sfr key="RWWSB" sfr="SPMCSR|SPMCR" field="RWWSB" optional="true" periph="BOOT_LOAD"/>
+      <per:sfr key="SPMIE" sfr="SPMCSR|SPMCR" field="SPMIE" optional="true" periph="BOOT_LOAD"/>
+      <per:sfr key="BLBSET" sfr="SPMCSR|SPMCR" field="BLBSET" optional="true" periph="BOOT_LOAD"/>
+      <per:periphClassDesc class="NVMController"/>
+    </per:periphConfig>
+    <per:periphConfig>
+      <per:sfr key="ADDR#" sfr="ADDR#" metaf="#" metar="0|1|2" periph="NVM"/>
+      <per:sfr key="DATA#" sfr="DATA#" metaf="#" metar="0|1|2" periph="NVM"/>
+      <per:sfr key="CMD" sfr="CMD" periph="NVM"/>
+      <per:sfr key="CTRLA" sfr="CTRLA" periph="NVM"/>
+      <per:sfr key="CMDEX" sfr="CTRLA" field="CMDEX" periph="NVM"/>
+      <per:sfr key="CTRLB" sfr="CTRLB" periph="NVM"/>
+      <per:sfr key="SPMLOCK" sfr="CTRLB" field="SPMLOCK" periph="NVM"/>
+      <per:sfr key="EPRM" sfr="CTRLB" field="EPRM" periph="NVM"/>
+      <per:sfr key="INTCTRL" sfr="INTCTRL" periph="NVM"/>
+      <per:sfr key="EELVL" sfr="INTCTRL" field="EELVL" periph="NVM"/>
+      <per:sfr key="SPMLVL" sfr="INTCTRL" field="SPMLVL" periph="NVM"/>
+      <per:sfr key="STATUS" sfr="STATUS" periph="NVM"/>
+      <per:sfr key="FLOAD" sfr="STATUS" field="FLOAD" periph="NVM"/>
+      <per:sfr key="EELOAD" sfr="STATUS" field="EELOAD" periph="NVM"/>
+      <per:sfr key="FBUSY" sfr="STATUS" field="FBUSY" periph="NVM"/>
+      <per:sfr key="NVMBUSY" sfr="STATUS" field="NVMBUSY" periph="NVM"/>
+      <per:sfr key="LOCKBITS" sfr="LOCKBITS" periph="NVM"/>
+      <per:sfr key="LB" sfr="LOCKBITS" field="LB" periph="NVM"/>
+      <per:sfr key="BLBAT" sfr="LOCKBITS" field="BLBAT" periph="NVM"/>
+      <per:sfr key="BLBA" sfr="LOCKBITS" field="BLBA" periph="NVM"/>
+      <per:sfr key="BLBB" sfr="LOCKBITS" field="BLBB" periph="NVM"/>
+      <per:periphClassDesc class="nvmcontroller.NVMControllerATxmega"/>
+    </per:periphConfig>
+    <per:periphConfig>
+      <per:sfr key="EECR" sfr="EECR" periph="EEPROM"/>
+      <per:sfr key="EERE" sfr="EECR" field="EERE" periph="EEPROM"/>
+      <per:sfr key="EEWE" sfr="EECR" field="EEWE" periph="EEPROM"/>
+      <per:sfr key="EEMWE" sfr="EECR" field="EEMWE" periph="EEPROM"/>
+      <per:sfr key="EERIE" sfr="EECR" field="EERIE" periph="EEPROM"/>
+      <per:sfr key="EEPM" sfr="EECR" field="EEPM" optional="true" periph="EEPROM"/>
+      <per:sfr key="EEPAGE" sfr="EECR" field="EEPAGE" optional="true" periph="EEPROM"/>
+      <per:sfr key="NVMBSY" sfr="EECR" field="NVMBSY" optional="true" periph="EEPROM"/>
+      <per:sfr key="EEDR" sfr="EEDR" periph="EEPROM"/>
+      <per:sfr key="EEAR" sfr="EEAR" periph="EEPROM"/>
+      <per:sfr key="EEPR" sfr="EEPR" optional="true" periph="EEPROM"/>
+      <per:sfr key="EEAP" sfr="EEPR" field="EEAP" optional="true" periph="EEPROM"/>
+      <per:periphClassDesc class="NVMController"/>
     </per:periphConfig>
   </per:peripheral>
 </per:per>

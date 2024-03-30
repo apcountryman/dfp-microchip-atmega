@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m88PBdef.inc
 ;* Title             : Register/Bit Definitions for the ATmega88PB
-;* Created           : 2020-05-05 14:14
+;* Created           : 2020-12-01 09:15
 ;* Version           : 1.00
 ;* Support e-mail    : avr@atmel.com
 ;* Target MCU        : ATmega88PB

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><edc:PIC xmlns:edc="http://crownking/edc" xmlns:atdf="http://crownking/atdf" xmlns:ltx="http://crownking/ltx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" atdf:architecture="AVR8" atdf:family="megaAVR" edc:arch="avr8" edc:hasfreeze="false" edc:name="ATmega256RFR2" edc:procid="0x0000" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><edc:PIC xmlns:edc="http://crownking/edc" xmlns:atdf="http://crownking/atdf" xmlns:ltx="http://crownking/ltx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" atdf:architecture="AVR8" atdf:family="megaAVR" edc:arch="avr8" edc:hasFreeze="false" edc:name="ATmega256RFR2" edc:procid="0x0000" xsi:schemaLocation="http://crownking/edc edc/PIC.xsd">
   <edc:Properties>
     <edc:Property edc:propkey="file.registers.are.odd.address.accessible" edc:propvalue="true"/>
   </edc:Properties>
@@ -140,11 +140,11 @@
     <edc:Peripheral edc:cname="LOCKBIT" edc:desc="Lockbits"/>
   </edc:PeripheralList>
   <edc:ProgramSpace>
-    <edc:CodeSector atdf:pagesize="0x100" edc:beginaddr="0x0" edc:endaddr="0x20000" edc:regionid="IFLASH"/>
-    <edc:CodeSector atdf:pagesize="0x100" edc:beginaddr="0x1FE00" edc:endaddr="0x20000" edc:regionid="BOOT_SECTION_1"/>
-    <edc:CodeSector atdf:pagesize="0x100" edc:beginaddr="0x1FC00" edc:endaddr="0x20000" edc:regionid="BOOT_SECTION_2"/>
-    <edc:CodeSector atdf:pagesize="0x100" edc:beginaddr="0x1F800" edc:endaddr="0x20000" edc:regionid="BOOT_SECTION_3"/>
-    <edc:CodeSector atdf:pagesize="0x100" edc:beginaddr="0x1F000" edc:endaddr="0x20000" edc:regionid="BOOT_SECTION_4"/>
+    <edc:CodeSector atdf:pagesize="0x100" edc:beginaddr="0x0" edc:endaddr="0x20000" edc:regionid="IFLASH" edc:rw="rw"/>
+    <edc:CodeSector atdf:pagesize="0x100" edc:beginaddr="0x1FE00" edc:endaddr="0x20000" edc:regionid="BOOT_SECTION_1" edc:rw="rw"/>
+    <edc:CodeSector atdf:pagesize="0x100" edc:beginaddr="0x1FC00" edc:endaddr="0x20000" edc:regionid="BOOT_SECTION_2" edc:rw="rw"/>
+    <edc:CodeSector atdf:pagesize="0x100" edc:beginaddr="0x1F800" edc:endaddr="0x20000" edc:regionid="BOOT_SECTION_3" edc:rw="rw"/>
+    <edc:CodeSector atdf:pagesize="0x100" edc:beginaddr="0x1F000" edc:endaddr="0x20000" edc:regionid="BOOT_SECTION_4" edc:rw="rw"/>
   </edc:ProgramSpace>
   <edc:DataSpace edc:magicoffset="0x800000">
     <edc:RegardlessOfMode>
@@ -3015,13 +3015,13 @@
   </edc:DataSpace>
   <edc:DataFlashSpace edc:endaddr="0x2000" edc:magicoffset="0x810000"/>
   <edc:SignaturesSpace edc:magicoffset="0x840000">
-    <edc:DeviceIDSector edc:beginaddr="0x0" edc:endaddr="0x3" edc:regionid="SIGNATURES" edc:value="0x1EA802"/>
+    <edc:DeviceIDSector edc:beginaddr="0x0" edc:endaddr="0x3" edc:regionid="SIGNATURES" edc:rw="r" edc:value="0x1EA802"/>
   </edc:SignaturesSpace>
   <edc:UserSignaturesSpace>
-    <edc:UserIDSector atdf:pagesize="0x100" edc:beginaddr="0x100" edc:endaddr="0x400" edc:magicoffset="0x850000" edc:regionid="USER_SIGNATURES"/>
+    <edc:UserIDSector atdf:pagesize="0x100" edc:beginaddr="0x100" edc:endaddr="0x400" edc:magicoffset="0x850000" edc:regionid="USER_SIGNATURES" edc:rw="rw"/>
   </edc:UserSignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
-    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x3" edc:magicoffset="0x820000" edc:regionid="FUSES">
+    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x3" edc:magicoffset="0x820000" edc:regionid="FUSES" edc:rw="rw">
       <edc:DCRDef edc:_addr="0x0" edc:access="nnnnnnnn" edc:cname="LOW" edc:factorydefault="0x62" edc:impl="0xFF" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="FUSE">
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0" ltx:memberofperipheral="FUSE">
@@ -3142,7 +3142,7 @@
     </edc:ConfigFuseSector>
   </edc:FusesSpace>
   <edc:LockbitsSpace edc:magicoffset="0x830000">
-    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x1" edc:magicoffset="0x830000" edc:regionid="LOCKBITS">
+    <edc:ConfigFuseSector edc:beginaddr="0x0" edc:endaddr="0x1" edc:magicoffset="0x830000" edc:regionid="LOCKBITS" edc:rw="rw">
       <edc:DCRDef edc:_addr="0x0" edc:access="--nnnnnn" edc:cname="LOCKBIT" edc:factorydefault="0xFF" edc:impl="0x3F" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="LOCKBIT">
         <edc:DCRModeList>
           <edc:DCRMode edc:id="DS.0" ltx:memberofperipheral="LOCKBIT">
