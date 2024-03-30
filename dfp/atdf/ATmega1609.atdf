@@ -457,8 +457,8 @@
         <interrupt index="4" module-instance="RTC" name="PIT"/>
         <interrupt index="5" module-instance="CCL" name="CCL"/>
         <interrupt index="6" module-instance="PORTA" name="PORT"/>
-        <interrupt index="7" module-instance="TCA0" name="OVF"/>
         <interrupt index="7" module-instance="TCA0" name="LUNF"/>
+        <interrupt index="7" module-instance="TCA0" name="OVF"/>
         <interrupt index="8" module-instance="TCA0" name="HUNF"/>
         <interrupt index="9" module-instance="TCA0" name="LCMP0"/>
         <interrupt index="9" module-instance="TCA0" name="CMP0"/>
@@ -743,12 +743,7 @@
       </value-group>
       <value-group caption="Bod level select" name="BOD_LVL">
         <value caption="1.8 V" name="BODLEVEL0" value="0x00"/>
-        <value caption="2.1 V" name="BODLEVEL1" value="0x01"/>
         <value caption="2.6 V" name="BODLEVEL2" value="0x02"/>
-        <value caption="2.9 V" name="BODLEVEL3" value="0x03"/>
-        <value caption="3.3 V" name="BODLEVEL4" value="0x04"/>
-        <value caption="3.7 V" name="BODLEVEL5" value="0x05"/>
-        <value caption="4.0 V" name="BODLEVEL6" value="0x06"/>
         <value caption="4.2 V" name="BODLEVEL7" value="0x07"/>
       </value-group>
       <value-group caption="Configuration select" name="BOD_VLMCFG">
@@ -971,6 +966,12 @@
         <register caption="OSC32K Control A" initval="0x00" name="OSC32KCTRLA" offset="0x18" rw="RW" size="1">
           <bitfield caption="Run standby" mask="0x2" name="RUNSTDBY" rw="RW"/>
         </register>
+        <register caption="XOSC32K Control A" initval="0x00" name="XOSC32KCTRLA" offset="0x1C" rw="RW" size="1">
+          <bitfield caption="Crystal startup time" mask="0x30" name="CSUT" rw="RW" values="CLKCTRL_CSUT"/>
+          <bitfield caption="Enable" mask="0x1" name="ENABLE" rw="RW"/>
+          <bitfield caption="Run standby" mask="0x2" name="RUNSTDBY" rw="RW"/>
+          <bitfield caption="Select" mask="0x4" name="SEL" rw="RW"/>
+        </register>
       </register-group>
       <value-group caption="clock select select" name="CLKCTRL_CLKSEL">
         <value caption="20MHz oscillator" name="OSC20M" value="0x00"/>
@@ -990,6 +991,12 @@
         <value caption="12X" name="12X" value="0x0A"/>
         <value caption="24X" name="24X" value="0x0B"/>
         <value caption="48X" name="48X" value="0x0C"/>
+      </value-group>
+      <value-group caption="Crystal startup time select" name="CLKCTRL_CSUT">
+        <value caption="1k cycles" name="1K" value="0x00"/>
+        <value caption="16k cycles" name="16K" value="0x01"/>
+        <value caption="32k cycles" name="32K" value="0x02"/>
+        <value caption="64k cycles" name="64K" value="0x03"/>
       </value-group>
     </module>
     <module caption="CPU" id="I2100" name="CPU">
@@ -1199,10 +1206,10 @@
         <value caption="Timer/Counter A0 compare 0" name="TCA0_CMP0" value="0x84"/>
         <value caption="Timer/Counter A0 compare 1" name="TCA0_CMP1" value="0x85"/>
         <value caption="Timer/Counter A0 compare 2" name="TCA0_CMP2" value="0x86"/>
-        <value caption="Timer/Counter B0 compare 0" name="TCB0_CMP0" value="0xA0"/>
-        <value caption="Timer/Counter B1 compare 0" name="TCB1_CMP0" value="0xA2"/>
-        <value caption="Timer/Counter B2 compare 0" name="TCB2_CMP0" value="0xA4"/>
-        <value caption="Timer/Counter B3 compare 0" name="TCB3_CMP0" value="0xA6"/>
+        <value caption="Timer/Counter B0 capture" name="TCB0_CAPT" value="0xA0"/>
+        <value caption="Timer/Counter B1 capture" name="TCB1_CAPT" value="0xA2"/>
+        <value caption="Timer/Counter B2 capture" name="TCB2_CAPT" value="0xA4"/>
+        <value caption="Timer/Counter B3 capture" name="TCB3_CAPT" value="0xA6"/>
       </value-group>
       <value-group caption="Software event on channels select" name="EVSYS_STROBE0">
         <value caption="" name="EV_STROBE_CH0" value="0x01"/>
@@ -1261,12 +1268,7 @@
       </value-group>
       <value-group caption="BOD Level select" name="FUSE_LVL">
         <value caption="1.8 V" name="BODLEVEL0" value="0x00"/>
-        <value caption="2.1 V" name="BODLEVEL1" value="0x01"/>
         <value caption="2.6 V" name="BODLEVEL2" value="0x02"/>
-        <value caption="2.9 V" name="BODLEVEL3" value="0x03"/>
-        <value caption="3.3 V" name="BODLEVEL4" value="0x04"/>
-        <value caption="3.7 V" name="BODLEVEL5" value="0x05"/>
-        <value caption="4.0 V" name="BODLEVEL6" value="0x06"/>
         <value caption="4.2 V" name="BODLEVEL7" value="0x07"/>
       </value-group>
       <value-group caption="BOD Sample Frequency select" name="FUSE_SAMPFREQ">
@@ -1555,6 +1557,7 @@
         <register caption="Compare" name="CMP" offset="0x0C" rw="RW" size="2"/>
         <register caption="Counter" name="CNT" offset="0x08" rw="RW" size="2"/>
         <register caption="Control A" initval="0x00" name="CTRLA" offset="0x00" rw="RW" size="1">
+          <bitfield caption="Correction enable" mask="0x4" name="CORREN" rw="RW"/>
           <bitfield caption="Prescaling Factor" mask="0x78" name="PRESCALER" rw="RW" values="RTC_PRESCALER"/>
           <bitfield caption="Enable" mask="0x1" name="RTCEN" rw="RW"/>
           <bitfield caption="Run In Standby" mask="0x80" name="RUNSTDBY" rw="RW"/>

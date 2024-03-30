@@ -40,8 +40,8 @@
     <edc:Interrupt edc:cname="PIT" edc:desc="" edc:irq="4" ltx:memberofperipheral="RTC"/>
     <edc:Interrupt edc:cname="CCL" edc:desc="" edc:irq="5" ltx:memberofperipheral="CCL"/>
     <edc:Interrupt edc:cname="PORT" edc:desc="" edc:irq="6" ltx:memberofperipheral="PORTA"/>
-    <edc:Interrupt edc:cname="LUNF" edc:desc="" edc:irq="7" ltx:memberofperipheral="TCA0"/>
     <edc:Interrupt edc:cname="OVF" edc:desc="" edc:irq="7" ltx:memberofperipheral="TCA0"/>
+    <edc:Interrupt edc:cname="LUNF" edc:desc="" edc:irq="7" ltx:memberofperipheral="TCA0"/>
     <edc:Interrupt edc:cname="HUNF" edc:desc="" edc:irq="8" ltx:memberofperipheral="TCA0"/>
     <edc:Interrupt edc:cname="LCMP0" edc:desc="" edc:irq="9" ltx:memberofperipheral="TCA0"/>
     <edc:Interrupt edc:cname="CMP0" edc:desc="" edc:irq="9" ltx:memberofperipheral="TCA0"/>
@@ -215,12 +215,7 @@
               </edc:DCRFieldDef>
               <edc:DCRFieldDef edc:cname="LVL" edc:desc="BOD Level" edc:nzwidth="0x3">
                 <edc:DCRFieldSemantic edc:cname="BODLEVEL0" edc:desc="1.8 V" edc:when="(field &amp; 0x7) == 0x00"/>
-                <edc:DCRFieldSemantic edc:cname="BODLEVEL1" edc:desc="2.1 V" edc:when="(field &amp; 0x7) == 0x01"/>
                 <edc:DCRFieldSemantic edc:cname="BODLEVEL2" edc:desc="2.6 V" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:DCRFieldSemantic edc:cname="BODLEVEL3" edc:desc="2.9 V" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:DCRFieldSemantic edc:cname="BODLEVEL4" edc:desc="3.3 V" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:DCRFieldSemantic edc:cname="BODLEVEL5" edc:desc="3.7 V" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:DCRFieldSemantic edc:cname="BODLEVEL6" edc:desc="4.0 V" edc:when="(field &amp; 0x7) == 0x06"/>
                 <edc:DCRFieldSemantic edc:cname="BODLEVEL7" edc:desc="4.2 V" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:DCRFieldDef>
             </edc:DCRMode>
@@ -283,7 +278,7 @@
         <edc:DCRDef edc:_addr="0x1287" edc:access="nnnnnnnn" edc:cname="APPEND" edc:factorydefault="0x00" edc:impl="0x0" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="FUSE"/>
         <edc:DCRDef edc:_addr="0x1288" edc:access="nnnnnnnn" edc:cname="BOOTEND" edc:factorydefault="0x00" edc:impl="0x0" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="FUSE"/>
       </edc:ConfigFuseSector>
-      <edc:GPRDataSector edc:beginaddr="0x3C00" edc:endaddr="0x4000" edc:regionid="INTERNAL_SRAM"/>
+      <edc:GPRDataSector edc:beginaddr="0x3C00" edc:endaddr="0x4000" edc:isexecutable="false" edc:regionid="INTERNAL_SRAM"/>
       <edc:SFRDataSector edc:beginaddr="0x0" edc:endaddr="0x100A" edc:regionid="IO">
         <edc:SFRDef edc:_addr="0x0" edc:access="nnnnnnnn" edc:cname="DIR" edc:nzwidth="0x8" ltx:memberofperipheral="VPORTA"/>
         <edc:SFRDef edc:_addr="0x1" edc:access="nnnnnnnn" edc:cname="OUT" edc:nzwidth="0x8" ltx:memberofperipheral="VPORTA"/>
@@ -498,7 +493,24 @@
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
-        <edc:AdjustPoint edc:_addr="0x79" edc:offset="0x7"/>
+        <edc:AdjustPoint edc:_addr="0x79" edc:offset="0x3"/>
+        <edc:SFRDef edc:_addr="0x7C" edc:access="--nn-nnn" edc:cname="XOSC32KCTRLA" edc:impl="0x37" edc:mclr="00000000" edc:nzwidth="0x8" edc:por="00000000" ltx:memberofperipheral="CLKCTRL">
+          <edc:SFRModeList>
+            <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="CLKCTRL">
+              <edc:SFRFieldDef edc:cname="ENABLE" edc:desc="Enable" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="RUNSTDBY" edc:desc="Run standby" edc:nzwidth="0x1"/>
+              <edc:SFRFieldDef edc:cname="SEL" edc:desc="Select" edc:nzwidth="0x1"/>
+              <edc:AdjustPoint edc:offset="0x1"/>
+              <edc:SFRFieldDef edc:cname="CSUT" edc:desc="Crystal startup time" edc:nzwidth="0x2">
+                <edc:SFRFieldSemantic edc:cname="1K" edc:desc="1k cycles" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="16K" edc:desc="16k cycles" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="32K" edc:desc="32k cycles" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="64K" edc:desc="64k cycles" edc:when="(field &amp; 0x3) == 0x03"/>
+              </edc:SFRFieldDef>
+            </edc:SFRMode>
+          </edc:SFRModeList>
+        </edc:SFRDef>
+        <edc:AdjustPoint edc:_addr="0x7D" edc:offset="0x3"/>
         <edc:SFRDef edc:_addr="0x80" edc:access="---nnnnn" edc:cname="CTRLA" edc:impl="0x1F" edc:mclr="00000101" edc:nzwidth="0x8" edc:por="00000101" ltx:memberofperipheral="BOD">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="BOD">
@@ -525,12 +537,7 @@
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="BOD">
               <edc:SFRFieldDef edc:cname="LVL" edc:desc="Bod level" edc:nzwidth="0x3">
                 <edc:SFRFieldSemantic edc:cname="BODLEVEL0" edc:desc="1.8 V" edc:when="(field &amp; 0x7) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="BODLEVEL1" edc:desc="2.1 V" edc:when="(field &amp; 0x7) == 0x01"/>
                 <edc:SFRFieldSemantic edc:cname="BODLEVEL2" edc:desc="2.6 V" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="BODLEVEL3" edc:desc="2.9 V" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="BODLEVEL4" edc:desc="3.3 V" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="BODLEVEL5" edc:desc="3.7 V" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="BODLEVEL6" edc:desc="4.0 V" edc:when="(field &amp; 0x7) == 0x06"/>
                 <edc:SFRFieldSemantic edc:cname="BODLEVEL7" edc:desc="4.2 V" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
@@ -715,11 +722,12 @@
           </edc:SFRModeList>
         </edc:SFRDef>
         <edc:AdjustPoint edc:_addr="0x123" edc:offset="0x1D"/>
-        <edc:SFRDef edc:_addr="0x140" edc:access="nnnnn--n" edc:cname="CTRLA" edc:impl="0xF9" edc:mclr="00000000" edc:nzwidth="0x8" edc:por="00000000" ltx:memberofperipheral="RTC">
+        <edc:SFRDef edc:_addr="0x140" edc:access="nnnnnn-n" edc:cname="CTRLA" edc:impl="0xFD" edc:mclr="00000000" edc:nzwidth="0x8" edc:por="00000000" ltx:memberofperipheral="RTC">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="RTC">
               <edc:SFRFieldDef edc:cname="RTCEN" edc:desc="Enable" edc:nzwidth="0x1"/>
-              <edc:AdjustPoint edc:offset="0x2"/>
+              <edc:AdjustPoint edc:offset="0x1"/>
+              <edc:SFRFieldDef edc:cname="CORREN" edc:desc="Correction enable" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="PRESCALER" edc:desc="Prescaling Factor" edc:nzwidth="0x4">
                 <edc:SFRFieldSemantic edc:cname="DIV1" edc:desc="RTC Clock / 1" edc:when="(field &amp; 0xF) == 0x00"/>
                 <edc:SFRFieldSemantic edc:cname="DIV2" edc:desc="RTC Clock / 2" edc:when="(field &amp; 0xF) == 0x01"/>
@@ -916,10 +924,10 @@
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP0" edc:desc="Timer/Counter A0 compare 0" edc:when="(field &amp; 0xFF) == 0x84"/>
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP1" edc:desc="Timer/Counter A0 compare 1" edc:when="(field &amp; 0xFF) == 0x85"/>
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP2" edc:desc="Timer/Counter A0 compare 2" edc:when="(field &amp; 0xFF) == 0x86"/>
-                <edc:SFRFieldSemantic edc:cname="TCB0_CMP0" edc:desc="Timer/Counter B0 compare 0" edc:when="(field &amp; 0xFF) == 0xA0"/>
-                <edc:SFRFieldSemantic edc:cname="TCB1_CMP0" edc:desc="Timer/Counter B1 compare 0" edc:when="(field &amp; 0xFF) == 0xA2"/>
-                <edc:SFRFieldSemantic edc:cname="TCB2_CMP0" edc:desc="Timer/Counter B2 compare 0" edc:when="(field &amp; 0xFF) == 0xA4"/>
-                <edc:SFRFieldSemantic edc:cname="TCB3_CMP0" edc:desc="Timer/Counter B3 compare 0" edc:when="(field &amp; 0xFF) == 0xA6"/>
+                <edc:SFRFieldSemantic edc:cname="TCB0_CAPT" edc:desc="Timer/Counter B0 capture" edc:when="(field &amp; 0xFF) == 0xA0"/>
+                <edc:SFRFieldSemantic edc:cname="TCB1_CAPT" edc:desc="Timer/Counter B1 capture" edc:when="(field &amp; 0xFF) == 0xA2"/>
+                <edc:SFRFieldSemantic edc:cname="TCB2_CAPT" edc:desc="Timer/Counter B2 capture" edc:when="(field &amp; 0xFF) == 0xA4"/>
+                <edc:SFRFieldSemantic edc:cname="TCB3_CAPT" edc:desc="Timer/Counter B3 capture" edc:when="(field &amp; 0xFF) == 0xA6"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -968,10 +976,10 @@
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP0" edc:desc="Timer/Counter A0 compare 0" edc:when="(field &amp; 0xFF) == 0x84"/>
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP1" edc:desc="Timer/Counter A0 compare 1" edc:when="(field &amp; 0xFF) == 0x85"/>
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP2" edc:desc="Timer/Counter A0 compare 2" edc:when="(field &amp; 0xFF) == 0x86"/>
-                <edc:SFRFieldSemantic edc:cname="TCB0_CMP0" edc:desc="Timer/Counter B0 compare 0" edc:when="(field &amp; 0xFF) == 0xA0"/>
-                <edc:SFRFieldSemantic edc:cname="TCB1_CMP0" edc:desc="Timer/Counter B1 compare 0" edc:when="(field &amp; 0xFF) == 0xA2"/>
-                <edc:SFRFieldSemantic edc:cname="TCB2_CMP0" edc:desc="Timer/Counter B2 compare 0" edc:when="(field &amp; 0xFF) == 0xA4"/>
-                <edc:SFRFieldSemantic edc:cname="TCB3_CMP0" edc:desc="Timer/Counter B3 compare 0" edc:when="(field &amp; 0xFF) == 0xA6"/>
+                <edc:SFRFieldSemantic edc:cname="TCB0_CAPT" edc:desc="Timer/Counter B0 capture" edc:when="(field &amp; 0xFF) == 0xA0"/>
+                <edc:SFRFieldSemantic edc:cname="TCB1_CAPT" edc:desc="Timer/Counter B1 capture" edc:when="(field &amp; 0xFF) == 0xA2"/>
+                <edc:SFRFieldSemantic edc:cname="TCB2_CAPT" edc:desc="Timer/Counter B2 capture" edc:when="(field &amp; 0xFF) == 0xA4"/>
+                <edc:SFRFieldSemantic edc:cname="TCB3_CAPT" edc:desc="Timer/Counter B3 capture" edc:when="(field &amp; 0xFF) == 0xA6"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -1020,10 +1028,10 @@
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP0" edc:desc="Timer/Counter A0 compare 0" edc:when="(field &amp; 0xFF) == 0x84"/>
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP1" edc:desc="Timer/Counter A0 compare 1" edc:when="(field &amp; 0xFF) == 0x85"/>
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP2" edc:desc="Timer/Counter A0 compare 2" edc:when="(field &amp; 0xFF) == 0x86"/>
-                <edc:SFRFieldSemantic edc:cname="TCB0_CMP0" edc:desc="Timer/Counter B0 compare 0" edc:when="(field &amp; 0xFF) == 0xA0"/>
-                <edc:SFRFieldSemantic edc:cname="TCB1_CMP0" edc:desc="Timer/Counter B1 compare 0" edc:when="(field &amp; 0xFF) == 0xA2"/>
-                <edc:SFRFieldSemantic edc:cname="TCB2_CMP0" edc:desc="Timer/Counter B2 compare 0" edc:when="(field &amp; 0xFF) == 0xA4"/>
-                <edc:SFRFieldSemantic edc:cname="TCB3_CMP0" edc:desc="Timer/Counter B3 compare 0" edc:when="(field &amp; 0xFF) == 0xA6"/>
+                <edc:SFRFieldSemantic edc:cname="TCB0_CAPT" edc:desc="Timer/Counter B0 capture" edc:when="(field &amp; 0xFF) == 0xA0"/>
+                <edc:SFRFieldSemantic edc:cname="TCB1_CAPT" edc:desc="Timer/Counter B1 capture" edc:when="(field &amp; 0xFF) == 0xA2"/>
+                <edc:SFRFieldSemantic edc:cname="TCB2_CAPT" edc:desc="Timer/Counter B2 capture" edc:when="(field &amp; 0xFF) == 0xA4"/>
+                <edc:SFRFieldSemantic edc:cname="TCB3_CAPT" edc:desc="Timer/Counter B3 capture" edc:when="(field &amp; 0xFF) == 0xA6"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -1072,10 +1080,10 @@
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP0" edc:desc="Timer/Counter A0 compare 0" edc:when="(field &amp; 0xFF) == 0x84"/>
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP1" edc:desc="Timer/Counter A0 compare 1" edc:when="(field &amp; 0xFF) == 0x85"/>
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP2" edc:desc="Timer/Counter A0 compare 2" edc:when="(field &amp; 0xFF) == 0x86"/>
-                <edc:SFRFieldSemantic edc:cname="TCB0_CMP0" edc:desc="Timer/Counter B0 compare 0" edc:when="(field &amp; 0xFF) == 0xA0"/>
-                <edc:SFRFieldSemantic edc:cname="TCB1_CMP0" edc:desc="Timer/Counter B1 compare 0" edc:when="(field &amp; 0xFF) == 0xA2"/>
-                <edc:SFRFieldSemantic edc:cname="TCB2_CMP0" edc:desc="Timer/Counter B2 compare 0" edc:when="(field &amp; 0xFF) == 0xA4"/>
-                <edc:SFRFieldSemantic edc:cname="TCB3_CMP0" edc:desc="Timer/Counter B3 compare 0" edc:when="(field &amp; 0xFF) == 0xA6"/>
+                <edc:SFRFieldSemantic edc:cname="TCB0_CAPT" edc:desc="Timer/Counter B0 capture" edc:when="(field &amp; 0xFF) == 0xA0"/>
+                <edc:SFRFieldSemantic edc:cname="TCB1_CAPT" edc:desc="Timer/Counter B1 capture" edc:when="(field &amp; 0xFF) == 0xA2"/>
+                <edc:SFRFieldSemantic edc:cname="TCB2_CAPT" edc:desc="Timer/Counter B2 capture" edc:when="(field &amp; 0xFF) == 0xA4"/>
+                <edc:SFRFieldSemantic edc:cname="TCB3_CAPT" edc:desc="Timer/Counter B3 capture" edc:when="(field &amp; 0xFF) == 0xA6"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -1124,10 +1132,10 @@
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP0" edc:desc="Timer/Counter A0 compare 0" edc:when="(field &amp; 0xFF) == 0x84"/>
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP1" edc:desc="Timer/Counter A0 compare 1" edc:when="(field &amp; 0xFF) == 0x85"/>
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP2" edc:desc="Timer/Counter A0 compare 2" edc:when="(field &amp; 0xFF) == 0x86"/>
-                <edc:SFRFieldSemantic edc:cname="TCB0_CMP0" edc:desc="Timer/Counter B0 compare 0" edc:when="(field &amp; 0xFF) == 0xA0"/>
-                <edc:SFRFieldSemantic edc:cname="TCB1_CMP0" edc:desc="Timer/Counter B1 compare 0" edc:when="(field &amp; 0xFF) == 0xA2"/>
-                <edc:SFRFieldSemantic edc:cname="TCB2_CMP0" edc:desc="Timer/Counter B2 compare 0" edc:when="(field &amp; 0xFF) == 0xA4"/>
-                <edc:SFRFieldSemantic edc:cname="TCB3_CMP0" edc:desc="Timer/Counter B3 compare 0" edc:when="(field &amp; 0xFF) == 0xA6"/>
+                <edc:SFRFieldSemantic edc:cname="TCB0_CAPT" edc:desc="Timer/Counter B0 capture" edc:when="(field &amp; 0xFF) == 0xA0"/>
+                <edc:SFRFieldSemantic edc:cname="TCB1_CAPT" edc:desc="Timer/Counter B1 capture" edc:when="(field &amp; 0xFF) == 0xA2"/>
+                <edc:SFRFieldSemantic edc:cname="TCB2_CAPT" edc:desc="Timer/Counter B2 capture" edc:when="(field &amp; 0xFF) == 0xA4"/>
+                <edc:SFRFieldSemantic edc:cname="TCB3_CAPT" edc:desc="Timer/Counter B3 capture" edc:when="(field &amp; 0xFF) == 0xA6"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -1176,10 +1184,10 @@
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP0" edc:desc="Timer/Counter A0 compare 0" edc:when="(field &amp; 0xFF) == 0x84"/>
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP1" edc:desc="Timer/Counter A0 compare 1" edc:when="(field &amp; 0xFF) == 0x85"/>
                 <edc:SFRFieldSemantic edc:cname="TCA0_CMP2" edc:desc="Timer/Counter A0 compare 2" edc:when="(field &amp; 0xFF) == 0x86"/>
-                <edc:SFRFieldSemantic edc:cname="TCB0_CMP0" edc:desc="Timer/Counter B0 compare 0" edc:when="(field &amp; 0xFF) == 0xA0"/>
-                <edc:SFRFieldSemantic edc:cname="TCB1_CMP0" edc:desc="Timer/Counter B1 compare 0" edc:when="(field &amp; 0xFF) == 0xA2"/>
-                <edc:SFRFieldSemantic edc:cname="TCB2_CMP0" edc:desc="Timer/Counter B2 compare 0" edc:when="(field &amp; 0xFF) == 0xA4"/>
-                <edc:SFRFieldSemantic edc:cname="TCB3_CMP0" edc:desc="Timer/Counter B3 compare 0" edc:when="(field &amp; 0xFF) == 0xA6"/>
+                <edc:SFRFieldSemantic edc:cname="TCB0_CAPT" edc:desc="Timer/Counter B0 capture" edc:when="(field &amp; 0xFF) == 0xA0"/>
+                <edc:SFRFieldSemantic edc:cname="TCB1_CAPT" edc:desc="Timer/Counter B1 capture" edc:when="(field &amp; 0xFF) == 0xA2"/>
+                <edc:SFRFieldSemantic edc:cname="TCB2_CAPT" edc:desc="Timer/Counter B2 capture" edc:when="(field &amp; 0xFF) == 0xA4"/>
+                <edc:SFRFieldSemantic edc:cname="TCB3_CAPT" edc:desc="Timer/Counter B3 capture" edc:when="(field &amp; 0xFF) == 0xA6"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
