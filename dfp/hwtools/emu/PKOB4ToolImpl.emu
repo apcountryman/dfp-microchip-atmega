@@ -1,0 +1,181 @@
+<emu:emu xmlns:emu="http://crownking/emu" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/emu ../../schema/emu/emu.xsd">
+  <emu:version major="0" minor="0" rev="0"/>
+  <emu:indextable>
+    <emu:indextablerecord device="AT90CAN128" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="AT90CAN32" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="AT90CAN64" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="AT90PWM1" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="AT90PWM161" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="AT90PWM216" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="AT90PWM2B" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="AT90PWM316" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="AT90PWM3B" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="AT90PWM81" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="AT90USB1286" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="AT90USB1287" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="AT90USB162" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="AT90USB646" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="AT90USB647" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="AT90USB82" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega128" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega1280" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega1281" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega1284" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega1284P" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega1284RFR2" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega128A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega128RFA1" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega128RFR2" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega16" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega162" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega164A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega164P" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega164PA" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega165A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega165P" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega165PA" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega168" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega168A" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega168P" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega168PA" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega168PB" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega169A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega169P" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega169PA" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega16A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega16HVA" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega16HVB" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega16HVBrevB" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega16M1" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega16U2" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega16U4" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega2560" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega2561" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega2564RFR2" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega256RFR2" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega32" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega3208" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega3209" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega324A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega324P" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega324PA" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega324PB" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega325" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega3250" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega3250A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega3250P" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega3250PA" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega325A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega325P" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega325PA" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega328" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega328P" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega328PB" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega329" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega3290" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega3290A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega3290P" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega3290PA" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega329A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega329P" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega329PA" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega32A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega32C1" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega32HVB" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega32HVBrevB" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega32M1" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega32U2" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega32U4" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega406" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega48" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega4808" emulengine="avrnativeavr8x"/>
+    <emu:indextablerecord device="ATmega4809" emulengine="avrnativeavr8x"/>
+    <emu:indextablerecord device="ATmega48A" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega48P" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega48PA" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega48PB" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega64" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega640" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega644" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega644A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega644P" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega644PA" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega644RFR2" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega645" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega6450" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega6450A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega6450P" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega645A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega645P" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega649" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega6490" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega6490A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega6490P" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega649A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega649P" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega64A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega64C1" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega64HVE2" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega64M1" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega64RFR2" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega8" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega8515" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega8535" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega88" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega88A" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega88P" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega88PA" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega88PB" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega8A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega8HVA" emulengine="avrnativetinyocd"/>
+    <emu:indextablerecord device="ATmega8U2" emulengine="avrnativetinyocd"/>
+  </emu:indextable>
+  <emu:emulenginedesc name="avrnativetinymegajtag">
+    <emu:bps maxdatabps="0" maxdelaycount="0" maxpasscount="0" maxprogbps="3" separate="false"/>
+    <emu:databps access="readorwrite" bus="false" match="false" widths="false"/>
+    <emu:tuples maxands="0"/>
+    <emu:sequences maxbpsinseq="0" maxseqs="0"/>
+    <emu:swbps alwayson="false" supported="true"/>
+    <emu:datacapture allowed="false"/>
+    <emu:addressmask allowed="false"/>
+    <emu:dma breaksallowed="false"/>
+    <emu:stopwatch available="false"/>
+    <emu:trace allowed="false"/>
+    <emu:tblxxbp available="false"/>
+    <emu:nonaddressbreaks/>
+    <emu:runtimebps supported="false"/>
+    <emu:runtimereads supported="false" supportfwver="0x01.0x27.0x12"/>
+  </emu:emulenginedesc>
+  <emu:emulenginedesc name="avrnativetinyocd">
+    <emu:bps maxdatabps="0" maxdelaycount="0" maxpasscount="0" maxprogbps="0" separate="false"/>
+    <emu:databps access="readorwrite" bus="false" match="false" widths="false"/>
+    <emu:tuples maxands="0"/>
+    <emu:sequences maxbpsinseq="0" maxseqs="0"/>
+    <emu:swbps alwayson="true" supported="true"/>
+    <emu:datacapture allowed="false"/>
+    <emu:addressmask allowed="false"/>
+    <emu:dma breaksallowed="false"/>
+    <emu:stopwatch available="false"/>
+    <emu:trace allowed="false"/>
+    <emu:tblxxbp available="false"/>
+    <emu:nonaddressbreaks/>
+    <emu:runtimebps supported="false"/>
+    <emu:runtimereads supported="false" supportfwver="0x01.0x27.0x12"/>
+  </emu:emulenginedesc>
+  <emu:emulenginedesc name="avrnativeavr8x">
+    <emu:bps maxdatabps="0" maxdelaycount="0" maxpasscount="0" maxprogbps="1" separate="false"/>
+    <emu:databps access="readorwrite" bus="false" match="false" widths="false"/>
+    <emu:tuples maxands="0"/>
+    <emu:sequences maxbpsinseq="0" maxseqs="0"/>
+    <emu:swbps alwayson="false" supported="true"/>
+    <emu:datacapture allowed="false"/>
+    <emu:addressmask allowed="false"/>
+    <emu:dma breaksallowed="false"/>
+    <emu:stopwatch available="false"/>
+    <emu:trace allowed="false"/>
+    <emu:tblxxbp available="false"/>
+    <emu:nonaddressbreaks/>
+    <emu:runtimebps supported="false"/>
+    <emu:runtimereads supported="false" supportfwver="0x01.0x27.0x12"/>
+  </emu:emulenginedesc>
+</emu:emu>

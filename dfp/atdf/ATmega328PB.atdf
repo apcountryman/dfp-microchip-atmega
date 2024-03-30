@@ -1,10 +1,9 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
+<?xml version="1.0" encoding="UTF-8"?><avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
   <variants>
     <variant ordercode="ATmega328PB-AU" tempmin="-40" tempmax="85" speedmax="20000000" pinout="TQFP32" package="TQFP32" vccmin="1.8" vccmax="5.5"/>
-    <variant ordercode="ATmega328PB-MU" tempmin="-40" tempmax="85" speedmax="20000000" pinout="VQFN32" package="VQFN32"  vccmin="1.8" vccmax="5.5"/>
-    <variant ordercode="ATmega328PB-AN" tempmin="-40" tempmax="105" speedmax="20000000" pinout="TQFP32" package="TQFP32"  vccmin="1.8" vccmax="5.5"/>
-    <variant ordercode="ATmega328PB-MN" tempmin="-40" tempmax="105" speedmax="20000000" pinout="VQFN32" package="VQFN32"  vccmin="1.8" vccmax="5.5"/>
+    <variant ordercode="ATmega328PB-MU" tempmin="-40" tempmax="85" speedmax="20000000" pinout="VQFN32" package="VQFN32" vccmin="1.8" vccmax="5.5"/>
+    <variant ordercode="ATmega328PB-AN" tempmin="-40" tempmax="105" speedmax="20000000" pinout="TQFP32" package="TQFP32" vccmin="1.8" vccmax="5.5"/>
+    <variant ordercode="ATmega328PB-MN" tempmin="-40" tempmax="105" speedmax="20000000" pinout="VQFN32" package="VQFN32" vccmin="1.8" vccmax="5.5"/>
   </variants>
   <devices>
     <device name="ATmega328PB" architecture="AVR8" family="megaAVR">
@@ -308,7 +307,9 @@
             <signals>
               <signal group="CLK" index="0" function="default" pad="PB0"/>
             </signals>
-          </instance>
+          <parameters>
+        <param name="CORE_VERSION" value="V2E"/>
+      </parameters></instance>
         </module>
         <module name="EEPROM">
           <instance name="EEPROM">
@@ -547,7 +548,7 @@
     </device>
   </devices>
   <modules>
-    <module caption="" name="FUSE">
+    <module caption="Fuses" name="FUSE">
       <register-group caption="" name="FUSE">
         <register caption="" name="EXTENDED" offset="0x02" size="1" initval="0xF7">
           <bitfield caption="Clock Failure Detection" mask="0x08" name="CFD" values="ENUM_CFD"/>
@@ -634,8 +635,8 @@
         <value caption="Boot Flash size=2048 words start address=$3800" name="2048W_3800" value="0x00"/>
       </value-group>
     </module>
-    <module caption="" name="LOCKBIT">
-      <register-group caption="" name="LOCKBIT">
+    <module caption="Lockbits" name="LOCKBIT">
+      <register-group caption="Lockbits" name="LOCKBIT">
         <register caption="" name="LOCKBIT" offset="0x00" size="1" initval="0xFF">
           <bitfield caption="Memory Lock" mask="0x03" name="LB" values="ENUM_LB"/>
           <bitfield caption="Boot Loader Protection Mode" mask="0x0C" name="BLB0" values="ENUM_BLB"/>
@@ -660,8 +661,8 @@
         <value caption="No lock on SPM and LPM in Boot Section" name="NO_LOCK" value="0x03"/>
       </value-group>
     </module>
-    <module caption="" name="USART">
-      <register-group caption="" name="USART0">
+    <module caption="USART" name="USART">
+      <register-group caption="USART" name="USART0">
         <register caption="USART I/O Data Register 0" name="UDR0" offset="0xC6" size="1" mask="0xFF" ocd-rw=""/>
         <register caption="USART Control and Status Register A" name="UCSR0A" offset="0xC0" size="1" ocd-rw="R">
           <bitfield caption="USART Receive Complete" mask="0x80" name="RXC0"/>
@@ -749,8 +750,8 @@
         <value caption="2-bit" name="VAL_0x01" value="0x01"/>
       </value-group>
     </module>
-    <module caption="" name="TWI">
-      <register-group caption="" name="TWI0">
+    <module caption="Two Wire Serial Interface" name="TWI">
+      <register-group caption="Two Wire Serial Interface" name="TWI0">
         <register caption="TWI (Slave) Address Mask Register" name="TWAMR0" offset="0xBD" size="1">
           <bitfield caption="" mask="0xFE" name="TWAM"/>
         </register>
@@ -774,7 +775,7 @@
           <bitfield caption="TWI General Call Recognition Enable Bit" mask="0x01" name="TWGCE"/>
         </register>
       </register-group>
-      <register-group caption="" name="TWI1">
+      <register-group caption="Two Wire Serial Interface" name="TWI1">
         <register caption="TWI (Slave) Address Mask Register" name="TWAMR1" offset="0xDD" size="1">
           <bitfield caption="" mask="0xFE" name="TWAM1"/>
         </register>
@@ -930,8 +931,8 @@
         <value caption="Running, CLK/1024" name="VAL_0x07" value="0x07"/>
       </value-group>
     </module>
-    <module caption="" name="TC8_ASYNC">
-      <register-group caption="" name="TC2">
+    <module caption="Timer/Counter, 8-bit Async" name="TC8_ASYNC">
+      <register-group caption="Timer/Counter, 8-bit Async" name="TC2">
         <register caption="Timer/Counter Interrupt Mask register" name="TIMSK2" offset="0x70" size="1">
           <bitfield caption="Timer/Counter2 Output Compare Match B Interrupt Enable" mask="0x04" name="OCIE2B"/>
           <bitfield caption="Timer/Counter2 Output Compare Match A Interrupt Enable" mask="0x02" name="OCIE2A"/>
@@ -981,8 +982,8 @@
         <value caption="Running, CLK/1024" name="VAL_0x07" value="0x07"/>
       </value-group>
     </module>
-    <module caption="" name="ADC">
-      <register-group caption="" name="ADC">
+    <module caption="Analog-to-Digital Converter" name="ADC">
+      <register-group caption="Analog-to-Digital Converter" name="ADC">
         <register caption="The ADC multiplexer Selection Register" name="ADMUX" offset="0x7C" size="1">
           <bitfield caption="Reference Selection Bits" mask="0xC0" name="REFS" values="ANALOG_ADC_V_REF3"/>
           <bitfield caption="Left Adjust Result" mask="0x20" name="ADLAR"/>
@@ -998,25 +999,27 @@
           <bitfield caption="ADC Prescaler Select Bits" mask="0x07" name="ADPS" values="ANALOG_ADC_PRESCALER"/>
         </register>
         <register caption="The ADC Control and Status register B" name="ADCSRB" offset="0x7B" size="1">
-          <bitfield caption="" mask="0x40" name="ACME"/>
+          <bitfield caption="Analog Comparator Multiplexer Enable" mask="0x40" name="ACME"/>
           <bitfield caption="ADC Auto Trigger Source bits" mask="0x07" name="ADTS" values="ANALOG_ADC_AUTO_TRIGGER"/>
         </register>
         <register caption="Digital Input Disable Register" name="DIDR0" offset="0x7E" size="1">
-          <bitfield caption="" mask="0x20" name="ADC5D"/>
-          <bitfield caption="" mask="0x10" name="ADC4D"/>
-          <bitfield caption="" mask="0x08" name="ADC3D"/>
-          <bitfield caption="" mask="0x04" name="ADC2D"/>
-          <bitfield caption="" mask="0x02" name="ADC1D"/>
-          <bitfield caption="" mask="0x01" name="ADC0D"/>
+          <bitfield caption="ADC Digital Input Disable" mask="0x80" name="ADC7D"/>
+          <bitfield caption="ADC Digital Input Disable" mask="0x40" name="ADC6D"/>
+          <bitfield caption="ADC Digital Input Disable" mask="0x20" name="ADC5D"/>
+          <bitfield caption="ADC Digital Input Disable" mask="0x10" name="ADC4D"/>
+          <bitfield caption="ADC Digital Input Disable" mask="0x08" name="ADC3D"/>
+          <bitfield caption="ADC Digital Input Disable" mask="0x04" name="ADC2D"/>
+          <bitfield caption="ADC Digital Input Disable" mask="0x02" name="ADC1D"/>
+          <bitfield caption="ADC Digital Input Disable" mask="0x01" name="ADC0D"/>
         </register>
       </register-group>
-      <value-group caption="" name="ANALOG_ADC_V_REF3">
+      <value-group caption="ADC Voltage Reference Selection" name="ANALOG_ADC_V_REF3">
         <value caption="AREF, Internal Vref turned off" name="VAL_0x00" value="0x00"/>
         <value caption="AVCC with external capacitor at AREF pin" name="VAL_0x01" value="0x01"/>
         <value caption="Reserved" name="VAL_0x02" value="0x02"/>
         <value caption="Internal 1.1V Voltage Reference with external capacitor at AREF pin" name="VAL_0x03" value="0x03"/>
       </value-group>
-      <value-group caption="" name="ADC_MUX_SINGLE">
+      <value-group caption="Input Channel Selection" name="ADC_MUX_SINGLE">
         <value caption="ADC Single Ended Input pin 0" name="ADC0" value="0x00"/>
         <value caption="ADC Single Ended Input pin 1" name="ADC1" value="0x01"/>
         <value caption="ADC Single Ended Input pin 2" name="ADC2" value="0x02"/>
@@ -1346,9 +1349,7 @@
       <value-group caption="Oscillator Calibration Values" name="OSCCAL_VALUE_ADDRESSES">
         <value value="0x00" caption="8.0 MHz" name="8_0_MHz"/>
       </value-group>
-      <parameters>
-        <param name="CORE_VERSION" value="V2E"/>
-      </parameters>
+      
     </module>
     <module caption="" name="EEPROM">
       <register-group caption="" name="EEPROM">

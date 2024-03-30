@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m644RFR2def.inc
 ;* Title             : Register/Bit Definitions for the ATmega644RFR2
-;* Created           : 2019-12-20 07:10
+;* Created           : 2020-05-05 14:14
 ;* Version           : 1.00
 ;* Support e-mail    : avr@atmel.com
 ;* Target MCU        : ATmega644RFR2
@@ -2988,23 +2988,23 @@
 ; ***** DATA MEMORY DECLARATIONS *****************************************
 .equ	FLASHSTART	= 0x0000 ; Note: Word address
 .equ	FLASHEND	= 0x7FFF ; Note: Word address
-.equ	FLASHPAGESIZE	= 0x0080 ;
+.equ	FLASHPAGESIZE	= 0x0080 ; Note: Size in words
 
 .equ	BOOTSECTION1START	= 0x7E00 ; Note: Word address
 .equ	BOOTSECTION1END	= 0x7FFF ; Note: Word address
-.equ	BOOTSECTION1PAGESIZE	= 0x0080 ;
+.equ	BOOTSECTION1PAGESIZE	= 0x0080 ; Note: Size in words
 
 .equ	BOOTSECTION2START	= 0x7C00 ; Note: Word address
 .equ	BOOTSECTION2END	= 0x7FFF ; Note: Word address
-.equ	BOOTSECTION2PAGESIZE	= 0x0080 ;
+.equ	BOOTSECTION2PAGESIZE	= 0x0080 ; Note: Size in words
 
 .equ	BOOTSECTION3START	= 0x7800 ; Note: Word address
 .equ	BOOTSECTION3END	= 0x7FFF ; Note: Word address
-.equ	BOOTSECTION3PAGESIZE	= 0x0080 ;
+.equ	BOOTSECTION3PAGESIZE	= 0x0080 ; Note: Size in words
 
 .equ	BOOTSECTION4START	= 0x7000 ; Note: Word address
 .equ	BOOTSECTION4END	= 0x7FFF ; Note: Word address
-.equ	BOOTSECTION4PAGESIZE	= 0x0080 ;
+.equ	BOOTSECTION4PAGESIZE	= 0x0080 ; Note: Size in words
 
 .equ	IOEND	= 0x01FF
 
@@ -3025,22 +3025,22 @@
 #pragma AVRPART MEMORY EEPROM 2048
 
 ; ***** BOOTLOADER DECLARATIONS ******************************************
-.equ	PAGESIZE	= 0x0080 ;
+.equ	PAGESIZE	= 0x0080 ; Note: Size in words
 
 .equ	FIRSTBOOTSTART	= 0x7E00 ; Note: Word address
-.equ	FIRSTBOOTPAGESIZE	= 0x0080 ;
+.equ	FIRSTBOOTPAGESIZE	= 0x0080 ; Note: Size in words
 .equ	FIRSTBOOTEND	= 0x0000 ; Note: Word address
 
 .equ	SECONDBOOTSTART	= 0x7C00 ; Note: Word address
-.equ	SECONDBOOTPAGESIZE	= 0x0080 ;
+.equ	SECONDBOOTPAGESIZE	= 0x0080 ; Note: Size in words
 .equ	SECONDBOOTEND	= 0x0000 ; Note: Word address
 
 .equ	THIRDBOOTSTART	= 0x7800 ; Note: Word address
-.equ	THIRDBOOTPAGESIZE	= 0x0080 ;
+.equ	THIRDBOOTPAGESIZE	= 0x0080 ; Note: Size in words
 .equ	THIRDBOOTEND	= 0x0000 ; Note: Word address
 
 .equ	FOURTHBOOTSTART	= 0x7000 ; Note: Word address
-.equ	FOURTHBOOTPAGESIZE	= 0x0080 ;
+.equ	FOURTHBOOTPAGESIZE	= 0x0080 ; Note: Size in words
 .equ	FOURTHBOOTEND	= 0x0000 ; Note: Word address
 
 .equ	 SMALLBOOTSTART	= FIRSTBOOTSTART ;

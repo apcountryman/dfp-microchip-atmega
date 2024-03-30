@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m809def.inc
 ;* Title             : Register/Bit Definitions for the ATmega809
-;* Created           : 2019-12-20 07:10
+;* Created           : 2020-05-05 14:14
 ;* Version           : 1.00
 ;* Support e-mail    : avr@atmel.com
 ;* Target MCU        : ATmega809
@@ -35,7 +35,7 @@
 .equ	SIGNATURE_001	= 0x93
 .equ	SIGNATURE_002	= 0x2A
 
-#pragma AVRPART CORE CORE_VERSION V3X
+#pragma AVRPART CORE CORE_VERSION V4
 
 
 ; ***** ABSOLUTE I/O REGISTER LOCATIONS **********************************
@@ -4201,12 +4201,12 @@
 .equ TCA0_LUNF_vect = 0x000E             ; 
 .equ TCA0_OVF_vect = 0x000E              ; 
 .equ TCA0_HUNF_vect = 0x0010             ; 
-.equ TCA0_LCMP0_vect = 0x0012            ; 
 .equ TCA0_CMP0_vect = 0x0012             ; 
+.equ TCA0_LCMP0_vect = 0x0012            ; 
 .equ TCA0_CMP1_vect = 0x0014             ; 
 .equ TCA0_LCMP1_vect = 0x0014            ; 
-.equ TCA0_LCMP2_vect = 0x0016            ; 
 .equ TCA0_CMP2_vect = 0x0016             ; 
+.equ TCA0_LCMP2_vect = 0x0016            ; 
 
 ; TCB0 interrupt vectors
 .equ TCB0_INT_vect = 0x0018              ; 
@@ -4330,12 +4330,12 @@
 .equ TCA0_LUNF_voffset = 0
 .equ TCA0_OVF_voffset = 0
 .equ TCA0_HUNF_voffset = 2
-.equ TCA0_LCMP0_voffset = 4
 .equ TCA0_CMP0_voffset = 4
+.equ TCA0_LCMP0_voffset = 4
 .equ TCA0_CMP1_voffset = 6
 .equ TCA0_LCMP1_voffset = 6
-.equ TCA0_LCMP2_voffset = 8
 .equ TCA0_CMP2_voffset = 8
+.equ TCA0_LCMP2_voffset = 8
 
 ; TCB0 interrupt vector offsets
 

@@ -43,8 +43,8 @@
     <edc:Interrupt edc:cname="LUNF" edc:desc="" edc:irq="7" ltx:memberofperipheral="TCA0"/>
     <edc:Interrupt edc:cname="OVF" edc:desc="" edc:irq="7" ltx:memberofperipheral="TCA0"/>
     <edc:Interrupt edc:cname="HUNF" edc:desc="" edc:irq="8" ltx:memberofperipheral="TCA0"/>
-    <edc:Interrupt edc:cname="LCMP0" edc:desc="" edc:irq="9" ltx:memberofperipheral="TCA0"/>
     <edc:Interrupt edc:cname="CMP0" edc:desc="" edc:irq="9" ltx:memberofperipheral="TCA0"/>
+    <edc:Interrupt edc:cname="LCMP0" edc:desc="" edc:irq="9" ltx:memberofperipheral="TCA0"/>
     <edc:Interrupt edc:cname="CMP1" edc:desc="" edc:irq="10" ltx:memberofperipheral="TCA0"/>
     <edc:Interrupt edc:cname="LCMP1" edc:desc="" edc:irq="10" ltx:memberofperipheral="TCA0"/>
     <edc:Interrupt edc:cname="CMP2" edc:desc="" edc:irq="11" ltx:memberofperipheral="TCA0"/>
@@ -4109,6 +4109,7 @@
           </edc:DCRModeList>
         </edc:DCRDef>
       </edc:ConfigFuseSector>
+      <edc:GPRDataSector atdf:pagesize="0x40" edc:beginaddr="0x4000" edc:endaddr="0x8000" edc:isexecutable="false" edc:regionid="MAPPED_PROGMEM"/>
       <edc:DeviceIDSector atdf:pagesize="0x40" edc:beginaddr="0x1103" edc:endaddr="0x1140" edc:regionid="PROD_SIGNATURES" edc:value="0x1E9427">
         <edc:DCRDef edc:_addr="0x1103" edc:access="rrrrrrrr" edc:cname="SERNUM0" edc:factorydefault="0x0" edc:impl="0x0" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="SIGROW"/>
         <edc:DCRDef edc:_addr="0x1104" edc:access="rrrrrrrr" edc:cname="SERNUM1" edc:factorydefault="0x0" edc:impl="0x0" edc:nzwidth="0x8" edc:unused="0x0" edc:useinchecksum="0xFF" ltx:memberofperipheral="SIGROW"/>

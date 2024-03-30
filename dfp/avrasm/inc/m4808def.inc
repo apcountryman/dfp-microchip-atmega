@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m4808def.inc
 ;* Title             : Register/Bit Definitions for the ATmega4808
-;* Created           : 2019-12-20 07:10
+;* Created           : 2020-05-05 14:14
 ;* Version           : 1.00
 ;* Support e-mail    : avr@atmel.com
 ;* Target MCU        : ATmega4808
@@ -35,7 +35,7 @@
 .equ	SIGNATURE_001	= 0x96
 .equ	SIGNATURE_002	= 0x50
 
-#pragma AVRPART CORE CORE_VERSION V3X
+#pragma AVRPART CORE CORE_VERSION V4
 
 
 ; ***** ABSOLUTE I/O REGISTER LOCATIONS **********************************
@@ -4144,13 +4144,13 @@
 .equ PORTA_PORT_vect = 0x000C            ; 
 
 ; TCA0 interrupt vectors
-.equ TCA0_OVF_vect = 0x000E              ; 
 .equ TCA0_LUNF_vect = 0x000E             ; 
+.equ TCA0_OVF_vect = 0x000E              ; 
 .equ TCA0_HUNF_vect = 0x0010             ; 
-.equ TCA0_LCMP0_vect = 0x0012            ; 
 .equ TCA0_CMP0_vect = 0x0012             ; 
-.equ TCA0_LCMP1_vect = 0x0014            ; 
+.equ TCA0_LCMP0_vect = 0x0012            ; 
 .equ TCA0_CMP1_vect = 0x0014             ; 
+.equ TCA0_LCMP1_vect = 0x0014            ; 
 .equ TCA0_CMP2_vect = 0x0016             ; 
 .equ TCA0_LCMP2_vect = 0x0016            ; 
 
@@ -4263,13 +4263,13 @@
 
 ; TCA0 interrupt vector offsets
 
-.equ TCA0_OVF_voffset = 0
 .equ TCA0_LUNF_voffset = 0
+.equ TCA0_OVF_voffset = 0
 .equ TCA0_HUNF_voffset = 2
-.equ TCA0_LCMP0_voffset = 4
 .equ TCA0_CMP0_voffset = 4
-.equ TCA0_LCMP1_voffset = 6
+.equ TCA0_LCMP0_voffset = 4
 .equ TCA0_CMP1_voffset = 6
+.equ TCA0_LCMP1_voffset = 6
 .equ TCA0_CMP2_voffset = 8
 .equ TCA0_LCMP2_voffset = 8
 

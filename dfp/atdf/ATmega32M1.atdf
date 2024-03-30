@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
+<?xml version="1.0" encoding="UTF-8"?><avr-tools-device-file xmlns:xalan="http://xml.apache.org/xalan" xmlns:NumHelper="NumHelper" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schema-version="0.3" xsi:noNamespaceSchemaLocation="../../schema/avr_tools_device_file.xsd">
   <variants>
     <variant ordercode="ATmega32M1-AU" tempmin="-40" tempmax="85" speedmax="16000000" pinout="TQFPQFN32" package="TQFP32" vccmin="2.7" vccmax="5.5"/>
     <variant ordercode="ATmega32M1-MU" tempmin="-40" tempmax="85" speedmax="16000000" pinout="TQFPQFN32" package="QFN32" vccmin="2.7" vccmax="5.5"/>
@@ -117,7 +116,9 @@
         <module name="CPU">
           <instance name="CPU" caption="CPU Registers">
             <register-group name="CPU" name-in-module="CPU" offset="0x00" address-space="data" caption="CPU Registers"/>
-          </instance>
+          <parameters>
+        <param name="CORE_VERSION" value="V2E"/>
+      </parameters></instance>
         </module>
         <module name="TC8">
           <instance name="TC0" caption="Timer/Counter, 8-bit">
@@ -878,9 +879,7 @@
       <value-group caption="Oscillator Calibration Values" name="OSCCAL_VALUE_ADDRESSES">
         <value value="0x00" caption="8.0 MHz" name="8_0_MHz"/>
       </value-group>
-      <parameters>
-        <param name="CORE_VERSION" value="V2E"/>
-      </parameters>
+      
     </module>
     <module caption="Timer/Counter, 8-bit" name="TC8">
       <register-group caption="Timer/Counter, 8-bit" name="TC0">
