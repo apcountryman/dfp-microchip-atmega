@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m3209def.inc
 ;* Title             : Register/Bit Definitions for the ATmega3209
-;* Created           : 2019-01-24 03:51
+;* Created           : 2019-04-26 00:07
 ;* Version           : 1.00
 ;* Support e-mail    : avr@atmel.com
 ;* Target MCU        : ATmega3209
@@ -1773,12 +1773,7 @@
 
 ; Bod level select
 .equ BOD_LVL_BODLEVEL0_gc = (0x00<<0)    ; 1.8 V
-.equ BOD_LVL_BODLEVEL1_gc = (0x01<<0)    ; 2.1 V
 .equ BOD_LVL_BODLEVEL2_gc = (0x02<<0)    ; 2.6 V
-.equ BOD_LVL_BODLEVEL3_gc = (0x03<<0)    ; 2.9 V
-.equ BOD_LVL_BODLEVEL4_gc = (0x04<<0)    ; 3.3 V
-.equ BOD_LVL_BODLEVEL5_gc = (0x05<<0)    ; 3.7 V
-.equ BOD_LVL_BODLEVEL6_gc = (0x06<<0)    ; 4.0 V
 .equ BOD_LVL_BODLEVEL7_gc = (0x07<<0)    ; 4.2 V
 
 ; Configuration select
@@ -2508,10 +2503,10 @@
 .equ EVSYS_GENERATOR_TCA0_CMP0_gc = (0x84<<0) ; Timer/Counter A0 compare 0
 .equ EVSYS_GENERATOR_TCA0_CMP1_gc = (0x85<<0) ; Timer/Counter A0 compare 1
 .equ EVSYS_GENERATOR_TCA0_CMP2_gc = (0x86<<0) ; Timer/Counter A0 compare 2
-.equ EVSYS_GENERATOR_TCB0_CMP0_gc = (0xA0<<0) ; Timer/Counter B0 compare 0
-.equ EVSYS_GENERATOR_TCB1_CMP0_gc = (0xA2<<0) ; Timer/Counter B1 compare 0
-.equ EVSYS_GENERATOR_TCB2_CMP0_gc = (0xA4<<0) ; Timer/Counter B2 compare 0
-.equ EVSYS_GENERATOR_TCB3_CMP0_gc = (0xA6<<0) ; Timer/Counter B3 compare 0
+.equ EVSYS_GENERATOR_TCB0_CAPT_gc = (0xA0<<0) ; Timer/Counter B0 capture
+.equ EVSYS_GENERATOR_TCB1_CAPT_gc = (0xA2<<0) ; Timer/Counter B1 capture
+.equ EVSYS_GENERATOR_TCB2_CAPT_gc = (0xA4<<0) ; Timer/Counter B2 capture
+.equ EVSYS_GENERATOR_TCB3_CAPT_gc = (0xA6<<0) ; Timer/Counter B3 capture
 
 ; Software event on channels select
 .equ EVSYS_STROBE0_EV_STROBE_CH0_gc = (0x01<<0) ; 
@@ -2625,12 +2620,7 @@
 
 ; BOD Level select
 .equ FUSE_LVL_BODLEVEL0_gc = (0x00<<5)   ; 1.8 V
-.equ FUSE_LVL_BODLEVEL1_gc = (0x01<<5)   ; 2.1 V
 .equ FUSE_LVL_BODLEVEL2_gc = (0x02<<5)   ; 2.6 V
-.equ FUSE_LVL_BODLEVEL3_gc = (0x03<<5)   ; 2.9 V
-.equ FUSE_LVL_BODLEVEL4_gc = (0x04<<5)   ; 3.3 V
-.equ FUSE_LVL_BODLEVEL5_gc = (0x05<<5)   ; 3.7 V
-.equ FUSE_LVL_BODLEVEL6_gc = (0x06<<5)   ; 4.0 V
 .equ FUSE_LVL_BODLEVEL7_gc = (0x07<<5)   ; 4.2 V
 
 ; BOD Sample Frequency select
@@ -3046,6 +3036,8 @@
 .equ RTC_CLKSEL1_bp = 1                  ; Clock Select bit 1 position
 
 ; RTC_CTRLA masks
+.equ RTC_CORREN_bm = 0x04                ; Correction enable bit mask
+.equ RTC_CORREN_bp = 2                   ; Correction enable bit position
 .equ RTC_PRESCALER_gm = 0x78             ; Prescaling Factor group mask
 .equ RTC_PRESCALER_gp = 3                ; Prescaling Factor group position
 .equ RTC_PRESCALER0_bm = (1<<3)          ; Prescaling Factor bit 0 mask

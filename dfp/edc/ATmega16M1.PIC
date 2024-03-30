@@ -670,7 +670,7 @@
         <edc:SFRDef edc:_addr="0x7C" edc:access="nnnnnnnn" edc:cname="ADMUX" edc:nzwidth="0x8" ltx:memberofperipheral="ADC">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="ADC">
-              <edc:SFRFieldDef edc:cname="MUX" edc:desc="Analog Channel and Gain Selection Bits" edc:nzwidth="0x5">
+              <edc:SFRFieldDef edc:cname="MUX" edc:desc="ADC channel selection bits" edc:nzwidth="0x5">
                 <edc:SFRFieldSemantic edc:cname="ADC0" edc:desc="ADC input pin 0" edc:when="(field &amp; 0x1F) == 0x0"/>
                 <edc:SFRFieldSemantic edc:cname="ADC1" edc:desc="ADC input pin 1" edc:when="(field &amp; 0x1F) == 0x1"/>
                 <edc:SFRFieldSemantic edc:cname="ADC2" edc:desc="ADC input pin 2" edc:when="(field &amp; 0x1F) == 0x2"/>

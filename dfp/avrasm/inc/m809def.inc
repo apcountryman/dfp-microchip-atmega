@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m809def.inc
 ;* Title             : Register/Bit Definitions for the ATmega809
-;* Created           : 2019-01-24 03:51
+;* Created           : 2019-04-26 00:07
 ;* Version           : 1.00
 ;* Support e-mail    : avr@atmel.com
 ;* Target MCU        : ATmega809
@@ -128,6 +128,7 @@
 .equ CLKCTRL_OSC20MCALIBA = 0x0071       ; OSC20M Calibration A
 .equ CLKCTRL_OSC20MCALIBB = 0x0072       ; OSC20M Calibration B
 .equ CLKCTRL_OSC32KCTRLA = 0x0078        ; OSC32K Control A
+.equ CLKCTRL_XOSC32KCTRLA = 0x007C       ; XOSC32K Control A
 
 ;*************************************************************************
 ;** CPU - CPU
@@ -972,6 +973,7 @@
 .equ CLKCTRL_OSC20MCALIBA_offset = 0x11  ; OSC20M Calibration A
 .equ CLKCTRL_OSC20MCALIBB_offset = 0x12  ; OSC20M Calibration B
 .equ CLKCTRL_OSC32KCTRLA_offset = 0x18   ; OSC32K Control A
+.equ CLKCTRL_XOSC32KCTRLA_offset = 0x1C  ; XOSC32K Control A
 
 ;*************************************************************************
 ;** CPU - CPU
@@ -1771,12 +1773,7 @@
 
 ; Bod level select
 .equ BOD_LVL_BODLEVEL0_gc = (0x00<<0)    ; 1.8 V
-.equ BOD_LVL_BODLEVEL1_gc = (0x01<<0)    ; 2.1 V
 .equ BOD_LVL_BODLEVEL2_gc = (0x02<<0)    ; 2.6 V
-.equ BOD_LVL_BODLEVEL3_gc = (0x03<<0)    ; 2.9 V
-.equ BOD_LVL_BODLEVEL4_gc = (0x04<<0)    ; 3.3 V
-.equ BOD_LVL_BODLEVEL5_gc = (0x05<<0)    ; 3.7 V
-.equ BOD_LVL_BODLEVEL6_gc = (0x06<<0)    ; 4.0 V
 .equ BOD_LVL_BODLEVEL7_gc = (0x07<<0)    ; 4.2 V
 
 ; Configuration select
@@ -2132,6 +2129,19 @@
 ; CLKCTRL_OSC32KCTRLA masks
 ; Masks for CLKCTRL_RUNSTDBY already defined
 
+; CLKCTRL_XOSC32KCTRLA masks
+.equ CLKCTRL_CSUT_gm = 0x30              ; Crystal startup time group mask
+.equ CLKCTRL_CSUT_gp = 4                 ; Crystal startup time group position
+.equ CLKCTRL_CSUT0_bm = (1<<4)           ; Crystal startup time bit 0 mask
+.equ CLKCTRL_CSUT0_bp = 4                ; Crystal startup time bit 0 position
+.equ CLKCTRL_CSUT1_bm = (1<<5)           ; Crystal startup time bit 1 mask
+.equ CLKCTRL_CSUT1_bp = 5                ; Crystal startup time bit 1 position
+.equ CLKCTRL_ENABLE_bm = 0x01            ; Enable bit mask
+.equ CLKCTRL_ENABLE_bp = 0               ; Enable bit position
+; Masks for CLKCTRL_RUNSTDBY already defined
+.equ CLKCTRL_SEL_bm = 0x04               ; Select bit mask
+.equ CLKCTRL_SEL_bp = 2                  ; Select bit position
+
 ; clock select select
 .equ CLKCTRL_CLKSEL_OSC20M_gc = (0x00<<0) ; 20MHz oscillator
 .equ CLKCTRL_CLKSEL_OSCULP32K_gc = (0x01<<0) ; 32KHz oscillator
@@ -2150,6 +2160,12 @@
 .equ CLKCTRL_PDIV_12X_gc = (0x0A<<1)     ; 12X
 .equ CLKCTRL_PDIV_24X_gc = (0x0B<<1)     ; 24X
 .equ CLKCTRL_PDIV_48X_gc = (0x0C<<1)     ; 48X
+
+; Crystal startup time select
+.equ CLKCTRL_CSUT_1K_gc = (0x00<<4)      ; 1k cycles
+.equ CLKCTRL_CSUT_16K_gc = (0x01<<4)     ; 16k cycles
+.equ CLKCTRL_CSUT_32K_gc = (0x02<<4)     ; 32k cycles
+.equ CLKCTRL_CSUT_64K_gc = (0x03<<4)     ; 64k cycles
 
 
 ;*************************************************************************
@@ -2487,10 +2503,10 @@
 .equ EVSYS_GENERATOR_TCA0_CMP0_gc = (0x84<<0) ; Timer/Counter A0 compare 0
 .equ EVSYS_GENERATOR_TCA0_CMP1_gc = (0x85<<0) ; Timer/Counter A0 compare 1
 .equ EVSYS_GENERATOR_TCA0_CMP2_gc = (0x86<<0) ; Timer/Counter A0 compare 2
-.equ EVSYS_GENERATOR_TCB0_CMP0_gc = (0xA0<<0) ; Timer/Counter B0 compare 0
-.equ EVSYS_GENERATOR_TCB1_CMP0_gc = (0xA2<<0) ; Timer/Counter B1 compare 0
-.equ EVSYS_GENERATOR_TCB2_CMP0_gc = (0xA4<<0) ; Timer/Counter B2 compare 0
-.equ EVSYS_GENERATOR_TCB3_CMP0_gc = (0xA6<<0) ; Timer/Counter B3 compare 0
+.equ EVSYS_GENERATOR_TCB0_CAPT_gc = (0xA0<<0) ; Timer/Counter B0 capture
+.equ EVSYS_GENERATOR_TCB1_CAPT_gc = (0xA2<<0) ; Timer/Counter B1 capture
+.equ EVSYS_GENERATOR_TCB2_CAPT_gc = (0xA4<<0) ; Timer/Counter B2 capture
+.equ EVSYS_GENERATOR_TCB3_CAPT_gc = (0xA6<<0) ; Timer/Counter B3 capture
 
 ; Software event on channels select
 .equ EVSYS_STROBE0_EV_STROBE_CH0_gc = (0x01<<0) ; 
@@ -2604,12 +2620,7 @@
 
 ; BOD Level select
 .equ FUSE_LVL_BODLEVEL0_gc = (0x00<<5)   ; 1.8 V
-.equ FUSE_LVL_BODLEVEL1_gc = (0x01<<5)   ; 2.1 V
 .equ FUSE_LVL_BODLEVEL2_gc = (0x02<<5)   ; 2.6 V
-.equ FUSE_LVL_BODLEVEL3_gc = (0x03<<5)   ; 2.9 V
-.equ FUSE_LVL_BODLEVEL4_gc = (0x04<<5)   ; 3.3 V
-.equ FUSE_LVL_BODLEVEL5_gc = (0x05<<5)   ; 3.7 V
-.equ FUSE_LVL_BODLEVEL6_gc = (0x06<<5)   ; 4.0 V
 .equ FUSE_LVL_BODLEVEL7_gc = (0x07<<5)   ; 4.2 V
 
 ; BOD Sample Frequency select
@@ -3025,6 +3036,8 @@
 .equ RTC_CLKSEL1_bp = 1                  ; Clock Select bit 1 position
 
 ; RTC_CTRLA masks
+.equ RTC_CORREN_bm = 0x04                ; Correction enable bit mask
+.equ RTC_CORREN_bp = 2                   ; Correction enable bit position
 .equ RTC_PRESCALER_gm = 0x78             ; Prescaling Factor group mask
 .equ RTC_PRESCALER_gp = 3                ; Prescaling Factor group position
 .equ RTC_PRESCALER0_bm = (1<<3)          ; Prescaling Factor bit 0 mask
@@ -4192,8 +4205,8 @@
 .equ TCA0_CMP0_vect = 0x0009             ; 
 .equ TCA0_CMP1_vect = 0x000A             ; 
 .equ TCA0_LCMP1_vect = 0x000A            ; 
-.equ TCA0_CMP2_vect = 0x000B             ; 
 .equ TCA0_LCMP2_vect = 0x000B            ; 
+.equ TCA0_CMP2_vect = 0x000B             ; 
 
 ; TCB0 interrupt vectors
 .equ TCB0_INT_vect = 0x000C              ; 
@@ -4321,8 +4334,8 @@
 .equ TCA0_CMP0_voffset = 2
 .equ TCA0_CMP1_voffset = 3
 .equ TCA0_LCMP1_voffset = 3
-.equ TCA0_CMP2_voffset = 4
 .equ TCA0_LCMP2_voffset = 4
+.equ TCA0_CMP2_voffset = 4
 
 ; TCB0 interrupt vector offsets
 

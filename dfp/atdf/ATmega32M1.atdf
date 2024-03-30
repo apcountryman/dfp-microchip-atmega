@@ -980,7 +980,7 @@
         <register caption="The ADC multiplexer Selection Register" name="ADMUX" offset="0x7C" size="1">
           <bitfield caption="Reference Selection Bits" mask="0xC0" name="REFS" values="ANALOG_ADC_V_REF2"/>
           <bitfield caption="Left Adjust Result" mask="0x20" name="ADLAR"/>
-          <bitfield caption="Analog Channel and Gain Selection Bits" mask="0x1F" name="MUX" values="ANALOG_ADC_MUXPOS"/>
+          <bitfield caption="ADC channel selection bits" mask="0x1F" name="MUX" values="ANALOG_ADC_MUXPOS"/>
         </register>
         <register caption="The ADC Control and Status register" name="ADCSRA" offset="0x7A" size="1" ocd-rw="R">
           <bitfield caption="ADC Enable" mask="0x80" name="ADEN"/>

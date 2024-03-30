@@ -327,12 +327,7 @@ typedef enum BOD_ACTIVE_enum
 typedef enum BOD_LVL_enum
 {
     BOD_LVL_BODLEVEL0_gc = (0x00<<0),  /* 1.8 V */
-    BOD_LVL_BODLEVEL1_gc = (0x01<<0),  /* 2.1 V */
     BOD_LVL_BODLEVEL2_gc = (0x02<<0),  /* 2.6 V */
-    BOD_LVL_BODLEVEL3_gc = (0x03<<0),  /* 2.9 V */
-    BOD_LVL_BODLEVEL4_gc = (0x04<<0),  /* 3.3 V */
-    BOD_LVL_BODLEVEL5_gc = (0x05<<0),  /* 3.7 V */
-    BOD_LVL_BODLEVEL6_gc = (0x06<<0),  /* 4.0 V */
     BOD_LVL_BODLEVEL7_gc = (0x07<<0),  /* 4.2 V */
 } BOD_LVL_t;
 
@@ -832,10 +827,10 @@ typedef enum EVSYS_GENERATOR_enum
     EVSYS_GENERATOR_TCA0_CMP0_gc = (0x84<<0),  /* Timer/Counter A0 compare 0 */
     EVSYS_GENERATOR_TCA0_CMP1_gc = (0x85<<0),  /* Timer/Counter A0 compare 1 */
     EVSYS_GENERATOR_TCA0_CMP2_gc = (0x86<<0),  /* Timer/Counter A0 compare 2 */
-    EVSYS_GENERATOR_TCB0_CMP0_gc = (0xA0<<0),  /* Timer/Counter B0 compare 0 */
-    EVSYS_GENERATOR_TCB1_CMP0_gc = (0xA2<<0),  /* Timer/Counter B1 compare 0 */
-    EVSYS_GENERATOR_TCB2_CMP0_gc = (0xA4<<0),  /* Timer/Counter B2 compare 0 */
-    EVSYS_GENERATOR_TCB3_CMP0_gc = (0xA6<<0),  /* Timer/Counter B3 compare 0 */
+    EVSYS_GENERATOR_TCB0_CAPT_gc = (0xA0<<0),  /* Timer/Counter B0 capture */
+    EVSYS_GENERATOR_TCB1_CAPT_gc = (0xA2<<0),  /* Timer/Counter B1 capture */
+    EVSYS_GENERATOR_TCB2_CAPT_gc = (0xA4<<0),  /* Timer/Counter B2 capture */
+    EVSYS_GENERATOR_TCB3_CAPT_gc = (0xA6<<0),  /* Timer/Counter B3 capture */
 } EVSYS_GENERATOR_t;
 
 /* Software event on channels select */
@@ -904,12 +899,7 @@ typedef enum FREQSEL_enum
 typedef enum LVL_enum
 {
     LVL_BODLEVEL0_gc = (0x00<<5),  /* 1.8 V */
-    LVL_BODLEVEL1_gc = (0x01<<5),  /* 2.1 V */
     LVL_BODLEVEL2_gc = (0x02<<5),  /* 2.6 V */
-    LVL_BODLEVEL3_gc = (0x03<<5),  /* 2.9 V */
-    LVL_BODLEVEL4_gc = (0x04<<5),  /* 3.3 V */
-    LVL_BODLEVEL5_gc = (0x05<<5),  /* 3.7 V */
-    LVL_BODLEVEL6_gc = (0x06<<5),  /* 4.0 V */
     LVL_BODLEVEL7_gc = (0x07<<5),  /* 4.2 V */
 } LVL_t;
 
@@ -3995,6 +3985,8 @@ IO Module Instances. Mapped to memory.
 /* RTC.CTRLA  bit masks and bit positions */
 #define RTC_RTCEN_bm  0x01  /* Enable bit mask. */
 #define RTC_RTCEN_bp  0  /* Enable bit position. */
+#define RTC_CORREN_bm  0x04  /* Correction enable bit mask. */
+#define RTC_CORREN_bp  2  /* Correction enable bit position. */
 #define RTC_PRESCALER_gm  0x78  /* Prescaling Factor group mask. */
 #define RTC_PRESCALER_gp  3  /* Prescaling Factor group position. */
 #define RTC_PRESCALER0_bm  (1<<3)  /* Prescaling Factor bit 0 mask. */

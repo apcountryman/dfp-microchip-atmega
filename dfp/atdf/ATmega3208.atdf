@@ -722,12 +722,7 @@
       </value-group>
       <value-group caption="Bod level select" name="BOD_LVL">
         <value caption="1.8 V" name="BODLEVEL0" value="0x00"/>
-        <value caption="2.1 V" name="BODLEVEL1" value="0x01"/>
         <value caption="2.6 V" name="BODLEVEL2" value="0x02"/>
-        <value caption="2.9 V" name="BODLEVEL3" value="0x03"/>
-        <value caption="3.3 V" name="BODLEVEL4" value="0x04"/>
-        <value caption="3.7 V" name="BODLEVEL5" value="0x05"/>
-        <value caption="4.0 V" name="BODLEVEL6" value="0x06"/>
         <value caption="4.2 V" name="BODLEVEL7" value="0x07"/>
       </value-group>
       <value-group caption="Configuration select" name="BOD_VLMCFG">
@@ -1184,10 +1179,10 @@
         <value caption="Timer/Counter A0 compare 0" name="TCA0_CMP0" value="0x84"/>
         <value caption="Timer/Counter A0 compare 1" name="TCA0_CMP1" value="0x85"/>
         <value caption="Timer/Counter A0 compare 2" name="TCA0_CMP2" value="0x86"/>
-        <value caption="Timer/Counter B0 compare 0" name="TCB0_CMP0" value="0xA0"/>
-        <value caption="Timer/Counter B1 compare 0" name="TCB1_CMP0" value="0xA2"/>
-        <value caption="Timer/Counter B2 compare 0" name="TCB2_CMP0" value="0xA4"/>
-        <value caption="Timer/Counter B3 compare 0" name="TCB3_CMP0" value="0xA6"/>
+        <value caption="Timer/Counter B0 capture" name="TCB0_CAPT" value="0xA0"/>
+        <value caption="Timer/Counter B1 capture" name="TCB1_CAPT" value="0xA2"/>
+        <value caption="Timer/Counter B2 capture" name="TCB2_CAPT" value="0xA4"/>
+        <value caption="Timer/Counter B3 capture" name="TCB3_CAPT" value="0xA6"/>
       </value-group>
       <value-group caption="Software event on channels select" name="EVSYS_STROBE0">
         <value caption="" name="EV_STROBE_CH0" value="0x01"/>
@@ -1244,12 +1239,7 @@
       </value-group>
       <value-group caption="BOD Level select" name="FUSE_LVL">
         <value caption="1.8 V" name="BODLEVEL0" value="0x00"/>
-        <value caption="2.1 V" name="BODLEVEL1" value="0x01"/>
         <value caption="2.6 V" name="BODLEVEL2" value="0x02"/>
-        <value caption="2.9 V" name="BODLEVEL3" value="0x03"/>
-        <value caption="3.3 V" name="BODLEVEL4" value="0x04"/>
-        <value caption="3.7 V" name="BODLEVEL5" value="0x05"/>
-        <value caption="4.0 V" name="BODLEVEL6" value="0x06"/>
         <value caption="4.2 V" name="BODLEVEL7" value="0x07"/>
       </value-group>
       <value-group caption="BOD Sample Frequency select" name="FUSE_SAMPFREQ">
@@ -1538,6 +1528,7 @@
         <register caption="Compare" name="CMP" offset="0x0C" rw="RW" size="2"/>
         <register caption="Counter" name="CNT" offset="0x08" rw="RW" size="2"/>
         <register caption="Control A" initval="0x00" name="CTRLA" offset="0x00" rw="RW" size="1">
+          <bitfield caption="Correction enable" mask="0x4" name="CORREN" rw="RW"/>
           <bitfield caption="Prescaling Factor" mask="0x78" name="PRESCALER" rw="RW" values="RTC_PRESCALER"/>
           <bitfield caption="Enable" mask="0x1" name="RTCEN" rw="RW"/>
           <bitfield caption="Run In Standby" mask="0x80" name="RUNSTDBY" rw="RW"/>

@@ -327,12 +327,7 @@ typedef enum BOD_ACTIVE_enum
 typedef enum BOD_LVL_enum
 {
     BOD_LVL_BODLEVEL0_gc = (0x00<<0),  /* 1.8 V */
-    BOD_LVL_BODLEVEL1_gc = (0x01<<0),  /* 2.1 V */
     BOD_LVL_BODLEVEL2_gc = (0x02<<0),  /* 2.6 V */
-    BOD_LVL_BODLEVEL3_gc = (0x03<<0),  /* 2.9 V */
-    BOD_LVL_BODLEVEL4_gc = (0x04<<0),  /* 3.3 V */
-    BOD_LVL_BODLEVEL5_gc = (0x05<<0),  /* 3.7 V */
-    BOD_LVL_BODLEVEL6_gc = (0x06<<0),  /* 4.0 V */
     BOD_LVL_BODLEVEL7_gc = (0x07<<0),  /* 4.2 V */
 } BOD_LVL_t;
 
@@ -608,7 +603,7 @@ typedef struct CLKCTRL_struct
     register8_t reserved_0x19;
     register8_t reserved_0x1A;
     register8_t reserved_0x1B;
-    register8_t reserved_0x1C;
+    register8_t XOSC32KCTRLA;  /* XOSC32K Control A */
     register8_t reserved_0x1D;
     register8_t reserved_0x1E;
     register8_t reserved_0x1F;
@@ -622,6 +617,15 @@ typedef enum CLKCTRL_CLKSEL_enum
     CLKCTRL_CLKSEL_XOSC32K_gc = (0x02<<0),  /* 32.768kHz crystal oscillator */
     CLKCTRL_CLKSEL_EXTCLK_gc = (0x03<<0),  /* External clock */
 } CLKCTRL_CLKSEL_t;
+
+/* Crystal startup time select */
+typedef enum CLKCTRL_CSUT_enum
+{
+    CLKCTRL_CSUT_1K_gc = (0x00<<4),  /* 1k cycles */
+    CLKCTRL_CSUT_16K_gc = (0x01<<4),  /* 16k cycles */
+    CLKCTRL_CSUT_32K_gc = (0x02<<4),  /* 32k cycles */
+    CLKCTRL_CSUT_64K_gc = (0x03<<4),  /* 64k cycles */
+} CLKCTRL_CSUT_t;
 
 /* Prescaler division select */
 typedef enum CLKCTRL_PDIV_enum
@@ -823,10 +827,10 @@ typedef enum EVSYS_GENERATOR_enum
     EVSYS_GENERATOR_TCA0_CMP0_gc = (0x84<<0),  /* Timer/Counter A0 compare 0 */
     EVSYS_GENERATOR_TCA0_CMP1_gc = (0x85<<0),  /* Timer/Counter A0 compare 1 */
     EVSYS_GENERATOR_TCA0_CMP2_gc = (0x86<<0),  /* Timer/Counter A0 compare 2 */
-    EVSYS_GENERATOR_TCB0_CMP0_gc = (0xA0<<0),  /* Timer/Counter B0 compare 0 */
-    EVSYS_GENERATOR_TCB1_CMP0_gc = (0xA2<<0),  /* Timer/Counter B1 compare 0 */
-    EVSYS_GENERATOR_TCB2_CMP0_gc = (0xA4<<0),  /* Timer/Counter B2 compare 0 */
-    EVSYS_GENERATOR_TCB3_CMP0_gc = (0xA6<<0),  /* Timer/Counter B3 compare 0 */
+    EVSYS_GENERATOR_TCB0_CAPT_gc = (0xA0<<0),  /* Timer/Counter B0 capture */
+    EVSYS_GENERATOR_TCB1_CAPT_gc = (0xA2<<0),  /* Timer/Counter B1 capture */
+    EVSYS_GENERATOR_TCB2_CAPT_gc = (0xA4<<0),  /* Timer/Counter B2 capture */
+    EVSYS_GENERATOR_TCB3_CAPT_gc = (0xA6<<0),  /* Timer/Counter B3 capture */
 } EVSYS_GENERATOR_t;
 
 /* Software event on channels select */
@@ -895,12 +899,7 @@ typedef enum FREQSEL_enum
 typedef enum LVL_enum
 {
     LVL_BODLEVEL0_gc = (0x00<<5),  /* 1.8 V */
-    LVL_BODLEVEL1_gc = (0x01<<5),  /* 2.1 V */
     LVL_BODLEVEL2_gc = (0x02<<5),  /* 2.6 V */
-    LVL_BODLEVEL3_gc = (0x03<<5),  /* 2.9 V */
-    LVL_BODLEVEL4_gc = (0x04<<5),  /* 3.3 V */
-    LVL_BODLEVEL5_gc = (0x05<<5),  /* 3.7 V */
-    LVL_BODLEVEL6_gc = (0x06<<5),  /* 4.0 V */
     LVL_BODLEVEL7_gc = (0x07<<5),  /* 4.2 V */
 } LVL_t;
 
@@ -2209,6 +2208,7 @@ IO Module Instances. Mapped to memory.
 #define CLKCTRL_OSC20MCALIBA  _SFR_MEM8(0x0071)
 #define CLKCTRL_OSC20MCALIBB  _SFR_MEM8(0x0072)
 #define CLKCTRL_OSC32KCTRLA  _SFR_MEM8(0x0078)
+#define CLKCTRL_XOSC32KCTRLA  _SFR_MEM8(0x007C)
 
 
 /* BOD - Bod interface */
@@ -3369,6 +3369,19 @@ IO Module Instances. Mapped to memory.
 /* CLKCTRL.OSC32KCTRLA  bit masks and bit positions */
 /* CLKCTRL_RUNSTDBY  is already defined. */
 
+/* CLKCTRL.XOSC32KCTRLA  bit masks and bit positions */
+#define CLKCTRL_ENABLE_bm  0x01  /* Enable bit mask. */
+#define CLKCTRL_ENABLE_bp  0  /* Enable bit position. */
+/* CLKCTRL_RUNSTDBY  is already defined. */
+#define CLKCTRL_SEL_bm  0x04  /* Select bit mask. */
+#define CLKCTRL_SEL_bp  2  /* Select bit position. */
+#define CLKCTRL_CSUT_gm  0x30  /* Crystal startup time group mask. */
+#define CLKCTRL_CSUT_gp  4  /* Crystal startup time group position. */
+#define CLKCTRL_CSUT0_bm  (1<<4)  /* Crystal startup time bit 0 mask. */
+#define CLKCTRL_CSUT0_bp  4  /* Crystal startup time bit 0 position. */
+#define CLKCTRL_CSUT1_bm  (1<<5)  /* Crystal startup time bit 1 mask. */
+#define CLKCTRL_CSUT1_bp  5  /* Crystal startup time bit 1 position. */
+
 /* CPU - CPU */
 /* CPU.CCP  bit masks and bit positions */
 #define CPU_CCP_gm  0xFF  /* CCP signature group mask. */
@@ -3972,6 +3985,8 @@ IO Module Instances. Mapped to memory.
 /* RTC.CTRLA  bit masks and bit positions */
 #define RTC_RTCEN_bm  0x01  /* Enable bit mask. */
 #define RTC_RTCEN_bp  0  /* Enable bit position. */
+#define RTC_CORREN_bm  0x04  /* Correction enable bit mask. */
+#define RTC_CORREN_bp  2  /* Correction enable bit position. */
 #define RTC_PRESCALER_gm  0x78  /* Prescaling Factor group mask. */
 #define RTC_PRESCALER_gp  3  /* Prescaling Factor group position. */
 #define RTC_PRESCALER0_bm  (1<<3)  /* Prescaling Factor bit 0 mask. */
@@ -4936,10 +4951,10 @@ IO Module Instances. Mapped to memory.
 #define PORTA_PORT_vect      _VECTOR(6)  /*  */
 
 /* TCA0 interrupt vectors */
-#define TCA0_OVF_vect_num  7
-#define TCA0_OVF_vect      _VECTOR(7)  /*  */
 #define TCA0_LUNF_vect_num  7
 #define TCA0_LUNF_vect      _VECTOR(7)  /*  */
+#define TCA0_OVF_vect_num  7
+#define TCA0_OVF_vect      _VECTOR(7)  /*  */
 #define TCA0_HUNF_vect_num  8
 #define TCA0_HUNF_vect      _VECTOR(8)  /*  */
 #define TCA0_LCMP0_vect_num  9
