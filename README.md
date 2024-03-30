@@ -15,6 +15,24 @@ SSH:
 git clone git@github.com:apcountryman/dfp-microchip-atmega.git
 ```
 
+## Usage
+
+The contents of the DFP can be found in the [`dfp/`](dfp) directory of this repository.
+
+```shell
+git submodule add https://github.com/apcountryman/dfp-microchip-atmega.git
+```
+```CMake
+add_compile_options(
+    -mmcu=atmega4809
+    -B "${CMAKE_CURRENT_SOURCE_DIR}/dfp-microchip-atmega/gcc/dev/atmega4809"
+    )
+
+include_directories( SYSTEM
+    "${CMAKE_CURRENT_SOURCE_DIR}/dfp-microchip-atmega/include"
+    )
+```
+
 ## License
 
 Microchip Technology Inc. releases the ATmega series DFP under the Apache License, Version
