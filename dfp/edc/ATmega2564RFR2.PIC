@@ -286,10 +286,10 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="EXINT">
               <edc:SFRFieldDef edc:cname="INTF" edc:desc="External Interrupt Flag" edc:nzwidth="0x8">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No edge or logic change on INT7:0 occurred." edc:when="(field &amp; 0xFF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="A edge or logic change on INT0 occurred and triggered an interrupt request." edc:when="(field &amp; 0xFF) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="..." edc:when="(field &amp; 0xFF) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x80" edc:desc="A edge or logic change on INT7 occurred and triggered an interrupt request." edc:when="(field &amp; 0xFF) == 0x80"/>
+                <edc:SFRFieldSemantic edc:cname="NO_EDGE_OR_LOGIC_CHANGE_ON_INT7_0_OCCURRED" edc:desc="No edge or logic change on INT7:0 occurred." edc:when="(field &amp; 0xFF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="A_EDGE_OR_LOGIC_CHANGE_ON_INT0_OCCURRED_AND_TRIGGERED_AN_INTERRUPT_REQUEST" edc:desc="A edge or logic change on INT0 occurred and triggered an interrupt request." edc:when="(field &amp; 0xFF) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="..." edc:when="(field &amp; 0xFF) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="A_EDGE_OR_LOGIC_CHANGE_ON_INT7_OCCURRED_AND_TRIGGERED_AN_INTERRUPT_REQUEST" edc:desc="A edge or logic change on INT7 occurred and triggered an interrupt request." edc:when="(field &amp; 0xFF) == 0x80"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -298,8 +298,8 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="EXINT">
               <edc:SFRFieldDef edc:cname="INT" edc:desc="External Interrupt Request Enable" edc:nzwidth="0x8">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="All external pin interrupts are disabled." edc:when="(field &amp; 0xFF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xff" edc:desc="All external pin interrupts are enabled." edc:when="(field &amp; 0xFF) == 0xff"/>
+                <edc:SFRFieldSemantic edc:cname="ALL_EXTERNAL_PIN_INTERRUPTS_ARE_DISABLED" edc:desc="All external pin interrupts are disabled." edc:when="(field &amp; 0xFF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ALL_EXTERNAL_PIN_INTERRUPTS_ARE_ENABLED" edc:desc="All external pin interrupts are enabled." edc:when="(field &amp; 0xFF) == 0xff"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -326,10 +326,10 @@
               <edc:SFRFieldDef edc:cname="EEMPE" edc:desc="EEPROM Master Write Enable" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="EERIE" edc:desc="EEPROM Ready Interrupt Enable" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="EEPM" edc:desc="EEPROM Programming Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Erase and Write in one operation (Atomic Operation)" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Erase only" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Write only" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Reserved for future use" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="ERASE_AND_WRITE_IN_ONE_OPERATION_ATOMIC_OPERATION" edc:desc="Erase and Write in one operation (Atomic Operation)" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ERASE_ONLY" edc:desc="Erase only" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="WRITE_ONLY" edc:desc="Write only" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED_FOR_FUTURE_USE" edc:desc="Reserved for future use" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -356,27 +356,27 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC0">
               <edc:SFRFieldDef edc:cname="WGM0" edc:desc="Waveform Generation Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x1" edc:desc="PWM, phase correct, TOP=0xFF" edc:when="(field &amp; 0x3) == 0x1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x2" edc:desc="CTC, TOP = OCRA" edc:when="(field &amp; 0x3) == 0x2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x3" edc:desc="Fast PWM, TOP=0xFF" edc:when="(field &amp; 0x3) == 0x3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x4" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x5" edc:desc="PWM, Phase correct, TOP = OCRA" edc:when="(field &amp; 0x3) == 0x5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x6" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x7" edc:desc="Fast PWM, TOP=OCRA" edc:when="(field &amp; 0x3) == 0x7"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_MODE_OF_OPERATION" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_0XFF" edc:desc="PWM, phase correct, TOP=0xFF" edc:when="(field &amp; 0x3) == 0x1"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRA" edc:desc="CTC, TOP = OCRA" edc:when="(field &amp; 0x3) == 0x2"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_0XFF" edc:desc="Fast PWM, TOP=0xFF" edc:when="(field &amp; 0x3) == 0x3"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x4"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_OCRA" edc:desc="PWM, Phase correct, TOP = OCRA" edc:when="(field &amp; 0x3) == 0x5"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x6"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_OCRA" edc:desc="Fast PWM, TOP=OCRA" edc:when="(field &amp; 0x3) == 0x7"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="Res" edc:desc="Reserved Bit" edc:nzwidth="0x2"/>
               <edc:SFRFieldDef edc:cname="COM0B" edc:desc="Compare Match Output B Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal port operation, OC0B disconnected" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Toggle OC0B on Compare Match" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Clear OC0B on Compare Match" edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Set OC0B on Compare Match" edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_PORT_OPERATION_OC0B_DISCONNECTED" edc:desc="Normal port operation, OC0B disconnected" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="TOGGLE_OC0B_ON_COMPARE_MATCH" edc:desc="Toggle OC0B on Compare Match" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="CLEAR_OC0B_ON_COMPARE_MATCH" edc:desc="Clear OC0B on Compare Match" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="SET_OC0B_ON_COMPARE_MATCH" edc:desc="Set OC0B on Compare Match" edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="COM0A" edc:desc="Compare Match Output A Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal port operation, OC0A disconnected" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Toggle OC0A on Compare Match" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Clear OC0A on Compare Match" edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Set OC0A on Compare Match" edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_PORT_OPERATION_OC0A_DISCONNECTED" edc:desc="Normal port operation, OC0A disconnected" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="TOGGLE_OC0A_ON_COMPARE_MATCH" edc:desc="Toggle OC0A on Compare Match" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="CLEAR_OC0A_ON_COMPARE_MATCH" edc:desc="Clear OC0A on Compare Match" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="SET_OC0A_ON_COMPARE_MATCH" edc:desc="Set OC0A on Compare Match" edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -385,14 +385,14 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC0">
               <edc:SFRFieldDef edc:cname="CS0" edc:desc="Clock Select" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No clock source (Timer/Counter0 stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="clk_IO/1 (no prescaling)" edc:when="(field &amp; 0x7) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="clk_IO/8 (from prescaler)" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="clk_IO/64 (from prescaler)" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="clk_IO/256 (from prescaler)" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="clk_IO/1024 (from prescaler)" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="External clock source on T0 pin, clock on falling edge" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="External clock source on T0 pin, clock on rising edge" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="NO_CLOCK_SOURCE_TIMER_COUNTER0_STOPPED" edc:desc="No clock source (Timer/Counter0 stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_1_NO_PRESCALING" edc:desc="clk_IO/1 (no prescaling)" edc:when="(field &amp; 0x7) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_8_FROM_PRESCALER" edc:desc="clk_IO/8 (from prescaler)" edc:when="(field &amp; 0x7) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_64_FROM_PRESCALER" edc:desc="clk_IO/64 (from prescaler)" edc:when="(field &amp; 0x7) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_256_FROM_PRESCALER" edc:desc="clk_IO/256 (from prescaler)" edc:when="(field &amp; 0x7) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_1024_FROM_PRESCALER" edc:desc="clk_IO/1024 (from prescaler)" edc:when="(field &amp; 0x7) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="EXTERNAL_CLOCK_SOURCE_ON_T0_PIN_CLOCK_ON_FALLING_EDGE" edc:desc="External clock source on T0 pin, clock on falling edge" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="EXTERNAL_CLOCK_SOURCE_ON_T0_PIN_CLOCK_ON_RISING_EDGE" edc:desc="External clock source on T0 pin, clock on rising edge" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="WGM02" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="Res" edc:desc="Reserved Bit" edc:nzwidth="0x2"/>
@@ -423,18 +423,18 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="SPI">
               <edc:SFRFieldDef edc:cname="SPR" edc:desc="SPI Clock Rate Select 1 and 0" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="fosc/4 / fosc/2 (SPI2X=0/1)" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="fosc/16 / fosc/8 (SPI2X=0/1)" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="fosc/64 / fosc/32 (SPI2X=0/1)" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="fosc/128 / fosc/64 (SPI2X=0/1)" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="FOSC_4_FOSC_2_SPI2X_0_1" edc:desc="fosc/4 / fosc/2 (SPI2X=0/1)" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="FOSC_16_FOSC_8_SPI2X_0_1" edc:desc="fosc/16 / fosc/8 (SPI2X=0/1)" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="FOSC_64_FOSC_32_SPI2X_0_1" edc:desc="fosc/64 / fosc/32 (SPI2X=0/1)" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="FOSC_128_FOSC_64_SPI2X_0_1" edc:desc="fosc/128 / fosc/64 (SPI2X=0/1)" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="CPHA" edc:desc="Clock Phase" edc:nzwidth="0x1">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Sample (Leading Edge), Setup (Trailing Edge)" edc:when="(field &amp; 0x1) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Setup (Leading Edge), Sample (Trailing Edge)" edc:when="(field &amp; 0x1) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="SAMPLE_LEADING_EDGE_SETUP_TRAILING_EDGE" edc:desc="Sample (Leading Edge), Setup (Trailing Edge)" edc:when="(field &amp; 0x1) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="SETUP_LEADING_EDGE_SAMPLE_TRAILING_EDGE" edc:desc="Setup (Leading Edge), Sample (Trailing Edge)" edc:when="(field &amp; 0x1) == 1"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="CPOL" edc:desc="Clock polarity" edc:nzwidth="0x1">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Rising (Leading Edge), Falling (Trailing Edge)" edc:when="(field &amp; 0x1) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Falling (Leading Egde), Rising (Trailing Edge)" edc:when="(field &amp; 0x1) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="RISING_LEADING_EDGE_FALLING_TRAILING_EDGE" edc:desc="Rising (Leading Edge), Falling (Trailing Edge)" edc:when="(field &amp; 0x1) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="FALLING_LEADING_EGDE_RISING_TRAILING_EDGE" edc:desc="Falling (Leading Egde), Rising (Trailing Edge)" edc:when="(field &amp; 0x1) == 1"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="MSTR" edc:desc="Master/Slave Select" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="DORD" edc:desc="Data Order" edc:nzwidth="0x1"/>
@@ -459,10 +459,10 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="AC">
               <edc:SFRFieldDef edc:cname="ACIS" edc:desc="Analog Comparator Interrupt Mode Select" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Interrupt on Toggle" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Interrupt on Falling Edge" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Interrupt on Rising Edge" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="INTERRUPT_ON_TOGGLE" edc:desc="Interrupt on Toggle" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="INTERRUPT_ON_FALLING_EDGE" edc:desc="Interrupt on Falling Edge" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="INTERRUPT_ON_RISING_EDGE" edc:desc="Interrupt on Rising Edge" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ACIC" edc:desc="Analog Comparator Input Capture Enable" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="ACIE" edc:desc="Analog Comparator Interrupt Enable" edc:nzwidth="0x1"/>
@@ -477,7 +477,7 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="JTAG">
               <edc:SFRFieldDef edc:cname="OCDR" edc:desc="On-Chip Debug Register Data" edc:nzwidth="0x8">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Refer to the debugger documentation for further information on how to use this register." edc:when="(field &amp; 0xFF) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="REFER_TO_THE_DEBUGGER_DOCUMENTATION_FOR_FURTHER_INFORMATION_ON_HOW_TO_USE_THIS_REGISTER" edc:desc="Refer to the debugger documentation for further information on how to use this register." edc:when="(field &amp; 0xFF) == 0"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -555,7 +555,7 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="CPU">
               <edc:SFRFieldDef edc:cname="RAMPZ" edc:desc="Extended Z-Pointer Value" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Default value of Z-pointer MSB's." edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="DEFAULT_VALUE_OF_Z_POINTER_MSB_S" edc:desc="Default value of Z-pointer MSB's." edc:when="(field &amp; 0x3) == 0"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -580,16 +580,16 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="WDT">
               <edc:SFRFieldDef edc:cname="WDP" edc:desc="Watchdog Timer Prescaler Bits" edc:mask="0x27" edc:nzwidth="0x6">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Oscillator Cycles 2K" edc:when="(field &amp; 0x27) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Oscillator Cycles 4K" edc:when="(field &amp; 0x27) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Oscillator Cycles 8K" edc:when="(field &amp; 0x27) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Oscillator Cycles 16K" edc:when="(field &amp; 0x27) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Oscillator Cycles 32K" edc:when="(field &amp; 0x27) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Oscillator Cycles 64K" edc:when="(field &amp; 0x27) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Oscillator Cycles 128K" edc:when="(field &amp; 0x27) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Oscillator Cycles 256K" edc:when="(field &amp; 0x27) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="Oscillator Cycles 512K" edc:when="(field &amp; 0x27) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x09" edc:desc="Oscillator Cycles 1024K" edc:when="(field &amp; 0x27) == 0x09"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_2K" edc:desc="Oscillator Cycles 2K" edc:when="(field &amp; 0x27) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_4K" edc:desc="Oscillator Cycles 4K" edc:when="(field &amp; 0x27) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_8K" edc:desc="Oscillator Cycles 8K" edc:when="(field &amp; 0x27) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_16K" edc:desc="Oscillator Cycles 16K" edc:when="(field &amp; 0x27) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_32K" edc:desc="Oscillator Cycles 32K" edc:when="(field &amp; 0x27) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_64K" edc:desc="Oscillator Cycles 64K" edc:when="(field &amp; 0x27) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_128K" edc:desc="Oscillator Cycles 128K" edc:when="(field &amp; 0x27) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_256K" edc:desc="Oscillator Cycles 256K" edc:when="(field &amp; 0x27) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_512K" edc:desc="Oscillator Cycles 512K" edc:when="(field &amp; 0x27) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_1024K" edc:desc="Oscillator Cycles 1024K" edc:when="(field &amp; 0x27) == 0x09"/>
               </edc:SFRFieldDef>
               <edc:AdjustPoint edc:offset="-3"/>
               <edc:SFRFieldDef edc:cname="WDE" edc:desc="Watch Dog Enable" edc:nzwidth="0x1"/>
@@ -604,22 +604,22 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="CPU">
               <edc:SFRFieldDef edc:cname="CLKPS" edc:desc="Clock Prescaler Select Bits" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0" edc:desc="Division factor 1   / RC-Oscillator   2" edc:when="(field &amp; 0xF) == 0x0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x1" edc:desc="Division factor 2   / RC-Oscillator   4" edc:when="(field &amp; 0xF) == 0x1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x2" edc:desc="Division factor 4   / RC-Oscillator   8" edc:when="(field &amp; 0xF) == 0x2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x3" edc:desc="Division factor 8   / RC-Oscillator  16" edc:when="(field &amp; 0xF) == 0x3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x4" edc:desc="Division factor 16  / RC-Oscillator  32" edc:when="(field &amp; 0xF) == 0x4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x5" edc:desc="Division factor 32  / RC-Oscillator  64" edc:when="(field &amp; 0xF) == 0x5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x6" edc:desc="Division factor 64  / RC-Oscillator 128" edc:when="(field &amp; 0xF) == 0x6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x7" edc:desc="Division factor 128 / RC-Oscillator 256" edc:when="(field &amp; 0xF) == 0x7"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x8" edc:desc="Division factor 256 / RC-Oscillator 512" edc:when="(field &amp; 0xF) == 0x8"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x9" edc:desc="Reserved" edc:when="(field &amp; 0xF) == 0x9"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xA" edc:desc="Reserved" edc:when="(field &amp; 0xF) == 0xA"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xB" edc:desc="Reserved" edc:when="(field &amp; 0xF) == 0xB"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xC" edc:desc="Reserved" edc:when="(field &amp; 0xF) == 0xC"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xD" edc:desc="Reserved" edc:when="(field &amp; 0xF) == 0xD"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xE" edc:desc="Reserved" edc:when="(field &amp; 0xF) == 0xE"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xF" edc:desc="Division factor 1 only permitted for RC-Oscillator. Flash and EEPROM programming is not allowed." edc:when="(field &amp; 0xF) == 0xF"/>
+                <edc:SFRFieldSemantic edc:cname="DIVISION_FACTOR_1_RC_OSCILLATOR_2" edc:desc="Division factor 1   / RC-Oscillator   2" edc:when="(field &amp; 0xF) == 0x0"/>
+                <edc:SFRFieldSemantic edc:cname="DIVISION_FACTOR_2_RC_OSCILLATOR_4" edc:desc="Division factor 2   / RC-Oscillator   4" edc:when="(field &amp; 0xF) == 0x1"/>
+                <edc:SFRFieldSemantic edc:cname="DIVISION_FACTOR_4_RC_OSCILLATOR_8" edc:desc="Division factor 4   / RC-Oscillator   8" edc:when="(field &amp; 0xF) == 0x2"/>
+                <edc:SFRFieldSemantic edc:cname="DIVISION_FACTOR_8_RC_OSCILLATOR_16" edc:desc="Division factor 8   / RC-Oscillator  16" edc:when="(field &amp; 0xF) == 0x3"/>
+                <edc:SFRFieldSemantic edc:cname="DIVISION_FACTOR_16_RC_OSCILLATOR_32" edc:desc="Division factor 16  / RC-Oscillator  32" edc:when="(field &amp; 0xF) == 0x4"/>
+                <edc:SFRFieldSemantic edc:cname="DIVISION_FACTOR_32_RC_OSCILLATOR_64" edc:desc="Division factor 32  / RC-Oscillator  64" edc:when="(field &amp; 0xF) == 0x5"/>
+                <edc:SFRFieldSemantic edc:cname="DIVISION_FACTOR_64_RC_OSCILLATOR_128" edc:desc="Division factor 64  / RC-Oscillator 128" edc:when="(field &amp; 0xF) == 0x6"/>
+                <edc:SFRFieldSemantic edc:cname="DIVISION_FACTOR_128_RC_OSCILLATOR_256" edc:desc="Division factor 128 / RC-Oscillator 256" edc:when="(field &amp; 0xF) == 0x7"/>
+                <edc:SFRFieldSemantic edc:cname="DIVISION_FACTOR_256_RC_OSCILLATOR_512" edc:desc="Division factor 256 / RC-Oscillator 512" edc:when="(field &amp; 0xF) == 0x8"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0xF) == 0x9"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0xF) == 0xA"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0xF) == 0xB"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0xF) == 0xC"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0xF) == 0xD"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0xF) == 0xE"/>
+                <edc:SFRFieldSemantic edc:cname="DIVISION_FACTOR_1_ONLY_PERMITTED_FOR_RC_OSCILLATOR_FLASH_AND_EEPROM_PROGRAMMING_IS_NOT_ALLOWED" edc:desc="Division factor 1 only permitted for RC-Oscillator. Flash and EEPROM programming is not allowed." edc:when="(field &amp; 0xF) == 0xF"/>
               </edc:SFRFieldDef>
               <edc:AdjustPoint edc:offset="0x3"/>
               <edc:SFRFieldDef edc:cname="CLKPCE" edc:desc="Clock Prescaler Change Enable" edc:nzwidth="0x1"/>
@@ -668,10 +668,10 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="CPU">
               <edc:SFRFieldDef edc:cname="CAL" edc:desc="Oscillator Calibration Tuning Value" edc:nzwidth="0x8">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Calibration value for lowest oscillator frequency" edc:when="(field &amp; 0xFF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x7f" edc:desc="End value of low frequency range calibration" edc:when="(field &amp; 0xFF) == 0x7f"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x80" edc:desc="Start value of high frequency range calibration" edc:when="(field &amp; 0xFF) == 0x80"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xff" edc:desc="Calibration value for highest oscillator frequency" edc:when="(field &amp; 0xFF) == 0xff"/>
+                <edc:SFRFieldSemantic edc:cname="CALIBRATION_VALUE_FOR_LOWEST_OSCILLATOR_FREQUENCY" edc:desc="Calibration value for lowest oscillator frequency" edc:when="(field &amp; 0xFF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="END_VALUE_OF_LOW_FREQUENCY_RANGE_CALIBRATION" edc:desc="End value of low frequency range calibration" edc:when="(field &amp; 0xFF) == 0x7f"/>
+                <edc:SFRFieldSemantic edc:cname="START_VALUE_OF_HIGH_FREQUENCY_RANGE_CALIBRATION" edc:desc="Start value of high frequency range calibration" edc:when="(field &amp; 0xFF) == 0x80"/>
+                <edc:SFRFieldSemantic edc:cname="CALIBRATION_VALUE_FOR_HIGHEST_OSCILLATOR_FREQUENCY" edc:desc="Calibration value for highest oscillator frequency" edc:when="(field &amp; 0xFF) == 0xff"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -680,18 +680,18 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="FLASH">
               <edc:SFRFieldDef edc:cname="BGCAL" edc:desc="Coarse Calibration Bits" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_4" edc:desc="Center value" edc:when="(field &amp; 0x7) == 4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Voltage step up" edc:when="(field &amp; 0x7) == 3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_5" edc:desc="Voltage step down" edc:when="(field &amp; 0x7) == 5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Setting for highest voltage" edc:when="(field &amp; 0x7) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_7" edc:desc="Setting for lowest voltage" edc:when="(field &amp; 0x7) == 7"/>
+                <edc:SFRFieldSemantic edc:cname="CENTER_VALUE" edc:desc="Center value" edc:when="(field &amp; 0x7) == 4"/>
+                <edc:SFRFieldSemantic edc:cname="VOLTAGE_STEP_UP" edc:desc="Voltage step up" edc:when="(field &amp; 0x7) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="VOLTAGE_STEP_DOWN" edc:desc="Voltage step down" edc:when="(field &amp; 0x7) == 5"/>
+                <edc:SFRFieldSemantic edc:cname="SETTING_FOR_HIGHEST_VOLTAGE" edc:desc="Setting for highest voltage" edc:when="(field &amp; 0x7) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="SETTING_FOR_LOWEST_VOLTAGE" edc:desc="Setting for lowest voltage" edc:when="(field &amp; 0x7) == 7"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="BGCAL_FINE" edc:desc="Fine Calibration Bits" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Center value" edc:when="(field &amp; 0xF) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Voltage step up" edc:when="(field &amp; 0xF) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_8" edc:desc="Voltage step down" edc:when="(field &amp; 0xF) == 8"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_7" edc:desc="Setting for highest voltage" edc:when="(field &amp; 0xF) == 7"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_15" edc:desc="Setting for lowest voltage" edc:when="(field &amp; 0xF) == 15"/>
+                <edc:SFRFieldSemantic edc:cname="CENTER_VALUE" edc:desc="Center value" edc:when="(field &amp; 0xF) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="VOLTAGE_STEP_UP" edc:desc="Voltage step up" edc:when="(field &amp; 0xF) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="VOLTAGE_STEP_DOWN" edc:desc="Voltage step down" edc:when="(field &amp; 0xF) == 8"/>
+                <edc:SFRFieldSemantic edc:cname="SETTING_FOR_HIGHEST_VOLTAGE" edc:desc="Setting for highest voltage" edc:when="(field &amp; 0xF) == 7"/>
+                <edc:SFRFieldSemantic edc:cname="SETTING_FOR_LOWEST_VOLTAGE" edc:desc="Setting for lowest voltage" edc:when="(field &amp; 0xF) == 15"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="Res" edc:desc="Reserved Bit" edc:nzwidth="0x1"/>
             </edc:SFRMode>
@@ -709,28 +709,28 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="EXINT">
               <edc:SFRFieldDef edc:cname="ISC0" edc:desc="External Interrupt 0 Sense Control Bit" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="THE_LOW_LEVEL_OF_INTN_GENERATES_AN_INTERRUPT_REQUEST" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="THE_FALLING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="THE_RISING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ISC1" edc:desc="External Interrupt 1 Sense Control Bit" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="THE_LOW_LEVEL_OF_INTN_GENERATES_AN_INTERRUPT_REQUEST" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="THE_FALLING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="THE_RISING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ISC2" edc:desc="External Interrupt 2 Sense Control Bit" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="THE_LOW_LEVEL_OF_INTN_GENERATES_AN_INTERRUPT_REQUEST" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="THE_FALLING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="THE_RISING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ISC3" edc:desc="External Interrupt 3 Sense Control Bit" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="THE_LOW_LEVEL_OF_INTN_GENERATES_AN_INTERRUPT_REQUEST" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="THE_FALLING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="THE_RISING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -739,28 +739,28 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="EXINT">
               <edc:SFRFieldDef edc:cname="ISC4" edc:desc="External Interrupt 4 Sense Control Bit" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="THE_LOW_LEVEL_OF_INTN_GENERATES_AN_INTERRUPT_REQUEST" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="THE_FALLING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="THE_RISING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ISC5" edc:desc="External Interrupt 5 Sense Control Bit" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="THE_LOW_LEVEL_OF_INTN_GENERATES_AN_INTERRUPT_REQUEST" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="THE_FALLING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="THE_RISING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ISC6" edc:desc="External Interrupt 6 Sense Control Bit" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="THE_LOW_LEVEL_OF_INTN_GENERATES_AN_INTERRUPT_REQUEST" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="THE_FALLING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="THE_RISING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ISC7" edc:desc="External Interrupt 7 Sense Control Bit" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="THE_LOW_LEVEL_OF_INTN_GENERATES_AN_INTERRUPT_REQUEST" edc:desc="The low level of INTn generates an interrupt request." edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="Any edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="THE_FALLING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The falling edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="THE_RISING_EDGE_OF_INTN_GENERATES_ASYNCHRONOUSLY_AN_INTERRUPT_REQUEST" edc:desc="The rising edge of INTn generates asynchronously an interrupt request." edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -859,10 +859,10 @@
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="FLASH">
               <edc:AdjustPoint edc:offset="0x4"/>
               <edc:SFRFieldDef edc:cname="AEAM" edc:desc="Address for Extended Address Mode of Extra Rows" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Factory Row" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="User Row 1" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="User Row 2" edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="User Row 3" edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="FACTORY_ROW" edc:desc="Factory Row" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="USER_ROW_1" edc:desc="User Row 1" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="USER_ROW_2" edc:desc="User Row 2" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="USER_ROW_3" edc:desc="User Row 3" edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ENEAM" edc:desc="Enable Extended Address Mode for Extra Rows" edc:nzwidth="0x1"/>
             </edc:SFRMode>
@@ -873,20 +873,20 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="ADC">
               <edc:SFRFieldDef edc:cname="ADSUT" edc:desc="ADC Start-up Time" edc:nzwidth="0x5">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="3 ADC clock cycles" edc:when="(field &amp; 0x1F) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="7 ADC clock cycles" edc:when="(field &amp; 0x1F) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="11 ADC clock cycles" edc:when="(field &amp; 0x1F) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="15 ADC clock cycles" edc:when="(field &amp; 0x1F) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="..." edc:when="(field &amp; 0x1F) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x3E" edc:desc="251 ADC clock cycles" edc:when="(field &amp; 0x1F) == 0x3E"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x3F" edc:desc="255 ADC clock cycles" edc:when="(field &amp; 0x1F) == 0x3F"/>
+                <edc:SFRFieldSemantic edc:cname="3_ADC_CLOCK_CYCLES" edc:desc="3 ADC clock cycles" edc:when="(field &amp; 0x1F) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="7_ADC_CLOCK_CYCLES" edc:desc="7 ADC clock cycles" edc:when="(field &amp; 0x1F) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="11_ADC_CLOCK_CYCLES" edc:desc="11 ADC clock cycles" edc:when="(field &amp; 0x1F) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="15_ADC_CLOCK_CYCLES" edc:desc="15 ADC clock cycles" edc:when="(field &amp; 0x1F) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="..." edc:when="(field &amp; 0x1F) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="251_ADC_CLOCK_CYCLES" edc:desc="251 ADC clock cycles" edc:when="(field &amp; 0x1F) == 0x3E"/>
+                <edc:SFRFieldSemantic edc:cname="255_ADC_CLOCK_CYCLES" edc:desc="255 ADC clock cycles" edc:when="(field &amp; 0x1F) == 0x3F"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="Res0" edc:desc="Reserved" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="ADTHT" edc:desc="ADC Track-and-Hold Time" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Single ended: 1, differential 3 ADC clock cycles" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Single ended: 2, differential 5 ADC clock cycles" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Single ended: 3, differential 7 ADC clock cycles" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Single ended: 4, differential 9 ADC clock cycles" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="SINGLE_ENDED_1_DIFFERENTIAL_3_ADC_CLOCK_CYCLES" edc:desc="Single ended: 1, differential 3 ADC clock cycles" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="SINGLE_ENDED_2_DIFFERENTIAL_5_ADC_CLOCK_CYCLES" edc:desc="Single ended: 2, differential 5 ADC clock cycles" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="SINGLE_ENDED_3_DIFFERENTIAL_7_ADC_CLOCK_CYCLES" edc:desc="Single ended: 3, differential 7 ADC clock cycles" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="SINGLE_ENDED_4_DIFFERENTIAL_9_ADC_CLOCK_CYCLES" edc:desc="Single ended: 4, differential 9 ADC clock cycles" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -896,14 +896,14 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="ADC">
               <edc:SFRFieldDef edc:cname="ADPS" edc:desc="ADC  Prescaler Select Bits" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="2" edc:when="(field &amp; 0x7) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="2" edc:when="(field &amp; 0x7) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="4" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="8" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="16" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="32" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="64" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="128" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="2" edc:desc="2" edc:when="(field &amp; 0x7) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="2" edc:desc="2" edc:when="(field &amp; 0x7) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="4" edc:desc="4" edc:when="(field &amp; 0x7) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="8" edc:desc="8" edc:when="(field &amp; 0x7) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="16" edc:desc="16" edc:when="(field &amp; 0x7) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="32" edc:desc="32" edc:when="(field &amp; 0x7) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="64" edc:desc="64" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="128" edc:desc="128" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ADIE" edc:desc="ADC Interrupt Enable" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="ADIF" edc:desc="ADC Interrupt Flag" edc:nzwidth="0x1"/>
@@ -921,14 +921,14 @@
             </edc:SFRMode>
             <edc:SFRMode edc:id="DS.1" ltx:memberofperipheral="ADC">
               <edc:SFRFieldDef edc:cname="ADTS" edc:desc="ADC Auto Trigger Source" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Free Running mode" edc:when="(field &amp; 0x7) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Analog Comparator" edc:when="(field &amp; 0x7) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="External Interrupt Request 0" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Timer/Counter0 Compare Match A" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Timer/Counter0 Overflow" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Timer/Counter1 Compare Match B" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Timer/Counter1 Overflow" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Timer/Counter1 Capture Event" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="FREE_RUNNING_MODE" edc:desc="Free Running mode" edc:when="(field &amp; 0x7) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANALOG_COMPARATOR" edc:desc="Analog Comparator" edc:when="(field &amp; 0x7) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="EXTERNAL_INTERRUPT_REQUEST_0" edc:desc="External Interrupt Request 0" edc:when="(field &amp; 0x7) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="TIMER_COUNTER0_COMPARE_MATCH_A" edc:desc="Timer/Counter0 Compare Match A" edc:when="(field &amp; 0x7) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="TIMER_COUNTER0_OVERFLOW" edc:desc="Timer/Counter0 Overflow" edc:when="(field &amp; 0x7) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="TIMER_COUNTER1_COMPARE_MATCH_B" edc:desc="Timer/Counter1 Compare Match B" edc:when="(field &amp; 0x7) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="TIMER_COUNTER1_OVERFLOW" edc:desc="Timer/Counter1 Overflow" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="TIMER_COUNTER1_CAPTURE_EVENT" edc:desc="Timer/Counter1 Capture Event" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="MUX5" edc:desc="Analog Channel and Gain Selection Bits" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="ACCH" edc:desc="Analog Channel Change" edc:nzwidth="0x1"/>
@@ -944,10 +944,10 @@
               <edc:SFRFieldDef edc:cname="MUX" edc:desc="Analog Channel and Gain Selection Bits" edc:nzwidth="0x5"/>
               <edc:SFRFieldDef edc:cname="ADLAR" edc:desc="ADC Left Adjust Result" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="REFS" edc:desc="Reference Selection Bits" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="AREF, Internal reference voltage generation turned off" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="AVDD with external capacitor at AREF pin" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Internal 1.5V Voltage Reference (no external capacitor at AREF pin)" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Internal 1.6V Voltage Reference (no external capacitor at AREF pin)" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="AREF_INTERNAL_REFERENCE_VOLTAGE_GENERATION_TURNED_OFF" edc:desc="AREF, Internal reference voltage generation turned off" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="AVDD_WITH_EXTERNAL_CAPACITOR_AT_AREF_PIN" edc:desc="AVDD with external capacitor at AREF pin" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="INTERNAL_1_5V_VOLTAGE_REFERENCE_NO_EXTERNAL_CAPACITOR_AT_AREF_PIN" edc:desc="Internal 1.5V Voltage Reference (no external capacitor at AREF pin)" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="INTERNAL_1_6V_VOLTAGE_REFERENCE_NO_EXTERNAL_CAPACITOR_AT_AREF_PIN" edc:desc="Internal 1.6V Voltage Reference (no external capacitor at AREF pin)" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -992,40 +992,40 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC1">
               <edc:SFRFieldDef edc:cname="WGM1" edc:desc="Waveform Generation Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x1" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x2" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x3" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x4" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x5" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x6" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x7" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x8" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x9" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xA" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xB" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xC" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xD" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xE" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xF" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_MODE_OF_OPERATION" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_8_BIT" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_9_BIT" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_10_BIT" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_8_BIT" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_9_BIT" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_10_BIT" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_ICRN" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_ICRN" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_ICRN" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_OCRNA" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="COM1C" edc:desc="Compare Output Mode for Channel C" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal port operation, OCnA/OCnB/OCnC disconnected." edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Toggle OCnA/OCnB/OCnC on Compare Match." edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Clear OCnA/OCnB/OCnC on Compare Match (set output to low level)." edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Set OCnA/OCnB/OCnC on Compare Match (set output to high level)." edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_PORT_OPERATION_OCNA_OCNB_OCNC_DISCONNECTED" edc:desc="Normal port operation, OCnA/OCnB/OCnC disconnected." edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="TOGGLE_OCNA_OCNB_OCNC_ON_COMPARE_MATCH" edc:desc="Toggle OCnA/OCnB/OCnC on Compare Match." edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="CLEAR_OCNA_OCNB_OCNC_ON_COMPARE_MATCH_SET_OUTPUT_TO_LOW_LEVEL" edc:desc="Clear OCnA/OCnB/OCnC on Compare Match (set output to low level)." edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="SET_OCNA_OCNB_OCNC_ON_COMPARE_MATCH_SET_OUTPUT_TO_HIGH_LEVEL" edc:desc="Set OCnA/OCnB/OCnC on Compare Match (set output to high level)." edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="COM1B" edc:desc="Compare Output Mode for Channel B" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal port operation, OCnA/OCnB/OCnC disconnected." edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Toggle OCnA/OCnB/OCnC on Compare Match." edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Clear OCnA/OCnB/OCnC on Compare Match (set output to low level)." edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Set OCnA/OCnB/OCnC on Compare Match (set output to high level)." edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_PORT_OPERATION_OCNA_OCNB_OCNC_DISCONNECTED" edc:desc="Normal port operation, OCnA/OCnB/OCnC disconnected." edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="TOGGLE_OCNA_OCNB_OCNC_ON_COMPARE_MATCH" edc:desc="Toggle OCnA/OCnB/OCnC on Compare Match." edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="CLEAR_OCNA_OCNB_OCNC_ON_COMPARE_MATCH_SET_OUTPUT_TO_LOW_LEVEL" edc:desc="Clear OCnA/OCnB/OCnC on Compare Match (set output to low level)." edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="SET_OCNA_OCNB_OCNC_ON_COMPARE_MATCH_SET_OUTPUT_TO_HIGH_LEVEL" edc:desc="Set OCnA/OCnB/OCnC on Compare Match (set output to high level)." edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="COM1A" edc:desc="Compare Output Mode for Channel A" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal port operation, OCnA/OCnB/OCnC disconnected." edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Toggle OCnA/OCnB/OCnC on Compare Match." edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Clear OCnA/OCnB/OCnC on Compare Match (set output to low level)." edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Set OCnA/OCnB/OCnC on Compare Match (set output to high level)." edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_PORT_OPERATION_OCNA_OCNB_OCNC_DISCONNECTED" edc:desc="Normal port operation, OCnA/OCnB/OCnC disconnected." edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="TOGGLE_OCNA_OCNB_OCNC_ON_COMPARE_MATCH" edc:desc="Toggle OCnA/OCnB/OCnC on Compare Match." edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="CLEAR_OCNA_OCNB_OCNC_ON_COMPARE_MATCH_SET_OUTPUT_TO_LOW_LEVEL" edc:desc="Clear OCnA/OCnB/OCnC on Compare Match (set output to low level)." edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="SET_OCNA_OCNB_OCNC_ON_COMPARE_MATCH_SET_OUTPUT_TO_HIGH_LEVEL" edc:desc="Set OCnA/OCnB/OCnC on Compare Match (set output to high level)." edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -1034,32 +1034,32 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC1">
               <edc:SFRFieldDef edc:cname="CS1" edc:desc="Clock Select" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No clock source (Timer/Counter stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="clk_IO/1 (no prescaling)" edc:when="(field &amp; 0x7) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="clk_IO/8 (from prescaler)" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="clk_IO/64 (from prescaler)" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="clk_IO/256 (from prescaler)" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="clk_IO/1024 (from prescaler)" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="External clock source on Tn pin, clock on falling edge" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="External clock source on Tn pin, clock on rising edge" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="NO_CLOCK_SOURCE_TIMER_COUNTER_STOPPED" edc:desc="No clock source (Timer/Counter stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_1_NO_PRESCALING" edc:desc="clk_IO/1 (no prescaling)" edc:when="(field &amp; 0x7) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_8_FROM_PRESCALER" edc:desc="clk_IO/8 (from prescaler)" edc:when="(field &amp; 0x7) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_64_FROM_PRESCALER" edc:desc="clk_IO/64 (from prescaler)" edc:when="(field &amp; 0x7) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_256_FROM_PRESCALER" edc:desc="clk_IO/256 (from prescaler)" edc:when="(field &amp; 0x7) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_1024_FROM_PRESCALER" edc:desc="clk_IO/1024 (from prescaler)" edc:when="(field &amp; 0x7) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="EXTERNAL_CLOCK_SOURCE_ON_TN_PIN_CLOCK_ON_FALLING_EDGE" edc:desc="External clock source on Tn pin, clock on falling edge" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="EXTERNAL_CLOCK_SOURCE_ON_TN_PIN_CLOCK_ON_RISING_EDGE" edc:desc="External clock source on Tn pin, clock on rising edge" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="WGM1" edc:desc="Waveform Generation Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x1" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x2" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x3" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x4" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x5" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x6" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x7" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x8" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x9" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xA" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xB" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xC" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xD" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xE" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xF" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_MODE_OF_OPERATION" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_8_BIT" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_9_BIT" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_10_BIT" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_8_BIT" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_9_BIT" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_10_BIT" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_ICRN" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_ICRN" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_ICRN" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_OCRNA" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="Res" edc:desc="Reserved Bit" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="ICES1" edc:desc="Input Capture 1 Edge Select" edc:nzwidth="0x1"/>
@@ -1088,40 +1088,40 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC3">
               <edc:SFRFieldDef edc:cname="WGM3" edc:desc="Waveform Generation Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x1" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x2" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x3" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x4" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x5" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x6" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x7" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x8" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x9" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xA" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xB" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xC" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xD" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xE" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xF" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_MODE_OF_OPERATION" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_8_BIT" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_9_BIT" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_10_BIT" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_8_BIT" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_9_BIT" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_10_BIT" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_ICRN" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_ICRN" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_ICRN" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_OCRNA" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="COM3C" edc:desc="Compare Output Mode for Channel C" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal port operation, OCnA/OCnB/OCnC disconnected." edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Toggle OCnA/OCnB/OCnC on Compare Match." edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Clear OCnA/OCnB/OCnC on Compare Match (set output to low level)." edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Set OCnA/OCnB/OCnC on Compare Match (set output to high level)." edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_PORT_OPERATION_OCNA_OCNB_OCNC_DISCONNECTED" edc:desc="Normal port operation, OCnA/OCnB/OCnC disconnected." edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="TOGGLE_OCNA_OCNB_OCNC_ON_COMPARE_MATCH" edc:desc="Toggle OCnA/OCnB/OCnC on Compare Match." edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="CLEAR_OCNA_OCNB_OCNC_ON_COMPARE_MATCH_SET_OUTPUT_TO_LOW_LEVEL" edc:desc="Clear OCnA/OCnB/OCnC on Compare Match (set output to low level)." edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="SET_OCNA_OCNB_OCNC_ON_COMPARE_MATCH_SET_OUTPUT_TO_HIGH_LEVEL" edc:desc="Set OCnA/OCnB/OCnC on Compare Match (set output to high level)." edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="COM3B" edc:desc="Compare Output Mode for Channel B" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal port operation, OCnA/OCnB/OCnC disconnected." edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Toggle OCnA/OCnB/OCnC on Compare Match." edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Clear OCnA/OCnB/OCnC on Compare Match (set output to low level)." edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Set OCnA/OCnB/OCnC on Compare Match (set output to high level)." edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_PORT_OPERATION_OCNA_OCNB_OCNC_DISCONNECTED" edc:desc="Normal port operation, OCnA/OCnB/OCnC disconnected." edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="TOGGLE_OCNA_OCNB_OCNC_ON_COMPARE_MATCH" edc:desc="Toggle OCnA/OCnB/OCnC on Compare Match." edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="CLEAR_OCNA_OCNB_OCNC_ON_COMPARE_MATCH_SET_OUTPUT_TO_LOW_LEVEL" edc:desc="Clear OCnA/OCnB/OCnC on Compare Match (set output to low level)." edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="SET_OCNA_OCNB_OCNC_ON_COMPARE_MATCH_SET_OUTPUT_TO_HIGH_LEVEL" edc:desc="Set OCnA/OCnB/OCnC on Compare Match (set output to high level)." edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="COM3A" edc:desc="Compare Output Mode for Channel A" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal port operation, OCnA/OCnB/OCnC disconnected." edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Toggle OCnA/OCnB/OCnC on Compare Match." edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Clear OCnA/OCnB/OCnC on Compare Match (set output to low level)." edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Set OCnA/OCnB/OCnC on Compare Match (set output to high level)." edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_PORT_OPERATION_OCNA_OCNB_OCNC_DISCONNECTED" edc:desc="Normal port operation, OCnA/OCnB/OCnC disconnected." edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="TOGGLE_OCNA_OCNB_OCNC_ON_COMPARE_MATCH" edc:desc="Toggle OCnA/OCnB/OCnC on Compare Match." edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="CLEAR_OCNA_OCNB_OCNC_ON_COMPARE_MATCH_SET_OUTPUT_TO_LOW_LEVEL" edc:desc="Clear OCnA/OCnB/OCnC on Compare Match (set output to low level)." edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="SET_OCNA_OCNB_OCNC_ON_COMPARE_MATCH_SET_OUTPUT_TO_HIGH_LEVEL" edc:desc="Set OCnA/OCnB/OCnC on Compare Match (set output to high level)." edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -1130,32 +1130,32 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC3">
               <edc:SFRFieldDef edc:cname="CS3" edc:desc="Clock Select" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No clock source (Timer/Counter stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="clk_IO/1 (no prescaling)" edc:when="(field &amp; 0x7) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="clk_IO/8 (from prescaler)" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="clk_IO/64 (from prescaler)" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="clk_IO/256 (from prescaler)" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="clk_IO/1024 (from prescaler)" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="External clock source on Tn pin, clock on falling edge" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="External clock source on Tn pin, clock on rising edge" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="NO_CLOCK_SOURCE_TIMER_COUNTER_STOPPED" edc:desc="No clock source (Timer/Counter stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_1_NO_PRESCALING" edc:desc="clk_IO/1 (no prescaling)" edc:when="(field &amp; 0x7) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_8_FROM_PRESCALER" edc:desc="clk_IO/8 (from prescaler)" edc:when="(field &amp; 0x7) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_64_FROM_PRESCALER" edc:desc="clk_IO/64 (from prescaler)" edc:when="(field &amp; 0x7) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_256_FROM_PRESCALER" edc:desc="clk_IO/256 (from prescaler)" edc:when="(field &amp; 0x7) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_1024_FROM_PRESCALER" edc:desc="clk_IO/1024 (from prescaler)" edc:when="(field &amp; 0x7) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="EXTERNAL_CLOCK_SOURCE_ON_TN_PIN_CLOCK_ON_FALLING_EDGE" edc:desc="External clock source on Tn pin, clock on falling edge" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="EXTERNAL_CLOCK_SOURCE_ON_TN_PIN_CLOCK_ON_RISING_EDGE" edc:desc="External clock source on Tn pin, clock on rising edge" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="WGM3" edc:desc="Waveform Generation Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x1" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x2" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x3" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x4" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x5" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x6" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x7" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x8" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x9" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xA" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xB" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xC" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xD" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xE" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xF" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_MODE_OF_OPERATION" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_8_BIT" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_9_BIT" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_10_BIT" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_8_BIT" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_9_BIT" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_10_BIT" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_ICRN" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_ICRN" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_ICRN" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_OCRNA" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="Res" edc:desc="Reserved Bit" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="ICES3" edc:desc="Input Capture 3 Edge Select" edc:nzwidth="0x1"/>
@@ -1184,40 +1184,40 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC4">
               <edc:SFRFieldDef edc:cname="WGM4" edc:desc="Waveform Generation Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x1" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x2" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x3" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x4" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x5" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x6" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x7" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x8" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x9" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xA" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xB" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xC" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xD" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xE" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xF" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_MODE_OF_OPERATION" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_8_BIT" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_9_BIT" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_10_BIT" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_8_BIT" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_9_BIT" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_10_BIT" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_ICRN" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_ICRN" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_ICRN" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_OCRNA" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="COM4C" edc:desc="Compare Output Mode for Channel C" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal operation" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_OPERATION" edc:desc="Normal operation" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="COM4B" edc:desc="Compare Output Mode for Channel B" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal operation" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_OPERATION" edc:desc="Normal operation" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="COM4A" edc:desc="Compare Output Mode for Channel A" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal operation" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_OPERATION" edc:desc="Normal operation" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -1226,32 +1226,32 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC4">
               <edc:SFRFieldDef edc:cname="CS4" edc:desc="Clock Select" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No clock source (Timer/Counter stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="clk_IO/1 (no prescaling)" edc:when="(field &amp; 0x7) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="clk_IO/8 (from prescaler)" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="clk_IO/64 (from prescaler)" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="clk_IO/256 (from prescaler)" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="clk_IO/1024 (from prescaler)" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Reserved" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Reserved" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="NO_CLOCK_SOURCE_TIMER_COUNTER_STOPPED" edc:desc="No clock source (Timer/Counter stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_1_NO_PRESCALING" edc:desc="clk_IO/1 (no prescaling)" edc:when="(field &amp; 0x7) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_8_FROM_PRESCALER" edc:desc="clk_IO/8 (from prescaler)" edc:when="(field &amp; 0x7) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_64_FROM_PRESCALER" edc:desc="clk_IO/64 (from prescaler)" edc:when="(field &amp; 0x7) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_256_FROM_PRESCALER" edc:desc="clk_IO/256 (from prescaler)" edc:when="(field &amp; 0x7) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_1024_FROM_PRESCALER" edc:desc="clk_IO/1024 (from prescaler)" edc:when="(field &amp; 0x7) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="WGM4" edc:desc="Waveform Generation Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x1" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x2" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x3" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x4" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x5" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x6" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x7" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x8" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x9" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xA" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xB" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xC" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xD" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xE" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xF" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_MODE_OF_OPERATION" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_8_BIT" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_9_BIT" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_10_BIT" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_8_BIT" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_9_BIT" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_10_BIT" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_ICRN" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_ICRN" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_ICRN" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_OCRNA" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="Res" edc:desc="Reserved Bit" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="ICES4" edc:desc="Input Capture 4 Edge Select" edc:nzwidth="0x1"/>
@@ -1280,27 +1280,27 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC2">
               <edc:SFRFieldDef edc:cname="WGM2" edc:desc="Waveform Generation Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x1" edc:desc="PWM, phase correct, TOP=0xFF" edc:when="(field &amp; 0x3) == 0x1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x2" edc:desc="CTC, TOP = OCRA" edc:when="(field &amp; 0x3) == 0x2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x3" edc:desc="Fast PWM, TOP=0xFF" edc:when="(field &amp; 0x3) == 0x3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x4" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x5" edc:desc="PWM, Phase correct, TOP = OCRA" edc:when="(field &amp; 0x3) == 0x5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x6" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x7" edc:desc="Fast PWM, TOP=OCRA" edc:when="(field &amp; 0x3) == 0x7"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_MODE_OF_OPERATION" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_0XFF" edc:desc="PWM, phase correct, TOP=0xFF" edc:when="(field &amp; 0x3) == 0x1"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRA" edc:desc="CTC, TOP = OCRA" edc:when="(field &amp; 0x3) == 0x2"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_0XFF" edc:desc="Fast PWM, TOP=0xFF" edc:when="(field &amp; 0x3) == 0x3"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x4"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_OCRA" edc:desc="PWM, Phase correct, TOP = OCRA" edc:when="(field &amp; 0x3) == 0x5"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x6"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_OCRA" edc:desc="Fast PWM, TOP=OCRA" edc:when="(field &amp; 0x3) == 0x7"/>
               </edc:SFRFieldDef>
               <edc:AdjustPoint edc:offset="0x2"/>
               <edc:SFRFieldDef edc:cname="COM2B" edc:desc="Compare Match Output B Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal port operation, OC2B disconnected" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Toggle OC2B on Compare Match" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Clear OC2B on Compare Match" edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Set OC2B on Compare Match" edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_PORT_OPERATION_OC2B_DISCONNECTED" edc:desc="Normal port operation, OC2B disconnected" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="TOGGLE_OC2B_ON_COMPARE_MATCH" edc:desc="Toggle OC2B on Compare Match" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="CLEAR_OC2B_ON_COMPARE_MATCH" edc:desc="Clear OC2B on Compare Match" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="SET_OC2B_ON_COMPARE_MATCH" edc:desc="Set OC2B on Compare Match" edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="COM2A" edc:desc="Compare Match Output A Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal port operation, OC2A disconnected" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Toggle OC2A on Compare Match" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Clear OC2A on Compare Match" edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Set OC2A on Compare Match" edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_PORT_OPERATION_OC2A_DISCONNECTED" edc:desc="Normal port operation, OC2A disconnected" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="TOGGLE_OC2A_ON_COMPARE_MATCH" edc:desc="Toggle OC2A on Compare Match" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="CLEAR_OC2A_ON_COMPARE_MATCH" edc:desc="Clear OC2A on Compare Match" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="SET_OC2A_ON_COMPARE_MATCH" edc:desc="Set OC2A on Compare Match" edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -1309,14 +1309,14 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC2">
               <edc:SFRFieldDef edc:cname="CS2" edc:desc="Clock Select" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No clock source (Timer/Counter2 stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="clk_T2S/1 (no prescaling)" edc:when="(field &amp; 0x7) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="clk_T2S/8 (from prescaler)" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="clk_T2S/32 (from prescaler)" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="clk_T2S/64 (from prescaler)" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="clk_T2S/128 (from prescaler)" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="clk_T2S/256 (from prescaler)" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="clk_T2S/1024 (from prescaler)" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="NO_CLOCK_SOURCE_TIMER_COUNTER2_STOPPED" edc:desc="No clock source (Timer/Counter2 stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_T2S_1_NO_PRESCALING" edc:desc="clk_T2S/1 (no prescaling)" edc:when="(field &amp; 0x7) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_T2S_8_FROM_PRESCALER" edc:desc="clk_T2S/8 (from prescaler)" edc:when="(field &amp; 0x7) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_T2S_32_FROM_PRESCALER" edc:desc="clk_T2S/32 (from prescaler)" edc:when="(field &amp; 0x7) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_T2S_64_FROM_PRESCALER" edc:desc="clk_T2S/64 (from prescaler)" edc:when="(field &amp; 0x7) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_T2S_128_FROM_PRESCALER" edc:desc="clk_T2S/128 (from prescaler)" edc:when="(field &amp; 0x7) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_T2S_256_FROM_PRESCALER" edc:desc="clk_T2S/256 (from prescaler)" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_T2S_1024_FROM_PRESCALER" edc:desc="clk_T2S/1024 (from prescaler)" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="WGM22" edc:desc="Waveform Generation Mode" edc:nzwidth="0x1"/>
               <edc:AdjustPoint edc:offset="0x2"/>
@@ -1349,40 +1349,40 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TWI">
               <edc:SFRFieldDef edc:cname="TWPS" edc:desc="TWI Prescaler Bits" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="1" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="4" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="16" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="64" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="1" edc:desc="1" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="4" edc:desc="4" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="16" edc:desc="16" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="64" edc:desc="64" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="Res" edc:desc="Reserved Bit" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="TWS" edc:desc="TWI Status" edc:nzwidth="0x5">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Bus error due to illegal START or STOP condition." edc:when="(field &amp; 0x1F) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="A START condition has been transmitted." edc:when="(field &amp; 0x1F) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x10" edc:desc="A repeated START condition has been transmitted." edc:when="(field &amp; 0x1F) == 0x10"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x18" edc:desc="SLA+W has been transmitted; ACK has been received." edc:when="(field &amp; 0x1F) == 0x18"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x20" edc:desc="SLA+W has been transmitted; NOT ACK has been received." edc:when="(field &amp; 0x1F) == 0x20"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x28" edc:desc="Data byte has been transmitted; ACK has been received." edc:when="(field &amp; 0x1F) == 0x28"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x30" edc:desc="Data byte has been transmitted; NOT ACK has been received." edc:when="(field &amp; 0x1F) == 0x30"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x38" edc:desc="Arbitration lost in SLA+W or data bytes (Transmitter); Arbitration lost in SLA+R or NOT ACK bit (Receiver)." edc:when="(field &amp; 0x1F) == 0x38"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x40" edc:desc="SLA+R has been transmitted; ACK has been received." edc:when="(field &amp; 0x1F) == 0x40"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x48" edc:desc="SLA+R has been transmitted; NOT ACK has been received." edc:when="(field &amp; 0x1F) == 0x48"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x50" edc:desc="Data byte has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0x50"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x58" edc:desc="Data byte has been received; NOT ACK has been returned." edc:when="(field &amp; 0x1F) == 0x58"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x60" edc:desc="Own SLA+W has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0x60"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x68" edc:desc="Arbitration lost in SLA+R/W as Master; own SLA+W has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0x68"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x70" edc:desc="General call address has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0x70"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x78" edc:desc="Arbitration lost in SLA+R/W as Master; general call address has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0x78"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x80" edc:desc="Previously addressed with own SLA+W; data has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0x80"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x88" edc:desc="Previously addressed with own SLA+W; data has been received; NOT ACK has been returned." edc:when="(field &amp; 0x1F) == 0x88"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x90" edc:desc="Previously addressed with general call; data has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0x90"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x98" edc:desc="Previously addressed with general call; data has been received; NOT ACK has been returned." edc:when="(field &amp; 0x1F) == 0x98"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xA0" edc:desc="A STOP condition or repeated START condition has been received while still addressed as Slave." edc:when="(field &amp; 0x1F) == 0xA0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xA8" edc:desc="Own SLA+R has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0xA8"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xB0" edc:desc="Arbitration lost in SLA+R/W as Master; own SLA+R has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0xB0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xB8" edc:desc="Data byte in TWDR has been transmitted; ACK has been received." edc:when="(field &amp; 0x1F) == 0xB8"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xC0" edc:desc="Data byte in TWDR has been transmitted; NO ACK has been received." edc:when="(field &amp; 0x1F) == 0xC0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xC8" edc:desc="Last data byte in TWDR has been transmitted (TWEA = 0); ACK has been received." edc:when="(field &amp; 0x1F) == 0xC8"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xF8" edc:desc="No relevant state information available; TWINT = 0." edc:when="(field &amp; 0x1F) == 0xF8"/>
+                <edc:SFRFieldSemantic edc:cname="BUS_ERROR_DUE_TO_ILLEGAL_START_OR_STOP_CONDITION" edc:desc="Bus error due to illegal START or STOP condition." edc:when="(field &amp; 0x1F) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="A_START_CONDITION_HAS_BEEN_TRANSMITTED" edc:desc="A START condition has been transmitted." edc:when="(field &amp; 0x1F) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="A_REPEATED_START_CONDITION_HAS_BEEN_TRANSMITTED" edc:desc="A repeated START condition has been transmitted." edc:when="(field &amp; 0x1F) == 0x10"/>
+                <edc:SFRFieldSemantic edc:cname="SLA_W_HAS_BEEN_TRANSMITTED_ACK_HAS_BEEN_RECEIVED" edc:desc="SLA+W has been transmitted; ACK has been received." edc:when="(field &amp; 0x1F) == 0x18"/>
+                <edc:SFRFieldSemantic edc:cname="SLA_W_HAS_BEEN_TRANSMITTED_NOT_ACK_HAS_BEEN_RECEIVED" edc:desc="SLA+W has been transmitted; NOT ACK has been received." edc:when="(field &amp; 0x1F) == 0x20"/>
+                <edc:SFRFieldSemantic edc:cname="DATA_BYTE_HAS_BEEN_TRANSMITTED_ACK_HAS_BEEN_RECEIVED" edc:desc="Data byte has been transmitted; ACK has been received." edc:when="(field &amp; 0x1F) == 0x28"/>
+                <edc:SFRFieldSemantic edc:cname="DATA_BYTE_HAS_BEEN_TRANSMITTED_NOT_ACK_HAS_BEEN_RECEIVED" edc:desc="Data byte has been transmitted; NOT ACK has been received." edc:when="(field &amp; 0x1F) == 0x30"/>
+                <edc:SFRFieldSemantic edc:cname="ARBITRATION_LOST_IN_SLA_W_OR_DATA_BYTES_TRANSMITTER_ARBITRATION_LOST_IN_SLA_R_OR_NOT_ACK_BIT_RECEIVER" edc:desc="Arbitration lost in SLA+W or data bytes (Transmitter); Arbitration lost in SLA+R or NOT ACK bit (Receiver)." edc:when="(field &amp; 0x1F) == 0x38"/>
+                <edc:SFRFieldSemantic edc:cname="SLA_R_HAS_BEEN_TRANSMITTED_ACK_HAS_BEEN_RECEIVED" edc:desc="SLA+R has been transmitted; ACK has been received." edc:when="(field &amp; 0x1F) == 0x40"/>
+                <edc:SFRFieldSemantic edc:cname="SLA_R_HAS_BEEN_TRANSMITTED_NOT_ACK_HAS_BEEN_RECEIVED" edc:desc="SLA+R has been transmitted; NOT ACK has been received." edc:when="(field &amp; 0x1F) == 0x48"/>
+                <edc:SFRFieldSemantic edc:cname="DATA_BYTE_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" edc:desc="Data byte has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0x50"/>
+                <edc:SFRFieldSemantic edc:cname="DATA_BYTE_HAS_BEEN_RECEIVED_NOT_ACK_HAS_BEEN_RETURNED" edc:desc="Data byte has been received; NOT ACK has been returned." edc:when="(field &amp; 0x1F) == 0x58"/>
+                <edc:SFRFieldSemantic edc:cname="OWN_SLA_W_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" edc:desc="Own SLA+W has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0x60"/>
+                <edc:SFRFieldSemantic edc:cname="ARBITRATION_LOST_IN_SLA_R_W_AS_MASTER_OWN_SLA_W_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" edc:desc="Arbitration lost in SLA+R/W as Master; own SLA+W has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0x68"/>
+                <edc:SFRFieldSemantic edc:cname="GENERAL_CALL_ADDRESS_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" edc:desc="General call address has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0x70"/>
+                <edc:SFRFieldSemantic edc:cname="ARBITRATION_LOST_IN_SLA_R_W_AS_MASTER_GENERAL_CALL_ADDRESS_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" edc:desc="Arbitration lost in SLA+R/W as Master; general call address has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0x78"/>
+                <edc:SFRFieldSemantic edc:cname="PREVIOUSLY_ADDRESSED_WITH_OWN_SLA_W_DATA_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" edc:desc="Previously addressed with own SLA+W; data has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0x80"/>
+                <edc:SFRFieldSemantic edc:cname="PREVIOUSLY_ADDRESSED_WITH_OWN_SLA_W_DATA_HAS_BEEN_RECEIVED_NOT_ACK_HAS_BEEN_RETURNED" edc:desc="Previously addressed with own SLA+W; data has been received; NOT ACK has been returned." edc:when="(field &amp; 0x1F) == 0x88"/>
+                <edc:SFRFieldSemantic edc:cname="PREVIOUSLY_ADDRESSED_WITH_GENERAL_CALL_DATA_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" edc:desc="Previously addressed with general call; data has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0x90"/>
+                <edc:SFRFieldSemantic edc:cname="PREVIOUSLY_ADDRESSED_WITH_GENERAL_CALL_DATA_HAS_BEEN_RECEIVED_NOT_ACK_HAS_BEEN_RETURNED" edc:desc="Previously addressed with general call; data has been received; NOT ACK has been returned." edc:when="(field &amp; 0x1F) == 0x98"/>
+                <edc:SFRFieldSemantic edc:cname="A_STOP_CONDITION_OR_REPEATED_START_CONDITION_HAS_BEEN_RECEIVED_WHILE_STILL_ADDRESSED_AS_SLAVE" edc:desc="A STOP condition or repeated START condition has been received while still addressed as Slave." edc:when="(field &amp; 0x1F) == 0xA0"/>
+                <edc:SFRFieldSemantic edc:cname="OWN_SLA_R_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" edc:desc="Own SLA+R has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0xA8"/>
+                <edc:SFRFieldSemantic edc:cname="ARBITRATION_LOST_IN_SLA_R_W_AS_MASTER_OWN_SLA_R_HAS_BEEN_RECEIVED_ACK_HAS_BEEN_RETURNED" edc:desc="Arbitration lost in SLA+R/W as Master; own SLA+R has been received; ACK has been returned." edc:when="(field &amp; 0x1F) == 0xB0"/>
+                <edc:SFRFieldSemantic edc:cname="DATA_BYTE_IN_TWDR_HAS_BEEN_TRANSMITTED_ACK_HAS_BEEN_RECEIVED" edc:desc="Data byte in TWDR has been transmitted; ACK has been received." edc:when="(field &amp; 0x1F) == 0xB8"/>
+                <edc:SFRFieldSemantic edc:cname="DATA_BYTE_IN_TWDR_HAS_BEEN_TRANSMITTED_NO_ACK_HAS_BEEN_RECEIVED" edc:desc="Data byte in TWDR has been transmitted; NO ACK has been received." edc:when="(field &amp; 0x1F) == 0xC0"/>
+                <edc:SFRFieldSemantic edc:cname="LAST_DATA_BYTE_IN_TWDR_HAS_BEEN_TRANSMITTED_TWEA_0_ACK_HAS_BEEN_RECEIVED" edc:desc="Last data byte in TWDR has been transmitted (TWEA = 0); ACK has been received." edc:when="(field &amp; 0x1F) == 0xC8"/>
+                <edc:SFRFieldSemantic edc:cname="NO_RELEVANT_STATE_INFORMATION_AVAILABLE_TWINT_0" edc:desc="No relevant state information available; TWINT = 0." edc:when="(field &amp; 0x1F) == 0xF8"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -1488,34 +1488,34 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="USART0">
               <edc:SFRFieldDef edc:cname="UCPOL0" edc:desc="Clock Polarity" edc:nzwidth="0x1">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Rising XCKn Edge (Transmitted Data Changed), Falling XCKn Edge (Received Data Sampled)" edc:when="(field &amp; 0x1) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Falling XCKn Edge (Transmitted Data Changed), Rising XCKn Edge (Received Data Sampled)" edc:when="(field &amp; 0x1) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="RISING_XCKN_EDGE_TRANSMITTED_DATA_CHANGED_FALLING_XCKN_EDGE_RECEIVED_DATA_SAMPLED" edc:desc="Rising XCKn Edge (Transmitted Data Changed), Falling XCKn Edge (Received Data Sampled)" edc:when="(field &amp; 0x1) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="FALLING_XCKN_EDGE_TRANSMITTED_DATA_CHANGED_RISING_XCKN_EDGE_RECEIVED_DATA_SAMPLED" edc:desc="Falling XCKn Edge (Transmitted Data Changed), Rising XCKn Edge (Received Data Sampled)" edc:when="(field &amp; 0x1) == 1"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="UCSZ0" edc:desc="Character Size" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="5-bit" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="6-bit" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="7-bit" edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="8-bit" edc:when="(field &amp; 0x3) == 3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_4" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_5" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_6" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_7" edc:desc="9-bit" edc:when="(field &amp; 0x3) == 7"/>
+                <edc:SFRFieldSemantic edc:cname="5_BIT" edc:desc="5-bit" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="6_BIT" edc:desc="6-bit" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="7_BIT" edc:desc="7-bit" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="8_BIT" edc:desc="8-bit" edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 4"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 5"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 6"/>
+                <edc:SFRFieldSemantic edc:cname="9_BIT" edc:desc="9-bit" edc:when="(field &amp; 0x3) == 7"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="USBS0" edc:desc="Stop Bit Select" edc:nzwidth="0x1">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="1-bit" edc:when="(field &amp; 0x1) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="2-bit" edc:when="(field &amp; 0x1) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="1_BIT" edc:desc="1-bit" edc:when="(field &amp; 0x1) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="2_BIT" edc:desc="2-bit" edc:when="(field &amp; 0x1) == 0x01"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="UPM0" edc:desc="Parity Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Disabled" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Enabled, Even Parity" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Enabled, Odd Parity" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="DISABLED" edc:desc="Disabled" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="ENABLED_EVEN_PARITY" edc:desc="Enabled, Even Parity" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="ENABLED_ODD_PARITY" edc:desc="Enabled, Odd Parity" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="UMSEL0" edc:desc="USART Mode Select" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Asynchronous USART" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Synchronous USART" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Master SPI (MSPIM)" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="ASYNCHRONOUS_USART" edc:desc="Asynchronous USART" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="SYNCHRONOUS_USART" edc:desc="Synchronous USART" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="MASTER_SPI_MSPIM" edc:desc="Master SPI (MSPIM)" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
             <edc:SFRMode edc:id="DS.1" ltx:memberofperipheral="USART0_SPI">
@@ -1575,34 +1575,34 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="USART1">
               <edc:SFRFieldDef edc:cname="UCPOL1" edc:desc="Clock Polarity" edc:nzwidth="0x1">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Rising XCKn Edge (Transmitted Data Changed), Falling XCKn Edge (Received Data Sampled)" edc:when="(field &amp; 0x1) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Falling XCKn Edge (Transmitted Data Changed), Rising XCKn Edge (Received Data Sampled)" edc:when="(field &amp; 0x1) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="RISING_XCKN_EDGE_TRANSMITTED_DATA_CHANGED_FALLING_XCKN_EDGE_RECEIVED_DATA_SAMPLED" edc:desc="Rising XCKn Edge (Transmitted Data Changed), Falling XCKn Edge (Received Data Sampled)" edc:when="(field &amp; 0x1) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="FALLING_XCKN_EDGE_TRANSMITTED_DATA_CHANGED_RISING_XCKN_EDGE_RECEIVED_DATA_SAMPLED" edc:desc="Falling XCKn Edge (Transmitted Data Changed), Rising XCKn Edge (Received Data Sampled)" edc:when="(field &amp; 0x1) == 1"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="UCSZ1" edc:desc="Character Size" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="5-bit" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="6-bit" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="7-bit" edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="8-bit" edc:when="(field &amp; 0x3) == 3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_4" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_5" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_6" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_7" edc:desc="9-bit" edc:when="(field &amp; 0x3) == 7"/>
+                <edc:SFRFieldSemantic edc:cname="5_BIT" edc:desc="5-bit" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="6_BIT" edc:desc="6-bit" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="7_BIT" edc:desc="7-bit" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="8_BIT" edc:desc="8-bit" edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 4"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 5"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 6"/>
+                <edc:SFRFieldSemantic edc:cname="9_BIT" edc:desc="9-bit" edc:when="(field &amp; 0x3) == 7"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="USBS1" edc:desc="Stop Bit Select" edc:nzwidth="0x1">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="1-bit" edc:when="(field &amp; 0x1) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="2-bit" edc:when="(field &amp; 0x1) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="1_BIT" edc:desc="1-bit" edc:when="(field &amp; 0x1) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="2_BIT" edc:desc="2-bit" edc:when="(field &amp; 0x1) == 0x01"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="UPM1" edc:desc="Parity Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Disabled" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Enabled, Even Parity" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Enabled, Odd Parity" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="DISABLED" edc:desc="Disabled" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="ENABLED_EVEN_PARITY" edc:desc="Enabled, Even Parity" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="ENABLED_ODD_PARITY" edc:desc="Enabled, Odd Parity" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="UMSEL1" edc:desc="USART Mode Select" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Asynchronous USART" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Synchronous USART" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Master SPI (MSPIM)" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="ASYNCHRONOUS_USART" edc:desc="Asynchronous USART" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="SYNCHRONOUS_USART" edc:desc="Synchronous USART" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="MASTER_SPI_MSPIM" edc:desc="Master SPI (MSPIM)" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
             <edc:SFRMode edc:id="DS.1" ltx:memberofperipheral="USART1_SPI">
@@ -1648,19 +1648,19 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="SYMCNT">
               <edc:SFRFieldDef edc:cname="SCCS1" edc:desc="Symbol Counter Compare Source select register for Compare Units" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Compare Unit 1 Relative Compare Source = Beacon Timestamp Register" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Compare Unit 1 Relative Compare Source = Transmit Frame Timestamp Register" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Compare Unit 1 Relative Compare Source = Received Frame Timestamp Register" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="COMPARE_UNIT_1_RELATIVE_COMPARE_SOURCE_BEACON_TIMESTAMP_REGISTER" edc:desc="Compare Unit 1 Relative Compare Source = Beacon Timestamp Register" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="COMPARE_UNIT_1_RELATIVE_COMPARE_SOURCE_TRANSMIT_FRAME_TIMESTAMP_REGISTER" edc:desc="Compare Unit 1 Relative Compare Source = Transmit Frame Timestamp Register" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="COMPARE_UNIT_1_RELATIVE_COMPARE_SOURCE_RECEIVED_FRAME_TIMESTAMP_REGISTER" edc:desc="Compare Unit 1 Relative Compare Source = Received Frame Timestamp Register" edc:when="(field &amp; 0x3) == 2"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="SCCS2" edc:desc="Symbol Counter Compare Source select register for Compare Unit 2" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Compare Unit 2 Relative Compare Source = Beacon Timestamp Register" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Compare Unit 2 Relative Compare Source = Transmit Frame Timestamp Register" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Compare Unit 2 Relative Compare Source = Received Frame Timestamp Register" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="COMPARE_UNIT_2_RELATIVE_COMPARE_SOURCE_BEACON_TIMESTAMP_REGISTER" edc:desc="Compare Unit 2 Relative Compare Source = Beacon Timestamp Register" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="COMPARE_UNIT_2_RELATIVE_COMPARE_SOURCE_TRANSMIT_FRAME_TIMESTAMP_REGISTER" edc:desc="Compare Unit 2 Relative Compare Source = Transmit Frame Timestamp Register" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="COMPARE_UNIT_2_RELATIVE_COMPARE_SOURCE_RECEIVED_FRAME_TIMESTAMP_REGISTER" edc:desc="Compare Unit 2 Relative Compare Source = Received Frame Timestamp Register" edc:when="(field &amp; 0x3) == 2"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="SCCS3" edc:desc="Symbol Counter Compare Source select register for Compare Unit 3" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Compare Unit 3 Relative Compare Source = Beacon Timestamp Register" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Compare Unit 3 Relative Compare Source = Transmit Frame Timestamp Register" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Compare Unit 3 Relative Compare Source = Received Frame Timestamp Register" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="COMPARE_UNIT_3_RELATIVE_COMPARE_SOURCE_BEACON_TIMESTAMP_REGISTER" edc:desc="Compare Unit 3 Relative Compare Source = Beacon Timestamp Register" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="COMPARE_UNIT_3_RELATIVE_COMPARE_SOURCE_TRANSMIT_FRAME_TIMESTAMP_REGISTER" edc:desc="Compare Unit 3 Relative Compare Source = Transmit Frame Timestamp Register" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="COMPARE_UNIT_3_RELATIVE_COMPARE_SOURCE_RECEIVED_FRAME_TIMESTAMP_REGISTER" edc:desc="Compare Unit 3 Relative Compare Source = Received Frame Timestamp Register" edc:when="(field &amp; 0x3) == 2"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="Res" edc:desc="Reserved Bit" edc:nzwidth="0x2"/>
             </edc:SFRMode>
@@ -1684,13 +1684,13 @@
               <edc:SFRFieldDef edc:cname="SCENBO" edc:desc="Backoff Slot Counter enable" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="SCEECLK" edc:desc="Enable External Clock Source on PG2" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="SCCKDIV" edc:desc="Clock divider for synchronous clock source (16MHz Transceiver Clock)" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Transceiver Clock divided by 256, (62.5kHz)" edc:when="(field &amp; 0x7) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Transceiver Clock divided by 128, (125kHz)" edc:when="(field &amp; 0x7) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Transceiver Clock divided by 64,  (250kHz)" edc:when="(field &amp; 0x7) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Transceiver Clock divided by 32,  (500kHz)" edc:when="(field &amp; 0x7) == 3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_4" edc:desc="Transceiver Clock divided by 16,  (1MHz)" edc:when="(field &amp; 0x7) == 4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_5" edc:desc="Transceiver Clock divided by 8,   (2MHz)" edc:when="(field &amp; 0x7) == 5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_6" edc:desc="Transceiver Clock divided by 4,   (4MHz)" edc:when="(field &amp; 0x7) == 6"/>
+                <edc:SFRFieldSemantic edc:cname="TRANSCEIVER_CLOCK_DIVIDED_BY_256_62_5KHZ" edc:desc="Transceiver Clock divided by 256, (62.5kHz)" edc:when="(field &amp; 0x7) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="TRANSCEIVER_CLOCK_DIVIDED_BY_128_125KHZ" edc:desc="Transceiver Clock divided by 128, (125kHz)" edc:when="(field &amp; 0x7) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="TRANSCEIVER_CLOCK_DIVIDED_BY_64_250KHZ" edc:desc="Transceiver Clock divided by 64,  (250kHz)" edc:when="(field &amp; 0x7) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="TRANSCEIVER_CLOCK_DIVIDED_BY_32_500KHZ" edc:desc="Transceiver Clock divided by 32,  (500kHz)" edc:when="(field &amp; 0x7) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="TRANSCEIVER_CLOCK_DIVIDED_BY_16_1MHZ" edc:desc="Transceiver Clock divided by 16,  (1MHz)" edc:when="(field &amp; 0x7) == 4"/>
+                <edc:SFRFieldSemantic edc:cname="TRANSCEIVER_CLOCK_DIVIDED_BY_8_2MHZ" edc:desc="Transceiver Clock divided by 8,   (2MHz)" edc:when="(field &amp; 0x7) == 5"/>
+                <edc:SFRFieldSemantic edc:cname="TRANSCEIVER_CLOCK_DIVIDED_BY_4_4MHZ" edc:desc="Transceiver Clock divided by 4,   (4MHz)" edc:when="(field &amp; 0x7) == 6"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="SCBTSM" edc:desc="Symbol Counter Beacon Timestamp Mask Register" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="Res" edc:desc="Reserved Bit" edc:nzwidth="0x2"/>
@@ -2064,40 +2064,40 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC5">
               <edc:SFRFieldDef edc:cname="WGM5" edc:desc="Waveform Generation Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x1" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x2" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x3" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x4" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x5" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x6" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x7" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x8" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x9" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xA" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xB" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xC" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xD" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xE" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xF" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_MODE_OF_OPERATION" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_8_BIT" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_9_BIT" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_10_BIT" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_8_BIT" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_9_BIT" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_10_BIT" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_ICRN" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_ICRN" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_ICRN" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_OCRNA" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="COM5C" edc:desc="Compare Output Mode for Channel C" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal operation" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_OPERATION" edc:desc="Normal operation" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="COM5B" edc:desc="Compare Output Mode for Channel B" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal operation" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_OPERATION" edc:desc="Normal operation" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="COM5A" edc:desc="Compare Output Mode for Channel A" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Normal operation" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_OPERATION" edc:desc="Normal operation" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -2106,32 +2106,32 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC5">
               <edc:SFRFieldDef edc:cname="CS5" edc:desc="Clock Select" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No clock source (Timer/Counter stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="clk_IO/1 (no prescaling)" edc:when="(field &amp; 0x7) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="clk_IO/8 (from prescaler)" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="clk_IO/64 (from prescaler)" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="clk_IO/256 (from prescaler)" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="clk_IO/1024 (from prescaler)" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Reserved" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Reserved" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="NO_CLOCK_SOURCE_TIMER_COUNTER_STOPPED" edc:desc="No clock source (Timer/Counter stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_1_NO_PRESCALING" edc:desc="clk_IO/1 (no prescaling)" edc:when="(field &amp; 0x7) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_8_FROM_PRESCALER" edc:desc="clk_IO/8 (from prescaler)" edc:when="(field &amp; 0x7) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_64_FROM_PRESCALER" edc:desc="clk_IO/64 (from prescaler)" edc:when="(field &amp; 0x7) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_256_FROM_PRESCALER" edc:desc="clk_IO/256 (from prescaler)" edc:when="(field &amp; 0x7) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="CLK_IO_1024_FROM_PRESCALER" edc:desc="clk_IO/1024 (from prescaler)" edc:when="(field &amp; 0x7) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="WGM5" edc:desc="Waveform Generation Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x1" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x2" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x3" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x4" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x5" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x6" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x7" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x8" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x9" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xA" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xB" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xC" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xD" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xE" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xF" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_MODE_OF_OPERATION" edc:desc="Normal mode of operation" edc:when="(field &amp; 0x3) == 0x0"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_8_BIT" edc:desc="PWM, phase correct, 8-bit" edc:when="(field &amp; 0x3) == 0x1"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_9_BIT" edc:desc="PWM, phase correct, 9-bit" edc:when="(field &amp; 0x3) == 0x2"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_10_BIT" edc:desc="PWM, phase correct, 10-bit" edc:when="(field &amp; 0x3) == 0x3"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x4"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_8_BIT" edc:desc="Fast PWM, 8-bit" edc:when="(field &amp; 0x3) == 0x5"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_9_BIT" edc:desc="Fast PWM, 9-bit" edc:when="(field &amp; 0x3) == 0x6"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_10_BIT" edc:desc="Fast PWM, 10-bit" edc:when="(field &amp; 0x3) == 0x7"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_ICRN" edc:desc="PWM, Phase and frequency correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0x8"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_AND_FREQUENCY_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase and frequency correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0x9"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_ICRN" edc:desc="PWM, Phase correct, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xA"/>
+                <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT_TOP_OCRNA" edc:desc="PWM, Phase correct, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xB"/>
+                <edc:SFRFieldSemantic edc:cname="CTC_TOP_OCRNA" edc:desc="CTC, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xC"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0xD"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_ICRN" edc:desc="Fast PWM, TOP = ICRn" edc:when="(field &amp; 0x3) == 0xE"/>
+                <edc:SFRFieldSemantic edc:cname="FAST_PWM_TOP_OCRNA" edc:desc="Fast PWM, TOP = OCRnA" edc:when="(field &amp; 0x3) == 0xF"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="Res" edc:desc="Reserved Bit" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="ICES5" edc:desc="Input Capture 5 Edge Select" edc:nzwidth="0x1"/>
@@ -2173,8 +2173,8 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="PWRCTRL">
               <edc:SFRFieldDef edc:cname="LLDRL" edc:desc="Low-Byte Data Register Bits" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Calibration limit for fast process corner/high output voltage" edc:when="(field &amp; 0xF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="Calibration limit for slow process corner/low output voltage" edc:when="(field &amp; 0xF) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="CALIBRATION_LIMIT_FOR_FAST_PROCESS_CORNER_HIGH_OUTPUT_VOLTAGE" edc:desc="Calibration limit for fast process corner/high output voltage" edc:when="(field &amp; 0xF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="CALIBRATION_LIMIT_FOR_SLOW_PROCESS_CORNER_LOW_OUTPUT_VOLTAGE" edc:desc="Calibration limit for slow process corner/low output voltage" edc:when="(field &amp; 0xF) == 0x08"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -2183,8 +2183,8 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="PWRCTRL">
               <edc:SFRFieldDef edc:cname="LLDRH" edc:desc="High-Byte Data Register Bits" edc:nzwidth="0x5">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Calibration limit for fast process corner/high output voltage" edc:when="(field &amp; 0x1F) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x10" edc:desc="Calibration limit for slow process corner/low output voltage" edc:when="(field &amp; 0x1F) == 0x10"/>
+                <edc:SFRFieldSemantic edc:cname="CALIBRATION_LIMIT_FOR_FAST_PROCESS_CORNER_HIGH_OUTPUT_VOLTAGE" edc:desc="Calibration limit for fast process corner/high output voltage" edc:when="(field &amp; 0x1F) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="CALIBRATION_LIMIT_FOR_SLOW_PROCESS_CORNER_LOW_OUTPUT_VOLTAGE" edc:desc="Calibration limit for slow process corner/low output voltage" edc:when="(field &amp; 0x1F) == 0x10"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -2431,22 +2431,22 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TRX24">
               <edc:SFRFieldDef edc:cname="TX_PWR" edc:desc="Transmit Power Setting" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="3.5 dBm" edc:when="(field &amp; 0xF) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="3.3 dBm" edc:when="(field &amp; 0xF) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="2.8 dBm" edc:when="(field &amp; 0xF) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="2.3 dBm" edc:when="(field &amp; 0xF) == 3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_4" edc:desc="1.8 dBm" edc:when="(field &amp; 0xF) == 4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_5" edc:desc="1.2 dBm" edc:when="(field &amp; 0xF) == 5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_6" edc:desc="0.5 dBm" edc:when="(field &amp; 0xF) == 6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_7" edc:desc="-0.5 dBm" edc:when="(field &amp; 0xF) == 7"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_8" edc:desc="-1.5 dBm" edc:when="(field &amp; 0xF) == 8"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_9" edc:desc="-2.5 dBm" edc:when="(field &amp; 0xF) == 9"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_10" edc:desc="-3.5 dBm" edc:when="(field &amp; 0xF) == 10"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_11" edc:desc="-4.5 dBm" edc:when="(field &amp; 0xF) == 11"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_12" edc:desc="-6.5 dBm" edc:when="(field &amp; 0xF) == 12"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_13" edc:desc="-8.5 dBm" edc:when="(field &amp; 0xF) == 13"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_14" edc:desc="-11.5 dBm" edc:when="(field &amp; 0xF) == 14"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_15" edc:desc="-16.5 dBm" edc:when="(field &amp; 0xF) == 15"/>
+                <edc:SFRFieldSemantic edc:cname="3_5_DBM" edc:desc="3.5 dBm" edc:when="(field &amp; 0xF) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="3_3_DBM" edc:desc="3.3 dBm" edc:when="(field &amp; 0xF) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="2_8_DBM" edc:desc="2.8 dBm" edc:when="(field &amp; 0xF) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="2_3_DBM" edc:desc="2.3 dBm" edc:when="(field &amp; 0xF) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="1_8_DBM" edc:desc="1.8 dBm" edc:when="(field &amp; 0xF) == 4"/>
+                <edc:SFRFieldSemantic edc:cname="1_2_DBM" edc:desc="1.2 dBm" edc:when="(field &amp; 0xF) == 5"/>
+                <edc:SFRFieldSemantic edc:cname="0_5_DBM" edc:desc="0.5 dBm" edc:when="(field &amp; 0xF) == 6"/>
+                <edc:SFRFieldSemantic edc:cname="_0_5_DBM" edc:desc="-0.5 dBm" edc:when="(field &amp; 0xF) == 7"/>
+                <edc:SFRFieldSemantic edc:cname="_1_5_DBM" edc:desc="-1.5 dBm" edc:when="(field &amp; 0xF) == 8"/>
+                <edc:SFRFieldSemantic edc:cname="_2_5_DBM" edc:desc="-2.5 dBm" edc:when="(field &amp; 0xF) == 9"/>
+                <edc:SFRFieldSemantic edc:cname="_3_5_DBM" edc:desc="-3.5 dBm" edc:when="(field &amp; 0xF) == 10"/>
+                <edc:SFRFieldSemantic edc:cname="_4_5_DBM" edc:desc="-4.5 dBm" edc:when="(field &amp; 0xF) == 11"/>
+                <edc:SFRFieldSemantic edc:cname="_6_5_DBM" edc:desc="-6.5 dBm" edc:when="(field &amp; 0xF) == 12"/>
+                <edc:SFRFieldSemantic edc:cname="_8_5_DBM" edc:desc="-8.5 dBm" edc:when="(field &amp; 0xF) == 13"/>
+                <edc:SFRFieldSemantic edc:cname="_11_5_DBM" edc:desc="-11.5 dBm" edc:when="(field &amp; 0xF) == 14"/>
+                <edc:SFRFieldSemantic edc:cname="_16_5_DBM" edc:desc="-16.5 dBm" edc:when="(field &amp; 0xF) == 15"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -2557,7 +2557,7 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TRX24">
               <edc:SFRFieldDef edc:cname="ANT_CTRL" edc:desc="Static Antenna Diversity Switch Control" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 0"/>
                 <edc:SFRFieldSemantic edc:cname="ANT_1" edc:desc="Antenna 1: DIG1=H, DIG2=L" edc:when="(field &amp; 0x3) == 1"/>
                 <edc:SFRFieldSemantic edc:cname="ANT_0" edc:desc="Antenna 0: DIG1=L, DIG2=H" edc:when="(field &amp; 0x3) == 2"/>
                 <edc:SFRFieldSemantic edc:cname="ANT_RESET" edc:desc="Default value for ANT_EXT_SW_EN=0; Mandatory setting for applications not using Antenna Diversity" edc:when="(field &amp; 0x3) == 3"/>
@@ -2567,8 +2567,8 @@
                 <edc:SFRFieldSemantic edc:cname="ANT_DIV_EXT_SW_EN" edc:desc="Antenna Diversity RF switch control enabled" edc:when="(field &amp; 0x1) == 1"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ANT_DIV_EN" edc:desc="Enable Antenna Diversity" edc:nzwidth="0x1">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Antenna Diversity algorithm disabled" edc:when="(field &amp; 0x1) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Antenna Diversity algorithm enabled" edc:when="(field &amp; 0x1) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="ANTENNA_DIVERSITY_ALGORITHM_DISABLED" edc:desc="Antenna Diversity algorithm disabled" edc:when="(field &amp; 0x1) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="ANTENNA_DIVERSITY_ALGORITHM_ENABLED" edc:desc="Antenna Diversity algorithm enabled" edc:when="(field &amp; 0x1) == 1"/>
               </edc:SFRFieldDef>
               <edc:AdjustPoint edc:offset="0x3"/>
               <edc:SFRFieldDef edc:cname="ANT_SEL" edc:desc="Antenna Diversity Antenna Status" edc:nzwidth="0x1">
@@ -2611,8 +2611,8 @@
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TRX24">
               <edc:AdjustPoint edc:offset="0x2"/>
               <edc:SFRFieldDef edc:cname="DVDD_OK" edc:desc="DVDD Supply Voltage Valid" edc:nzwidth="0x1">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Digital voltage regulator disabled or supply voltage not stable" edc:when="(field &amp; 0x1) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Digital supply voltage has settled" edc:when="(field &amp; 0x1) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="DIGITAL_VOLTAGE_REGULATOR_DISABLED_OR_SUPPLY_VOLTAGE_NOT_STABLE" edc:desc="Digital voltage regulator disabled or supply voltage not stable" edc:when="(field &amp; 0x1) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="DIGITAL_SUPPLY_VOLTAGE_HAS_SETTLED" edc:desc="Digital supply voltage has settled" edc:when="(field &amp; 0x1) == 1"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="DVREG_EXT" edc:desc="Use External DVDD Regulator" edc:nzwidth="0x1">
                 <edc:SFRFieldSemantic edc:cname="DVDD_INT" edc:desc="Internal DVDD voltage regulator for the digital section is enabled." edc:when="(field &amp; 0x1) == 0"/>
@@ -2620,8 +2620,8 @@
               </edc:SFRFieldDef>
               <edc:AdjustPoint edc:offset="0x2"/>
               <edc:SFRFieldDef edc:cname="AVDD_OK" edc:desc="AVDD Supply Voltage Valid" edc:nzwidth="0x1">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Analog voltage regulator disabled or supply voltage not stable" edc:when="(field &amp; 0x1) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Analog supply voltage has settled" edc:when="(field &amp; 0x1) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="ANALOG_VOLTAGE_REGULATOR_DISABLED_OR_SUPPLY_VOLTAGE_NOT_STABLE" edc:desc="Analog voltage regulator disabled or supply voltage not stable" edc:when="(field &amp; 0x1) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="ANALOG_SUPPLY_VOLTAGE_HAS_SETTLED" edc:desc="Analog supply voltage has settled" edc:when="(field &amp; 0x1) == 1"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="AVREG_EXT" edc:desc="Use External AVDD Regulator" edc:nzwidth="0x1">
                 <edc:SFRFieldSemantic edc:cname="AVDD_INT" edc:desc="Internal AVDD voltage regulator for the analog section is enabled." edc:when="(field &amp; 0x1) == 0"/>
@@ -2634,30 +2634,30 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TRX24">
               <edc:SFRFieldDef edc:cname="BATMON_VTH" edc:desc="Battery Monitor Threshold Voltage" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0" edc:desc="2.550V / 1.70V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x1" edc:desc="2.625V / 1.75V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x2" edc:desc="2.700V / 1.80V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x3" edc:desc="2.775V / 1.85V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x4" edc:desc="2.850V / 1.90V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x5" edc:desc="2.925V / 1.95V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x6" edc:desc="3.000V / 2.00V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x7" edc:desc="3.075V / 2.05V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x7"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x8" edc:desc="3.150V / 2.10V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x8"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x9" edc:desc="3.225V / 2.15V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x9"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xA" edc:desc="3.300V / 2.20V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0xA"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xB" edc:desc="3.375V / 2.25V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0xB"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xC" edc:desc="3.450V / 2.30V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0xC"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xD" edc:desc="3.525V / 2.35V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0xD"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xE" edc:desc="3.600V / 2.40V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0xE"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xF" edc:desc="3.675V / 2.45V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0xF"/>
+                <edc:SFRFieldSemantic edc:cname="2_550V_1_70V_BATMON_HR_1_0" edc:desc="2.550V / 1.70V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x0"/>
+                <edc:SFRFieldSemantic edc:cname="2_625V_1_75V_BATMON_HR_1_0" edc:desc="2.625V / 1.75V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x1"/>
+                <edc:SFRFieldSemantic edc:cname="2_700V_1_80V_BATMON_HR_1_0" edc:desc="2.700V / 1.80V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x2"/>
+                <edc:SFRFieldSemantic edc:cname="2_775V_1_85V_BATMON_HR_1_0" edc:desc="2.775V / 1.85V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x3"/>
+                <edc:SFRFieldSemantic edc:cname="2_850V_1_90V_BATMON_HR_1_0" edc:desc="2.850V / 1.90V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x4"/>
+                <edc:SFRFieldSemantic edc:cname="2_925V_1_95V_BATMON_HR_1_0" edc:desc="2.925V / 1.95V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x5"/>
+                <edc:SFRFieldSemantic edc:cname="3_000V_2_00V_BATMON_HR_1_0" edc:desc="3.000V / 2.00V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x6"/>
+                <edc:SFRFieldSemantic edc:cname="3_075V_2_05V_BATMON_HR_1_0" edc:desc="3.075V / 2.05V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x7"/>
+                <edc:SFRFieldSemantic edc:cname="3_150V_2_10V_BATMON_HR_1_0" edc:desc="3.150V / 2.10V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x8"/>
+                <edc:SFRFieldSemantic edc:cname="3_225V_2_15V_BATMON_HR_1_0" edc:desc="3.225V / 2.15V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0x9"/>
+                <edc:SFRFieldSemantic edc:cname="3_300V_2_20V_BATMON_HR_1_0" edc:desc="3.300V / 2.20V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0xA"/>
+                <edc:SFRFieldSemantic edc:cname="3_375V_2_25V_BATMON_HR_1_0" edc:desc="3.375V / 2.25V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0xB"/>
+                <edc:SFRFieldSemantic edc:cname="3_450V_2_30V_BATMON_HR_1_0" edc:desc="3.450V / 2.30V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0xC"/>
+                <edc:SFRFieldSemantic edc:cname="3_525V_2_35V_BATMON_HR_1_0" edc:desc="3.525V / 2.35V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0xD"/>
+                <edc:SFRFieldSemantic edc:cname="3_600V_2_40V_BATMON_HR_1_0" edc:desc="3.600V / 2.40V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0xE"/>
+                <edc:SFRFieldSemantic edc:cname="3_675V_2_45V_BATMON_HR_1_0" edc:desc="3.675V / 2.45V (BATMON_HR=1/0)" edc:when="(field &amp; 0xF) == 0xF"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="BATMON_HR" edc:desc="Battery Monitor Voltage Range" edc:nzwidth="0x1">
                 <edc:SFRFieldSemantic edc:cname="BATMON_HR_DIS" edc:desc="Enables the low range, see BATMON_VTH" edc:when="(field &amp; 0x1) == 0"/>
                 <edc:SFRFieldSemantic edc:cname="BATMON_HR_EN" edc:desc="Enables the high range, see BATMON_VTH" edc:when="(field &amp; 0x1) == 1"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="BATMON_OK" edc:desc="Battery Monitor Status" edc:nzwidth="0x1">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="The battery voltage is below the threshold." edc:when="(field &amp; 0x1) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="The battery voltage is above the threshold." edc:when="(field &amp; 0x1) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="THE_BATTERY_VOLTAGE_IS_BELOW_THE_THRESHOLD" edc:desc="The battery voltage is below the threshold." edc:when="(field &amp; 0x1) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="THE_BATTERY_VOLTAGE_IS_ABOVE_THE_THRESHOLD" edc:desc="The battery voltage is above the threshold." edc:when="(field &amp; 0x1) == 1"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="BAT_LOW_EN" edc:desc="Battery Monitor Interrupt Enable" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="BAT_LOW" edc:desc="Battery Monitor Interrupt Status" edc:nzwidth="0x1"/>
@@ -2674,8 +2674,8 @@
                 <edc:SFRFieldSemantic edc:cname="XTAL_TRIM_MAX" edc:desc="4.5 pF, trimming capacitor switched on" edc:when="(field &amp; 0xF) == 0xF"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="XTAL_MODE" edc:desc="Crystal Oscillator Operating Mode" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x4" edc:desc="Internal crystal oscillator disabled; use external reference frequency." edc:when="(field &amp; 0xF) == 0x4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xF" edc:desc="Internal crystal oscillator enabled; amplitude regulation of oscillation enabled." edc:when="(field &amp; 0xF) == 0xF"/>
+                <edc:SFRFieldSemantic edc:cname="INTERNAL_CRYSTAL_OSCILLATOR_DISABLED_USE_EXTERNAL_REFERENCE_FREQUENCY" edc:desc="Internal crystal oscillator disabled; use external reference frequency." edc:when="(field &amp; 0xF) == 0x4"/>
+                <edc:SFRFieldSemantic edc:cname="INTERNAL_CRYSTAL_OSCILLATOR_ENABLED_AMPLITUDE_REGULATION_OF_OSCILLATION_ENABLED" edc:desc="Internal crystal oscillator enabled; amplitude regulation of oscillation enabled." edc:when="(field &amp; 0xF) == 0xF"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -2720,10 +2720,10 @@
               <edc:SFRFieldDef edc:cname="PDT_RPC_EN" edc:desc="Smart Receiving Mode Reduced Sensitivity Enable" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="RX_RPC_EN" edc:desc="Reciver Smart Receiving Mode Enable" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="RX_RPC_CTRL" edc:desc="Smart Receiving Mode Timing" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Activates minimum power saving behaviour for smart receiving mode" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Activates maximum power saving behaviour for smart receiving mode" edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="ACTIVATES_MINIMUM_POWER_SAVING_BEHAVIOUR_FOR_SMART_RECEIVING_MODE" edc:desc="Activates minimum power saving behaviour for smart receiving mode" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="ACTIVATES_MAXIMUM_POWER_SAVING_BEHAVIOUR_FOR_SMART_RECEIVING_MODE" edc:desc="Activates maximum power saving behaviour for smart receiving mode" edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -2929,18 +2929,18 @@
                 <edc:SFRFieldSemantic edc:cname="SLOTTED_OP_EN" edc:desc="The transmission of an acknowledgment frame has to be controlled by the microcontroller." edc:when="(field &amp; 0x1) == 1"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="MAX_CSMA_RETRIES" edc:desc="Maximum Number of CSMA-CA Procedure Repetition Attempts" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0" edc:desc="No repetition of CSMA-CA procedure" edc:when="(field &amp; 0x7) == 0x0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x1" edc:desc="One repetition of CSMA-CA procedure" edc:when="(field &amp; 0x7) == 0x1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x2" edc:desc="..." edc:when="(field &amp; 0x7) == 0x2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x5" edc:desc="Five repetitions (highest IEEE 802.15.4 compliant value)" edc:when="(field &amp; 0x7) == 0x5"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x6" edc:desc="Reserved" edc:when="(field &amp; 0x7) == 0x6"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x7" edc:desc="Immediate frame re-transmission without performing CSMA-CA" edc:when="(field &amp; 0x7) == 0x7"/>
+                <edc:SFRFieldSemantic edc:cname="NO_REPETITION_OF_CSMA_CA_PROCEDURE" edc:desc="No repetition of CSMA-CA procedure" edc:when="(field &amp; 0x7) == 0x0"/>
+                <edc:SFRFieldSemantic edc:cname="ONE_REPETITION_OF_CSMA_CA_PROCEDURE" edc:desc="One repetition of CSMA-CA procedure" edc:when="(field &amp; 0x7) == 0x1"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="..." edc:when="(field &amp; 0x7) == 0x2"/>
+                <edc:SFRFieldSemantic edc:cname="FIVE_REPETITIONS_HIGHEST_IEEE_802_15_4_COMPLIANT_VALUE" edc:desc="Five repetitions (highest IEEE 802.15.4 compliant value)" edc:when="(field &amp; 0x7) == 0x5"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="Reserved" edc:when="(field &amp; 0x7) == 0x6"/>
+                <edc:SFRFieldSemantic edc:cname="IMMEDIATE_FRAME_RE_TRANSMISSION_WITHOUT_PERFORMING_CSMA_CA" edc:desc="Immediate frame re-transmission without performing CSMA-CA" edc:when="(field &amp; 0x7) == 0x7"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="MAX_FRAME_RETRIES" edc:desc="Maximum Number of Frame Re-transmission Attempts" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0" edc:desc="Retransmission of frame is not attempted." edc:when="(field &amp; 0xF) == 0x0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x1" edc:desc="Retransmission of frame is attempted once." edc:when="(field &amp; 0xF) == 0x1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x2" edc:desc="..." edc:when="(field &amp; 0xF) == 0x2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0xF" edc:desc="Retransmission of frame is attempted 15 times." edc:when="(field &amp; 0xF) == 0xF"/>
+                <edc:SFRFieldSemantic edc:cname="RETRANSMISSION_OF_FRAME_IS_NOT_ATTEMPTED" edc:desc="Retransmission of frame is not attempted." edc:when="(field &amp; 0xF) == 0x0"/>
+                <edc:SFRFieldSemantic edc:cname="RETRANSMISSION_OF_FRAME_IS_ATTEMPTED_ONCE" edc:desc="Retransmission of frame is attempted once." edc:when="(field &amp; 0xF) == 0x1"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="..." edc:when="(field &amp; 0xF) == 0x2"/>
+                <edc:SFRFieldSemantic edc:cname="RETRANSMISSION_OF_FRAME_IS_ATTEMPTED_15_TIMES" edc:desc="Retransmission of frame is attempted 15 times." edc:when="(field &amp; 0xF) == 0xF"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -2967,10 +2967,10 @@
               <edc:SFRFieldDef edc:cname="AACK_DIS_ACK" edc:desc="Disable Acknowledgment Frame Transmission" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="AACK_SET_PD" edc:desc="Set Frame Pending Sub-field" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="AACK_FVN_MODE" edc:desc="Acknowledgment Frame Filter Mode" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Acknowledge frames with version number 0" edc:when="(field &amp; 0x3) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="Acknowledge frames with version number 0 or 1" edc:when="(field &amp; 0x3) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="Acknowledge frames with version number 0 or 1 or 2" edc:when="(field &amp; 0x3) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Acknowledge frames independent of frame version number" edc:when="(field &amp; 0x3) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="ACKNOWLEDGE_FRAMES_WITH_VERSION_NUMBER_0" edc:desc="Acknowledge frames with version number 0" edc:when="(field &amp; 0x3) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="ACKNOWLEDGE_FRAMES_WITH_VERSION_NUMBER_0_OR_1" edc:desc="Acknowledge frames with version number 0 or 1" edc:when="(field &amp; 0x3) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="ACKNOWLEDGE_FRAMES_WITH_VERSION_NUMBER_0_OR_1_OR_2" edc:desc="Acknowledge frames with version number 0 or 1 or 2" edc:when="(field &amp; 0x3) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="ACKNOWLEDGE_FRAMES_INDEPENDENT_OF_FRAME_VERSION_NUMBER" edc:desc="Acknowledge frames independent of frame version number" edc:when="(field &amp; 0x3) == 3"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -2979,16 +2979,16 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TRX24">
               <edc:SFRFieldDef edc:cname="MIN_BE" edc:desc="Minimum Back-off Exponent" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="Minimum value of minimum back-off exponent." edc:when="(field &amp; 0xF) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="..." edc:when="(field &amp; 0xF) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_8" edc:desc="Maximum value of minimum back-off exponent. MIN_BE must be smaller or equal to MAX_BE." edc:when="(field &amp; 0xF) == 8"/>
+                <edc:SFRFieldSemantic edc:cname="MINIMUM_VALUE_OF_MINIMUM_BACK_OFF_EXPONENT" edc:desc="Minimum value of minimum back-off exponent." edc:when="(field &amp; 0xF) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="..." edc:when="(field &amp; 0xF) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="MAXIMUM_VALUE_OF_MINIMUM_BACK_OFF_EXPONENT_MIN_BE_MUST_BE_SMALLER_OR_EQUAL_TO_MAX_BE" edc:desc="Maximum value of minimum back-off exponent. MIN_BE must be smaller or equal to MAX_BE." edc:when="(field &amp; 0xF) == 8"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="MAX_BE" edc:desc="Maximum Back-off Exponent" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_1" edc:desc="This value is not valid for the maximum back-off exponent." edc:when="(field &amp; 0xF) == 1"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_2" edc:desc="This value is not valid for the maximum back-off exponent." edc:when="(field &amp; 0xF) == 2"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_3" edc:desc="Minimum, IEEE compliant value for the maximum back-off exponent." edc:when="(field &amp; 0xF) == 3"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_4" edc:desc="..." edc:when="(field &amp; 0xF) == 4"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_8" edc:desc="Maximum, IEEE compliant value for the maximum back-off exponent." edc:when="(field &amp; 0xF) == 8"/>
+                <edc:SFRFieldSemantic edc:cname="THIS_VALUE_IS_NOT_VALID_FOR_THE_MAXIMUM_BACK_OFF_EXPONENT" edc:desc="This value is not valid for the maximum back-off exponent." edc:when="(field &amp; 0xF) == 1"/>
+                <edc:SFRFieldSemantic edc:cname="THIS_VALUE_IS_NOT_VALID_FOR_THE_MAXIMUM_BACK_OFF_EXPONENT" edc:desc="This value is not valid for the maximum back-off exponent." edc:when="(field &amp; 0xF) == 2"/>
+                <edc:SFRFieldSemantic edc:cname="MINIMUM_IEEE_COMPLIANT_VALUE_FOR_THE_MAXIMUM_BACK_OFF_EXPONENT" edc:desc="Minimum, IEEE compliant value for the maximum back-off exponent." edc:when="(field &amp; 0xF) == 3"/>
+                <edc:SFRFieldSemantic edc:cname="RESERVED" edc:desc="..." edc:when="(field &amp; 0xF) == 4"/>
+                <edc:SFRFieldSemantic edc:cname="MAXIMUM_IEEE_COMPLIANT_VALUE_FOR_THE_MAXIMUM_BACK_OFF_EXPONENT" edc:desc="Maximum, IEEE compliant value for the maximum back-off exponent." edc:when="(field &amp; 0xF) == 8"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -2998,8 +2998,8 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TRX24">
               <edc:SFRFieldDef edc:cname="TST_CTRL_DIG" edc:desc="Digital Test Controller Register" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0" edc:desc="NORMAL (no test is active)" edc:when="(field &amp; 0xF) == 0"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_15" edc:desc="TST_CONT_TX (continuous transmit)" edc:when="(field &amp; 0xF) == 15"/>
+                <edc:SFRFieldSemantic edc:cname="NORMAL_NO_TEST_IS_ACTIVE" edc:desc="NORMAL (no test is active)" edc:when="(field &amp; 0xF) == 0"/>
+                <edc:SFRFieldSemantic edc:cname="TST_CONT_TX_CONTINUOUS_TRANSMIT" edc:desc="TST_CONT_TX (continuous transmit)" edc:when="(field &amp; 0xF) == 15"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>

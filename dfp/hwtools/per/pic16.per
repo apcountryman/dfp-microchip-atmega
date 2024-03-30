@@ -144,7 +144,7 @@
     <per:periphConfig>
       <per:sfr key="TO" sfr="STATUS" field="nTO"/>
       <per:sfr key="PD" sfr="STATUS" field="nPD" critical="false"/>
-      <per:sfr key="WDTPS" sfr="WDTCON[0]?" field="WDTPS[0]?"/>
+      <per:sfr key="WDTPS" sfr="WDTCON[0]?" field="(WDT)?PS[0]?"/>
       <per:sfr key="SWDTEN" sfr="WDTCON[0]?" field="S(WDT)?EN"/>
       <per:cfg key="WDTE" cfg="CONFIG[1-9]?" field="WDTE|WDTEN"/>
       <per:periphClassDesc class="WatchdogTimerEnhanced"/>
@@ -423,20 +423,20 @@
       <per:pin key="VIN4+" pinID="DAC2OUT@" optional="true" critical="false"/>
       <per:pin key="VIN5+" pinID="DAC1OUT@" critical="false" optional="true"/>
       <per:pin key="VIN7+" pinID="VSS" critical="false"/>
-      <per:pin key="VOUT" pinID="C@OUT" critical="false"/>
+      <per:pin key="VOUT" pinID="C@OUT|CMP@" critical="false"/>
       <per:sfr key="CXENABLE" sfr="CM@CON0" field="C@ON|ON|EN"/>
       <per:sfr key="CXPOLARITY" sfr="CM@CON0" field="C@POL|POL"/>
       <per:sfr key="CXOUT" sfr="CM@CON0" field="C@OUT|OUT"/>
       <per:sfr key="COE" sfr="CM@CON0" field="C@OE" optional="true"/>
       <per:sfr key="CXZLF" sfr="CM@CON0" field="C@ZLF" optional="true"/>
-      <per:sfr key="MCXOUT" sfr="CMOUT" field="MC@OUT" critical="false"/>
+      <per:sfr key="MCXOUT" sfr="CMOUT" field="M?C@OUT" critical="false"/>
       <per:sfr key="CXNCH" sfr="CM@CON1|CM@NSEL|CM@NCH" field="C@NCH0?|NCH0?"/>
       <per:sfr key="CXNCH1" sfr="CM@CON1|CM@NSEL|CM@NCH" field="C@NCH1|NCH1" optional="true"/>
       <per:sfr key="CXNCH2" sfr="CM@CON1|CM@NSEL|CM@NCH" field="C@NCH2|NCH2" optional="true"/>
       <per:sfr key="CXPCH" sfr="CM@CON1|CM@PSEL|CM@PCH" field="C@PCH0?|PCH0?"/>
       <per:sfr key="CXPCH1" sfr="CM@CON1|CM@PSEL|CM@PCH" field="C@PCH1|PCH1" optional="true"/>
       <per:sfr key="CXPCH2" sfr="CM@CON1|CM@PSEL|CM@PCH" field="C@PCH2|PCH2" optional="true"/>
-      <per:sfr key="CXIF" sfr="PIR2" field="C@IF" critical="false"/>
+      <per:sfr key="CXIF" sfr="PIR[0-9]" field="CM?@IF" critical="false"/>
       <per:sfr key="CXINTP" sfr="CM@CON1" field="C@INTP|INTP"/>
       <per:sfr key="CXINTN" sfr="CM@CON1" field="C@INTN|INTN"/>
       <per:sfr key="CXSYNC" sfr="CM@CON0" field="C@SYNC|SYNC"/>
@@ -1103,8 +1103,8 @@
       <per:sfr key="PIE" sfr="PIE1" critical="false"/>
       <per:sfr key="TXHLT" sfr="T2HLT"/>
       <per:sfr key="PSYNC" sfr="T2HLT" field="PSYNC"/>
-      <per:sfr key="CPOL" sfr="T2HLT" field="CKPOL"/>
-      <per:sfr key="CSYNC" sfr="T2HLT" field="CKSYNC"/>
+      <per:sfr key="CPOL" sfr="T2HLT" field="CK?POL"/>
+      <per:sfr key="CSYNC" sfr="T2HLT" field="CK?SYNC"/>
       <per:sfr key="TXMODE" sfr="T2HLT" field="MODE"/>
       <per:sfr key="TXERS" sfr="T2RST"/>
       <per:sfr key="RSEL" sfr="T2RST" field="RSEL"/>
@@ -1298,8 +1298,8 @@
       <per:sfr key="PIE" sfr="PIE1" critical="false"/>
       <per:sfr key="TXHLT" sfr="T4HLT"/>
       <per:sfr key="PSYNC" sfr="T4HLT" field="PSYNC"/>
-      <per:sfr key="CPOL" sfr="T4HLT" field="CKPOL"/>
-      <per:sfr key="CSYNC" sfr="T4HLT" field="CKSYNC"/>
+      <per:sfr key="CPOL" sfr="T4HLT" field="CK?POL"/>
+      <per:sfr key="CSYNC" sfr="T4HLT" field="CK?SYNC"/>
       <per:sfr key="TXMODE" sfr="T4HLT" field="MODE"/>
       <per:sfr key="TXERS" sfr="T4RST"/>
       <per:sfr key="RSEL" sfr="T4RST" field="RSEL"/>
@@ -1429,8 +1429,8 @@
       <per:sfr key="PIE" sfr="PIE1" critical="false"/>
       <per:sfr key="TXHLT" sfr="T6HLT"/>
       <per:sfr key="PSYNC" sfr="T6HLT" field="PSYNC"/>
-      <per:sfr key="CPOL" sfr="T6HLT" field="CKPOL"/>
-      <per:sfr key="CSYNC" sfr="T6HLT" field="CKSYNC"/>
+      <per:sfr key="CPOL" sfr="T6HLT" field="CK?POL"/>
+      <per:sfr key="CSYNC" sfr="T6HLT" field="CK?SYNC"/>
       <per:sfr key="TXMODE" sfr="T6HLT" field="MODE"/>
       <per:sfr key="TXERS" sfr="T6RST"/>
       <per:sfr key="RSEL" sfr="T6RST" field="RSEL"/>

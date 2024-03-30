@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (C) 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  *
  * This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
@@ -1159,6 +1159,7 @@ typedef enum RTC_CLKSEL_enum
 {
     RTC_CLKSEL_INT32K_gc = (0x00<<0),  /* Internal 32kHz OSC */
     RTC_CLKSEL_INT1K_gc = (0x01<<0),  /* Internal 1kHz OSC */
+    RTC_CLKSEL_TOSC32K_gc = (0x02<<0),  /* 32KHz Crystal OSC */
     RTC_CLKSEL_EXTCLK_gc = (0x03<<0),  /* External Clock */
 } RTC_CLKSEL_t;
 
@@ -4492,8 +4493,6 @@ IO Module Instances. Mapped to memory.
 /* USART.DBGCTRL  bit masks and bit positions */
 #define USART_DBGRUN_bm  0x01  /* Debug Run bit mask. */
 #define USART_DBGRUN_bp  0  /* Debug Run bit position. */
-#define USART_ABMBP_bm  0x80  /* Autobaud majority voter bypass bit mask. */
-#define USART_ABMBP_bp  7  /* Autobaud majority voter bypass bit position. */
 
 /* USART.EVCTRL  bit masks and bit positions */
 #define USART_IREI_bm  0x01  /* IrDA Event Input Enable bit mask. */

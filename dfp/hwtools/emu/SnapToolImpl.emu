@@ -17,13 +17,13 @@
     <emu:indextablerecord device="AT90USB646" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="AT90USB647" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="AT90USB82" emulengine="avrnativetinyocd"/>
-    <emu:indextablerecord device="ATmega128" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega128" emulengine="avrnativetinymegajtagwithoutswbp"/>
     <emu:indextablerecord device="ATmega1280" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="ATmega1281" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="ATmega1284" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="ATmega1284P" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="ATmega1284RFR2" emulengine="avrnativetinymegajtag"/>
-    <emu:indextablerecord device="ATmega128A" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega128A" emulengine="avrnativetinymegajtagwithoutswbp"/>
     <emu:indextablerecord device="ATmega128RFA1" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="ATmega128RFR2" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="ATmega16" emulengine="avrnativetinymegajtag"/>
@@ -56,8 +56,8 @@
     <emu:indextablerecord device="ATmega2564RFR2" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="ATmega256RFR2" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="ATmega32" emulengine="avrnativetinymegajtag"/>
-    <emu:indextablerecord device="ATmega3208" emulengine="avrnativetinymegajtag"/>
-    <emu:indextablerecord device="ATmega3209" emulengine="avrnativetinymegajtag"/>
+    <emu:indextablerecord device="ATmega3208" emulengine="avrnativeavr8x"/>
+    <emu:indextablerecord device="ATmega3209" emulengine="avrnativeavr8x"/>
     <emu:indextablerecord device="ATmega324A" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="ATmega324P" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="ATmega324PA" emulengine="avrnativetinymegajtag"/>
@@ -122,7 +122,7 @@
     <emu:indextablerecord device="ATmega64RFR2" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="ATmega8" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="ATmega808" emulengine="avrnativeavr8x"/>
-    <emu:indextablerecord device="ATmega809" emulengine="empty" maxprogbps="0"/>
+    <emu:indextablerecord device="ATmega809" emulengine="avrnativeavr8x"/>
     <emu:indextablerecord device="ATmega8515" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="ATmega8535" emulengine="avrnativetinymegajtag"/>
     <emu:indextablerecord device="ATmega88" emulengine="avrnativetinyocd"/>
@@ -149,6 +149,7 @@
     <emu:nonaddressbreaks/>
     <emu:runtimebps supported="false"/>
     <emu:runtimereads supported="false" supportfwver="0x01.0x27.0x12"/>
+    <emu:liveconnect avrsupported="true"/>
   </emu:emulenginedesc>
   <emu:emulenginedesc name="avrnativetinyocd">
     <emu:bps maxdatabps="0" maxdelaycount="0" maxpasscount="0" maxprogbps="0" separate="false"/>
@@ -165,6 +166,24 @@
     <emu:nonaddressbreaks/>
     <emu:runtimebps supported="false"/>
     <emu:runtimereads supported="false" supportfwver="0x01.0x27.0x12"/>
+    <emu:liveconnect avrsupported="true"/>
+  </emu:emulenginedesc>
+  <emu:emulenginedesc name="avrnativetinymegajtagwithoutswbp">
+    <emu:bps maxdatabps="2" maxdelaycount="0" maxpasscount="0" maxprogbps="3" separate="false"/>
+    <emu:databps access="readorwrite" bus="false" match="false" widths="false"/>
+    <emu:tuples maxands="0"/>
+    <emu:sequences maxbpsinseq="0" maxseqs="0"/>
+    <emu:swbps alwayson="false" supported="false"/>
+    <emu:datacapture allowed="false"/>
+    <emu:addressmask allowed="false"/>
+    <emu:dma breaksallowed="false"/>
+    <emu:stopwatch available="false"/>
+    <emu:trace allowed="false"/>
+    <emu:tblxxbp available="false"/>
+    <emu:nonaddressbreaks/>
+    <emu:runtimebps supported="false"/>
+    <emu:runtimereads supported="false" supportfwver="0x01.0x27.0x12"/>
+    <emu:liveconnect avrsupported="true"/>
   </emu:emulenginedesc>
   <emu:emulenginedesc name="avrnativeavr8x">
     <emu:bps maxdatabps="0" maxdelaycount="0" maxpasscount="0" maxprogbps="1" separate="false"/>
@@ -181,20 +200,6 @@
     <emu:nonaddressbreaks/>
     <emu:runtimebps supported="false"/>
     <emu:runtimereads supported="false" supportfwver="0x01.0x27.0x12"/>
-  </emu:emulenginedesc>
-  <emu:emulenginedesc name="empty">
-    <emu:bps maxdatabps="0" maxdelaycount="0" maxpasscount="0" maxprogbps="0" separate="false"/>
-    <emu:databps access="none" bus="false" match="false" widths="false"/>
-    <emu:tuples maxands="0"/>
-    <emu:sequences maxbpsinseq="0" maxseqs="0"/>
-    <emu:swbps supported="false"/>
-    <emu:datacapture allowed="false"/>
-    <emu:addressmask allowed="false"/>
-    <emu:dma breaksallowed="false"/>
-    <emu:stopwatch available="false" cpcontrolled="false" freerunning="false"/>
-    <emu:trace allowed="false"/>
-    <emu:tblxxbp available="false"/>
-    <emu:nonaddressbreaks clockswitch="false" sleep="false" stack="false" watchdog="false"/>
-    <emu:runtimebps supported="false"/>
+    <emu:liveconnect avrsupported="true"/>
   </emu:emulenginedesc>
 </emu:emu>

@@ -183,9 +183,9 @@
               <edc:SFRFieldDef edc:cname="EEMPE" edc:desc="EEPROM Master Programming Enable" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="EERIE" edc:desc="EEPROM Ready Interrupt Enable" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="EEPM" edc:desc="EEPROM Programming Mode Bits" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Erase and Write in one operation" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Erase Only" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Write Only" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="ERASE_AND_WRITE_IN_ONE_OPERATION" edc:desc="Erase and Write in one operation" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ERASE_ONLY" edc:desc="Erase Only" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="WRITE_ONLY" edc:desc="Write Only" edc:when="(field &amp; 0x3) == 0x02"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -215,14 +215,14 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC0">
               <edc:SFRFieldDef edc:cname="CS0" edc:desc="Clock Select0 bits" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No Clock Source (Stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Running, No Prescaling" edc:when="(field &amp; 0x7) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Running, CLK/8" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Running, CLK/64" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Running, CLK/256" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Running, CLK/1024" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Running, ExtClk Tn Falling Edge" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Running, ExtClk Tn Rising Edge" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="NO_CLOCK_SOURCE_STOPPED" edc:desc="No Clock Source (Stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_NO_PRESCALING" edc:desc="Running, No Prescaling" edc:when="(field &amp; 0x7) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_8" edc:desc="Running, CLK/8" edc:when="(field &amp; 0x7) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_64" edc:desc="Running, CLK/64" edc:when="(field &amp; 0x7) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_256" edc:desc="Running, CLK/256" edc:when="(field &amp; 0x7) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_1024" edc:desc="Running, CLK/1024" edc:when="(field &amp; 0x7) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_EXTCLK_TN_FALLING_EDGE" edc:desc="Running, ExtClk Tn Falling Edge" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_EXTCLK_TN_RISING_EDGE" edc:desc="Running, ExtClk Tn Rising Edge" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="WGM02" edc:nzwidth="0x1"/>
               <edc:AdjustPoint edc:offset="0x2"/>
@@ -325,16 +325,16 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="WDT">
               <edc:SFRFieldDef edc:cname="WDP" edc:desc="Watchdog Timer Prescaler Bits" edc:mask="0x27" edc:nzwidth="0x6">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Oscillator Cycles 2K" edc:when="(field &amp; 0x27) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Oscillator Cycles 4K" edc:when="(field &amp; 0x27) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Oscillator Cycles 8K" edc:when="(field &amp; 0x27) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Oscillator Cycles 16K" edc:when="(field &amp; 0x27) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Oscillator Cycles 32K" edc:when="(field &amp; 0x27) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Oscillator Cycles 64K" edc:when="(field &amp; 0x27) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Oscillator Cycles 128K" edc:when="(field &amp; 0x27) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Oscillator Cycles 256K" edc:when="(field &amp; 0x27) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="Oscillator Cycles 512K" edc:when="(field &amp; 0x27) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x09" edc:desc="Oscillator Cycles 1024K" edc:when="(field &amp; 0x27) == 0x09"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_2K" edc:desc="Oscillator Cycles 2K" edc:when="(field &amp; 0x27) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_4K" edc:desc="Oscillator Cycles 4K" edc:when="(field &amp; 0x27) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_8K" edc:desc="Oscillator Cycles 8K" edc:when="(field &amp; 0x27) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_16K" edc:desc="Oscillator Cycles 16K" edc:when="(field &amp; 0x27) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_32K" edc:desc="Oscillator Cycles 32K" edc:when="(field &amp; 0x27) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_64K" edc:desc="Oscillator Cycles 64K" edc:when="(field &amp; 0x27) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_128K" edc:desc="Oscillator Cycles 128K" edc:when="(field &amp; 0x27) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_256K" edc:desc="Oscillator Cycles 256K" edc:when="(field &amp; 0x27) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_512K" edc:desc="Oscillator Cycles 512K" edc:when="(field &amp; 0x27) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="OSCILLATOR_CYCLES_1024K" edc:desc="Oscillator Cycles 1024K" edc:when="(field &amp; 0x27) == 0x09"/>
               </edc:SFRFieldDef>
               <edc:AdjustPoint edc:offset="-3"/>
               <edc:SFRFieldDef edc:cname="WDE" edc:desc="Watch Dog Enable" edc:nzwidth="0x1"/>
@@ -350,14 +350,14 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="WAKEUP_TIMER">
               <edc:SFRFieldDef edc:cname="WUTP" edc:desc="Wake-up Timer Prescaler Bits" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="4K(Slow RC) / 1K (32kHz)" edc:when="(field &amp; 0x7) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="8K(Slow RC) / 2K (32kHz)" edc:when="(field &amp; 0x7) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="16K(Slow RC) / 4K (32kHz)" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="32K(Slow RC) / 8K (32kHz)" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="64K(Slow RC) / 16K (32kHz)" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="128K(Slow RC) / 32K (32kHz)" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="256K(Slow RC) / 64K (32kHz)" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="512K(Slow RC) / 128K (32kHz)" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="4K_SLOW_RC_1K_32KHZ" edc:desc="4K(Slow RC) / 1K (32kHz)" edc:when="(field &amp; 0x7) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="8K_SLOW_RC_2K_32KHZ" edc:desc="8K(Slow RC) / 2K (32kHz)" edc:when="(field &amp; 0x7) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="16K_SLOW_RC_4K_32KHZ" edc:desc="16K(Slow RC) / 4K (32kHz)" edc:when="(field &amp; 0x7) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="32K_SLOW_RC_8K_32KHZ" edc:desc="32K(Slow RC) / 8K (32kHz)" edc:when="(field &amp; 0x7) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="64K_SLOW_RC_16K_32KHZ" edc:desc="64K(Slow RC) / 16K (32kHz)" edc:when="(field &amp; 0x7) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="128K_SLOW_RC_32K_32KHZ" edc:desc="128K(Slow RC) / 32K (32kHz)" edc:when="(field &amp; 0x7) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="256K_SLOW_RC_64K_32KHZ" edc:desc="256K(Slow RC) / 64K (32kHz)" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="512K_SLOW_RC_128K_32KHZ" edc:desc="512K(Slow RC) / 128K (32kHz)" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="WUTE" edc:desc="Wake-up Timer Enable" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="WUTR" edc:desc="Wake-up Timer Reset" edc:nzwidth="0x1"/>
@@ -392,28 +392,28 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="EXINT">
               <edc:SFRFieldDef edc:cname="ISC0" edc:desc="External Interrupt Sense Control 0 Bits" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="LOW_LEVEL_OF_INTX" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_LOGICAL_CHANGE_OF_INTX" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="FALLING_EDGE_OF_INTX" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="RISING_EDGE_OF_INTX" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ISC1" edc:desc="External Interrupt Sense Control 1 Bits" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="LOW_LEVEL_OF_INTX" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_LOGICAL_CHANGE_OF_INTX" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="FALLING_EDGE_OF_INTX" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="RISING_EDGE_OF_INTX" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ISC2" edc:desc="External Interrupt Sense Control 2 Bits" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="LOW_LEVEL_OF_INTX" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_LOGICAL_CHANGE_OF_INTX" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="FALLING_EDGE_OF_INTX" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="RISING_EDGE_OF_INTX" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="ISC3" edc:desc="External Interrupt Sense Control 3 Bits" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="LOW_LEVEL_OF_INTX" edc:desc="Low Level of INTX" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="ANY_LOGICAL_CHANGE_OF_INTX" edc:desc="Any Logical Change of INTX" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="FALLING_EDGE_OF_INTX" edc:desc="Falling Edge of INTX" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="RISING_EDGE_OF_INTX" edc:desc="Rising Edge of INTX" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -466,14 +466,14 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC1">
               <edc:SFRFieldDef edc:cname="CS1" edc:desc="Clock Select1 bits" edc:nzwidth="0x3">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="No Clock Source (Stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="Running, No Prescaling" edc:when="(field &amp; 0x7) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="Running, CLK/8" edc:when="(field &amp; 0x7) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="Running, CLK/32" edc:when="(field &amp; 0x7) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="Running, CLK/64" edc:when="(field &amp; 0x7) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="Running, CLK/128" edc:when="(field &amp; 0x7) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="Running, CLK/256" edc:when="(field &amp; 0x7) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="Running, CLK/1024" edc:when="(field &amp; 0x7) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="NO_CLOCK_SOURCE_STOPPED" edc:desc="No Clock Source (Stopped)" edc:when="(field &amp; 0x7) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_NO_PRESCALING" edc:desc="Running, No Prescaling" edc:when="(field &amp; 0x7) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_8" edc:desc="Running, CLK/8" edc:when="(field &amp; 0x7) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_32" edc:desc="Running, CLK/32" edc:when="(field &amp; 0x7) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_64" edc:desc="Running, CLK/64" edc:when="(field &amp; 0x7) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_128" edc:desc="Running, CLK/128" edc:when="(field &amp; 0x7) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_256" edc:desc="Running, CLK/256" edc:when="(field &amp; 0x7) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="RUNNING_CLK_1024" edc:desc="Running, CLK/1024" edc:when="(field &amp; 0x7) == 0x07"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="CTC1" edc:desc="Clear Timer/Counter on Compare Match" edc:nzwidth="0x1"/>
             </edc:SFRMode>
@@ -490,10 +490,10 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TWI">
               <edc:SFRFieldDef edc:cname="TWPS" edc:desc="TWI Prescaler" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="1" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="4" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="16" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="64" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="1" edc:desc="1" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="4" edc:desc="4" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="16" edc:desc="16" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="64" edc:desc="64" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="TWS" edc:desc="TWI Status" edc:nzwidth="0x5"/>
@@ -536,10 +536,10 @@
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TWI">
               <edc:SFRFieldDef edc:cname="TWBCIP" edc:desc="TWI Bus Connect/Disconnect Interrupt Polarity" edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="TWBDT" edc:desc="TWI Bus Disconnect Time-out Period" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="250ms" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="500ms" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="1000ms" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="2000ms" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="250MS" edc:desc="250ms" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="500MS" edc:desc="500ms" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="1000MS" edc:desc="1000ms" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="2000MS" edc:desc="2000ms" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:AdjustPoint edc:offset="0x3"/>
               <edc:SFRFieldDef edc:cname="TWBCIE" edc:desc="TWI Bus Connect/Disconnect Interrupt Enable" edc:nzwidth="0x1"/>
@@ -577,16 +577,16 @@
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="COULOMB_COUNTER">
               <edc:SFRFieldDef edc:cname="CADSE" edc:desc="When the CADSE bit is written to one, the ongoing CC-ADC conversion is aborted, and the CC-ADC enters Regular Current detection mode." edc:nzwidth="0x1"/>
               <edc:SFRFieldDef edc:cname="CADSI" edc:desc="The CADSI bits determine the current sampling interval for the Regular Current detection in Power-down mode. The actual settings remain to be determined." edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="125ms" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="250ms" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="500ms" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="1000ms" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="125MS" edc:desc="125ms" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="250MS" edc:desc="250ms" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="500MS" edc:desc="500ms" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="1000MS" edc:desc="1000ms" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="CADAS" edc:desc="CC_ADC Accumulate Current Select Bits" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="125ms" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="250ms" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="500ms" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="1000ms" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="125MS" edc:desc="125ms" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="250MS" edc:desc="250ms" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="500MS" edc:desc="500ms" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="1000MS" edc:desc="1000ms" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="CADUB" edc:desc="CC_ADC Update Busy" edc:nzwidth="0x1"/>
               <edc:AdjustPoint edc:offset="0x1"/>
@@ -648,28 +648,28 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="BATTERY_PROTECTION">
               <edc:SFRFieldDef edc:cname="DUDL" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="4.71V" edc:when="(field &amp; 0xF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="5.03V" edc:when="(field &amp; 0xF) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="5.34V" edc:when="(field &amp; 0xF) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="5.66V" edc:when="(field &amp; 0xF) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="5.97V" edc:when="(field &amp; 0xF) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="6.29V" edc:when="(field &amp; 0xF) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="6.60V" edc:when="(field &amp; 0xF) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="6.91V" edc:when="(field &amp; 0xF) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="7.23V" edc:when="(field &amp; 0xF) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x09" edc:desc="7.54V" edc:when="(field &amp; 0xF) == 0x09"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0A" edc:desc="7.86V" edc:when="(field &amp; 0xF) == 0x0A"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0B" edc:desc="8.17V" edc:when="(field &amp; 0xF) == 0x0B"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0C" edc:desc="8.49V" edc:when="(field &amp; 0xF) == 0x0C"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0D" edc:desc="8.80V" edc:when="(field &amp; 0xF) == 0x0D"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0E" edc:desc="9.11V" edc:when="(field &amp; 0xF) == 0x0E"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0F" edc:desc="9.43V" edc:when="(field &amp; 0xF) == 0x0F"/>
+                <edc:SFRFieldSemantic edc:cname="4_71V" edc:desc="4.71V" edc:when="(field &amp; 0xF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="5_03V" edc:desc="5.03V" edc:when="(field &amp; 0xF) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="5_34V" edc:desc="5.34V" edc:when="(field &amp; 0xF) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="5_66V" edc:desc="5.66V" edc:when="(field &amp; 0xF) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="5_97V" edc:desc="5.97V" edc:when="(field &amp; 0xF) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="6_29V" edc:desc="6.29V" edc:when="(field &amp; 0xF) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="6_60V" edc:desc="6.60V" edc:when="(field &amp; 0xF) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="6_91V" edc:desc="6.91V" edc:when="(field &amp; 0xF) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="7_23V" edc:desc="7.23V" edc:when="(field &amp; 0xF) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="7_54V" edc:desc="7.54V" edc:when="(field &amp; 0xF) == 0x09"/>
+                <edc:SFRFieldSemantic edc:cname="7_86V" edc:desc="7.86V" edc:when="(field &amp; 0xF) == 0x0A"/>
+                <edc:SFRFieldSemantic edc:cname="8_17V" edc:desc="8.17V" edc:when="(field &amp; 0xF) == 0x0B"/>
+                <edc:SFRFieldSemantic edc:cname="8_49V" edc:desc="8.49V" edc:when="(field &amp; 0xF) == 0x0C"/>
+                <edc:SFRFieldSemantic edc:cname="8_80V" edc:desc="8.80V" edc:when="(field &amp; 0xF) == 0x0D"/>
+                <edc:SFRFieldSemantic edc:cname="9_11V" edc:desc="9.11V" edc:when="(field &amp; 0xF) == 0x0E"/>
+                <edc:SFRFieldSemantic edc:cname="9_43V" edc:desc="9.43V" edc:when="(field &amp; 0xF) == 0x0F"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="DUVT" edc:nzwidth="0x2">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="750ms" edc:when="(field &amp; 0x3) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="1000ms" edc:when="(field &amp; 0x3) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="1250ms" edc:when="(field &amp; 0x3) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="1500ms" edc:when="(field &amp; 0x3) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="750MS" edc:desc="750ms" edc:when="(field &amp; 0x3) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="1000MS" edc:desc="1000ms" edc:when="(field &amp; 0x3) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="1250MS" edc:desc="1250ms" edc:when="(field &amp; 0x3) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="1500MS" edc:desc="1500ms" edc:when="(field &amp; 0x3) == 0x03"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -678,22 +678,22 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="BATTERY_PROTECTION">
               <edc:SFRFieldDef edc:cname="SCDL" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="0.100V" edc:when="(field &amp; 0xF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="0.110V" edc:when="(field &amp; 0xF) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="0.120V" edc:when="(field &amp; 0xF) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="0.130V" edc:when="(field &amp; 0xF) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="0.140V" edc:when="(field &amp; 0xF) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="0.160V" edc:when="(field &amp; 0xF) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="0.180V" edc:when="(field &amp; 0xF) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="0.200V" edc:when="(field &amp; 0xF) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="0.220V" edc:when="(field &amp; 0xF) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x09" edc:desc="0.240V" edc:when="(field &amp; 0xF) == 0x09"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0A" edc:desc="0.260V" edc:when="(field &amp; 0xF) == 0x0A"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0B" edc:desc="0.280V" edc:when="(field &amp; 0xF) == 0x0B"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0C" edc:desc="0.320V" edc:when="(field &amp; 0xF) == 0x0C"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0D" edc:desc="0.360V" edc:when="(field &amp; 0xF) == 0x0D"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0E" edc:desc="0.400V" edc:when="(field &amp; 0xF) == 0x0E"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0F" edc:desc="0.440V" edc:when="(field &amp; 0xF) == 0x0F"/>
+                <edc:SFRFieldSemantic edc:cname="0_100V" edc:desc="0.100V" edc:when="(field &amp; 0xF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="0_110V" edc:desc="0.110V" edc:when="(field &amp; 0xF) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="0_120V" edc:desc="0.120V" edc:when="(field &amp; 0xF) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="0_130V" edc:desc="0.130V" edc:when="(field &amp; 0xF) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="0_140V" edc:desc="0.140V" edc:when="(field &amp; 0xF) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="0_160V" edc:desc="0.160V" edc:when="(field &amp; 0xF) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="0_180V" edc:desc="0.180V" edc:when="(field &amp; 0xF) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="0_200V" edc:desc="0.200V" edc:when="(field &amp; 0xF) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="0_220V" edc:desc="0.220V" edc:when="(field &amp; 0xF) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="0_240V" edc:desc="0.240V" edc:when="(field &amp; 0xF) == 0x09"/>
+                <edc:SFRFieldSemantic edc:cname="0_260V" edc:desc="0.260V" edc:when="(field &amp; 0xF) == 0x0A"/>
+                <edc:SFRFieldSemantic edc:cname="0_280V" edc:desc="0.280V" edc:when="(field &amp; 0xF) == 0x0B"/>
+                <edc:SFRFieldSemantic edc:cname="0_320V" edc:desc="0.320V" edc:when="(field &amp; 0xF) == 0x0C"/>
+                <edc:SFRFieldSemantic edc:cname="0_360V" edc:desc="0.360V" edc:when="(field &amp; 0xF) == 0x0D"/>
+                <edc:SFRFieldSemantic edc:cname="0_400V" edc:desc="0.400V" edc:when="(field &amp; 0xF) == 0x0E"/>
+                <edc:SFRFieldSemantic edc:cname="0_440V" edc:desc="0.440V" edc:when="(field &amp; 0xF) == 0x0F"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -702,40 +702,40 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="BATTERY_PROTECTION">
               <edc:SFRFieldDef edc:cname="CCDL" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="0.050V" edc:when="(field &amp; 0xF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="0.055V" edc:when="(field &amp; 0xF) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="0.060V" edc:when="(field &amp; 0xF) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="0.065V" edc:when="(field &amp; 0xF) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="0.070V" edc:when="(field &amp; 0xF) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="0.080V" edc:when="(field &amp; 0xF) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="0.090V" edc:when="(field &amp; 0xF) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="0.100V" edc:when="(field &amp; 0xF) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="0.110V" edc:when="(field &amp; 0xF) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x09" edc:desc="0.120V" edc:when="(field &amp; 0xF) == 0x09"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0A" edc:desc="0.130V" edc:when="(field &amp; 0xF) == 0x0A"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0B" edc:desc="0.140V" edc:when="(field &amp; 0xF) == 0x0B"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0C" edc:desc="0.160V" edc:when="(field &amp; 0xF) == 0x0C"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0D" edc:desc="0.180V" edc:when="(field &amp; 0xF) == 0x0D"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0E" edc:desc="0.200V" edc:when="(field &amp; 0xF) == 0x0E"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0F" edc:desc="0.220V" edc:when="(field &amp; 0xF) == 0x0F"/>
+                <edc:SFRFieldSemantic edc:cname="0_050V" edc:desc="0.050V" edc:when="(field &amp; 0xF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="0_055V" edc:desc="0.055V" edc:when="(field &amp; 0xF) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="0_060V" edc:desc="0.060V" edc:when="(field &amp; 0xF) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="0_065V" edc:desc="0.065V" edc:when="(field &amp; 0xF) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="0_070V" edc:desc="0.070V" edc:when="(field &amp; 0xF) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="0_080V" edc:desc="0.080V" edc:when="(field &amp; 0xF) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="0_090V" edc:desc="0.090V" edc:when="(field &amp; 0xF) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="0_100V" edc:desc="0.100V" edc:when="(field &amp; 0xF) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="0_110V" edc:desc="0.110V" edc:when="(field &amp; 0xF) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="0_120V" edc:desc="0.120V" edc:when="(field &amp; 0xF) == 0x09"/>
+                <edc:SFRFieldSemantic edc:cname="0_130V" edc:desc="0.130V" edc:when="(field &amp; 0xF) == 0x0A"/>
+                <edc:SFRFieldSemantic edc:cname="0_140V" edc:desc="0.140V" edc:when="(field &amp; 0xF) == 0x0B"/>
+                <edc:SFRFieldSemantic edc:cname="0_160V" edc:desc="0.160V" edc:when="(field &amp; 0xF) == 0x0C"/>
+                <edc:SFRFieldSemantic edc:cname="0_180V" edc:desc="0.180V" edc:when="(field &amp; 0xF) == 0x0D"/>
+                <edc:SFRFieldSemantic edc:cname="0_200V" edc:desc="0.200V" edc:when="(field &amp; 0xF) == 0x0E"/>
+                <edc:SFRFieldSemantic edc:cname="0_220V" edc:desc="0.220V" edc:when="(field &amp; 0xF) == 0x0F"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="DCDL" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="0.050V" edc:when="(field &amp; 0xF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="0.055V" edc:when="(field &amp; 0xF) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="0.060V" edc:when="(field &amp; 0xF) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="0.065V" edc:when="(field &amp; 0xF) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="0.070V" edc:when="(field &amp; 0xF) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="0.080V" edc:when="(field &amp; 0xF) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="0.090V" edc:when="(field &amp; 0xF) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="0.100V" edc:when="(field &amp; 0xF) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="0.110V" edc:when="(field &amp; 0xF) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x09" edc:desc="0.120V" edc:when="(field &amp; 0xF) == 0x09"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0A" edc:desc="0.130V" edc:when="(field &amp; 0xF) == 0x0A"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0B" edc:desc="0.140V" edc:when="(field &amp; 0xF) == 0x0B"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0C" edc:desc="0.160V" edc:when="(field &amp; 0xF) == 0x0C"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0D" edc:desc="0.180V" edc:when="(field &amp; 0xF) == 0x0D"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0E" edc:desc="0.200V" edc:when="(field &amp; 0xF) == 0x0E"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0F" edc:desc="0.220V" edc:when="(field &amp; 0xF) == 0x0F"/>
+                <edc:SFRFieldSemantic edc:cname="0_050V" edc:desc="0.050V" edc:when="(field &amp; 0xF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="0_055V" edc:desc="0.055V" edc:when="(field &amp; 0xF) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="0_060V" edc:desc="0.060V" edc:when="(field &amp; 0xF) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="0_065V" edc:desc="0.065V" edc:when="(field &amp; 0xF) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="0_070V" edc:desc="0.070V" edc:when="(field &amp; 0xF) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="0_080V" edc:desc="0.080V" edc:when="(field &amp; 0xF) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="0_090V" edc:desc="0.090V" edc:when="(field &amp; 0xF) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="0_100V" edc:desc="0.100V" edc:when="(field &amp; 0xF) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="0_110V" edc:desc="0.110V" edc:when="(field &amp; 0xF) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="0_120V" edc:desc="0.120V" edc:when="(field &amp; 0xF) == 0x09"/>
+                <edc:SFRFieldSemantic edc:cname="0_130V" edc:desc="0.130V" edc:when="(field &amp; 0xF) == 0x0A"/>
+                <edc:SFRFieldSemantic edc:cname="0_140V" edc:desc="0.140V" edc:when="(field &amp; 0xF) == 0x0B"/>
+                <edc:SFRFieldSemantic edc:cname="0_160V" edc:desc="0.160V" edc:when="(field &amp; 0xF) == 0x0C"/>
+                <edc:SFRFieldSemantic edc:cname="0_180V" edc:desc="0.180V" edc:when="(field &amp; 0xF) == 0x0D"/>
+                <edc:SFRFieldSemantic edc:cname="0_200V" edc:desc="0.200V" edc:when="(field &amp; 0xF) == 0x0E"/>
+                <edc:SFRFieldSemantic edc:cname="0_220V" edc:desc="0.220V" edc:when="(field &amp; 0xF) == 0x0F"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -744,40 +744,40 @@
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="BATTERY_PROTECTION">
               <edc:SFRFieldDef edc:cname="OCPT" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="1 ms" edc:when="(field &amp; 0xF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="2 ms" edc:when="(field &amp; 0xF) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="4 ms" edc:when="(field &amp; 0xF) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="6 ms" edc:when="(field &amp; 0xF) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="8 ms" edc:when="(field &amp; 0xF) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="10 ms" edc:when="(field &amp; 0xF) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="12 ms" edc:when="(field &amp; 0xF) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="14 ms" edc:when="(field &amp; 0xF) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="16 ms" edc:when="(field &amp; 0xF) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x09" edc:desc="18 ms" edc:when="(field &amp; 0xF) == 0x09"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0A" edc:desc="20 ms" edc:when="(field &amp; 0xF) == 0x0A"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0B" edc:desc="22 ms" edc:when="(field &amp; 0xF) == 0x0B"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0C" edc:desc="24 ms" edc:when="(field &amp; 0xF) == 0x0C"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0D" edc:desc="26 ms" edc:when="(field &amp; 0xF) == 0x0D"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0E" edc:desc="28 ms" edc:when="(field &amp; 0xF) == 0x0E"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0F" edc:desc="30 ms" edc:when="(field &amp; 0xF) == 0x0F"/>
+                <edc:SFRFieldSemantic edc:cname="1_MS" edc:desc="1 ms" edc:when="(field &amp; 0xF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="2_MS" edc:desc="2 ms" edc:when="(field &amp; 0xF) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="4_MS" edc:desc="4 ms" edc:when="(field &amp; 0xF) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="6_MS" edc:desc="6 ms" edc:when="(field &amp; 0xF) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="8_MS" edc:desc="8 ms" edc:when="(field &amp; 0xF) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="10_MS" edc:desc="10 ms" edc:when="(field &amp; 0xF) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="12_MS" edc:desc="12 ms" edc:when="(field &amp; 0xF) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="14_MS" edc:desc="14 ms" edc:when="(field &amp; 0xF) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="16_MS" edc:desc="16 ms" edc:when="(field &amp; 0xF) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="18_MS" edc:desc="18 ms" edc:when="(field &amp; 0xF) == 0x09"/>
+                <edc:SFRFieldSemantic edc:cname="20_MS" edc:desc="20 ms" edc:when="(field &amp; 0xF) == 0x0A"/>
+                <edc:SFRFieldSemantic edc:cname="22_MS" edc:desc="22 ms" edc:when="(field &amp; 0xF) == 0x0B"/>
+                <edc:SFRFieldSemantic edc:cname="24_MS" edc:desc="24 ms" edc:when="(field &amp; 0xF) == 0x0C"/>
+                <edc:SFRFieldSemantic edc:cname="26_MS" edc:desc="26 ms" edc:when="(field &amp; 0xF) == 0x0D"/>
+                <edc:SFRFieldSemantic edc:cname="28_MS" edc:desc="28 ms" edc:when="(field &amp; 0xF) == 0x0E"/>
+                <edc:SFRFieldSemantic edc:cname="30_MS" edc:desc="30 ms" edc:when="(field &amp; 0xF) == 0x0F"/>
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="SCPT" edc:nzwidth="0x4">
-                <edc:SFRFieldSemantic edc:cname="VAL_0x00" edc:desc="61 us" edc:when="(field &amp; 0xF) == 0x00"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x01" edc:desc="122 us" edc:when="(field &amp; 0xF) == 0x01"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x02" edc:desc="183 us" edc:when="(field &amp; 0xF) == 0x02"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x03" edc:desc="244 us" edc:when="(field &amp; 0xF) == 0x03"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x04" edc:desc="305 us" edc:when="(field &amp; 0xF) == 0x04"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x05" edc:desc="366 us" edc:when="(field &amp; 0xF) == 0x05"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x06" edc:desc="427 us" edc:when="(field &amp; 0xF) == 0x06"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x07" edc:desc="488 us" edc:when="(field &amp; 0xF) == 0x07"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x08" edc:desc="610 us" edc:when="(field &amp; 0xF) == 0x08"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x09" edc:desc="732 us" edc:when="(field &amp; 0xF) == 0x09"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0A" edc:desc="854 us" edc:when="(field &amp; 0xF) == 0x0A"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0B" edc:desc="976 us" edc:when="(field &amp; 0xF) == 0x0B"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0C" edc:desc="1098 us" edc:when="(field &amp; 0xF) == 0x0C"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0D" edc:desc="1220 us" edc:when="(field &amp; 0xF) == 0x0D"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0E" edc:desc="1342 us" edc:when="(field &amp; 0xF) == 0x0E"/>
-                <edc:SFRFieldSemantic edc:cname="VAL_0x0F" edc:desc="1464 us" edc:when="(field &amp; 0xF) == 0x0F"/>
+                <edc:SFRFieldSemantic edc:cname="61_US" edc:desc="61 us" edc:when="(field &amp; 0xF) == 0x00"/>
+                <edc:SFRFieldSemantic edc:cname="122_US" edc:desc="122 us" edc:when="(field &amp; 0xF) == 0x01"/>
+                <edc:SFRFieldSemantic edc:cname="183_US" edc:desc="183 us" edc:when="(field &amp; 0xF) == 0x02"/>
+                <edc:SFRFieldSemantic edc:cname="244_US" edc:desc="244 us" edc:when="(field &amp; 0xF) == 0x03"/>
+                <edc:SFRFieldSemantic edc:cname="305_US" edc:desc="305 us" edc:when="(field &amp; 0xF) == 0x04"/>
+                <edc:SFRFieldSemantic edc:cname="366_US" edc:desc="366 us" edc:when="(field &amp; 0xF) == 0x05"/>
+                <edc:SFRFieldSemantic edc:cname="427_US" edc:desc="427 us" edc:when="(field &amp; 0xF) == 0x06"/>
+                <edc:SFRFieldSemantic edc:cname="488_US" edc:desc="488 us" edc:when="(field &amp; 0xF) == 0x07"/>
+                <edc:SFRFieldSemantic edc:cname="610_US" edc:desc="610 us" edc:when="(field &amp; 0xF) == 0x08"/>
+                <edc:SFRFieldSemantic edc:cname="732_US" edc:desc="732 us" edc:when="(field &amp; 0xF) == 0x09"/>
+                <edc:SFRFieldSemantic edc:cname="854_US" edc:desc="854 us" edc:when="(field &amp; 0xF) == 0x0A"/>
+                <edc:SFRFieldSemantic edc:cname="976_US" edc:desc="976 us" edc:when="(field &amp; 0xF) == 0x0B"/>
+                <edc:SFRFieldSemantic edc:cname="1098_US" edc:desc="1098 us" edc:when="(field &amp; 0xF) == 0x0C"/>
+                <edc:SFRFieldSemantic edc:cname="1220_US" edc:desc="1220 us" edc:when="(field &amp; 0xF) == 0x0D"/>
+                <edc:SFRFieldSemantic edc:cname="1342_US" edc:desc="1342 us" edc:when="(field &amp; 0xF) == 0x0E"/>
+                <edc:SFRFieldSemantic edc:cname="1464_US" edc:desc="1464 us" edc:when="(field &amp; 0xF) == 0x0F"/>
               </edc:SFRFieldDef>
             </edc:SFRMode>
           </edc:SFRModeList>

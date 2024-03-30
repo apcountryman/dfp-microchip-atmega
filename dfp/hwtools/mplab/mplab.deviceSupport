@@ -1,400 +1,400 @@
 <mp:deviceSupport xmlns:mp="http://crownking/mplab" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://crownking/mplab ../../schema/mplab/deviceSupport.xsd">
   <mp:family mp:family="avr">
     <mp:device mp:name="AT90CAN128">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="AT90CAN32">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="AT90CAN64">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="AT90PWM1">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="AT90PWM161">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="AT90PWM216">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="AT90PWM2B">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="AT90PWM316">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="AT90PWM3B">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="AT90PWM81">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="AT90USB1286">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="AT90USB1287">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="AT90USB162">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="AT90USB646">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="AT90USB647">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="AT90USB82">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega128">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega1280">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega1281">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega1284">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega1284P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega1284RFR2">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega128A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega128RFA1">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega128RFR2">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega16">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega1608">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="beta" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega1609">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="beta" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega162">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega164A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega164P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega164PA">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega165A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega165P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega165PA">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega168">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega168A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega168P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega168PA">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega168PB">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega169A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega169P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega169PA">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega16A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega16HVA">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega16HVB">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega16HVBrevB">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega16M1">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega16U2">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega16U4">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega2560">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega2561">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega2564RFR2">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega256RFR2">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega32">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega3208">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="beta" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega3209">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="beta" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega324A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega324P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega324PA">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega324PB">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega325">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega3250">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega3250A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega3250P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega3250PA">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega325A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega325P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega325PA">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega328">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega328P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega328PB">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega329">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega3290">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega3290A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega3290P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega3290PA">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega329A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega329P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega329PA">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega32A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega32C1">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega32HVB">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega32HVBrevB">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega32M1">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega32U2">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega32U4">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega406">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega48">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega4808">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="beta" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega4809">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="beta" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega48A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="beta" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="beta" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega48P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega48PA">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega48PB">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega64">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega640">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega644">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega644A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega644P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega644PA">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega644RFR2">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega645">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega6450">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega6450A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega6450P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega645A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega645P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega649">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega6490">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega6490A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega6490P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega649A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega649P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega64A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega64C1">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega64HVE2">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega64M1">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega64RFR2">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega8">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega808">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="beta" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega809">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="beta" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega8515">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega8535">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega88">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega88A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega88P">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega88PA">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega88PB">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega8A">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega8HVA">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
     <mp:device mp:name="ATmega8U2">
-      <mp:support mp:aiced="beta" mp:aicep="beta" mp:icd4d="no" mp:icd4p="no" mp:ice4d="no" mp:ice4p="no" mp:nedbgd="beta" mp:nedbgp="beta" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
+      <mp:support mp:aiced="yes" mp:aicep="yes" mp:icd4d="no" mp:icd4p="no" mp:ice4d="beta" mp:ice4p="beta" mp:nedbgd="yes" mp:nedbgp="yes" mp:pk4d="yes" mp:pk4p="yes" mp:sim="yes" mp:snapd="yes" mp:snapp="yes"/>
     </mp:device>
   </mp:family>
 </mp:deviceSupport>
