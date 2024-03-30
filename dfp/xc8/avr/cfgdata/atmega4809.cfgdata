@@ -1,7 +1,7 @@
-# Generated Thu Mar 26 16:48:44 2020
+# Generated Wed Nov 25 23:04:17 2020
 
 #
-# Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+# Copyright (C) 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
 # All rights reserved.
 #
 # This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
@@ -14,7 +14,8 @@
 #
 #     2. Redistributions in binary form must reproduce the above copyright notice, this list
 #        of conditions and the following disclaimer in the documentation and/or other
-#        materials provided with the distribution.
+#        materials provided with the distribution. Publication is not required when
+#        this file is used in an embedded application.
 #
 #     3. Microchip's name may not be used to endorse or promote products derived from this
 #        software without specific prior written permission.
@@ -130,9 +131,9 @@ CVALUE:00000005:SUT_16MS:16 ms
 CVALUE:00000006:SUT_32MS:32 ms
 CVALUE:00000007:SUT_64MS:64 ms
 CWORD:00821287:000000FF:00000000:APPEND
-CSETTING:000000FF:APPEND:
+CSETTING:000000FF:APPEND:Application Code Section End
 CWORD:00821288:000000FF:00000000:BOOTEND
-CSETTING:000000FF:BOOTEND:
+CSETTING:000000FF:BOOTEND:Boot Section End
 CWORD:0083128A:000000FF:000000C5:LOCKBIT
 CSETTING:000000FF:LB:Lock Bits
 CVALUE:0000003A:LB_RWLOCK:Read and write lock

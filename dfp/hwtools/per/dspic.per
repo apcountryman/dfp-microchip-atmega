@@ -318,10 +318,10 @@
       <per:sfr key="CMPDAC" sfr="CMPDAC@|CMP@DAC"/>
       <per:sfr key="CMREF" sfr="CMPDAC@|CMP@DAC" field="CMREF[0-9]?"/>
       <per:sfr key="IFS" sfr="IFS[0-9]" field="AC@IF|CMP@?IF|CMIF" critical="false"/>
-      <per:pin key="CMPA" pinID="CMP@A"/>
-      <per:pin key="CMPB" pinID="CMP@B" optional="true"/>
-      <per:pin key="CMPC" pinID="CMP@C" optional="true"/>
-      <per:pin key="CMPD" pinID="CMP@D" optional="true"/>
+      <per:pin key="CMPA" pinID="CMP@A" critical="false"/>
+      <per:pin key="CMPB" pinID="CMP@B" optional="true" critical="false"/>
+      <per:pin key="CMPC" pinID="CMP@C" optional="true" critical="false"/>
+      <per:pin key="CMPD" pinID="CMP@D" optional="true" critical="false"/>
       <per:pin key="AVDD" pinID="AVDD" critical="false"/>
       <per:pin key="DACOUT" pinID="DACOUT1?" optional="true" critical="false"/>
       <per:pin key="EXTREF" pinID="EXTREF1?" optional="true" critical="false"/>
@@ -1575,7 +1575,7 @@
     <per:meta char="@" val="1|2|3"/>
     <per:periphConfig>
       <per:pin key="ICMx" pinID="ICM@R?|IC@" critical="false"/>
-      <per:pin key="OCMxA" pinID="OCM@A|OC@A" critical="false" optional="true"/>
+      <per:pin key="OCMxA" pinID="OCM@A?|OC@A" critical="false" optional="true"/>
       <per:pin key="OCMxB" pinID="OCM@B|OC@B" critical="false" optional="true"/>
       <per:sfr key="CCPxCON1L" sfr="CCP@CON1L"/>
       <per:sfr key="CCPxCON1H" sfr="CCP@CON1H"/>
@@ -2525,18 +2525,11 @@
     <per:periphConfig>
       <per:sfr key="SWDTEN" sfr="RCON" field="SWDTEN"/>
       <per:sfr key="WDTO" sfr="RCON" field="WDTO"/>
-      <per:cfg key="FWDTEN" cfg="FWDT|CONFIG1" field="FWDTEN|WDTEN"/>
-      <per:cfg key="WINDIS" cfg="FWDT|CONFIG1" field="WINDIS|WWDTEN"/>
-      <per:cfg key="WDTWIN" cfg="CONFIG3" field="WDTIN" optional="true"/>
-      <per:cfg key="WDTPRE" cfg="FWDT|CONFIG1" field="WDTPRE|FWPSA|FWPSA0"/>
-      <per:cfg key="WDTPOST" cfg="FWDT|CONFIG1" field="WDTPOST|WDTPS"/>
-      <per:periphClassDesc class="WatchdogTimer"/>
-    </per:periphConfig>
-    <per:periphConfig>
-      <per:sfr key="SWDTEN" sfr="RCON" field="SWDTEN"/>
-      <per:sfr key="WDTO" sfr="RCON" field="WDTO"/>
-      <per:cfg key="FWDTEN" cfg="FWDT|CONFIG1" field="FWDTEN|WDT"/>
-      <per:cfg key="WDTPRE" cfg="FWDT|CONFIG1" field="WDTPRE|FWPSA"/>
+      <per:cfg key="FWDTEN" cfg="FWDT|CONFIG1" field="FWDTEN|WDT(EN)?"/>
+      <per:cfg key="WINDIS" cfg="FWDT|CONFIG1" field="WINDIS|WWDTEN" optional="true"/>
+      <per:cfg key="WDTCLK" cfg="FWDT" field="WDTCLK" optional="true"/>
+      <per:cfg key="WDTWIN" cfg="FWDT|CONFIG3" field="WDTIN|WDTWIN" optional="true"/>
+      <per:cfg key="WDTPRE" cfg="FWDT|CONFIG1" field="WDTPRE|FWPSA(0)?"/>
       <per:cfg key="WDTPOST" cfg="FWDT|CONFIG1" field="WDTPOST|WDTPS|FWPSB"/>
       <per:periphClassDesc class="WatchdogTimer"/>
     </per:periphConfig>

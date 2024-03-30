@@ -760,6 +760,39 @@
       <per:initParam param="K"/>
     </per:periphConfig>
   </per:peripheral>
+  <per:peripheral name="COMP@">
+    <per:meta char="@" val="1|2|3|4|5"/>
+    <per:periphConfig>
+      <per:pin key="VIN0-" pinID="C@IN1-"/>
+      <per:pin key="VIN1-" pinID="C@IN2-" optional="true"/>
+      <per:pin key="VIN2-" pinID="C@IN3-"/>
+      <per:pin key="VIN3-" pinID="C@IN4-"/>
+      <per:pin key="VIN0+" pinID="C@IN1?\+"/>
+      <per:pin key="VOUT" pinID="C@OUT"/>
+      <per:sfr key="CXENABLE" sfr="CM@CON" field="ON"/>
+      <per:sfr key="COE" sfr="CM@CON" field="COE"/>
+      <per:sfr key="CXPOLARITY" sfr="CM@CON" field="CPOL"/>
+      <per:sfr key="EVPOL" sfr="CM@CON" field="EVPOL"/>
+      <per:sfr key="CEVT" sfr="CM@CON" field="CEVT"/>
+      <per:sfr key="CXOUT" sfr="CM@CON" field="COUT"/>
+      <per:sfr key="CXNCH" sfr="CM@CON" field="CCH"/>
+      <per:sfr key="CXPCH" sfr="CM@CON" field="CREF"/>
+      <per:sfr key="CFSEL" sfr="CM@CON" field="CFSEL"/>
+      <per:sfr key="CFLTREN" sfr="CM@CON" field="CFLTREN"/>
+      <per:sfr key="CFDIV" sfr="CM@CON" field="CFDIV"/>
+      <per:sfr key="CXIF" sfr="IFS[0-5]" field="CMP@IF" critical="false"/>
+      <per:sfr key="MCXOUT" sfr="CMSTAT" field="C@OUT" critical="false"/>
+      <per:sfr key="SIDL" sfr="CMSTAT" field="SIDL" critical="false"/>
+      <per:sfr key="CXEVT" sfr="CMSTAT" field="C@EVT" critical="false"/>
+      <per:sfr key="PBDIV" sfr="PB2DIV" field="PBDIV" critical="false"/>
+      <per:sfr key="PR2" sfr="PR2" field="PR2" critical="false"/>
+      <per:sfr key="PR3" sfr="PR3" field="PR3" critical="false"/>
+      <per:sfr key="PR4" sfr="PR4" field="PR4" critical="false"/>
+      <per:sfr key="PR5" sfr="PR5" field="PR5" critical="false"/>
+      <per:initParam param="@"/>
+      <per:periphClassDesc class="COMP.ComparatorC"/>
+    </per:periphConfig>
+  </per:peripheral>
   <per:peripheral name="COMP1">
     <per:periphConfig>
       <per:pin key="IN2" pinID="(C2IN\+)|(C1IND)" critical="false"/>
@@ -800,39 +833,6 @@
       <per:sfr key="IF" sfr="IFS[0-5]" field="CMP3IF" critical="false"/>
       <per:periphClassDesc class="Comparator"/>
       <per:initParam param="3"/>
-    </per:periphConfig>
-  </per:peripheral>
-  <per:peripheral name="COMP@">
-    <per:meta char="@" val="1|2|3|4|5"/>
-    <per:periphConfig>
-      <per:pin key="VIN0-" pinID="C@IN1-"/>
-      <per:pin key="VIN1-" pinID="C@IN2-"/>
-      <per:pin key="VIN2-" pinID="C@IN3-"/>
-      <per:pin key="VIN3-" pinID="C@IN4-"/>
-      <per:pin key="VIN0+" pinID="C@IN1\+"/>
-      <per:pin key="VOUT" pinID="C@OUT"/>
-      <per:sfr key="CXENABLE" sfr="CM@CON" field="ON"/>
-      <per:sfr key="COE" sfr="CM@CON" field="COE"/>
-      <per:sfr key="CXPOLARITY" sfr="CM@CON" field="CPOL"/>
-      <per:sfr key="EVPOL" sfr="CM@CON" field="EVPOL"/>
-      <per:sfr key="CEVT" sfr="CM@CON" field="CEVT"/>
-      <per:sfr key="CXOUT" sfr="CM@CON" field="COUT"/>
-      <per:sfr key="CXNCH" sfr="CM@CON" field="CCH"/>
-      <per:sfr key="CXPCH" sfr="CM@CON" field="CREF"/>
-      <per:sfr key="CFSEL" sfr="CM@CON" field="CFSEL"/>
-      <per:sfr key="CFLTREN" sfr="CM@CON" field="CFLTREN"/>
-      <per:sfr key="CFDIV" sfr="CM@CON" field="CFDIV"/>
-      <per:sfr key="CXIF" sfr="IFS[0-5]" field="CMP@IF" critical="false"/>
-      <per:sfr key="MCXOUT" sfr="CMSTAT" field="C@OUT" critical="false"/>
-      <per:sfr key="SIDL" sfr="CMSTAT" field="SIDL" critical="false"/>
-      <per:sfr key="CXEVT" sfr="CMSTAT" field="C@EVT" critical="false"/>
-      <per:sfr key="PBDIV" sfr="PB2DIV" field="PBDIV" critical="false"/>
-      <per:sfr key="PR2" sfr="PR2" field="PR2" critical="false"/>
-      <per:sfr key="PR3" sfr="PR3" field="PR3" critical="false"/>
-      <per:sfr key="PR4" sfr="PR4" field="PR4" critical="false"/>
-      <per:sfr key="PR5" sfr="PR5" field="PR5" critical="false"/>
-      <per:initParam param="@"/>
-      <per:periphClassDesc class="COMP.ComparatorC"/>
     </per:periphConfig>
   </per:peripheral>
   <per:peripheral name="AD_PIN_CFG" excludeFromMgrRpt="true">
@@ -908,7 +908,7 @@
   </per:peripheral>
   <per:peripheral name="TMR1">
     <per:periphConfig>
-      <per:pin key="TXCKI" pinID="T1CK"/>
+      <per:pin key="TXCKI" pinID="T1CK|SOSCO"/>
       <per:sfr key="TMRX" sfr="TMR1"/>
       <per:sfr key="INTCON" sfr="IEC0" critical="false"/>
       <per:sfr key="IFS" sfr="IFS0" critical="false"/>

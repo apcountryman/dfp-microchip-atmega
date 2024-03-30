@@ -71,16 +71,16 @@
       <per:sfr key="BRG16" sfr="BAUDCTL|BAUDCON" field="BRG16" optional="true"/>
       <per:sfr key="WUE" sfr="BAUDCTL|BAUDCON" field="WUE" optional="true"/>
       <per:sfr key="ABDEN" sfr="BAUDCTL|BAUDCON" field="ABDEN" optional="true"/>
-      <per:sfr key="SPBRG" sfr="SPBRG|SPBRGL"/>
-      <per:sfr key="SPBRGH" sfr="SPBRGH|SPBRGH" optional="true"/>
+      <per:sfr key="SPBRG" sfr="SPBRG|SPBRGL|SP1BRGL"/>
+      <per:sfr key="SPBRGH" sfr="SPBRGH|SPBRGH|SP1BRGH" optional="true"/>
       <per:sfr key="PIR" sfr="PIR[1-5]" critical="false"/>
       <per:sfr key="TXIF" sfr="PIR[1-5]" field="TXIF" critical="false"/>
       <per:sfr key="RCIF" sfr="PIR[1-5]" field="RCIF" critical="false"/>
       <per:sfr key="PIE" sfr="PIE[1-5]" critical="false"/>
       <per:sfr key="TXIE" sfr="PIE[1-5]" field="TXIE" critical="false"/>
       <per:sfr key="RCIE" sfr="PIE[1-5]" field="RCIE" critical="false"/>
-      <per:pin key="TX" pinID="TX"/>
-      <per:pin key="RX" pinID="RX"/>
+      <per:pin key="TX" pinID="TX_?(CK)?"/>
+      <per:pin key="RX" pinID="RX(_DT)?"/>
       <per:periphClassDesc class="UART.UARTWrapper"/>
       <per:initParam param="1"/>
     </per:periphConfig>
@@ -114,13 +114,15 @@
       <per:sfr key="SPBRG" sfr="SP@BRGL|SPBRGL@"/>
       <per:sfr key="SPBRGH" sfr="SP@BRGH|SPBRGH@"/>
       <per:sfr key="PIR" sfr="PIR[1-5]" critical="false"/>
-      <per:sfr key="TXIF" sfr="PIR[1-5]" field="TX@IF|TXIF@" critical="false"/>
-      <per:sfr key="RCIF" sfr="PIR[1-5]" field="RC@IF|RCIF@" critical="false"/>
+      <per:sfr key="TXIF" sfr="PIR[1-5]" field="TX@?IF|TXIF@" critical="false"/>
+      <per:sfr key="RCIF" sfr="PIR[1-5]" field="RC@?IF|RCIF@" critical="false"/>
       <per:sfr key="PIE" sfr="PIE[1-5]" critical="false"/>
-      <per:sfr key="TXIE" sfr="PIE[1-5]" field="TX@IE|TXIE@" critical="false"/>
-      <per:sfr key="RCIE" sfr="PIE[1-5]" field="RC@IE|RCIE@" critical="false"/>
-      <per:pin key="TX" pinID="TX@"/>
-      <per:pin key="RX" pinID="RX@"/>
+      <per:sfr key="TXIE" sfr="PIE[1-5]" field="TX@?IE|TXIE@" critical="false"/>
+      <per:sfr key="RCIE" sfr="PIE[1-5]" field="RC@?IE|RCIE@" critical="false"/>
+      <per:pin key="TXmeta" pinID="TX@" optional="true" critical="false"/>
+      <per:pin key="TX" pinID="TX|TX_CK" optional="true" critical="false"/>
+      <per:pin key="RXmeta" pinID="RX@" optional="true" critical="false"/>
+      <per:pin key="RX" pinID="RX" optional="true" critical="false"/>
       <per:periphClassDesc class="UART.UARTWrapper"/>
       <per:initParam param="@"/>
     </per:periphConfig>

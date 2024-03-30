@@ -48,6 +48,24 @@
       <per:periphClassDesc class="PORT.PORT"/>
     </per:periphConfig>
   </per:peripheral>
+  <per:peripheral name="PAC">
+    <per:periphConfig>
+      <per:cfg key="CFGPAC" cfg="USER_WORD_[0-9]+" field="NONSECA_PAC"/>
+      <per:cfg key="CFG#" cfg="USER_WORD_[0-9]+" field="NONSECA_#" optional="true" critical="false" metaf="#" metar="PM|MCLK|RSTC|OSCCTRL|OSC32KCTRL|SUPC|GCLK|WDT|RTC|EIC|FREQM|PORT|AC"/>
+      <per:cfg key="CFG#" cfg="USER_WORD_[0-9]+" field="NONSECB_#" optional="true" critical="false" metaf="#" metar="IDAU|DSU|NVMCTRL|DMAC|HMATRIXHS"/>
+      <per:cfg key="CFG#" cfg="USER_WORD_[0-9]+" field="NONSECC_#" optional="true" critical="false" metaf="#" metar="EVSYS|SERCOM0|SERCOM1|SERCOM2|TC0|TC1|TC2|ADC|DAC|PTC|TRNG|CCL|OPAMP|TRAM"/>
+      <per:sfr key="NONSEC#" sfr="NONSECA" field="#_?" optional="true" periph="PAC" critical="false" metaf="#" metar="PAC|PM|MCLK|RSTC|OSCCTRL|OSC32KCTRL|SUPC|GCLK|WDT|RTC|EIC|FREQM|PORT|AC"/>
+      <per:sfr key="NONSEC#" sfr="NONSECB" field="#_?" optional="true" periph="PAC" critical="false" metaf="#" metar="IDAU|DSU|NVMCTRL|DMAC|HMATRIXHS"/>
+      <per:sfr key="NONSEC#" sfr="NONSECC" field="#_?" optional="true" periph="PAC" critical="false" metaf="#" metar="EVSYS|SERCOM0|SERCOM1|SERCOM2|TC0|TC1|TC2|ADC|DAC|PTC|TRNG|CCL|OPAMP|TRAM"/>
+      <per:sfr key="INTFLAG#" sfr="INTFLAGA" field="#_?" optional="true" periph="PAC" critical="false" metaf="#" metar="PAC|PM|MCLK|RSTC|OSCCTRL|OSC32KCTRL|SUPC|GCLK|WDT|RTC|EIC|FREQM|PORT|AC"/>
+      <per:sfr key="INTFLAG#" sfr="INTFLAGB" field="#_?" optional="true" periph="PAC" critical="false" metaf="#" metar="IDAU|DSU|NVMCTRL|DMAC|HMATRIXHS"/>
+      <per:sfr key="INTFLAG#" sfr="INTFLAGC" field="#_?" optional="true" periph="PAC" critical="false" metaf="#" metar="EVSYS|SERCOM0|SERCOM1|SERCOM2|TC0|TC1|TC2|ADC|DAC|PTC|TRNG|CCL|OPAMP|TRAM"/>
+      <per:sfr key="EVCTRL" sfr="EVCTRL" field="ERREO" periph="PAC" critical="false"/>
+      <per:sfr key="INTENCLR" sfr="INTENCLR" field="ERR" periph="PAC" critical="false"/>
+      <per:sfr key="INTENSET" sfr="INTENSET" field="ERR" periph="PAC" critical="false"/>
+      <per:periphClassDesc class="PAC.PAC_TZ"/>
+    </per:periphConfig>
+  </per:peripheral>
   <per:peripheral name="IDAU">
     <per:periphConfig>
       <per:cfg key="BOOTROM_RXN" cfg="USER_WORD_1" field="BOOTROM_RXN" optional="true"/>
@@ -66,7 +84,7 @@
       <per:sfr key="ANSC" sfr="SCFGA" field="ANSC" periph="IDAU"/>
       <per:sfr key="DS" sfr="SCFGA" field="DS" periph="IDAU"/>
       <per:sfr key="RS" sfr="SCFGR" field="RS" periph="IDAU"/>
-      <per:periphClassDesc class="IDAU"/>
+      <per:periphClassDesc class="IDAU.IDAU_CM23"/>
     </per:periphConfig>
   </per:peripheral>
   <per:peripheral name="EEFC">
@@ -116,7 +134,7 @@
       <per:sfr key="FILTEN#_C2" sfr="CONFIG2" field="FILTEN#" periph="EIC" metaf="#" metar="0-7" optional="true"/>
       <per:sfr key="SENSE#_C3" sfr="CONFIG3" field="SENSE#" periph="EIC" metaf="#" metar="0-7" optional="true"/>
       <per:sfr key="FILTEN#_C3" sfr="CONFIG3" field="FILTEN#" periph="EIC" metaf="#" metar="0-7" optional="true"/>
-      <per:sfr key="DEBOUNCEN" sfr="DEBOUNCEN" field="DEBOUNCEN0?" periph="EIC"/>
+      <per:sfr key="DEBOUNCEN" sfr="DEBOUNCEN" field="DEBOUNCEN0?" periph="EIC" optional="true"/>
       <per:sfr key="DEBOUNCEN#" sfr="DEBOUNCEN" field="DEBOUNCEN#" periph="EIC" metaf="#" metar="1-15" optional="true"/>
       <per:sfr key="EXTINT_NSC" sfr="NSCHK" field="EXTINT0?" periph="EIC" optional="true"/>
       <per:sfr key="EXTINT#_NSC" sfr="NSCHK" field="EXTINT#" periph="EIC" metaf="#" metar="1-15" optional="true"/>
@@ -655,8 +673,7 @@
       <per:sfr key="WINCTRLSYNC" sfr="SYNCBUSY" periph="AC" field="WINCTRL" optional="true"/>
       <per:sfr key="ENABLESYNC" sfr="SYNCBUSY" periph="AC" field="ENABLE" optional="true"/>
       <per:sfr key="SWRSTSYNC" sfr="SYNCBUSY" periph="AC" field="SWRST" optional="true"/>
-      <per:pin key="AIN#" pinID="AIN#" critical="false" metaf="#" metar="0-3"/>
-      <per:pin key="AIN#" pinID="AIN#" critical="false" metaf="#" metar="4-7" optional="true"/>
+      <per:pin key="AIN#" pinID="AIN#" critical="false" metaf="#" metar="0-7" optional="true"/>
       <per:pin key="CMP0" pinID="CMP0"/>
       <per:pin key="CMP1" pinID="CMP1"/>
       <per:pin key="CMP2" pinID="CMP2" optional="true"/>
@@ -674,7 +691,7 @@
       <per:sfr key="ONDEMAND0" sfr="CTRLA" periph="ADC0" field="ONDEMAND"/>
       <per:sfr key="SWRST0" sfr="CTRLA" periph="ADC0" field="SWRST"/>
       <per:sfr key="CTRLB0" sfr="CTRLB" periph="ADC0"/>
-      <per:sfr key="PRESCALER0" sfr="CTRLB" periph="ADC0" field="PRESCALER"/>
+      <per:sfr key="PRESCALER0" sfr="CTRLB" periph="ADC0" field="PRESCALER" optional="true"/>
       <per:sfr key="SWTRIG0" sfr="SWTRIG" periph="ADC0"/>
       <per:sfr key="START0" sfr="SWTRIG" periph="ADC0" field="START"/>
       <per:sfr key="FLUSH0" sfr="SWTRIG" periph="ADC0" field="FLUSH"/>
@@ -1085,6 +1102,38 @@
       <per:sfr key="SHCSR_S" sfr="SHCSR" periph="SCB" critical="false"/>
       <per:sfr key="SHCSR_NS" sfr="SHCSR" periph="SCB_NS"/>
       <per:periphClassDesc class="SCB"/>
+    </per:periphConfig>
+  </per:peripheral>
+  <per:peripheral name="SERCOM@">
+    <per:meta char="@" val="0|1|2|3|4|5|6|7"/>
+    <per:periphConfig>
+      <per:sfr key="CTRLA" sfr="CTRLA_SERCOM@/USART_INT" periph="SERCOM@"/>
+      <per:sfr key="MODE" sfr="CTRLA_SERCOM@/USART_INT" field="MODE" periph="SERCOM@"/>
+      <per:sfr key="ENABLE" sfr="CTRLA_SERCOM@/USART_INT" field="ENABLE" periph="SERCOM@"/>
+      <per:sfr key="SWRST" sfr="CTRLA_SERCOM@/USART_INT" field="SWRST" periph="SERCOM@"/>
+      <per:sfr key="CMODE" sfr="CTRLA_SERCOM@/USART_INT" field="CMODE" periph="SERCOM@"/>
+      <per:sfr key="FORM" sfr="CTRLA_SERCOM@/USART_INT" field="FORM" periph="SERCOM@"/>
+      <per:sfr key="CTRLB" sfr="CTRLB_SERCOM@/USART_INT" periph="SERCOM@"/>
+      <per:sfr key="CHSIZE" sfr="CTRLB_SERCOM@/USART_INT" field="CHSIZE" periph="SERCOM@"/>
+      <per:sfr key="SBMODE" sfr="CTRLB_SERCOM@/USART_INT" field="SBMODE" periph="SERCOM@"/>
+      <per:sfr key="PMODE" sfr="CTRLB_SERCOM@/USART_INT" field="PMODE" periph="SERCOM@"/>
+      <per:sfr key="TXEN" sfr="CTRLB_SERCOM@/USART_INT" field="TXEN" periph="SERCOM@"/>
+      <per:sfr key="RXEN" sfr="CTRLB_SERCOM@/USART_INT" field="RXEN" periph="SERCOM@"/>
+      <per:sfr key="DATA" sfr="DATA_SERCOM@/USART_INT" periph="SERCOM@"/>
+      <per:sfr key="BAUD" sfr="BAUD_SERCOM@/USART_INT" periph="SERCOM@"/>
+      <per:sfr key="INT_DISABLE" sfr="INTENCLR_SERCOM@/USART_INT" periph="SERCOM@"/>
+      <per:sfr key="INT_ENABLE" sfr="INTENSET_SERCOM@/USART_INT" periph="SERCOM@"/>
+      <per:sfr key="TXC_EN" sfr="INTENSET_SERCOM@/USART_INT" field="TXC" periph="SERCOM@"/>
+      <per:sfr key="DRE_EN" sfr="INTENSET_SERCOM@/USART_INT" field="DRE" periph="SERCOM@"/>
+      <per:sfr key="RXC_EN" sfr="INTENSET_SERCOM@/USART_INT" field="RXC" periph="SERCOM@"/>
+      <per:sfr key="INTFLAG" sfr="INTFLAG_SERCOM@/USART_INT" periph="SERCOM@"/>
+      <per:sfr key="TXC_IF" sfr="INTFLAG_SERCOM@/USART_INT" field="TXC" periph="SERCOM@"/>
+      <per:sfr key="DRE_IF" sfr="INTFLAG_SERCOM@/USART_INT" field="DRE" periph="SERCOM@"/>
+      <per:sfr key="RXC_IF" sfr="INTFLAG_SERCOM@/USART_INT" field="RXC" periph="SERCOM@"/>
+      <per:sfr key="STATUS" sfr="STATUS_SERCOM@/USART_INT" periph="SERCOM@"/>
+      <per:sfr key="BUFOVF" sfr="STATUS_SERCOM@/USART_INT" field="BUFOVF" periph="SERCOM@"/>
+      <per:initParam param="@"/>
+      <per:periphClassDesc class="SERCOM.SERCOM"/>
     </per:periphConfig>
   </per:peripheral>
 </per:per>

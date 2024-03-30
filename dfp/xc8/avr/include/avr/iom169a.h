@@ -1,6 +1,7 @@
 /*****************************************************************************
  *
- * Copyright (C) 2002, 2003, 2004, 2005 Juergen Schilling <juergen.schilling@honeywell.com>, Eric B. Weddington, 2011 Atmel Corporation
+ * Copyright (C) 2002, 2003, 2004, 2005 Juergen Schilling <juergen.schilling@honeywell.com>, Eric B. Weddington
+ * Copyright (C) 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

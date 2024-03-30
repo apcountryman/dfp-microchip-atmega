@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m808def.inc
 ;* Title             : Register/Bit Definitions for the ATmega808
-;* Created           : 2020-05-05 14:14
+;* Created           : 2020-12-01 09:15
 ;* Version           : 1.00
 ;* Support e-mail    : avr@atmel.com
 ;* Target MCU        : ATmega808
@@ -1906,6 +1906,35 @@
 .equ CCL_SEQSEL12_bm = (1<<2)            ; Sequential Selection bit 2 mask
 .equ CCL_SEQSEL12_bp = 2                 ; Sequential Selection bit 2 position
 
+; CCL_TRUTH0 masks
+.equ CCL_TRUTH_gm = 0xFF                 ; Truth Table group mask
+.equ CCL_TRUTH_gp = 0                    ; Truth Table group position
+.equ CCL_TRUTH0_bm = (1<<0)              ; Truth Table bit 0 mask
+.equ CCL_TRUTH0_bp = 0                   ; Truth Table bit 0 position
+.equ CCL_TRUTH1_bm = (1<<1)              ; Truth Table bit 1 mask
+.equ CCL_TRUTH1_bp = 1                   ; Truth Table bit 1 position
+.equ CCL_TRUTH2_bm = (1<<2)              ; Truth Table bit 2 mask
+.equ CCL_TRUTH2_bp = 2                   ; Truth Table bit 2 position
+.equ CCL_TRUTH3_bm = (1<<3)              ; Truth Table bit 3 mask
+.equ CCL_TRUTH3_bp = 3                   ; Truth Table bit 3 position
+.equ CCL_TRUTH4_bm = (1<<4)              ; Truth Table bit 4 mask
+.equ CCL_TRUTH4_bp = 4                   ; Truth Table bit 4 position
+.equ CCL_TRUTH5_bm = (1<<5)              ; Truth Table bit 5 mask
+.equ CCL_TRUTH5_bp = 5                   ; Truth Table bit 5 position
+.equ CCL_TRUTH6_bm = (1<<6)              ; Truth Table bit 6 mask
+.equ CCL_TRUTH6_bp = 6                   ; Truth Table bit 6 position
+.equ CCL_TRUTH7_bm = (1<<7)              ; Truth Table bit 7 mask
+.equ CCL_TRUTH7_bp = 7                   ; Truth Table bit 7 position
+
+; CCL_TRUTH1 masks
+; Masks for CCL_TRUTH already defined
+
+; CCL_TRUTH2 masks
+; Masks for CCL_TRUTH already defined
+
+; CCL_TRUTH3 masks
+; Masks for CCL_TRUTH already defined
+
 ; Interrupt Mode for LUT0 select
 .equ CCL_INTMODE0_INTDISABLE_gc = (0x00<<0) ; Interrupt disabled
 .equ CCL_INTMODE0_RISING_gc = (0x01<<0)  ; Sense rising edge
@@ -2812,18 +2841,18 @@
 .equ PORTMUX_LUT3_bp = 3                 ; CCL LUT3 bit position
 
 ; PORTMUX_EVSYSROUTEA masks
-.equ PORTMUX_EVOUT0_bm = 0x01            ; Event Output 0 bit mask
-.equ PORTMUX_EVOUT0_bp = 0               ; Event Output 0 bit position
-.equ PORTMUX_EVOUT1_bm = 0x02            ; Event Output 1 bit mask
-.equ PORTMUX_EVOUT1_bp = 1               ; Event Output 1 bit position
-.equ PORTMUX_EVOUT2_bm = 0x04            ; Event Output 2 bit mask
-.equ PORTMUX_EVOUT2_bp = 2               ; Event Output 2 bit position
-.equ PORTMUX_EVOUT3_bm = 0x08            ; Event Output 3 bit mask
-.equ PORTMUX_EVOUT3_bp = 3               ; Event Output 3 bit position
-.equ PORTMUX_EVOUT4_bm = 0x10            ; Event Output 4 bit mask
-.equ PORTMUX_EVOUT4_bp = 4               ; Event Output 4 bit position
-.equ PORTMUX_EVOUT5_bm = 0x20            ; Event Output 5 bit mask
-.equ PORTMUX_EVOUT5_bp = 5               ; Event Output 5 bit position
+.equ PORTMUX_EVOUTA_bm = 0x01            ; Event Output A bit mask
+.equ PORTMUX_EVOUTA_bp = 0               ; Event Output A bit position
+.equ PORTMUX_EVOUTB_bm = 0x02            ; Event Output B bit mask
+.equ PORTMUX_EVOUTB_bp = 1               ; Event Output B bit position
+.equ PORTMUX_EVOUTC_bm = 0x04            ; Event Output C bit mask
+.equ PORTMUX_EVOUTC_bp = 2               ; Event Output C bit position
+.equ PORTMUX_EVOUTD_bm = 0x08            ; Event Output D bit mask
+.equ PORTMUX_EVOUTD_bp = 3               ; Event Output D bit position
+.equ PORTMUX_EVOUTE_bm = 0x10            ; Event Output E bit mask
+.equ PORTMUX_EVOUTE_bp = 4               ; Event Output E bit position
+.equ PORTMUX_EVOUTF_bm = 0x20            ; Event Output F bit mask
+.equ PORTMUX_EVOUTF_bp = 5               ; Event Output F bit position
 
 ; PORTMUX_TCAROUTEA masks
 .equ PORTMUX_TCA0_gm = 0x07              ; Port Multiplexer TCA0 group mask
@@ -2885,6 +2914,20 @@
 .equ PORTMUX_USART31_bm = (1<<7)         ; Port Multiplexer USART3 bit 1 mask
 .equ PORTMUX_USART31_bp = 7              ; Port Multiplexer USART3 bit 1 position
 
+; Event Output A select
+.equ PORTMUX_EVOUTA_DEFAULT_gc = (0x00<<0) ; EVOUT on PA2
+.equ PORTMUX_EVOUTA_ALT1_gc = (0x01<<0)  ; EVOUT on PA7
+
+; Event Output C select
+.equ PORTMUX_EVOUTC_DEFAULT_gc = (0x00<<2) ; EVOUT on PC2
+
+; Event Output D select
+.equ PORTMUX_EVOUTD_DEFAULT_gc = (0x00<<3) ; EVOUT on PD2
+.equ PORTMUX_EVOUTD_ALT1_gc = (0x01<<3)  ; EVOUT on PD7
+
+; Event Output F select
+.equ PORTMUX_EVOUTF_DEFAULT_gc = (0x00<<5) ; EVOUT on PF2
+
 ; Port Multiplexer TCA0 select
 .equ PORTMUX_TCA0_PORTA_gc = (0x00<<0)   ; TCA0 pins on PA[5:0]
 .equ PORTMUX_TCA0_PORTB_gc = (0x01<<0)   ; TCA0 pins on PB[5:0]
@@ -2892,6 +2935,20 @@
 .equ PORTMUX_TCA0_PORTD_gc = (0x03<<0)   ; TCA0 pins on PD[5:0]
 .equ PORTMUX_TCA0_PORTE_gc = (0x04<<0)   ; TCA0 pins on PE[5:0]
 .equ PORTMUX_TCA0_PORTF_gc = (0x05<<0)   ; TCA0 pins on PF[5:0]
+
+; Port Multiplexer TCB0 select
+.equ PORTMUX_TCB0_DEFAULT_gc = (0x00<<0) ; WO on PA2
+.equ PORTMUX_TCB0_ALT1_gc = (0x01<<0)    ; WO on PF4
+
+; Port Multiplexer TCB1 select
+.equ PORTMUX_TCB1_DEFAULT_gc = (0x00<<1) ; WO on PA3
+.equ PORTMUX_TCB1_ALT1_gc = (0x01<<1)    ; WO on PF5
+
+; Port Multiplexer TCB2 select
+.equ PORTMUX_TCB2_DEFAULT_gc = (0x00<<2) ; WO on PC0
+
+; Port Multiplexer TCB3 select
+.equ PORTMUX_TCB3_ALT1_gc = (0x01<<3)    ; WO on PC1
 
 ; Port Multiplexer SPI0 select
 .equ PORTMUX_SPI0_DEFAULT_gc = (0x00<<0) ; SPI0 on PA[7:4]
@@ -3054,7 +3111,6 @@
 ; Clock Select select
 .equ RTC_CLKSEL_INT32K_gc = (0x00<<0)    ; Internal 32kHz OSC
 .equ RTC_CLKSEL_INT1K_gc = (0x01<<0)     ; Internal 1kHz OSC
-.equ RTC_CLKSEL_TOSC32K_gc = (0x02<<0)   ; 32KHz Crystal OSC
 .equ RTC_CLKSEL_EXTCLK_gc = (0x03<<0)    ; External Clock
 
 ; Prescaling Factor select
@@ -3751,6 +3807,7 @@
 .equ USART_CHSIZE1_bp = 1                ; Character Size bit 1 position
 .equ USART_CHSIZE2_bm = (1<<2)           ; Character Size bit 2 mask
 .equ USART_CHSIZE2_bp = 2                ; Character Size bit 2 position
+; Masks for USART_CMODE already defined
 .equ USART_PMODE_gm = 0x30               ; Parity Mode group mask
 .equ USART_PMODE_gp = 4                  ; Parity Mode group position
 .equ USART_PMODE0_bm = (1<<4)            ; Parity Mode bit 0 mask
@@ -3893,6 +3950,12 @@
 .equ USART_NORMAL_CHSIZE_8BIT_gc = (0x03<<0) ; Character size: 8 bit
 .equ USART_NORMAL_CHSIZE_9BITL_gc = (0x06<<0) ; Character size: 9 bit read low byte first
 .equ USART_NORMAL_CHSIZE_9BITH_gc = (0x07<<0) ; Character size: 9 bit read high byte first
+
+; Communication Mode select
+.equ USART_NORMAL_CMODE_ASYNCHRONOUS_gc = (0x00<<6) ; Asynchronous Mode
+.equ USART_NORMAL_CMODE_SYNCHRONOUS_gc = (0x01<<6) ; Synchronous Mode
+.equ USART_NORMAL_CMODE_IRCOM_gc = (0x02<<6) ; Infrared Communication
+.equ USART_NORMAL_CMODE_MSPI_gc = (0x03<<6) ; Master SPI Mode
 
 ; Parity Mode select
 .equ USART_NORMAL_PMODE_DISABLED_gc = (0x00<<4) ; No Parity
@@ -4066,10 +4129,12 @@
 #define EEPROM_START 0x1400
 #define EEPROM_SIZE 0x0100
 #define EEPROM_END (0x1400 + 0x0100 - 1)
+#define EEPROM_PAGE_SIZE 0x20
 
 #define FUSES_START 0x1280
 #define FUSES_SIZE 0x000A
 #define FUSES_END (0x1280 + 0x000A - 1)
+#define FUSES_PAGE_SIZE 0x20
 
 #define INTERNAL_SRAM_START 0x3C00
 #define INTERNAL_SRAM_SIZE 0x0400
@@ -4082,30 +4147,32 @@
 #define LOCKBITS_START 0x128A
 #define LOCKBITS_SIZE 0x0001
 #define LOCKBITS_END (0x128A + 0x0001 - 1)
+#define LOCKBITS_PAGE_SIZE 0x20
 
 #define MAPPED_PROGMEM_START 0x4000
 #define MAPPED_PROGMEM_SIZE 0x2000
 #define MAPPED_PROGMEM_END (0x4000 + 0x2000 - 1)
+#define MAPPED_PROGMEM_PAGE_SIZE 0x40
 
 #define PROD_SIGNATURES_START 0x1103
 #define PROD_SIGNATURES_SIZE 0x003D
 #define PROD_SIGNATURES_END (0x1103 + 0x003D - 1)
+#define PROD_SIGNATURES_PAGE_SIZE 0x40
 
 #define SIGNATURES_START 0x1100
 #define SIGNATURES_SIZE 0x0003
 #define SIGNATURES_END (0x1100 + 0x0003 - 1)
+#define SIGNATURES_PAGE_SIZE 0x40
 
 #define USER_SIGNATURES_START 0x1300
 #define USER_SIGNATURES_SIZE 0x0020
 #define USER_SIGNATURES_END (0x1300 + 0x0020 - 1)
+#define USER_SIGNATURES_PAGE_SIZE 0x20
 
 #define PROGMEM_START 0x0000
 #define PROGMEM_SIZE 0x2000
 #define PROGMEM_END (0x0000 + 0x2000 - 1)
-
-#define PROGMEM_START 0x0000
-#define PROGMEM_SIZE 0x2000
-#define PROGMEM_END (0x0000 + 0x2000 - 1)
+#define PROGMEM_PAGE_SIZE 0x40
 
 
 ; Legacy definitions

@@ -86,7 +86,7 @@
   <per:peripheral name="EECON2LOCK" excludeFromMgrRpt="true">
     <per:periphConfig>
       <per:sfr key="NVMCON2" sfr="NVMCON2"/>
-      <per:sfr key="NVMADRU" sfr="NVMADRU"/>
+      <per:sfr key="NVMADRU" sfr="NVMADRU" critical="false"/>
       <per:periphClassDesc class="NVM.NVMCON2Lock"/>
     </per:periphConfig>
     <per:periphConfig>
@@ -95,6 +95,29 @@
     </per:periphConfig>
   </per:peripheral>
   <per:peripheral name="EEFLASH">
+    <per:periphConfig>
+      <per:cfg key="WRTB" cfg="CONFIG8" field="WRTB" critical="false"/>
+      <per:cfg key="WRTC" cfg="CONFIG8" field="WRTC" critical="false"/>
+      <per:cfg key="WRTD" cfg="CONFIG8" field="WRTD" critical="false"/>
+      <per:cfg key="WRTSAF" cfg="CONFIG8" field="WRTSAF" critical="false"/>
+      <per:cfg key="WRTAPP" cfg="CONFIG8" field="WRTAPP" critical="false"/>
+      <per:cfg key="CP" cfg="CONFIG10" field="CP" critical="false"/>
+      <per:sfr key="GO" sfr="NVMCON0" field="GO"/>
+      <per:sfr key="WRERR" sfr="NVMCON1" field="WRERR"/>
+      <per:sfr key="CMD" sfr="NVMCON1" field="CMD"/>
+      <per:sfr key="NVMLOCK" sfr="NVMLOCK"/>
+      <per:sfr key="NVMADRL" sfr="NVMADRL"/>
+      <per:sfr key="NVMADRH" sfr="NVMADRH"/>
+      <per:sfr key="NVMADRU" sfr="NVMADRU"/>
+      <per:sfr key="NVMDATL" sfr="NVMDATL"/>
+      <per:sfr key="NVMDATH" sfr="NVMDATH"/>
+      <per:sfr key="TABLAT" sfr="TABLAT" critical="false"/>
+      <per:sfr key="TBLPTRL" sfr="TBLPTRL" critical="false"/>
+      <per:sfr key="TBLPTRH" sfr="TBLPTRH" critical="false"/>
+      <per:sfr key="TBLPTRU" sfr="TBLPTRU" critical="false"/>
+      <per:sfr key="NVMIF" sfr="PIR1?[0-9]" field="NVMIF"/>
+      <per:periphClassDesc class="NVM.NVMController"/>
+    </per:periphConfig>
     <per:periphConfig>
       <per:sfr key="NVMCON0" sfr="NVMCON0"/>
       <per:sfr key="NVMEN" sfr="NVMCON0" field="NVMEN"/>
@@ -4291,7 +4314,7 @@
     </per:periphConfig>
   </per:peripheral>
   <per:peripheral name="INT_@" excludeFromMgrRpt="true">
-    <per:meta char="@" val="AD|ADT|        BCL1?|BCL2|        CLC1|CLC2|CLC3|CLC4|CLC5|CLC6|CLC7|CLC8|        CM|C(MP)?1|C(MP)?2|C(MP)?3|        CCP1|CCP2|CCP3|CCP4|CCP5|CCP6|CCP7|CCP8|CCP9|CCP10|        ECCP1|ECCP2|ECCP3|        CRC|        CSW|        CTMU|        CWG1?|CWG2|CWG3|        DMA1SCNT|DMA1DCNT|DMA1OVR|DMA1ARBT|DMA2SCNT|DMA2DCNT|DMA2OVR|DMA2ARBT|        EE|        (H)?LVD|        I2C1R|I2C1T|I2C1|I2C1E|I2C2R|I2C2T|I2C2|I2C2E|        INT0|INT1|INT2|INT3|        IOC|        IRX|WAK|ERR|TXB2|TXB1|TXB0|RXB1|RXB0|        LCD|        MSSP|        NCO1|        NVM|        OSCF|        PMP|        PSP|        PWM|        RTCC|        SCAN|        SMT1|SMT1PRA|SMT1PRW|        SPI1R|SPI1T|SPI1|        SSP1?|SSP2|        SWINT|        TMR0|TMR1|TMR2|TMR3|TMR4|TMR5|TMR6|TMR7|TMR8|TMR10|TMR12|        TMR1G|TMR3G|TMR5G|TMR7G|        TX1?|RC1?|TX2|RC2|        U1R|U1T|U1E|U1G|U2R|U2T|U2E|U2G|        USB|        ZCD"/>
+    <per:meta char="@" val="AD|ADT|        BCL1?|BCL2|        CLC1|CLC2|CLC3|CLC4|CLC5|CLC6|CLC7|CLC8|        CM|C(MP)?1|C(MP)?2|C(MP)?3|        CCP1|CCP2|CCP3|CCP4|CCP5|CCP6|CCP7|CCP8|CCP9|CCP10|        ECCP1|ECCP2|ECCP3|        CRC|        CSW|        CTMU|        CWG1?|CWG2|CWG3|        DMA1SCNT|DMA1DCNT|DMA1OVR|DMA1ARBT|DMA2SCNT|DMA2DCNT|DMA2OVR|DMA2ARBT|        EE|        (H)?LVD|        I2C1R|I2C1T|I2C1|I2C1E|I2C2R|I2C2T|I2C2|I2C2E|        INT0|INT1|INT2|INT3|        IOC|        IRX|WAK|ERR|TXB2|TXB1|TXB0|RXB1|RXB0|        LCD|        MSSP|        NCO1|        NVM|        OSCF|        PMP|        PSP|        PWM|        RTCC|        SCAN|        SMT1|SMT1PRA|SMT1PRW|        SPI1R|SPI1T|SPI1|        SSP1?|SSP2|        SWINT|        TMR0|TMR1|TMR2|TMR3|TMR4|TMR5|TMR6|TMR7|TMR8|TMR10|TMR12|        TMR1G|TMR3G|TMR5G|TMR7G|        TX1?|RC1?|TX2|RC2|        U1R|U1T|U1E|U1G|U2R|U2T|U2E|U2G|U1TX|U1RX|U2TX|U2RX|        USB|        ZCD"/>
     <per:periphConfig>
       <per:sfr key="ENABLE" sfr="PIE1?[0-9]" field="@IE"/>
       <per:sfr key="FLAG" sfr="PIR1?[0-9]" field="@IF"/>
