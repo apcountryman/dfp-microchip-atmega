@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m809def.inc
 ;* Title             : Register/Bit Definitions for the ATmega809
-;* Created           : 2022-03-01 14:14
+;* Created           : 2023-08-15 15:08
 ;* Version           : 1.00
 ;* Support           : https://microchipsupport.force.com/
 ;* Target MCU        : ATmega809
@@ -1570,18 +1570,18 @@
 .equ ADC_WINCM_2_bp = 2                  ; Window Comparator Mode bit 2 position
 
 ; ADC_SAMPCTRL masks
-.equ ADC_SAMPLEN_gm = 0x1F               ; Sample lenght group mask
-.equ ADC_SAMPLEN_gp = 0                  ; Sample lenght group position
-.equ ADC_SAMPLEN_0_bm = (1<<0)           ; Sample lenght bit 0 mask
-.equ ADC_SAMPLEN_0_bp = 0                ; Sample lenght bit 0 position
-.equ ADC_SAMPLEN_1_bm = (1<<1)           ; Sample lenght bit 1 mask
-.equ ADC_SAMPLEN_1_bp = 1                ; Sample lenght bit 1 position
-.equ ADC_SAMPLEN_2_bm = (1<<2)           ; Sample lenght bit 2 mask
-.equ ADC_SAMPLEN_2_bp = 2                ; Sample lenght bit 2 position
-.equ ADC_SAMPLEN_3_bm = (1<<3)           ; Sample lenght bit 3 mask
-.equ ADC_SAMPLEN_3_bp = 3                ; Sample lenght bit 3 position
-.equ ADC_SAMPLEN_4_bm = (1<<4)           ; Sample lenght bit 4 mask
-.equ ADC_SAMPLEN_4_bp = 4                ; Sample lenght bit 4 position
+.equ ADC_SAMPLEN_gm = 0x1F               ; Sample length group mask
+.equ ADC_SAMPLEN_gp = 0                  ; Sample length group position
+.equ ADC_SAMPLEN_0_bm = (1<<0)           ; Sample length bit 0 mask
+.equ ADC_SAMPLEN_0_bp = 0                ; Sample length bit 0 position
+.equ ADC_SAMPLEN_1_bm = (1<<1)           ; Sample length bit 1 mask
+.equ ADC_SAMPLEN_1_bp = 1                ; Sample length bit 1 position
+.equ ADC_SAMPLEN_2_bm = (1<<2)           ; Sample length bit 2 mask
+.equ ADC_SAMPLEN_2_bp = 2                ; Sample length bit 2 position
+.equ ADC_SAMPLEN_3_bm = (1<<3)           ; Sample length bit 3 mask
+.equ ADC_SAMPLEN_3_bp = 3                ; Sample length bit 3 position
+.equ ADC_SAMPLEN_4_bm = (1<<4)           ; Sample length bit 4 mask
+.equ ADC_SAMPLEN_4_bp = 4                ; Sample length bit 4 position
 
 ; ADC_MUXPOS masks
 .equ ADC_MUXPOS_gm = 0x1F                ; Analog Channel Selection Bits group mask
@@ -2120,8 +2120,8 @@
 .equ CLKCTRL_PDIV_3_bp = 4               ; Prescaler division bit 3 position
 
 ; CLKCTRL_MCLKLOCK masks
-.equ CLKCTRL_LOCKEN_bm = 0x01            ; lock ebable bit mask
-.equ CLKCTRL_LOCKEN_bp = 0               ; lock ebable bit position
+.equ CLKCTRL_LOCKEN_bm = 0x01            ; Lock enable bit mask
+.equ CLKCTRL_LOCKEN_bp = 0               ; Lock enable bit position
 
 ; CLKCTRL_MCLKSTATUS masks
 .equ CLKCTRL_SOSC_bm = 0x01              ; System Oscillator changing bit mask
@@ -2188,9 +2188,9 @@
 .equ CLKCTRL_CSUT_1_bp = 5               ; Crystal startup time bit 1 position
 
 ; Clock select
-.equ CLKCTRL_CLKSEL_OSC20M_gc = (0x00<<0) ; 20MHz oscillator
-.equ CLKCTRL_CLKSEL_OSCULP32K_gc = (0x01<<0) ; 32KHz oscillator
-.equ CLKCTRL_CLKSEL_XOSC32K_gc = (0x02<<0) ; 32.768kHz crystal oscillator
+.equ CLKCTRL_CLKSEL_OSC20M_gc = (0x00<<0) ; 16/20MHz internal oscillator
+.equ CLKCTRL_CLKSEL_OSCULP32K_gc = (0x01<<0) ; 32.768kHz internal ultra low-power oscillator
+.equ CLKCTRL_CLKSEL_XOSC32K_gc = (0x02<<0) ; 32.768kHz external crystal oscillator
 .equ CLKCTRL_CLKSEL_EXTCLK_gc = (0x03<<0) ; External clock
 
 ; Prescaler division select
@@ -3326,10 +3326,10 @@
 .equ SPI_IF_bp = 7                       ; Interrupt Flag bit position
 
 ; Prescaler select
-.equ SPI_PRESC_DIV4_gc = (0x00<<1)       ; System Clock / 4
-.equ SPI_PRESC_DIV16_gc = (0x01<<1)      ; System Clock / 16
-.equ SPI_PRESC_DIV64_gc = (0x02<<1)      ; System Clock / 64
-.equ SPI_PRESC_DIV128_gc = (0x03<<1)     ; System Clock / 128
+.equ SPI_PRESC_DIV4_gc = (0x00<<1)       ; CLK_PER / 4
+.equ SPI_PRESC_DIV16_gc = (0x01<<1)      ; CLK_PER / 16
+.equ SPI_PRESC_DIV64_gc = (0x02<<1)      ; CLK_PER / 64
+.equ SPI_PRESC_DIV128_gc = (0x03<<1)     ; CLK_PER / 128
 
 ; SPI Mode select
 .equ SPI_MODE_0_gc = (0x00<<0)           ; SPI Mode 0
@@ -3548,14 +3548,14 @@
 .equ TCA_SPLIT_DBGRUN_bp = 0             ; Debug Run bit position
 
 ; Clock Selection
-.equ TCA_SINGLE_CLKSEL_DIV1_gc = (0x00<<1) ; System Clock
-.equ TCA_SINGLE_CLKSEL_DIV2_gc = (0x01<<1) ; System Clock / 2
-.equ TCA_SINGLE_CLKSEL_DIV4_gc = (0x02<<1) ; System Clock / 4
-.equ TCA_SINGLE_CLKSEL_DIV8_gc = (0x03<<1) ; System Clock / 8
-.equ TCA_SINGLE_CLKSEL_DIV16_gc = (0x04<<1) ; System Clock / 16
-.equ TCA_SINGLE_CLKSEL_DIV64_gc = (0x05<<1) ; System Clock / 64
-.equ TCA_SINGLE_CLKSEL_DIV256_gc = (0x06<<1) ; System Clock / 256
-.equ TCA_SINGLE_CLKSEL_DIV1024_gc = (0x07<<1) ; System Clock / 1024
+.equ TCA_SINGLE_CLKSEL_DIV1_gc = (0x00<<1) ; CLK_PER
+.equ TCA_SINGLE_CLKSEL_DIV2_gc = (0x01<<1) ; CLK_PER / 2
+.equ TCA_SINGLE_CLKSEL_DIV4_gc = (0x02<<1) ; CLK_PER / 4
+.equ TCA_SINGLE_CLKSEL_DIV8_gc = (0x03<<1) ; CLK_PER / 8
+.equ TCA_SINGLE_CLKSEL_DIV16_gc = (0x04<<1) ; CLK_PER / 16
+.equ TCA_SINGLE_CLKSEL_DIV64_gc = (0x05<<1) ; CLK_PER / 64
+.equ TCA_SINGLE_CLKSEL_DIV256_gc = (0x06<<1) ; CLK_PER / 256
+.equ TCA_SINGLE_CLKSEL_DIV1024_gc = (0x07<<1) ; CLK_PER / 1024
 
 ; Waveform generation mode select
 .equ TCA_SINGLE_WGMODE_NORMAL_gc = (0x00<<0) ; Normal Mode
@@ -3582,14 +3582,14 @@
 .equ TCA_SINGLE_EVACT_UPDOWN_gc = (0x03<<1) ; Count on prescaled clock. Event controls count direction. Up-count when event line is 0, down-count when event line is 1.
 
 ; Clock Selection
-.equ TCA_SPLIT_CLKSEL_DIV1_gc = (0x00<<1) ; System Clock
-.equ TCA_SPLIT_CLKSEL_DIV2_gc = (0x01<<1) ; System Clock / 2
-.equ TCA_SPLIT_CLKSEL_DIV4_gc = (0x02<<1) ; System Clock / 4
-.equ TCA_SPLIT_CLKSEL_DIV8_gc = (0x03<<1) ; System Clock / 8
-.equ TCA_SPLIT_CLKSEL_DIV16_gc = (0x04<<1) ; System Clock / 16
-.equ TCA_SPLIT_CLKSEL_DIV64_gc = (0x05<<1) ; System Clock / 64
-.equ TCA_SPLIT_CLKSEL_DIV256_gc = (0x06<<1) ; System Clock / 256
-.equ TCA_SPLIT_CLKSEL_DIV1024_gc = (0x07<<1) ; System Clock / 1024
+.equ TCA_SPLIT_CLKSEL_DIV1_gc = (0x00<<1) ; CLK_PER
+.equ TCA_SPLIT_CLKSEL_DIV2_gc = (0x01<<1) ; CLK_PER / 2
+.equ TCA_SPLIT_CLKSEL_DIV4_gc = (0x02<<1) ; CLK_PER / 4
+.equ TCA_SPLIT_CLKSEL_DIV8_gc = (0x03<<1) ; CLK_PER / 8
+.equ TCA_SPLIT_CLKSEL_DIV16_gc = (0x04<<1) ; CLK_PER / 16
+.equ TCA_SPLIT_CLKSEL_DIV64_gc = (0x05<<1) ; CLK_PER / 64
+.equ TCA_SPLIT_CLKSEL_DIV256_gc = (0x06<<1) ; CLK_PER / 256
+.equ TCA_SPLIT_CLKSEL_DIV1024_gc = (0x07<<1) ; CLK_PER / 1024
 
 ; Command select
 .equ TCA_SPLIT_CMD_NONE_gc = (0x00<<2)   ; No Command

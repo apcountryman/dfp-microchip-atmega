@@ -46,7 +46,7 @@
     <edc:Interrupt edc:irq="13" edc:cname="TIMER1_OVF" edc:desc="Timer/Counter1 Overflow"/>
     <edc:Interrupt edc:irq="14" edc:cname="TIMER0_COMPA" edc:desc="TimerCounter0 Compare Match A"/>
     <edc:Interrupt edc:irq="15" edc:cname="TIMER0_COMPB" edc:desc="TimerCounter0 Compare Match B"/>
-    <edc:Interrupt edc:irq="16" edc:cname="TIMER0_OVF" edc:desc="Timer/Couner0 Overflow"/>
+    <edc:Interrupt edc:irq="16" edc:cname="TIMER0_OVF" edc:desc="Timer/Counter0 Overflow"/>
     <edc:Interrupt edc:irq="17" edc:cname="SPI_STC" edc:desc="SPI Serial Transfer Complete"/>
     <edc:Interrupt edc:irq="18" edc:cname="USART_RX" edc:desc="USART Rx Complete"/>
     <edc:Interrupt edc:irq="19" edc:cname="USART_UDRE" edc:desc="USART, Data Register Empty"/>
@@ -674,7 +674,7 @@
         <edc:SFRDef ltx:memberofperipheral="TC2" edc:cname="TCCR2A" edc:nzwidth="0x8" edc:access="nnnn--nn" edc:impl="0xF3" edc:_addr="0xB0">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="TC2">
-              <edc:SFRFieldDef edc:cname="WGM2" edc:nzwidth="0x2" edc:desc="Waveform Genration Mode"/>
+              <edc:SFRFieldDef edc:cname="WGM2" edc:nzwidth="0x2" edc:desc="Waveform Generation Mode"/>
               <edc:AdjustPoint edc:offset="0x2"/>
               <edc:SFRFieldDef edc:cname="COM2B" edc:nzwidth="0x2" edc:desc="Compare Output Mode bits"/>
               <edc:SFRFieldDef edc:cname="COM2A" edc:nzwidth="0x2" edc:desc="Compare Output Mode bits"/>
@@ -749,7 +749,7 @@
               <edc:SFRFieldDef edc:cname="TWIE" edc:nzwidth="0x1" edc:desc="TWI Interrupt Enable"/>
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="TWEN" edc:nzwidth="0x1" edc:desc="TWI Enable Bit"/>
-              <edc:SFRFieldDef edc:cname="TWWC" edc:nzwidth="0x1" edc:desc="TWI Write Collition Flag"/>
+              <edc:SFRFieldDef edc:cname="TWWC" edc:nzwidth="0x1" edc:desc="TWI Write Collision Flag"/>
               <edc:SFRFieldDef edc:cname="TWSTO" edc:nzwidth="0x1" edc:desc="TWI Stop Condition Bit"/>
               <edc:SFRFieldDef edc:cname="TWSTA" edc:nzwidth="0x1" edc:desc="TWI Start Condition Bit"/>
               <edc:SFRFieldDef edc:cname="TWEA" edc:nzwidth="0x1" edc:desc="TWI Enable Acknowledge Bit"/>
@@ -775,7 +775,7 @@
               <edc:SFRFieldDef edc:cname="DOR0" edc:nzwidth="0x1" edc:desc="Data overRun"/>
               <edc:SFRFieldDef edc:cname="FE0" edc:nzwidth="0x1" edc:desc="Framing Error"/>
               <edc:SFRFieldDef edc:cname="UDRE0" edc:nzwidth="0x1" edc:desc="USART Data Register Empty"/>
-              <edc:SFRFieldDef edc:cname="TXC0" edc:nzwidth="0x1" edc:desc="USART Transmitt Complete"/>
+              <edc:SFRFieldDef edc:cname="TXC0" edc:nzwidth="0x1" edc:desc="USART Transmit Complete"/>
               <edc:SFRFieldDef edc:cname="RXC0" edc:nzwidth="0x1" edc:desc="USART Receive Complete"/>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -845,7 +845,7 @@
   </edc:DataSpace>
   <edc:DataFlashSpace edc:endaddr="0x200" edc:magicoffset="0x810000"/>
   <edc:SignaturesSpace edc:magicoffset="0x840000">
-    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9415" edc:rw="r"/>
+    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9415" edc:mask="0xffffff" edc:rw="r"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
     <edc:ConfigFuseSector edc:regionid="FUSES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:magicoffset="0x820000" edc:rw="rw">

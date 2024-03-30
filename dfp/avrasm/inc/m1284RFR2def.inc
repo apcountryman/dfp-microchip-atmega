@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m1284RFR2def.inc
 ;* Title             : Register/Bit Definitions for the ATmega1284RFR2
-;* Created           : 2022-03-01 14:14
+;* Created           : 2023-08-15 15:08
 ;* Version           : 1.00
 ;* Support           : https://microchipsupport.force.com/
 ;* Target MCU        : ATmega1284RFR2
@@ -1903,7 +1903,7 @@
 .equ	IPAN_RPC_EN	= 1 ; Smart Receiving Mode IPAN Handling Enable
 .equ	PLL_RPC_EN	= 3 ; PLL Smart Receiving Mode Enable
 .equ	PDT_RPC_EN	= 4 ; Smart Receiving Mode Reduced Sensitivity Enable
-.equ	RX_RPC_EN	= 5 ; Reciver Smart Receiving Mode Enable
+.equ	RX_RPC_EN	= 5 ; Receiver Smart Receiving Mode Enable
 .equ	RX_RPC_CTRL0	= 6 ; Smart Receiving Mode Timing
 .equ	RX_RPC_CTRL1	= 7 ; Smart Receiving Mode Timing
 
@@ -3109,7 +3109,7 @@
 .equ	TRX24_CCA_ED_DONEaddr	 = 0x007A ; TRX24 - CCA/ED done interrupt
 .equ	TRX24_XAH_AMIaddr	 = 0x007C ; TRX24 - XAH - AMI
 .equ	TRX24_TX_ENDaddr	 = 0x007E ; TRX24 - TX_END interrupt
-.equ	TRX24_AWAKEaddr	 = 0x0080 ; TRX24 AWAKE - tranceiver is reaching state TRX_OFF
+.equ	TRX24_AWAKEaddr	 = 0x0080 ; TRX24 AWAKE - transceiver is reaching state TRX_OFF
 .equ	SCNT_CMP1addr	 = 0x0082 ; Symbol counter - compare match 1 interrupt
 .equ	SCNT_CMP2addr	 = 0x0084 ; Symbol counter - compare match 2 interrupt
 .equ	SCNT_CMP3addr	 = 0x0086 ; Symbol counter - compare match 3 interrupt

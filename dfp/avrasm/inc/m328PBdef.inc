@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m328PBdef.inc
 ;* Title             : Register/Bit Definitions for the ATmega328PB
-;* Created           : 2022-03-01 14:14
+;* Created           : 2023-08-15 15:08
 ;* Version           : 1.00
 ;* Support           : https://microchipsupport.force.com/
 ;* Target MCU        : ATmega328PB
@@ -200,7 +200,7 @@
 .equ	DOR0	= 3 ; Data overRun
 .equ	FE0	= 4 ; Framing Error
 .equ	UDRE0	= 5 ; USART Data Register Empty
-.equ	TXC0	= 6 ; USART Transmitt Complete
+.equ	TXC0	= 6 ; USART Transmit Complete
 .equ	RXC0	= 7 ; USART Receive Complete
 
 ; UCSR0B - USART Control and Status Register B
@@ -262,7 +262,7 @@
 .equ	DOR1	= 3 ; Data overRun
 .equ	FE1	= 4 ; Framing Error
 .equ	UDRE1	= 5 ; USART Data Register Empty
-.equ	TXC1	= 6 ; USART Transmitt Complete
+.equ	TXC1	= 6 ; USART Transmit Complete
 .equ	RXC1	= 7 ; USART Receive Complete
 
 ; UCSR1B - USART Control and Status Register B
@@ -329,7 +329,7 @@
 ; TWCR0 - TWI Control Register
 .equ	TWIE	= 0 ; TWI Interrupt Enable
 .equ	TWEN	= 2 ; TWI Enable Bit
-.equ	TWWC	= 3 ; TWI Write Collition Flag
+.equ	TWWC	= 3 ; TWI Write Collision Flag
 .equ	TWSTO	= 4 ; TWI Stop Condition Bit
 .equ	TWSTA	= 5 ; TWI Start Condition Bit
 .equ	TWEA	= 6 ; TWI Enable Acknowledge Bit
@@ -388,7 +388,7 @@
 ; TWCR1 - TWI Control Register
 .equ	TWIE1	= 0 ; TWI Interrupt Enable
 .equ	TWEN1	= 2 ; TWI Enable Bit
-.equ	TWWC1	= 3 ; TWI Write Collition Flag
+.equ	TWWC1	= 3 ; TWI Write Collision Flag
 .equ	TWSTO1	= 4 ; TWI Stop Condition Bit
 .equ	TWSTA1	= 5 ; TWI Start Condition Bit
 .equ	TWEA1	= 6 ; TWI Enable Acknowledge Bit
@@ -425,38 +425,38 @@
 
 
 ; ***** TC1 *****************
-; TIMSK1 - Timer/Counter Interrupt Mask Register
+; TIMSK1 - Timer/Counter1 Interrupt Mask Register
 .equ	TOIE1	= 0 ; Timer/Counter1 Overflow Interrupt Enable
-.equ	OCIE1A	= 1 ; Timer/Counter1 Output CompareA Match Interrupt Enable
-.equ	OCIE1B	= 2 ; Timer/Counter1 Output CompareB Match Interrupt Enable
+.equ	OCIE1A	= 1 ; Timer/Counter1 Output Compare A Match Interrupt Enable
+.equ	OCIE1B	= 2 ; Timer/Counter1 Output Compare B Match Interrupt Enable
 .equ	ICIE1	= 5 ; Timer/Counter1 Input Capture Interrupt Enable
 
-; TIFR1 - Timer/Counter Interrupt Flag register
+; TIFR1 - Timer/Counter1 Interrupt Flag register
 .equ	TOV1	= 0 ; Timer/Counter1 Overflow Flag
-.equ	OCF1A	= 1 ; Output Compare Flag 1A
-.equ	OCF1B	= 2 ; Output Compare Flag 1B
-.equ	ICF1	= 5 ; Input Capture Flag 1
+.equ	OCF1A	= 1 ; Timer/Counter1 Output Compare A Match Flag
+.equ	OCF1B	= 2 ; Timer/Counter1 Output Compare B Match Flag
+.equ	ICF1	= 5 ; Timer/Counter1 Input Capture Flag
 
 ; TCCR1A - Timer/Counter1 Control Register A
 .equ	WGM10	= 0 ; Waveform Generation Mode
 .equ	WGM11	= 1 ; Waveform Generation Mode
-.equ	COM1B0	= 4 ; Compare Output Mode 1B, bits
-.equ	COM1B1	= 5 ; Compare Output Mode 1B, bits
-.equ	COM1A0	= 6 ; Compare Output Mode 1A, bits
-.equ	COM1A1	= 7 ; Compare Output Mode 1A, bits
+.equ	COM1B0	= 4 ; Compare Output Mode 1B bits
+.equ	COM1B1	= 5 ; Compare Output Mode 1B bits
+.equ	COM1A0	= 6 ; Compare Output Mode 1A bits
+.equ	COM1A1	= 7 ; Compare Output Mode 1A bits
 
 ; TCCR1B - Timer/Counter1 Control Register B
-.equ	CS10	= 0 ; Prescaler source of Timer/Counter 1
-.equ	CS11	= 1 ; Prescaler source of Timer/Counter 1
-.equ	CS12	= 2 ; Prescaler source of Timer/Counter 1
+.equ	CS10	= 0 ; Clock Select bits
+.equ	CS11	= 1 ; Clock Select bits
+.equ	CS12	= 2 ; Clock Select bits
 .equ	WGM12	= 3 ; Waveform Generation Mode
 .equ	WGM13	= 4 ; Waveform Generation Mode
-.equ	ICES1	= 6 ; Input Capture 1 Edge Select
-.equ	ICNC1	= 7 ; Input Capture 1 Noise Canceler
+.equ	ICES1	= 6 ; Input Capture Edge Select
+.equ	ICNC1	= 7 ; Input Capture Noise Canceler
 
 ; TCCR1C - Timer/Counter1 Control Register C
-.equ	FOC1B	= 6 ; 
-.equ	FOC1A	= 7 ; 
+.equ	FOC1B	= 6 ; Force Output Compare for Channel B
+.equ	FOC1A	= 7 ; Force Output Compare for Channel A
 
 ; TCNT1 - Timer/Counter1 Bytes
 .equ	TCNT1H0	= 0 ; Timer/Counter1 Bytes High Bit 8
@@ -540,32 +540,32 @@
 
 
 ; ***** TC3 *****************
-; TIMSK3 - Timer/Counter Interrupt Mask Register
+; TIMSK3 - Timer/Counter3 Interrupt Mask Register
 .equ	TOIE3	= 0 ; Timer/Counter3 Overflow Interrupt Enable
-.equ	OCIE3A	= 1 ; Timer/Counter3 Output Compare Match A Interrupt Enable
-.equ	OCIE3B	= 2 ; Timer/Counter3 Output Compare Match B Interrupt Enable
+.equ	OCIE3A	= 1 ; Timer/Counter3 Output Compare A Match Interrupt Enable
+.equ	OCIE3B	= 2 ; Timer/Counter3 Output Compare B Match Interrupt Enable
 .equ	ICIE3	= 5 ; Timer/Counter3 Input Capture Interrupt Enable
 
 ; TIFR3 - Timer/Counter3 Interrupt Flag register
 .equ	TOV3	= 0 ; Timer/Counter3 Overflow Flag
-.equ	OCF3A	= 1 ; Output Compare Flag 3A
-.equ	OCF3B	= 2 ; Output Compare Flag 3B
+.equ	OCF3A	= 1 ; Timer/Counter3 Output Compare A Match Flag
+.equ	OCF3B	= 2 ; Timer/Counter3 Output Compare B Match Flag
 .equ	ICF3	= 5 ; Timer/Counter3 Input Capture Flag
 
 ; TCCR3A - Timer/Counter3 Control Register A
-.equ	WGM30	= 0 ; Waveform Genration Mode
-.equ	WGM31	= 1 ; Waveform Genration Mode
-.equ	COM3B0	= 4 ; Compare Output Mode bits
-.equ	COM3B1	= 5 ; Compare Output Mode bits
-.equ	COM3A0	= 6 ; Compare Output Mode bits
-.equ	COM3A1	= 7 ; Compare Output Mode bits
+.equ	WGM30	= 0 ; Waveform Generation Mode
+.equ	WGM31	= 1 ; Waveform Generation Mode
+.equ	COM3B0	= 4 ; Compare Output Mode 3B bits
+.equ	COM3B1	= 5 ; Compare Output Mode 3B bits
+.equ	COM3A0	= 6 ; Compare Output Mode 3A bits
+.equ	COM3A1	= 7 ; Compare Output Mode 3A bits
 
 ; TCCR3B - Timer/Counter3 Control Register B
 .equ	CS30	= 0 ; Clock Select bits
 .equ	CS31	= 1 ; Clock Select bits
 .equ	CS32	= 2 ; Clock Select bits
-.equ	WGM32	= 3 ; Waveform Generation Mode bit 2
-.equ	WGM33	= 4 ; Waveform Generation Mode bit 3
+.equ	WGM32	= 3 ; Waveform Generation Mode
+.equ	WGM33	= 4 ; Waveform Generation Mode
 .equ	ICES3	= 6 ; Input Capture Edge Select
 .equ	ICNC3	= 7 ; Input Capture Noise Canceler
 
@@ -653,30 +653,30 @@
 ; ***** TC4 *****************
 ; TIMSK4 - Timer/Counter4 Interrupt Mask Register
 .equ	TOIE4	= 0 ; Timer/Counter4 Overflow Interrupt Enable
-.equ	OCIE4A	= 1 ; Timer/Counter4 Output Compare Match A Interrupt Enable
-.equ	OCIE4B	= 2 ; Timer/Counter4 Output Compare Match B Interrupt Enable
+.equ	OCIE4A	= 1 ; Timer/Counter4 Output Compare A Match Interrupt Enable
+.equ	OCIE4B	= 2 ; Timer/Counter4 Output Compare B Match Interrupt Enable
 .equ	ICIE4	= 5 ; Timer/Counter4 Input Capture Interrupt Enable
 
 ; TIFR4 - Timer/Counter4 Interrupt Flag register
 .equ	TOV4	= 0 ; Timer/Counter4 Overflow Flag
-.equ	OCF4A	= 1 ; Output Compare Flag 4A
-.equ	OCF4B	= 2 ; Output Compare Flag 4B
+.equ	OCF4A	= 1 ; Timer/Counter4 Output Compare A Match Flag
+.equ	OCF4B	= 2 ; Timer/Counter4 Output Compare B Match Flag
 .equ	ICF4	= 5 ; Timer/Counter4 Input Capture Flag
 
 ; TCCR4A - Timer/Counter4 Control Register A
 .equ	WGM40	= 0 ; Waveform Generation Mode
 .equ	WGM41	= 1 ; Waveform Generation Mode
-.equ	COM4B0	= 4 ; Compare Output Mode bits
-.equ	COM4B1	= 5 ; Compare Output Mode bits
-.equ	COM4A0	= 6 ; Compare Output Mode bits
-.equ	COM4A1	= 7 ; Compare Output Mode bits
+.equ	COM4B0	= 4 ; Compare Output Mode 4B bits
+.equ	COM4B1	= 5 ; Compare Output Mode 4B bits
+.equ	COM4A0	= 6 ; Compare Output Mode 4A bits
+.equ	COM4A1	= 7 ; Compare Output Mode 4A bits
 
 ; TCCR4B - Timer/Counter4 Control Register B
 .equ	CS40	= 0 ; Clock Select bits
 .equ	CS41	= 1 ; Clock Select bits
 .equ	CS42	= 2 ; Clock Select bits
-.equ	WGM42	= 3 ; Waveform Generation Mode bit 2
-.equ	WGM43	= 4 ; Waveform Generation Mode bit 3
+.equ	WGM42	= 3 ; Waveform Generation Mode
+.equ	WGM43	= 4 ; Waveform Generation Mode
 .equ	ICES4	= 6 ; Input Capture Edge Select
 .equ	ICNC4	= 7 ; Input Capture Noise Canceler
 
@@ -773,8 +773,8 @@
 .equ	OCF2B	= 2 ; Output Compare Flag 2B
 
 ; TCCR2A - Timer/Counter2 Control Register A
-.equ	WGM20	= 0 ; Waveform Genration Mode
-.equ	WGM21	= 1 ; Waveform Genration Mode
+.equ	WGM20	= 0 ; Waveform Generation Mode
+.equ	WGM21	= 1 ; Waveform Generation Mode
 .equ	COM2B0	= 4 ; Compare Output Mode bits
 .equ	COM2B1	= 5 ; Compare Output Mode bits
 .equ	COM2A0	= 6 ; Compare Output Mode bits
@@ -1501,7 +1501,7 @@
 .equ	TIMER1_OVFaddr	 = 0x001A ; Timer/Counter1 Overflow
 .equ	TIMER0_COMPAaddr	 = 0x001C ; TimerCounter0 Compare Match A
 .equ	TIMER0_COMPBaddr	 = 0x001E ; TimerCounter0 Compare Match B
-.equ	TIMER0_OVFaddr	 = 0x0020 ; Timer/Couner0 Overflow
+.equ	TIMER0_OVFaddr	 = 0x0020 ; Timer/Counter0 Overflow
 .equ	SPI0_STCaddr	 = 0x0022 ; SPI Serial Transfer Complete
 .equ	USART0_RXaddr	 = 0x0024 ; USART0 Rx Complete
 .equ	USART0_UDREaddr	 = 0x0026 ; USART0, Data Register Empty

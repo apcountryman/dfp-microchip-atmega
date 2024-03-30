@@ -843,7 +843,7 @@
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="WGM21" edc:nzwidth="0x1" edc:desc="Waveform Generation Mode"/>
               <edc:SFRFieldDef edc:cname="COM2A" edc:nzwidth="0x2" edc:desc="Compare Output Mode bits"/>
-              <edc:SFRFieldDef edc:cname="WGM20" edc:nzwidth="0x1" edc:desc="Waveform Genration Mode">
+              <edc:SFRFieldDef edc:cname="WGM20" edc:nzwidth="0x1" edc:desc="Waveform Generation Mode">
                 <edc:SFRFieldSemantic edc:cname="NORMAL" edc:desc="Normal" edc:when="(field &amp; 0x1) == 0x00"/>
                 <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT" edc:desc="PWM, Phase Correct" edc:when="(field &amp; 0x1) == 0x02"/>
                 <edc:SFRFieldSemantic edc:cname="CTC" edc:desc="CTC" edc:when="(field &amp; 0x1) == 0x01"/>
@@ -899,7 +899,7 @@
               <edc:SFRFieldDef edc:cname="TWIE" edc:nzwidth="0x1" edc:desc="TWI Interrupt Enable"/>
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="TWEN" edc:nzwidth="0x1" edc:desc="TWI Enable Bit"/>
-              <edc:SFRFieldDef edc:cname="TWWC" edc:nzwidth="0x1" edc:desc="TWI Write Collition Flag"/>
+              <edc:SFRFieldDef edc:cname="TWWC" edc:nzwidth="0x1" edc:desc="TWI Write Collision Flag"/>
               <edc:SFRFieldDef edc:cname="TWSTO" edc:nzwidth="0x1" edc:desc="TWI Stop Condition Bit"/>
               <edc:SFRFieldDef edc:cname="TWSTA" edc:nzwidth="0x1" edc:desc="TWI Start Condition Bit"/>
               <edc:SFRFieldDef edc:cname="TWEA" edc:nzwidth="0x1" edc:desc="TWI Enable Acknowledge Bit"/>
@@ -917,7 +917,7 @@
               <edc:SFRFieldDef edc:cname="DOR0" edc:nzwidth="0x1" edc:desc="Data overRun"/>
               <edc:SFRFieldDef edc:cname="FE0" edc:nzwidth="0x1" edc:desc="Framing Error"/>
               <edc:SFRFieldDef edc:cname="UDRE0" edc:nzwidth="0x1" edc:desc="USART Data Register Empty"/>
-              <edc:SFRFieldDef edc:cname="TXC0" edc:nzwidth="0x1" edc:desc="USART Transmitt Complete"/>
+              <edc:SFRFieldDef edc:cname="TXC0" edc:nzwidth="0x1" edc:desc="USART Transmit Complete"/>
               <edc:SFRFieldDef edc:cname="RXC0" edc:nzwidth="0x1" edc:desc="USART Receive Complete"/>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -971,7 +971,7 @@
               <edc:SFRFieldDef edc:cname="DOR1" edc:nzwidth="0x1" edc:desc="Data overRun"/>
               <edc:SFRFieldDef edc:cname="FE1" edc:nzwidth="0x1" edc:desc="Framing Error"/>
               <edc:SFRFieldDef edc:cname="UDRE1" edc:nzwidth="0x1" edc:desc="USART Data Register Empty"/>
-              <edc:SFRFieldDef edc:cname="TXC1" edc:nzwidth="0x1" edc:desc="USART Transmitt Complete"/>
+              <edc:SFRFieldDef edc:cname="TXC1" edc:nzwidth="0x1" edc:desc="USART Transmit Complete"/>
               <edc:SFRFieldDef edc:cname="RXC1" edc:nzwidth="0x1" edc:desc="USART Receive Complete"/>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -1046,7 +1046,7 @@
         <edc:SFRDef ltx:memberofperipheral="CAN" edc:cname="CANGIT" edc:nzwidth="0x8" edc:access="nnnnnnnn" edc:_addr="0xDA">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="CAN">
-              <edc:SFRFieldDef edc:cname="AERG" edc:nzwidth="0x1" edc:desc="Ackknowledgement Error General"/>
+              <edc:SFRFieldDef edc:cname="AERG" edc:nzwidth="0x1" edc:desc="Acknowledgement Error General"/>
               <edc:SFRFieldDef edc:cname="FERG" edc:nzwidth="0x1" edc:desc="Form Error General"/>
               <edc:SFRFieldDef edc:cname="CERG" edc:nzwidth="0x1" edc:desc="CRC Error General"/>
               <edc:SFRFieldDef edc:cname="SERG" edc:nzwidth="0x1" edc:desc="Stuff Error General"/>
@@ -1064,7 +1064,7 @@
               <edc:SFRFieldDef edc:cname="ENERG" edc:nzwidth="0x1" edc:desc="Enable General Error Interrupt"/>
               <edc:SFRFieldDef edc:cname="ENBX" edc:nzwidth="0x1" edc:desc="Enable Burst Receive Interrupt"/>
               <edc:SFRFieldDef edc:cname="ENERR" edc:nzwidth="0x1" edc:desc="Enable MOb Error Interrupt"/>
-              <edc:SFRFieldDef edc:cname="ENTX" edc:nzwidth="0x1" edc:desc="Enable Transmitt Interrupt"/>
+              <edc:SFRFieldDef edc:cname="ENTX" edc:nzwidth="0x1" edc:desc="Enable Transmit Interrupt"/>
               <edc:SFRFieldDef edc:cname="ENRX" edc:nzwidth="0x1" edc:desc="Enable Receive Interrupt"/>
               <edc:SFRFieldDef edc:cname="ENBOFF" edc:nzwidth="0x1" edc:desc="Enable Bus Off INterrupt"/>
               <edc:SFRFieldDef edc:cname="ENIT" edc:nzwidth="0x1" edc:desc="Enable all Interrupts"/>
@@ -1164,7 +1164,7 @@
         <edc:SFRDef ltx:memberofperipheral="CAN" edc:cname="CANTEC" edc:nzwidth="0x8" edc:access="nnnnnnnn" edc:_addr="0xEA">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="CAN">
-              <edc:SFRFieldDef edc:cname="TEC" edc:nzwidth="0x8" edc:desc="Trasnmit Error Count"/>
+              <edc:SFRFieldDef edc:cname="TEC" edc:nzwidth="0x8" edc:desc="Transmit Error Count"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -1195,7 +1195,7 @@
         <edc:SFRDef ltx:memberofperipheral="CAN" edc:cname="CANSTMOB" edc:nzwidth="0x8" edc:access="nnnnnnnn" edc:_addr="0xEE">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="CAN">
-              <edc:SFRFieldDef edc:cname="AERR" edc:nzwidth="0x1" edc:desc="Ackknowledgement Error"/>
+              <edc:SFRFieldDef edc:cname="AERR" edc:nzwidth="0x1" edc:desc="Acknowledgement Error"/>
               <edc:SFRFieldDef edc:cname="FERR" edc:nzwidth="0x1" edc:desc="Form Error"/>
               <edc:SFRFieldDef edc:cname="CERR" edc:nzwidth="0x1" edc:desc="CRC Error"/>
               <edc:SFRFieldDef edc:cname="SERR" edc:nzwidth="0x1" edc:desc="Stuff Error"/>
@@ -1221,7 +1221,7 @@
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="CAN">
               <edc:SFRFieldDef edc:cname="RB0TAG" edc:nzwidth="0x1" edc:desc="Reserved Bit 0 Tag"/>
               <edc:SFRFieldDef edc:cname="RB1TAG" edc:nzwidth="0x1" edc:desc="Reserved Bit 1 Tag"/>
-              <edc:SFRFieldDef edc:cname="RTRTAG" edc:nzwidth="0x1" edc:desc="Remote Trasnmission Request Tag"/>
+              <edc:SFRFieldDef edc:cname="RTRTAG" edc:nzwidth="0x1" edc:desc="Remote Transmission Request Tag"/>
               <edc:SFRFieldDef edc:cname="IDT" edc:nzwidth="0x5" edc:desc="Identifier Tag"/>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -1299,7 +1299,7 @@
   </edc:DataSpace>
   <edc:DataFlashSpace edc:endaddr="0x1000" edc:magicoffset="0x810000"/>
   <edc:SignaturesSpace edc:magicoffset="0x840000">
-    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9781" edc:rw="r"/>
+    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9781" edc:mask="0xffffff" edc:rw="r"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
     <edc:ConfigFuseSector edc:regionid="FUSES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:magicoffset="0x820000" edc:rw="rw">

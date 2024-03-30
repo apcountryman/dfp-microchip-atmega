@@ -767,10 +767,10 @@
           <bitfield caption="Timer/Counter1" mask="0xFFFF" name="TCNT1"/>
         </register>
         <register caption="Timer/Counter1 Output Compare Register Bytes" name="OCR1A" offset="0x88" size="2">
-          <bitfield caption="Timer/Counter1 Ouput Capture A" mask="0xFFFF" name="OCR1A"/>
+          <bitfield caption="Timer/Counter1 Output Capture A" mask="0xFFFF" name="OCR1A"/>
         </register>
         <register caption="Timer/Counter1 Output Compare Register Bytes" name="OCR1B" offset="0x8A" size="2">
-          <bitfield caption="Timer/Counter1 Ouput Capture B" mask="0xFFFF" name="OCR1B"/>
+          <bitfield caption="Timer/Counter1 Output Capture B" mask="0xFFFF" name="OCR1B"/>
         </register>
         <register caption="Timer/Counter1 Input Capture Register Bytes" name="ICR1" offset="0x86" size="2" mask="0xFFFF">
           <bitfield caption="Timer/Counter1 Input Capture" mask="0xFFFF" name="ICR1"/>
@@ -859,7 +859,7 @@
         </register>
         <register caption="USART Control and Status register A" name="UCSRA" offset="0xC0" size="1" ocd-rw="R">
           <bitfield caption="USART Receive Complete" mask="0x80" name="RXC"/>
-          <bitfield caption="USART Transmitt Complete" mask="0x40" name="TXC"/>
+          <bitfield caption="USART Transmit Complete" mask="0x40" name="TXC"/>
           <bitfield caption="USART Data Register Empty" mask="0x20" name="UDRE"/>
           <bitfield caption="Framing Error" mask="0x10" name="FE"/>
           <bitfield caption="Data Overrun" mask="0x08" name="DOR"/>
@@ -1204,7 +1204,7 @@
         <value caption="Reserved (do not use)" name="RESERVED_DO_NOT_USE" value="0x0B"/>
         <value caption="Reserved (do not use)" name="RESERVED_DO_NOT_USE" value="0x0C"/>
         <value caption="Reserved (do not use)" name="RESERVED_DO_NOT_USE" value="0x0D"/>
-        <value caption="Fixed Frequency Edge Retrigger PSC and Disactivate Output" name="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC_AND_DISACTIVATE_OUTPUT" value="0x0E"/>
+        <value caption="Fixed Frequency Edge Retrigger PSC and Deactivate Output" name="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC_AND_DISACTIVATE_OUTPUT" value="0x0E"/>
         <value caption="Reserved (do not use)" name="RESERVED_DO_NOT_USE" value="0x0F"/>
       </value-group>
       <value-group name="PSC_PRESCALER">

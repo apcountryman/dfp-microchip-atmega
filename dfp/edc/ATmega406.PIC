@@ -516,7 +516,7 @@
               <edc:SFRFieldDef edc:cname="TWIE" edc:nzwidth="0x1" edc:desc="TWI Interrupt Enable"/>
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="TWEN" edc:nzwidth="0x1" edc:desc="TWI Enable Bit"/>
-              <edc:SFRFieldDef edc:cname="TWWC" edc:nzwidth="0x1" edc:desc="TWI Write Collition Flag"/>
+              <edc:SFRFieldDef edc:cname="TWWC" edc:nzwidth="0x1" edc:desc="TWI Write Collision Flag"/>
               <edc:SFRFieldDef edc:cname="TWSTO" edc:nzwidth="0x1" edc:desc="TWI Stop Condition Bit"/>
               <edc:SFRFieldDef edc:cname="TWSTA" edc:nzwidth="0x1" edc:desc="TWI Start Condition Bit"/>
               <edc:SFRFieldDef edc:cname="TWEA" edc:nzwidth="0x1" edc:desc="TWI Enable Acknowledge Bit"/>
@@ -602,7 +602,7 @@
               <edc:SFRFieldDef edc:cname="CADRCIF" edc:nzwidth="0x1" edc:desc="CC-ADC Accumulate Current Interrupt Flag"/>
               <edc:SFRFieldDef edc:cname="CADACIF" edc:nzwidth="0x1" edc:desc="CC-ADC Accumulate Current Interrupt Flag"/>
               <edc:AdjustPoint edc:offset="0x1"/>
-              <edc:SFRFieldDef edc:cname="CADICIE" edc:nzwidth="0x1" edc:desc="CAD Instantenous Current Interrupt Enable"/>
+              <edc:SFRFieldDef edc:cname="CADICIE" edc:nzwidth="0x1" edc:desc="CAD Instantaneous Current Interrupt Enable"/>
               <edc:SFRFieldDef edc:cname="CADRCIE" edc:nzwidth="0x1" edc:desc="Regular Current Interrupt Enable"/>
               <edc:SFRFieldDef edc:cname="CADACIE" edc:nzwidth="0x1"/>
             </edc:SFRMode>
@@ -807,7 +807,7 @@
   </edc:DataSpace>
   <edc:DataFlashSpace edc:endaddr="0x200" edc:magicoffset="0x810000"/>
   <edc:SignaturesSpace edc:magicoffset="0x840000">
-    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9507" edc:rw="r"/>
+    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9507" edc:mask="0xffffff" edc:rw="r"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
     <edc:ConfigFuseSector edc:regionid="FUSES" edc:beginaddr="0x0" edc:endaddr="0x2" edc:magicoffset="0x820000" edc:rw="rw">

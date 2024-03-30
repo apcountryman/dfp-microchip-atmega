@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (C) 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  *
  * This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
@@ -648,7 +648,7 @@
 #define TIMER0_IC_vect            _VECTOR(10)
 #define TIMER0_IC_vect_num        10
 
-/* Timer 0 Comapre Match A */
+/* Timer 0 Compare Match A */
 #define TIMER0_COMPA_vect            _VECTOR(11)
 #define TIMER0_COMPA_vect_num        11
 

@@ -225,7 +225,7 @@
               <edc:SFRFieldDef edc:cname="DOR0" edc:nzwidth="0x1" edc:desc="Data overRun"/>
               <edc:SFRFieldDef edc:cname="FE0" edc:nzwidth="0x1" edc:desc="Framing Error"/>
               <edc:SFRFieldDef edc:cname="UDRE0" edc:nzwidth="0x1" edc:desc="USART Data Register Empty"/>
-              <edc:SFRFieldDef edc:cname="TXC0" edc:nzwidth="0x1" edc:desc="USART Transmitt Complete"/>
+              <edc:SFRFieldDef edc:cname="TXC0" edc:nzwidth="0x1" edc:desc="USART Transmit Complete"/>
               <edc:SFRFieldDef edc:cname="RXC0" edc:nzwidth="0x1" edc:desc="USART Receive Complete"/>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -362,7 +362,7 @@
               </edc:SFRFieldDef>
               <edc:SFRFieldDef edc:cname="WGM21" edc:nzwidth="0x1" edc:desc="Waveform Generation Mode"/>
               <edc:SFRFieldDef edc:cname="COM2" edc:nzwidth="0x2" edc:desc="Compare Match Output Mode"/>
-              <edc:SFRFieldDef edc:cname="WGM20" edc:nzwidth="0x1" edc:desc="Wafeform Generation Mode">
+              <edc:SFRFieldDef edc:cname="WGM20" edc:nzwidth="0x1" edc:desc="Waveform Generation Mode">
                 <edc:SFRFieldSemantic edc:cname="NORMAL" edc:desc="Normal" edc:when="(field &amp; 0x1) == 0x00"/>
                 <edc:SFRFieldSemantic edc:cname="PWM_PHASE_CORRECT" edc:desc="PWM, Phase Correct" edc:when="(field &amp; 0x1) == 0x02"/>
                 <edc:SFRFieldSemantic edc:cname="CTC" edc:desc="CTC" edc:when="(field &amp; 0x1) == 0x01"/>
@@ -412,7 +412,7 @@
               <edc:SFRFieldDef edc:cname="TCR0UB" edc:nzwidth="0x1" edc:desc="Timer/Counter Control Register 0 Update Busy"/>
               <edc:SFRFieldDef edc:cname="OCR0UB" edc:nzwidth="0x1" edc:desc="Output Compare register 0 Busy"/>
               <edc:SFRFieldDef edc:cname="TCN0UB" edc:nzwidth="0x1" edc:desc="Timer/Counter0 Update Busy"/>
-              <edc:SFRFieldDef edc:cname="AS0" edc:nzwidth="0x1" edc:desc="Asynchronus Timer/Counter 0"/>
+              <edc:SFRFieldDef edc:cname="AS0" edc:nzwidth="0x1" edc:desc="Asynchronous Timer/Counter 0"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -713,7 +713,7 @@
               <edc:SFRFieldDef edc:cname="TWIE" edc:nzwidth="0x1" edc:desc="TWI Interrupt Enable"/>
               <edc:AdjustPoint edc:offset="0x1"/>
               <edc:SFRFieldDef edc:cname="TWEN" edc:nzwidth="0x1" edc:desc="TWI Enable Bit"/>
-              <edc:SFRFieldDef edc:cname="TWWC" edc:nzwidth="0x1" edc:desc="TWI Write Collition Flag"/>
+              <edc:SFRFieldDef edc:cname="TWWC" edc:nzwidth="0x1" edc:desc="TWI Write Collision Flag"/>
               <edc:SFRFieldDef edc:cname="TWSTO" edc:nzwidth="0x1" edc:desc="TWI Stop Condition Bit"/>
               <edc:SFRFieldDef edc:cname="TWSTA" edc:nzwidth="0x1" edc:desc="TWI Start Condition Bit"/>
               <edc:SFRFieldDef edc:cname="TWEA" edc:nzwidth="0x1" edc:desc="TWI Enable Acknowledge Bit"/>
@@ -861,7 +861,7 @@
               <edc:SFRFieldDef edc:cname="DOR1" edc:nzwidth="0x1" edc:desc="Data overRun"/>
               <edc:SFRFieldDef edc:cname="FE1" edc:nzwidth="0x1" edc:desc="Framing Error"/>
               <edc:SFRFieldDef edc:cname="UDRE1" edc:nzwidth="0x1" edc:desc="USART Data Register Empty"/>
-              <edc:SFRFieldDef edc:cname="TXC1" edc:nzwidth="0x1" edc:desc="USART Transmitt Complete"/>
+              <edc:SFRFieldDef edc:cname="TXC1" edc:nzwidth="0x1" edc:desc="USART Transmit Complete"/>
               <edc:SFRFieldDef edc:cname="RXC1" edc:nzwidth="0x1" edc:desc="USART Receive Complete"/>
             </edc:SFRMode>
           </edc:SFRModeList>
@@ -896,7 +896,7 @@
   </edc:DataSpace>
   <edc:DataFlashSpace edc:endaddr="0x1000" edc:magicoffset="0x810000"/>
   <edc:SignaturesSpace edc:magicoffset="0x840000">
-    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9702" edc:rw="r"/>
+    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9702" edc:mask="0xffffff" edc:rw="r"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
     <edc:ConfigFuseSector edc:regionid="FUSES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:magicoffset="0x820000" edc:rw="rw">

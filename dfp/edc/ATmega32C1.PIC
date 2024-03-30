@@ -998,7 +998,7 @@
         <edc:SFRDef ltx:memberofperipheral="CAN" edc:cname="CANGIT" edc:nzwidth="0x8" edc:access="nnnnnnnn" edc:_addr="0xDA">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="CAN">
-              <edc:SFRFieldDef edc:cname="AERG" edc:nzwidth="0x1" edc:desc="Ackknowledgement Error General Flag"/>
+              <edc:SFRFieldDef edc:cname="AERG" edc:nzwidth="0x1" edc:desc="Acknowledgement Error General Flag"/>
               <edc:SFRFieldDef edc:cname="FERG" edc:nzwidth="0x1" edc:desc="Form Error General Flag"/>
               <edc:SFRFieldDef edc:cname="CERG" edc:nzwidth="0x1" edc:desc="CRC Error General Flag"/>
               <edc:SFRFieldDef edc:cname="SERG" edc:nzwidth="0x1" edc:desc="Stuff Error General Flag"/>
@@ -1016,7 +1016,7 @@
               <edc:SFRFieldDef edc:cname="ENERG" edc:nzwidth="0x1" edc:desc="Enable General Error Interrupt"/>
               <edc:SFRFieldDef edc:cname="ENBX" edc:nzwidth="0x1" edc:desc="Enable Burst Receive Interrupt"/>
               <edc:SFRFieldDef edc:cname="ENERR" edc:nzwidth="0x1" edc:desc="Enable MOb Error Interrupt"/>
-              <edc:SFRFieldDef edc:cname="ENTX" edc:nzwidth="0x1" edc:desc="Enable Transmitt Interrupt"/>
+              <edc:SFRFieldDef edc:cname="ENTX" edc:nzwidth="0x1" edc:desc="Enable Transmit Interrupt"/>
               <edc:SFRFieldDef edc:cname="ENRX" edc:nzwidth="0x1" edc:desc="Enable Receive Interrupt"/>
               <edc:SFRFieldDef edc:cname="ENBOFF" edc:nzwidth="0x1" edc:desc="Enable Bus Off Interrupt"/>
               <edc:SFRFieldDef edc:cname="ENIT" edc:nzwidth="0x1" edc:desc="Enable all Interrupts"/>
@@ -1129,7 +1129,7 @@
         <edc:SFRDef ltx:memberofperipheral="CAN" edc:cname="CANSTMOB" edc:nzwidth="0x8" edc:access="nnnnnnnn" edc:_addr="0xEE">
           <edc:SFRModeList>
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="CAN">
-              <edc:SFRFieldDef edc:cname="AERR" edc:nzwidth="0x1" edc:desc="Ackknowledgement Error on MOb"/>
+              <edc:SFRFieldDef edc:cname="AERR" edc:nzwidth="0x1" edc:desc="Acknowledgement Error on MOb"/>
               <edc:SFRFieldDef edc:cname="FERR" edc:nzwidth="0x1" edc:desc="Form Error on MOb"/>
               <edc:SFRFieldDef edc:cname="CERR" edc:nzwidth="0x1" edc:desc="CRC Error on MOb"/>
               <edc:SFRFieldDef edc:cname="SERR" edc:nzwidth="0x1" edc:desc="Stuff Error on MOb"/>
@@ -1232,7 +1232,7 @@
   </edc:DataSpace>
   <edc:DataFlashSpace edc:endaddr="0x400" edc:magicoffset="0x810000"/>
   <edc:SignaturesSpace edc:magicoffset="0x840000">
-    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9586" edc:rw="r"/>
+    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9586" edc:mask="0xffffff" edc:rw="r"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
     <edc:ConfigFuseSector edc:regionid="FUSES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:magicoffset="0x820000" edc:rw="rw">

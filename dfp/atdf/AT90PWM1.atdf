@@ -614,7 +614,7 @@
         <value caption="Reserved (do not use)" name="RESERVED_DO_NOT_USE" value="0x0B"/>
         <value caption="Reserved (do not use)" name="RESERVED_DO_NOT_USE" value="0x0C"/>
         <value caption="Reserved (do not use)" name="RESERVED_DO_NOT_USE" value="0x0D"/>
-        <value caption="Fixed Frequency Edge Retrigger PSC and Disactivate Output" name="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC_AND_DISACTIVATE_OUTPUT" value="0x0E"/>
+        <value caption="Fixed Frequency Edge Retrigger PSC and Deactivate Output" name="FIXED_FREQUENCY_EDGE_RETRIGGER_PSC_AND_DISACTIVATE_OUTPUT" value="0x0E"/>
         <value caption="Reserved (do not use)" name="RESERVED_DO_NOT_USE" value="0x0F"/>
       </value-group>
       <value-group name="PSC_PRESCALER">

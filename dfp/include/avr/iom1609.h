@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (C) 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  *
  * This software is developed by Microchip Technology Inc. and its subsidiaries ("Microchip").
@@ -43,8 +43,6 @@
 
 /* Ungrouped common registers */
 #define CCP  _SFR_MEM8(0x0034)  /* Configuration Change Protection */
-#define SPL  _SFR_MEM8(0x003D)  /* Stack Pointer Low */
-#define SPH  _SFR_MEM8(0x003E)  /* Stack Pointer High */
 #define SREG  _SFR_MEM8(0x003F)  /* Status Register */
 
 
@@ -556,9 +554,9 @@ typedef struct CLKCTRL_struct
 /* Clock select */
 typedef enum CLKCTRL_CLKSEL_enum
 {
-    CLKCTRL_CLKSEL_OSC20M_gc = (0x00<<0),  /* 20MHz oscillator */
-    CLKCTRL_CLKSEL_OSCULP32K_gc = (0x01<<0),  /* 32KHz oscillator */
-    CLKCTRL_CLKSEL_XOSC32K_gc = (0x02<<0),  /* 32.768kHz crystal oscillator */
+    CLKCTRL_CLKSEL_OSC20M_gc = (0x00<<0),  /* 16/20MHz internal oscillator */
+    CLKCTRL_CLKSEL_OSCULP32K_gc = (0x01<<0),  /* 32.768kHz internal ultra low-power oscillator */
+    CLKCTRL_CLKSEL_XOSC32K_gc = (0x02<<0),  /* 32.768kHz external crystal oscillator */
     CLKCTRL_CLKSEL_EXTCLK_gc = (0x03<<0)  /* External clock */
 } CLKCTRL_CLKSEL_t;
 
@@ -1327,10 +1325,10 @@ typedef enum SPI_MODE_enum
 /* Prescaler select */
 typedef enum SPI_PRESC_enum
 {
-    SPI_PRESC_DIV4_gc = (0x00<<1),  /* System Clock / 4 */
-    SPI_PRESC_DIV16_gc = (0x01<<1),  /* System Clock / 16 */
-    SPI_PRESC_DIV64_gc = (0x02<<1),  /* System Clock / 64 */
-    SPI_PRESC_DIV128_gc = (0x03<<1)  /* System Clock / 128 */
+    SPI_PRESC_DIV4_gc = (0x00<<1),  /* CLK_PER / 4 */
+    SPI_PRESC_DIV16_gc = (0x01<<1),  /* CLK_PER / 16 */
+    SPI_PRESC_DIV64_gc = (0x02<<1),  /* CLK_PER / 64 */
+    SPI_PRESC_DIV128_gc = (0x03<<1)  /* CLK_PER / 128 */
 } SPI_PRESC_t;
 
 /*
@@ -1430,14 +1428,14 @@ typedef union TCA_union
 /* Clock Selection */
 typedef enum TCA_SINGLE_CLKSEL_enum
 {
-    TCA_SINGLE_CLKSEL_DIV1_gc = (0x00<<1),  /* System Clock */
-    TCA_SINGLE_CLKSEL_DIV2_gc = (0x01<<1),  /* System Clock / 2 */
-    TCA_SINGLE_CLKSEL_DIV4_gc = (0x02<<1),  /* System Clock / 4 */
-    TCA_SINGLE_CLKSEL_DIV8_gc = (0x03<<1),  /* System Clock / 8 */
-    TCA_SINGLE_CLKSEL_DIV16_gc = (0x04<<1),  /* System Clock / 16 */
-    TCA_SINGLE_CLKSEL_DIV64_gc = (0x05<<1),  /* System Clock / 64 */
-    TCA_SINGLE_CLKSEL_DIV256_gc = (0x06<<1),  /* System Clock / 256 */
-    TCA_SINGLE_CLKSEL_DIV1024_gc = (0x07<<1)  /* System Clock / 1024 */
+    TCA_SINGLE_CLKSEL_DIV1_gc = (0x00<<1),  /* CLK_PER */
+    TCA_SINGLE_CLKSEL_DIV2_gc = (0x01<<1),  /* CLK_PER / 2 */
+    TCA_SINGLE_CLKSEL_DIV4_gc = (0x02<<1),  /* CLK_PER / 4 */
+    TCA_SINGLE_CLKSEL_DIV8_gc = (0x03<<1),  /* CLK_PER / 8 */
+    TCA_SINGLE_CLKSEL_DIV16_gc = (0x04<<1),  /* CLK_PER / 16 */
+    TCA_SINGLE_CLKSEL_DIV64_gc = (0x05<<1),  /* CLK_PER / 64 */
+    TCA_SINGLE_CLKSEL_DIV256_gc = (0x06<<1),  /* CLK_PER / 256 */
+    TCA_SINGLE_CLKSEL_DIV1024_gc = (0x07<<1)  /* CLK_PER / 1024 */
 } TCA_SINGLE_CLKSEL_t;
 
 /* Command select */
@@ -1479,14 +1477,14 @@ typedef enum TCA_SINGLE_WGMODE_enum
 /* Clock Selection */
 typedef enum TCA_SPLIT_CLKSEL_enum
 {
-    TCA_SPLIT_CLKSEL_DIV1_gc = (0x00<<1),  /* System Clock */
-    TCA_SPLIT_CLKSEL_DIV2_gc = (0x01<<1),  /* System Clock / 2 */
-    TCA_SPLIT_CLKSEL_DIV4_gc = (0x02<<1),  /* System Clock / 4 */
-    TCA_SPLIT_CLKSEL_DIV8_gc = (0x03<<1),  /* System Clock / 8 */
-    TCA_SPLIT_CLKSEL_DIV16_gc = (0x04<<1),  /* System Clock / 16 */
-    TCA_SPLIT_CLKSEL_DIV64_gc = (0x05<<1),  /* System Clock / 64 */
-    TCA_SPLIT_CLKSEL_DIV256_gc = (0x06<<1),  /* System Clock / 256 */
-    TCA_SPLIT_CLKSEL_DIV1024_gc = (0x07<<1)  /* System Clock / 1024 */
+    TCA_SPLIT_CLKSEL_DIV1_gc = (0x00<<1),  /* CLK_PER */
+    TCA_SPLIT_CLKSEL_DIV2_gc = (0x01<<1),  /* CLK_PER / 2 */
+    TCA_SPLIT_CLKSEL_DIV4_gc = (0x02<<1),  /* CLK_PER / 4 */
+    TCA_SPLIT_CLKSEL_DIV8_gc = (0x03<<1),  /* CLK_PER / 8 */
+    TCA_SPLIT_CLKSEL_DIV16_gc = (0x04<<1),  /* CLK_PER / 16 */
+    TCA_SPLIT_CLKSEL_DIV64_gc = (0x05<<1),  /* CLK_PER / 64 */
+    TCA_SPLIT_CLKSEL_DIV256_gc = (0x06<<1),  /* CLK_PER / 256 */
+    TCA_SPLIT_CLKSEL_DIV1024_gc = (0x07<<1)  /* CLK_PER / 1024 */
 } TCA_SPLIT_CLKSEL_t;
 
 /* Command select */
@@ -2834,18 +2832,18 @@ IO Module Instances. Mapped to memory.
 #define ADC_WINCM_2_bp  2  /* Window Comparator Mode bit 2 position. */
 
 /* ADC.SAMPCTRL  bit masks and bit positions */
-#define ADC_SAMPLEN_gm  0x1F  /* Sample lenght group mask. */
-#define ADC_SAMPLEN_gp  0  /* Sample lenght group position. */
-#define ADC_SAMPLEN_0_bm  (1<<0)  /* Sample lenght bit 0 mask. */
-#define ADC_SAMPLEN_0_bp  0  /* Sample lenght bit 0 position. */
-#define ADC_SAMPLEN_1_bm  (1<<1)  /* Sample lenght bit 1 mask. */
-#define ADC_SAMPLEN_1_bp  1  /* Sample lenght bit 1 position. */
-#define ADC_SAMPLEN_2_bm  (1<<2)  /* Sample lenght bit 2 mask. */
-#define ADC_SAMPLEN_2_bp  2  /* Sample lenght bit 2 position. */
-#define ADC_SAMPLEN_3_bm  (1<<3)  /* Sample lenght bit 3 mask. */
-#define ADC_SAMPLEN_3_bp  3  /* Sample lenght bit 3 position. */
-#define ADC_SAMPLEN_4_bm  (1<<4)  /* Sample lenght bit 4 mask. */
-#define ADC_SAMPLEN_4_bp  4  /* Sample lenght bit 4 position. */
+#define ADC_SAMPLEN_gm  0x1F  /* Sample length group mask. */
+#define ADC_SAMPLEN_gp  0  /* Sample length group position. */
+#define ADC_SAMPLEN_0_bm  (1<<0)  /* Sample length bit 0 mask. */
+#define ADC_SAMPLEN_0_bp  0  /* Sample length bit 0 position. */
+#define ADC_SAMPLEN_1_bm  (1<<1)  /* Sample length bit 1 mask. */
+#define ADC_SAMPLEN_1_bp  1  /* Sample length bit 1 position. */
+#define ADC_SAMPLEN_2_bm  (1<<2)  /* Sample length bit 2 mask. */
+#define ADC_SAMPLEN_2_bp  2  /* Sample length bit 2 position. */
+#define ADC_SAMPLEN_3_bm  (1<<3)  /* Sample length bit 3 mask. */
+#define ADC_SAMPLEN_3_bp  3  /* Sample length bit 3 position. */
+#define ADC_SAMPLEN_4_bm  (1<<4)  /* Sample length bit 4 mask. */
+#define ADC_SAMPLEN_4_bp  4  /* Sample length bit 4 position. */
 
 /* ADC.MUXPOS  bit masks and bit positions */
 #define ADC_MUXPOS_gm  0x1F  /* Analog Channel Selection Bits group mask. */
@@ -3188,8 +3186,8 @@ IO Module Instances. Mapped to memory.
 #define CLKCTRL_PDIV_3_bp  4  /* Prescaler division bit 3 position. */
 
 /* CLKCTRL.MCLKLOCK  bit masks and bit positions */
-#define CLKCTRL_LOCKEN_bm  0x01  /* lock ebable bit mask. */
-#define CLKCTRL_LOCKEN_bp  0  /* lock ebable bit position. */
+#define CLKCTRL_LOCKEN_bm  0x01  /* Lock enable bit mask. */
+#define CLKCTRL_LOCKEN_bp  0  /* Lock enable bit position. */
 
 /* CLKCTRL.MCLKSTATUS  bit masks and bit positions */
 #define CLKCTRL_SOSC_bm  0x01  /* System Oscillator changing bit mask. */

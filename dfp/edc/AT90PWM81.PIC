@@ -743,8 +743,8 @@
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="AC">
               <edc:SFRFieldDef edc:cname="AC1H" edc:nzwidth="0x3" edc:desc="Analog Comparator Hysteresis Select"/>
               <edc:SFRFieldDef edc:cname="AC1ICE" edc:nzwidth="0x1" edc:desc="Analog Comparator Interrupt Capture Enable"/>
-              <edc:SFRFieldDef edc:cname="AC1OE" edc:nzwidth="0x1" edc:desc="Analog Comparator Ouput Enable"/>
-              <edc:SFRFieldDef edc:cname="AC1OI" edc:nzwidth="0x1" edc:desc="Analog Comparator Ouput Invert"/>
+              <edc:SFRFieldDef edc:cname="AC1OE" edc:nzwidth="0x1" edc:desc="Analog Comparator Output Enable"/>
+              <edc:SFRFieldDef edc:cname="AC1OI" edc:nzwidth="0x1" edc:desc="Analog Comparator Output Invert"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -753,8 +753,8 @@
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="AC">
               <edc:SFRFieldDef edc:cname="AC2H" edc:nzwidth="0x3" edc:desc="Analog Comparator Hysteresis Select"/>
               <edc:AdjustPoint edc:offset="0x1"/>
-              <edc:SFRFieldDef edc:cname="AC2OE" edc:nzwidth="0x1" edc:desc="Analog Comparator Ouput Enable"/>
-              <edc:SFRFieldDef edc:cname="AC2OI" edc:nzwidth="0x1" edc:desc="Analog Comparator Ouput Invert"/>
+              <edc:SFRFieldDef edc:cname="AC2OE" edc:nzwidth="0x1" edc:desc="Analog Comparator Output Enable"/>
+              <edc:SFRFieldDef edc:cname="AC2OI" edc:nzwidth="0x1" edc:desc="Analog Comparator Output Invert"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -763,8 +763,8 @@
             <edc:SFRMode edc:id="DS.0" ltx:memberofperipheral="AC">
               <edc:SFRFieldDef edc:cname="AC3H" edc:nzwidth="0x3" edc:desc="Analog Comparator Hysteresis Select"/>
               <edc:AdjustPoint edc:offset="0x1"/>
-              <edc:SFRFieldDef edc:cname="AC3OE" edc:nzwidth="0x1" edc:desc="Analog Comparator Ouput Enable"/>
-              <edc:SFRFieldDef edc:cname="AC3OI" edc:nzwidth="0x1" edc:desc="Analog Comparator Ouput Invert"/>
+              <edc:SFRFieldDef edc:cname="AC3OE" edc:nzwidth="0x1" edc:desc="Analog Comparator Output Enable"/>
+              <edc:SFRFieldDef edc:cname="AC3OI" edc:nzwidth="0x1" edc:desc="Analog Comparator Output Invert"/>
             </edc:SFRMode>
           </edc:SFRModeList>
         </edc:SFRDef>
@@ -976,7 +976,7 @@
   </edc:DataSpace>
   <edc:DataFlashSpace edc:endaddr="0x200" edc:magicoffset="0x810000"/>
   <edc:SignaturesSpace edc:magicoffset="0x840000">
-    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9388" edc:rw="r"/>
+    <edc:DeviceIDSector edc:regionid="SIGNATURES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:value="0x1E9388" edc:mask="0xffffff" edc:rw="r"/>
   </edc:SignaturesSpace>
   <edc:FusesSpace edc:magicoffset="0x820000">
     <edc:ConfigFuseSector edc:regionid="FUSES" edc:beginaddr="0x0" edc:endaddr="0x3" edc:magicoffset="0x820000" edc:rw="rw">
