@@ -19,4 +19,5 @@ git clone git@github.com:apcountryman/dfp-microchip-atmega.git
 
 Microchip Technology Inc. releases the ATmega series DFP under the Apache License, Version
 2.0.
-For more information, [see the `LICENSE` file in this repository](LICENSE).
+For more information, see the [`EULA`](EULA) and [`LICENSE`](LICENSE) files in this
+repository.
