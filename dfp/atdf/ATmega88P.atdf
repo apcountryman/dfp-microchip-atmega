@@ -77,6 +77,8 @@
             <signals>
               <signal group="OCA" function="default" pad="PB3"/>
               <signal group="OCB" function="default" pad="PD3"/>
+              <signal group="TOSC1" function="default" pad="PB6"/>
+              <signal group="TOSC2" function="default" pad="PB7"/>
             </signals>
           </instance>
         </module>
@@ -210,6 +212,8 @@
             <register-group name="CPU" name-in-module="CPU" offset="0x00" address-space="data" caption="CPU Registers"/>
             <signals>
               <signal group="CLK" index="0" function="default" pad="PB0"/>
+              <signal group="XTAL1" function="default" pad="PB6"/>
+              <signal group="XTAL2" function="default" pad="PB7"/>
             </signals>
           <parameters>
         <param name="CORE_VERSION" value="V2E"/>

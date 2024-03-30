@@ -6,9 +6,9 @@
 ;* Number            : AVR000
 ;* File Name         : m64HVE2def.inc
 ;* Title             : Register/Bit Definitions for the ATmega64HVE2
-;* Created           : 2021-07-13 10:40
+;* Created           : 2022-03-01 14:14
 ;* Version           : 1.00
-;* Support e-mail    : avr@atmel.com
+;* Support           : https://microchipsupport.force.com/
 ;* Target MCU        : ATmega64HVE2
 ;*
 ;* DESCRIPTION

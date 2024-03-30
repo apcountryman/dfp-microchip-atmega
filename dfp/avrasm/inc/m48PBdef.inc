@@ -6,9 +6,9 @@
 ;* Number            : AVR000
 ;* File Name         : m48PBdef.inc
 ;* Title             : Register/Bit Definitions for the ATmega48PB
-;* Created           : 2021-07-13 10:40
+;* Created           : 2022-03-01 14:14
 ;* Version           : 1.00
-;* Support e-mail    : avr@atmel.com
+;* Support           : https://microchipsupport.force.com/
 ;* Target MCU        : ATmega48PB
 ;*
 ;* DESCRIPTION
