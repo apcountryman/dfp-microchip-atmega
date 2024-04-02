@@ -25,11 +25,11 @@ git submodule add https://github.com/apcountryman/dfp-microchip-atmega.git
 ```CMake
 add_compile_options(
     -mmcu=atmega4809
-    -B "${CMAKE_CURRENT_SOURCE_DIR}/dfp-microchip-atmega/gcc/dev/atmega4809"
+    -B "${CMAKE_CURRENT_SOURCE_DIR}/dfp-microchip-atmega/dfp/gcc/dev/atmega4809"
     )
 
 include_directories( SYSTEM
-    "${CMAKE_CURRENT_SOURCE_DIR}/dfp-microchip-atmega/include"
+    "${CMAKE_CURRENT_SOURCE_DIR}/dfp-microchip-atmega/dfp/include"
     )
 ```
 
